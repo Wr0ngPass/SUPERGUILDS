@@ -1,5 +1,5 @@
 aliases:
-	wooditems = 17:0, 17:1, 17:2, 17:3,	162:0, 162:1
+	wooditems = 17:0, 17:1, 17:2, 17:3, 162:0, 162:1
 	woolitems = 35:0, 35:1, 35:2, 35:3, 35:4, 35:5, 35:6, 35:7, 35:8, 35:9, 35:10, 35:11, 35:12, 35:13, 35:14, 35:15
 on load:
 	set {SG::Locale_Version} to "1701"
@@ -520,7 +520,7 @@ on load:
 	set {SG::Messages::Click_To_Info} to "||§7Lider: §f{LEADER}||§7Savaş Puanı: §f{POINTS} ✪||§7Küme: §f{LEVEL}||||§eLoncayı detaylı incelemek için tıkla."
 	set {SG::Messages::War_Top_GUI} to "§7En iyi loncalara bakmak için tıkla."
 	set {SG::Messages::War_Death_0} to "§9{VICTIM} ({VGUILD}) §7öldü ve savaştan elendi."
-	set {SG::Messages::Locale_zh_CN} to "§6Çince"
+	set {SG::Messages::Locale_zh_CN} to "§6渔乐"
 	set {SG::Messages::Locale_vn_VN} to "§6Tiếng Việt"
 	set {SG::Messages::Locale_fr_FR} to "§6Français"
 	set {SG::Messages::Buildings_Lore_More} to "§c§nDaha Fazla Kaynak Lazım;||§7 → §7Daha fazla bağışlamak için tıkla."
