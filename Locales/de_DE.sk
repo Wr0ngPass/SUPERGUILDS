@@ -540,7 +540,7 @@ on load:
 	set {SG::Messages::Click_To_Info} to "||§7Leader: §f{LEADER}||§7War Points: §f{POINTS} ✪||§7Division: §f{LEVEL}||||§eClick to see information of this guild."
 	set {SG::Messages::War_Top_GUI} to "§7Click to check top guilds list."
 	set {SG::Messages::Locale_zh_CN} to "§6渔乐"
-	set {SG::Messages::War_Death_0} to ""&9{VICTIM} ({VGUILD}) &7has died and eliminated from war."
+	set {SG::Messages::War_Death_0} to "&9{VICTIM} ({VGUILD}) &7has died and eliminated from war."
 	set {SG::Messages::Locale_vn_VN} to "§6Tiếng Việt"
 	set {SG::Messages::Locale_fr_FR} to "§6Français"
 	set {SG::Messages::Back_Item} to arrow
