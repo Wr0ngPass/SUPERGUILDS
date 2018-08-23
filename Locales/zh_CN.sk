@@ -628,3 +628,12 @@ on load:
 	set {SG::Messages::Placeholder_NoVariable_guild_division} to "?"
 	set {SG::Messages::Vault_Using} to "§7Vault 正在被 §a{PLAYER} §7使用."
 	set {SG::Messages::Top_Calc_Time_Name} to "§a§n刷新倒计时:"
+	set {SG::Messages::War_Death_1_New} to "§f{ATTACKER} ({AGUILD}) §c⚔ §f{VICTIM} ({VGUILD}) §7[+{POINTS} ☆]"
+	set {SG::Messages::War_Points_New} to "§9{AGUILD}: {APOINTS} ☆ §7vs. §c{VGUILD}: {VPOINTS} ☆"
+	set {SG::Messages::Score_Prefix_New} to "§6§l§n公会 对战"
+	set {SG::Messages::ScoreBrd_1_New} to "§e⊙ 时间: §f{TIME}"
+	set {SG::Messages::ScoreBrd_2_New} to "§9➙ {GUILD1}:"
+	set {SG::Messages::ScoreBrd_3_New} to "§f{PLY1}/{MAX} ☆"
+	set {SG::Messages::ScoreBrd_4_New} to "§c➙ {GUILD2}:"
+	set {SG::Messages::ScoreBrd_5_New} to "§f{PLY2}/{MAX} ☆§f"
+
