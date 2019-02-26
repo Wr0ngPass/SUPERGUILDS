@@ -1,7 +1,11 @@
 #Tanslated by TUCAOEVER[814697582]
 aliases:
-	wooditems = 17:0, 17:1, 17:2, 17:3,	162:0, 162:1
-	woolitems = 35:0, 35:1, 35:2, 35:3, 35:4, 35:5, 35:6, 35:7, 35:8, 35:9, 35:10, 35:11, 35:12, 35:13, 35:14, 35:15
+	wooditems = minecraft:oak_log, minecraft:spruce_log, minecraft:birch_log, minecraft:jungle_log, minecraft:acacia_log, minecraft:dark_oak_log
+	woolitems = minecraft:orange_wool, minecraft:magenta_wool, minecraft:light_blue_wool, minecraft:yellow_wool, minecraft:lime_wool, minecraft:pink_wool, minecraft:gray_wool, minecraft:light_gray_wool, minecraft:cyan_wool, minecraft:purple_wool, minecraft:blue_wool, minecraft:brown_wool, minecraft:green_wool, minecraft:red_wool, minecraft:black_wool
+	sgench = minecraft:enchanting_table
+	sgcraft = minecraft:crafting_table
+	sganvil = minecraft:anvil
+	sgbed = minecraft:orange_bed, minecraft:magenta_bed, minecraft:light_blue_bed, minecraft:yellow_bed, minecraft:lime_bed, minecraft:pink_bed, minecraft::gray_bed, minecraft:light_gray_bed, minecraft:cyan_bed, minecraft:purple_bed, minecraft:blue_bed, minecraft:brown_bed, minecraft:green_bed, minecraft:red_bed, minecraft:black_bed
 on load:
 	set {SG::Locale_Version} to "1006"
 	set {SG::Messages::Prefix} to "§f§l[§6§l公会§f§l] §6➥§7"
@@ -426,7 +430,6 @@ on load:
 	set {SG::Messages::Guild_Home_Menu_Lore} to "||§7点击以传送至公会HOME."
 	set {SG::Messages::Tournament_Cooldown} to "§7对将要在 §e{SECOND} §7秒后开始. §7你的公会可以使用 '§e/g§7' 命令以加入对战."
 	set {SG::Messages::You_Need_More_Resource} to "§7你需要更多的 §f{AMOUNT} §7的 {RESOURCE}§r §7."
-	set {SG::Messages::Main_Page_Item} to sign item
 	set {SG::Messages::Enemy_Leader_Not_Online} to "§7现在没有人有权限同意申请."
 	set {SG::Messages::Menu_War_Lore_New} to "§e公会;||§7 → 段位: §f{LEVEL}||§7 → 公会积分: §f{POINTS} ✪||§7 → 初始 物品: §f{ITEMS}||||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}"
 	set {SG::Messages::Resource_Wood} to "§6§n木资源"
@@ -452,12 +455,12 @@ on load:
 	set {SG::Messages::Resource_Color_Worker} to "§e"
 	set {SG::Messages::Resource_Donate_Lore} to "§7点击以贡献资源."
 	set {SG::Messages::Resource_Donate_Usage} to "§7你可以使用命令:	§e/g donate <wood/stone/iron/gold/diamond/wool> <number>§7以贡献资源."
-	set {SG::Messages::Resource_DonateItemType_Wood} to wooditems
-	set {SG::Messages::Resource_DonateItemType_Stone} to stone
-	set {SG::Messages::Resource_DonateItemType_Iron} to iron ingot
-	set {SG::Messages::Resource_DonateItemType_Gold} to gold ingot
-	set {SG::Messages::Resource_DonateItemType_Diamond} to diamond
-	set {SG::Messages::Resource_DonateItemType_Wool} to woolitems
+	set {SG::Resource_DonateItemType_Wood} to wooditems
+	set {SG::Resource_DonateItemType_Stone} to stone
+	set {SG::Resource_DonateItemType_Iron} to iron ingot
+	set {SG::Resource_DonateItemType_Gold} to gold ingot
+	set {SG::Resource_DonateItemType_Diamond} to diamond
+	set {SG::Resource_DonateItemType_Wool} to woolitems
 	set {SG::Messages::No_Item_Resouce} to "§7ni==你没有足够的 §c{NUMBER} §7这种资源贡献."
 	set {SG::Messages::SYNC_Done} to "§7SYNC§a{FILE} §7完成."
 	set {SG::Messages::SYNC_Enter_File_Type} to "§7将文件输入SYN. (/sg sync <config/locale>)"
@@ -552,12 +555,9 @@ on load:
 	set {SG::Messages::PageAPI_NoVariable_4} to "§c§n没有找到同盟公会."
 	set {SG::Messages::PageAPI_NoVariable_5} to "§c§n没有找到公开公会."
 	set {SG::Messages::PageAPI_NextPage_Name} to "§a下一页"
-	set {SG::Messages::PageAPI_PreviousPage_Name} to "§a上一页"
 	set {SG::Messages::PageAPI_MainPage_Item} to nether star
 	set {SG::Messages::PageAPI_MainPage_Name} to "§a主页"
 	set {SG::Messages::Menu_PreviousMenu_Name} to "§c上一菜单"
-	set {SG::Messages::Menu_PreviousMenu_Item} to "160:14" parsed as material
-	set {SG::Messages::Menu_Item} to "160:15" parsed as material
 	set {SG::Messages::Dont_Have_Money_To_Create} to "§7你没有足够的金钱创建公会.你必须有 §e${NUMBER}§7."
 	set {SG::Messages::RankGUI_PermName_Disband} to "§f§n解散公会"
 	set {SG::Messages::RankGUI_PermName_Upgrade} to "§f§n升级公会建筑"
