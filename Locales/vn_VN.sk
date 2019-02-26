@@ -1,8 +1,12 @@
 aliases:
-	wooditems = 17:0, 17:1, 17:2, 17:3,	162:0, 162:1
-	woolitems = 35:0, 35:1, 35:2, 35:3, 35:4, 35:5, 35:6, 35:7, 35:8, 35:9, 35:10, 35:11, 35:12, 35:13, 35:14, 35:15
+	wooditems = minecraft:oak_log, minecraft:spruce_log, minecraft:birch_log, minecraft:jungle_log, minecraft:acacia_log, minecraft:dark_oak_log
+	woolitems = minecraft:orange_wool, minecraft:magenta_wool, minecraft:light_blue_wool, minecraft:yellow_wool, minecraft:lime_wool, minecraft:pink_wool, minecraft:gray_wool, minecraft:light_gray_wool, minecraft:cyan_wool, minecraft:purple_wool, minecraft:blue_wool, minecraft:brown_wool, minecraft:green_wool, minecraft:red_wool, minecraft:black_wool
+	sgench = minecraft:enchanting_table
+	sgcraft = minecraft:crafting_table
+	sganvil = minecraft:anvil
+	sgbed = minecraft:orange_bed, minecraft:magenta_bed, minecraft:light_blue_bed, minecraft:yellow_bed, minecraft:lime_bed, minecraft:pink_bed, minecraft::gray_bed, minecraft:light_gray_bed, minecraft:cyan_bed, minecraft:purple_bed, minecraft:blue_bed, minecraft:brown_bed, minecraft:green_bed, minecraft:red_bed, minecraft:black_bed
 on load:
-	set {SG::Locale_Version} to "2801"
+	set {SG::Locale_Version} to "2001"
 	set {SG::Messages::Prefix} to "&6&lSUPERGUILDS &6➥&7"
 	set {SG::Messages::Char_Error} to "§7Văn bản chứa các ký tự không thích hợp."
 	set {SG::Messages::WorldGuard_Error} to "§7Có sự bảo vệ của WorldGuard."
@@ -524,9 +528,6 @@ on load:
 	set {SG::Messages::Locale_zh_CN} to "§6渔乐"
 	set {SG::Messages::Locale_vn_VN} to "§6Tiếng Việt"
 	set {SG::Messages::Locale_fr_FR} to "§6Français"
-	set {SG::Messages::Back_Item} to arrow
-	set {SG::Messages::Forward_Item} to arrow
-	set {SG::Messages::Menu_Item} to "160:15" parsed as material
 	set {SG::Messages::Divisions_0} to "§8Bronze"
 	set {SG::Messages::Divisions_1} to "§7Silver"
 	set {SG::Messages::Divisions_2} to "§eGold"
@@ -540,7 +541,6 @@ on load:
 	set {SG::Messages::Guild_Home_Menu_Lore} to "||§7Click to teleport your guild's home."
 	set {SG::Messages::Tournament_Cooldown} to "§7Matches will be set in §e{SECOND} §7second(s). §7Join with §e/tournament§7."
 	set {SG::Messages::You_Need_More_Resource} to "§7You need more §f{AMOUNT} §7of {RESOURCE}§r §7to do this."
-	set {SG::Messages::Main_Page_Item} to sign item
 	set {SG::Messages::Main_Page_Header} to "§6Main Page"
 	set {SG::Messages::Select_GUI} to "Select Type"
 	set {SG::Messages::No_Variable_List_3} to "§7No players."
@@ -570,12 +570,12 @@ on load:
 	set {SG::Messages::Resource_Color_Worker} to "§e"
 	set {SG::Messages::Resource_Donate_Lore} to "§7Click to donate resources."
 	set {SG::Messages::Resource_Donate_Usage} to "§7You can donate resources using §e/g donate <wood/stone/iron/gold/diamond/wool> <number>§7."
-	set {SG::Messages::Resource_DonateItemType_Wood} to wooditems
-	set {SG::Messages::Resource_DonateItemType_Stone} to stone
-	set {SG::Messages::Resource_DonateItemType_Iron} to iron ingot
-	set {SG::Messages::Resource_DonateItemType_Gold} to gold ingot
-	set {SG::Messages::Resource_DonateItemType_Diamond} to diamond
-	set {SG::Messages::Resource_DonateItemType_Wool} to woolitems
+	set {SG::Resource_DonateItemType_Wood} to wooditems
+	set {SG::Resource_DonateItemType_Stone} to stone
+	set {SG::Resource_DonateItemType_Iron} to iron ingot
+	set {SG::Resource_DonateItemType_Gold} to gold ingot
+	set {SG::Resource_DonateItemType_Diamond} to diamond
+	set {SG::Resource_DonateItemType_Wool} to woolitems
 	set {SG::Messages::No_Item_Resouce} to "§7You don't have §c{NUMBER} §7of this resource to donate."
 	set {SG::Messages::SYNC_Done} to "§7SYNC for §a{FILE} §7file is done."
 	set {SG::Messages::SYNC_Enter_File_Type} to "§7Enter the file to sync. (/sg sync <config/locale>)"
