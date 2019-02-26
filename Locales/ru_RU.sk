@@ -1,8 +1,12 @@
 aliases:
-	wooditems = 17:0, 17:1, 17:2, 17:3,	162:0, 162:1
-	woolitems = 35:0, 35:1, 35:2, 35:3, 35:4, 35:5, 35:6, 35:7, 35:8, 35:9, 35:10, 35:11, 35:12, 35:13, 35:14, 35:15
+	wooditems = minecraft:oak_log, minecraft:spruce_log, minecraft:birch_log, minecraft:jungle_log, minecraft:acacia_log, minecraft:dark_oak_log
+	woolitems = minecraft:orange_wool, minecraft:magenta_wool, minecraft:light_blue_wool, minecraft:yellow_wool, minecraft:lime_wool, minecraft:pink_wool, minecraft:gray_wool, minecraft:light_gray_wool, minecraft:cyan_wool, minecraft:purple_wool, minecraft:blue_wool, minecraft:brown_wool, minecraft:green_wool, minecraft:red_wool, minecraft:black_wool
+	sgench = minecraft:enchanting_table
+	sgcraft = minecraft:crafting_table
+	sganvil = minecraft:anvil
+	sgbed = minecraft:orange_bed, minecraft:magenta_bed, minecraft:light_blue_bed, minecraft:yellow_bed, minecraft:lime_bed, minecraft:pink_bed, minecraft::gray_bed, minecraft:light_gray_bed, minecraft:cyan_bed, minecraft:purple_bed, minecraft:blue_bed, minecraft:brown_bed, minecraft:green_bed, minecraft:red_bed, minecraft:black_bed
 on load:
-	set {SG::Locale_Version} to "1023"
+	set {SG::Locale_Version} to "0224"
 	set {SG::Messages::Prefix} to "§6§lSUPERGUILDS §6➥§7"
 	set {SG::Messages::Char_Error} to "§7The text contains inappropriate characters."
 	set {SG::Messages::WorldGuard_Error} to "§7There is under protection by WorldGuard."
@@ -317,7 +321,6 @@ on load:
 	set {SG::Messages::Use_Emblem_Button} to "§0§l[§0✎§0§l]"
 	set {SG::Messages::Player_No_Guild} to "§7This player does not have a guild."
 	set {SG::Messages::Menu_Donate_GUI} to "Put Resources To Here"
-	set {SG::Messages::Cant_Attack_Member} to "§7You can't attack your guild-mates."
 	set {SG::Messages::Enter_MOTD} to "§7Enter the message of the day."
 	set {SG::Messages::MOTD_Changed} to "§7Message of the Day has changed by §a{BY}§7."
 	set {SG::Messages::MOTD_Removed} to "§7Message of the Day has removed by §a{BY}§7."
@@ -404,7 +407,6 @@ on load:
 	set {SG::Messages::Guild_Home_Menu_Lore} to "||§7Click to teleport your guild's home."
 	set {SG::Messages::Tournament_Cooldown} to "§7Matches will be set in §e{SECOND} §7second(s). §7Your guild can join with '§e/g§7' command."
 	set {SG::Messages::You_Need_More_Resource} to "§7You need more §f{AMOUNT} §7of {RESOURCE}§r §7to do this."
-	set {SG::Messages::Main_Page_Item} to sign item
 	set {SG::Messages::Enemy_Leader_Not_Online} to "§7Right now, no one has the permission of answer the invite in this guild."
 	set {SG::Messages::Menu_War_Lore_New} to "§eGuild;||§7 → Division: §f{LEVEL}||§7 → Points: §f{POINTS} ✪||§7 → Start Items: §f{ITEMS}||||§ePvP;||§7 → Kills: §f{KILLS}||§7 → Deaths: §f{DEATHS}"
 	set {SG::Messages::Claim_Name} to "§7§o(You can change this claim's name||§7§ousing §e/g claimname §7§ocommand.)"
@@ -478,7 +480,6 @@ on load:
 	set {SG::Messages::You_Cant_Edit_Here} to "§7You can't change prepared things on §e{BUILD} §7zone. You only can place/break blocks like chests, furnaces."
 	set {SG::Messages::You_Cant_Build_Here} to "§7You can't make buildings on §e{BUILD} §7zone."
 	set {SG::Messages::You_Cant_Alchemy} to "§7You can't use §9Alchemy§7 because you need to make §9Alchemy §7to §6Level I§7."
-	set {SG::Messages::You_Cant_War} to "§7You can't guild war because you need to make §9Barrack §7to §6Level I§7."
 	set {SG::Messages::Land_Protection} to "§7System will create a base so please select empty land."
 	set {SG::Messages::Creation_Point} to "Creation Point"
 	set {SG::Messages::Romen_Num_0} to "0"
@@ -529,11 +530,8 @@ on load:
 	set {SG::Messages::PageAPI_NoVariable_5} to "§c§nNo Public Guilds Found To Join."
 	set {SG::Messages::PageAPI_NextPage_Name} to "§aNext Page"
 	set {SG::Messages::PageAPI_PreviousPage_Name} to "§aPrevious Page"
-	set {SG::Messages::PageAPI_MainPage_Item} to nether star
 	set {SG::Messages::PageAPI_MainPage_Name} to "§aMain Page"
 	set {SG::Messages::Menu_PreviousMenu_Name} to "§cPrevious Menu"
-	set {SG::Messages::Menu_PreviousMenu_Item} to "160:14" parsed as material
-	set {SG::Messages::Menu_Item} to "160:15" parsed as material
 	set {SG::Messages::Dont_Have_Money_To_Create} to "§7You do not have enough money in your balance to create the guild. You must have §e${NUMBER}§7."
 	set {SG::Messages::RankGUI_PermName_Disband} to "§f§nDisband Guild"
 	set {SG::Messages::RankGUI_PermName_Upgrade} to "§f§nUpgrade Guild Buildings"
@@ -613,9 +611,9 @@ on load:
 	set {SG::Messages::TimeSpanText_Hour} to "hr"
 	set {SG::Messages::TimeSpanText_Minute} to "min"
 	set {SG::Messages::TimeSpanText_Second} to "s"
-	set {SG::Messages::Enemy_War_Shield} to "§7This guild has shield for guild wars. Their war sheild expires in §c{EXPIRE}§7."
-	set {SG::Messages::War_Invite_Send_2} to "§7Prepare warriors! Your guild starts a guild war with §c{GUILD} §7guild."
-	set {SG::Messages::War_Invite_Send_3} to "§7Prepare warriors! §c{GUILD} starts a guild war with you."
+	set {SG::Messages::Enemy_War_Shield_New} to "§7This guild has shield for instant guild war. Their war shield expires in §c{EXPIRE}§7."
+	set {SG::Messages::War_Invite_Send_2_New} to "§7Good luck warriors! Your guild starts a guild war with §c{GUILD} §7guild."
+	set {SG::Messages::War_Invite_Send_3_New} to "§7Prepare right now! §c{GUILD} §7starts a guild war with you."
 	set {SG::Messages::War_Shield_Enable_Name} to "§aWar Shield Enabled"
 	set {SG::Messages::War_Shield_Enable_Lore} to "||§7You lose a war and gain a §9war||§9shield §7for instant guild wars.||||§7Other guilds can not declare war to you||§7while you have §9war shield §7enabled.||||§9War Shield §7expires in §c{TIME}§7."
 	set {SG::Messages::War_Shield_Disable_Name} to "§cNo War Shield"
@@ -625,3 +623,18 @@ on load:
 	set {SG::Messages::Click_To_Join} to "||§7Leader: §f{LEADER}||§7War Points: §f{POINTS} ✪||§7Division: §f{LEVEL}||||{EMBLEM}||||§eClick to join to this guild."
 	set {SG::Messages::RankGUI_PermName_Break} to "§f§nBreak Blocks at Guild Claimed Lands"
 	set {SG::Messages::RankGUI_PermName_Place} to "§f§nPlace Blocks at Guild Claimed Lands"
+	set {SG::Messages::Click_To_Join_New} to "||§7Leader: §f{LEADER}||§7War Points: §f{POINTS} ✪||§7Division: §f{LEVEL}||||{EMBLEM}||||§eClick to join this guild."
+	set {SG::Messages::War_Death_2_New} to "§c☠ §f{VICTIM} ({VGUILD}) §7[+{POINTS} ☆]"
+	set {SG::Messages::War_Death_3} to "§a♜ §a§lMATCH POINT!§r §a♜"
+	set {SG::Messages::War_Start_1} to "§2♜§r §2§l§nGUILD WARS§r §2♜"
+	set {SG::Messages::War_Left} to "§c{PLAYER} ({PLAYERGUILD}) §7left from war."
+	set {SG::Messages::War_Shield_GUI_Lore_1} to "§a(War Shield Enabled)"
+	set {SG::Messages::War_Shield_GUI_Lore_2} to "§c(No War Shield)"
+	set {SG::Messages::You_Cant_War_New} to "§7You can't guild war because you need to make §9Barrack §7to §6Level {LEVEL}§7."
+	set {SG::Messages::No_Guild_Perm} to "§7You can't do this with your permissions."
+	set {SG::Messages::WarShield_Give_Usage} to "§7Usage: §e/sgadmin warshield <guild name> <days (number)>§7, example: §6/sgadmin warshield Spigot 3"
+	set {SG::Messages::WarShield_Set_Admin} to "§7You added §a+{NUMBER} §7days of war protection to §b{GUILD}."
+	set {SG::Messages::ItemTypeSupport_SGEnch} to sgench
+	set {SG::Messages::ItemTypeSupport_SGCraft} to sgcraft
+	set {SG::Messages::ItemTypeSupport_SGAnvil} to sganvil
+	set {SG::Messages::ItemTypeSupport_SGBed} to sgbed
