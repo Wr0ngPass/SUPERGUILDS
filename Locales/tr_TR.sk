@@ -1,8 +1,12 @@
 aliases:
-	wooditems = 17:0, 17:1, 17:2, 17:3, 162:0, 162:1
-	woolitems = 35:0, 35:1, 35:2, 35:3, 35:4, 35:5, 35:6, 35:7, 35:8, 35:9, 35:10, 35:11, 35:12, 35:13, 35:14, 35:15
+	wooditems = minecraft:oak_log, minecraft:spruce_log, minecraft:birch_log, minecraft:jungle_log, minecraft:acacia_log, minecraft:dark_oak_log
+	woolitems = minecraft:orange_wool, minecraft:magenta_wool, minecraft:light_blue_wool, minecraft:yellow_wool, minecraft:lime_wool, minecraft:pink_wool, minecraft:gray_wool, minecraft:light_gray_wool, minecraft:cyan_wool, minecraft:purple_wool, minecraft:blue_wool, minecraft:brown_wool, minecraft:green_wool, minecraft:red_wool, minecraft:black_wool
+	sgench = minecraft:enchanting_table
+	sgcraft = minecraft:crafting_table
+	sganvil = minecraft:anvil
+	sgbed = minecraft:orange_bed, minecraft:magenta_bed, minecraft:light_blue_bed, minecraft:yellow_bed, minecraft:lime_bed, minecraft:pink_bed, minecraft::gray_bed, minecraft:light_gray_bed, minecraft:cyan_bed, minecraft:purple_bed, minecraft:blue_bed, minecraft:brown_bed, minecraft:green_bed, minecraft:red_bed, minecraft:black_bed
 on load:
-	set {SG::Locale_Version} to "1701"
+	set {SG::Locale_Version} to "2001"
 	set {SG::Messages::Prefix} to "§6§lSUPERGUILDS §6➥§7"
 	set {SG::Messages::Char_Error} to "Yazdığınız şey desteklenmeyen karakter(ler) içeriyor."
 	set {SG::Messages::WorldGuard_Error} to "Burası WorldGuard tarafından korumalı."
@@ -384,9 +388,6 @@ on load:
 	set {SG::Messages::Text_On} to "&fVar"
 	set {SG::Messages::Text_Off} to "&fYok"
 	set {SG::Messages::Click_To_Teleport} to "&7Işınlanmak için buraya tıkla."
-	set {SG::Messages::Back_Item} to arrow
-	set {SG::Messages::Forward_Item} to arrow
-	set {SG::Messages::Menu_Item} to "160:15" parsed as material
 	set {SG::Messages::Click_To_Select_Color} to "§fBoyanı seçmek için tıkla."
 	set {SG::Messages::Click_To_Dye_Here} to "Boyamak için tıkla."
 	set {SG::Messages::Save_Emblem_Lore} to "§fAmblemi kaydetmek için tıkla."
@@ -530,7 +531,6 @@ on load:
 	set {SG::Messages::Guild_Home_Menu_Name} to "§6Lonca Evi"
 	set {SG::Messages::Guild_Home_Menu_Lore} to "||§7Lonca evine ışınlanmak için tıkla."
 	set {SG::Messages::You_Need_More_Resource} to "&7Bunu yapabilmek için §f{AMOUNT} §7adet {RESOURCE}§r §7lazım."
-	set {SG::Messages::Main_Page_Item} to sign item
 	set {SG::Messages::Main_Page_Header} to "§6Ana Sayfa"
 	set {SG::Messages::No_Variable_List_3} to "§7Oyuncu bulunamadı."
 	set {SG::Messages::Header_3} to "Lonca Üyeleri"
@@ -562,12 +562,12 @@ on load:
 	set {SG::Messages::Resource_Color_Worker} to "§e"
 	set {SG::Messages::Resource_Donate_Lore} to "§7Kaynak bağışlamak için tıkla."
 	set {SG::Messages::Resource_Donate_Usage} to "§7Bağışlamak için §e/g donate <wood/stone/iron/gold/diamond/wool> <number>§7 kullan."
-	set {SG::Messages::Resource_DonateItemType_Wood} to wooditems
-	set {SG::Messages::Resource_DonateItemType_Stone} to stone
-	set {SG::Messages::Resource_DonateItemType_Iron} to iron ingot
-	set {SG::Messages::Resource_DonateItemType_Gold} to gold ingot
-	set {SG::Messages::Resource_DonateItemType_Diamond} to diamond
-	set {SG::Messages::Resource_DonateItemType_Wool} to woolitems
+	set {SG::Resource_DonateItemType_Wood} to wooditems
+	set {SG::Resource_DonateItemType_Stone} to stone
+	set {SG::Resource_DonateItemType_Iron} to iron ingot
+	set {SG::Resource_DonateItemType_Gold} to gold ingot
+	set {SG::Resource_DonateItemType_Diamond} to diamond
+	set {SG::Resource_DonateItemType_Wool} to woolitems
 	set {SG::Messages::No_Item_Resouce} to "§7Bu kaynaktan §c{NUMBER} §7adet yok."
 	set {SG::Messages::Buildings_GUI} to "Lonca Binaları"
 	set {SG::Messages::Buildings_Name_Townhall} to "§6Merkez"
