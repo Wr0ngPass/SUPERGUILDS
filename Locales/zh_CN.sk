@@ -1,11 +1,7 @@
 #Tanslated by TUCAOEVER[814697582]
 aliases:
-	wooditems = minecraft:oak_log, minecraft:spruce_log, minecraft:birch_log, minecraft:jungle_log, minecraft:acacia_log, minecraft:dark_oak_log
-	woolitems = minecraft:orange_wool, minecraft:magenta_wool, minecraft:light_blue_wool, minecraft:yellow_wool, minecraft:lime_wool, minecraft:pink_wool, minecraft:gray_wool, minecraft:light_gray_wool, minecraft:cyan_wool, minecraft:purple_wool, minecraft:blue_wool, minecraft:brown_wool, minecraft:green_wool, minecraft:red_wool, minecraft:black_wool
-	sgench = minecraft:enchanting_table
-	sgcraft = minecraft:crafting_table
-	sganvil = minecraft:anvil
-	sgbed = minecraft:orange_bed, minecraft:magenta_bed, minecraft:light_blue_bed, minecraft:yellow_bed, minecraft:lime_bed, minecraft:pink_bed, minecraft::gray_bed, minecraft:light_gray_bed, minecraft:cyan_bed, minecraft:purple_bed, minecraft:blue_bed, minecraft:brown_bed, minecraft:green_bed, minecraft:red_bed, minecraft:black_bed
+	wooditems = 17:0, 17:1, 17:2, 17:3,	162:0, 162:1
+	woolitems = 35:0, 35:1, 35:2, 35:3, 35:4, 35:5, 35:6, 35:7, 35:8, 35:9, 35:10, 35:11, 35:12, 35:13, 35:14, 35:15
 on load:
 	set {SG::Locale_Version} to "1006"
 	set {SG::Messages::Prefix} to "§f§l[§6§l公会§f§l] §6➥§7"
@@ -83,18 +79,18 @@ on load:
 	set {SG::Messages::Store_GUI} to "公会 仓库"
 	set {SG::Messages::Store_Status} to "§7可用: §f{NUMBER}"
 	set {SG::Messages::Help_Pages_1::Line_1} to "§e/guilds help §8- §7帮助信息."
-	set {SG::Messages::Help_Pages_1::Line_2} to "§e/guilds create <guild name> §8- §7创建公会."
+	set {SG::Messages::Help_Pages_1::Line_2} to "§e/guilds create [公会名称] §8- §7创建公会."
 	set {SG::Messages::Help_Pages_1::Line_3} to "§e/guilds remove §8- §7删除公会."
 	set {SG::Messages::Help_Pages_1::Line_4} to "§e/guilds emblem §8- §7制作公会徽章."
 	set {SG::Messages::Help_Pages_1::Line_5} to "§e/guilds info §8- §7显示公会信息."
 	set {SG::Messages::Help_Pages_1::Line_6} to "§e/guilds leave §8- §7离开你的公会."
 	set {SG::Messages::Help_Pages_1::Line_7} to "§e/guilds storage §8- §7显示公会 仓库."
-	set {SG::Messages::Help_Pages_1::Line_8} to "§e/guilds claimname <name> §8- §7设置你所在的领地名字."
+	set {SG::Messages::Help_Pages_1::Line_8} to "§e/guilds claimname [领地名称] §8- §7设置你所在的领地名字."
 	set {SG::Messages::Help_Pages_2::Line_1} to "§e/guilds leader §8- §7提升一名玩家至主席职务."
-	set {SG::Messages::Help_Pages_2::Line_2} to "§e/guilds invite <player> §8- §7邀请玩家加入公会."
+	set {SG::Messages::Help_Pages_2::Line_2} to "§e/guilds invite [玩家] §8- §7邀请玩家加入公会."
 	set {SG::Messages::Help_Pages_2::Line_3} to "§e/guilds claim §8- §7占领你所在领地."
 	set {SG::Messages::Help_Pages_2::Line_4} to "§e/guilds unclaim §8- §7解除领地管理权."
-	set {SG::Messages::Help_Pages_2::Line_5} to "§e/guilds rank §8- §7改变玩家的职务."
+	set {SG::Messages::Help_Pages_2::Line_5} to "§e/guilds rank §8- §7改变玩家的职位."
 	set {SG::Messages::Help_Pages_2::Line_6} to "§e/guilds reload §8- §7载入插件."
 	set {SG::Messages::Help_Pages_2::Line_7} to "§e/guilds home §8- §7传送至公会HOME."
 	set {SG::Messages::Help_Pages_3::Line_1} to "§e/guilds sethome §8- §7设置公会HOME."
@@ -156,7 +152,7 @@ on load:
 	set {SG::Messages::Guild_Emblem_GUI} to "§6公会 徽章"
 	set {SG::Messages::Guild_Emblem_Lore} to "||§7点击以制作徽章."
 	set {SG::Messages::Rank_Changed} to "§7你的职位被改变至 {RANK}§7."
-	set {SG::Messages::Ranked_Player} to "§7{OLDRANKCHANGEP} {CHANGEP}§7的职位升至 {NEWRANKCHANGEP} §7执行人: {RANKPLAYER} {PLAYER}§7."
+	set {SG::Messages::Ranked_Player} to "§7{OLDRANKCHANGEP} {CHANGEP} §7的职位升至 {NEWRANKCHANGEP} §7执行人: {RANKPLAYER} {PLAYER}§7."
 	set {SG::Messages::Rank_Wrong} to "§7你只能选择比你职位低的成员."
 	set {SG::Messages::Player_Info_4} to "||§7玩家不在线.||||§e上次上线时间: §f{SEEN}"
 	set {SG::Messages::You_Cant_Unclaim} to "§7你无法解除该领地的管理权 此处为§e{BUILD} §7区域."
@@ -232,7 +228,7 @@ on load:
 	set {SG::Messages::Arena_Exists} to "§7已经存在一个相同名字的竞技场."
 	set {SG::Messages::Enter_Arena_Name} to "§7输入竞技场名称."
 	set {SG::Messages::No_Arena} to "§7没有该竞技场."
-	set {SG::Messages::Arena_Removed} to "§7竞技场 §e{ARENA} &7已移除"
+	set {SG::Messages::Arena_Removed} to "§7竞技场 §e{ARENA} §7已移除"
 	set {SG::Messages::Enter_Setspawn_Type} to "§7你必须输入队伍类型. (1 或者 2)"
 	set {SG::Messages::Setspawn_Done} to "§e队伍-{TYPE}§7位于 §a{ARENA} 的出生点§7已经设置."
 	set {SG::Messages::Lobby_Done} to "§7大厅设置在你所在位置.玩家将会在游戏结束传送至此位置."
@@ -430,6 +426,7 @@ on load:
 	set {SG::Messages::Guild_Home_Menu_Lore} to "||§7点击以传送至公会HOME."
 	set {SG::Messages::Tournament_Cooldown} to "§7对将要在 §e{SECOND} §7秒后开始. §7你的公会可以使用 '§e/g§7' 命令以加入对战."
 	set {SG::Messages::You_Need_More_Resource} to "§7你需要更多的 §f{AMOUNT} §7的 {RESOURCE}§r §7."
+	set {SG::Messages::Main_Page_Item} to sign item
 	set {SG::Messages::Enemy_Leader_Not_Online} to "§7现在没有人有权限同意申请."
 	set {SG::Messages::Menu_War_Lore_New} to "§e公会;||§7 → 段位: §f{LEVEL}||§7 → 公会积分: §f{POINTS} ✪||§7 → 初始 物品: §f{ITEMS}||||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}"
 	set {SG::Messages::Resource_Wood} to "§6§n木资源"
@@ -455,12 +452,12 @@ on load:
 	set {SG::Messages::Resource_Color_Worker} to "§e"
 	set {SG::Messages::Resource_Donate_Lore} to "§7点击以贡献资源."
 	set {SG::Messages::Resource_Donate_Usage} to "§7你可以使用命令:	§e/g donate <wood/stone/iron/gold/diamond/wool> <number>§7以贡献资源."
-	set {SG::Resource_DonateItemType_Wood} to wooditems
-	set {SG::Resource_DonateItemType_Stone} to stone
-	set {SG::Resource_DonateItemType_Iron} to iron ingot
-	set {SG::Resource_DonateItemType_Gold} to gold ingot
-	set {SG::Resource_DonateItemType_Diamond} to diamond
-	set {SG::Resource_DonateItemType_Wool} to woolitems
+	set {SG::Messages::Resource_DonateItemType_Wood} to wooditems
+	set {SG::Messages::Resource_DonateItemType_Stone} to stone
+	set {SG::Messages::Resource_DonateItemType_Iron} to iron ingot
+	set {SG::Messages::Resource_DonateItemType_Gold} to gold ingot
+	set {SG::Messages::Resource_DonateItemType_Diamond} to diamond
+	set {SG::Messages::Resource_DonateItemType_Wool} to woolitems
 	set {SG::Messages::No_Item_Resouce} to "§7ni==你没有足够的 §c{NUMBER} §7这种资源贡献."
 	set {SG::Messages::SYNC_Done} to "§7SYNC§a{FILE} §7完成."
 	set {SG::Messages::SYNC_Enter_File_Type} to "§7将文件输入SYN. (/sg sync <config/locale>)"
@@ -532,7 +529,7 @@ on load:
 	set {SG::Messages::Disabled_ChatSpy} to "§7你关闭了公会聊天频道."
 	set {SG::Messages::Enabled_ChatSpy} to "§7你开启了公会聊天频道."
 	set {SG::Messages::Holo_Message_Claim} to "物品堆叠:金铲;§e§l- {GUILD} 已经占领该领地 -;§7占领者: §f{PLAYER};§7总区块: §f{CHUNKS};"
-	set {SG::Messages::Holo_Message_Build} to "物品堆叠:砖块;§6§l- {BUILD} 建筑区域 -;§7Owner Guild: §f{GUILD};§7完成时间: §f{DATE};"
+	set {SG::Messages::Holo_Message_Build} to "物品堆叠:砖块;§6§l- {BUILD} 建筑区域 -;§7公会: §f{GUILD};§7完成时间: §f{DATE};"
 	set {SG::Messages::Guild_Vault_Header} to "公会 经济"
 	set {SG::Messages::You_Cant_Vault} to "§7你无法使用 §e公会 经济§7 你必须先将 §9仓库 §7升级至 §6Level I§7."
 	set {SG::Messages::Building_Desc_Townhall} to "城镇可以提高公会最大人数,同时可以保护成员免于TNT的爆炸伤害"
@@ -555,9 +552,12 @@ on load:
 	set {SG::Messages::PageAPI_NoVariable_4} to "§c§n没有找到同盟公会."
 	set {SG::Messages::PageAPI_NoVariable_5} to "§c§n没有找到公开公会."
 	set {SG::Messages::PageAPI_NextPage_Name} to "§a下一页"
+	set {SG::Messages::PageAPI_PreviousPage_Name} to "§a上一页"
 	set {SG::Messages::PageAPI_MainPage_Item} to nether star
 	set {SG::Messages::PageAPI_MainPage_Name} to "§a主页"
 	set {SG::Messages::Menu_PreviousMenu_Name} to "§c上一菜单"
+	set {SG::Messages::Menu_PreviousMenu_Item} to "160:14" parsed as material
+	set {SG::Messages::Menu_Item} to "160:15" parsed as material
 	set {SG::Messages::Dont_Have_Money_To_Create} to "§7你没有足够的金钱创建公会.你必须有 §e${NUMBER}§7."
 	set {SG::Messages::RankGUI_PermName_Disband} to "§f§n解散公会"
 	set {SG::Messages::RankGUI_PermName_Upgrade} to "§f§n升级公会建筑"
@@ -574,9 +574,9 @@ on load:
 	set {SG::Messages::RankGUI_PermName_Ally} to "§f§n同盟 / 敌人"
 	set {SG::Messages::RankGUI_PermName_War} to "§f§n申请公会对战"
 	set {SG::Messages::RankGUI_PermName_Donate} to "§f§n向公会贡献物资"
-	set {SG::Messages::RankGUI_Header} to "排名 设置"
-	set {SG::Messages::RankGUI_CurrentRank} to "||§7当前排名: §f{RANK}||||§7玩家权限:||"
-	set {SG::Messages::RankGUI_UsePresetRank} to "||§7使用当前排名."
+	set {SG::Messages::RankGUI_Header} to "职位 设置"
+	set {SG::Messages::RankGUI_CurrentRank} to "||§7当前职位: §f{RANK}||||§7玩家权限:||"
+	set {SG::Messages::RankGUI_UsePresetRank} to "||§7当前职位权限"
 	set {SG::Messages::RankGUI_ChangePermission} to "||§7点击以给予该权限."
 	set {SG::Messages::Member_Information_Lore} to "§e(可见: §f{SEEN}§e)||||§e排名: §f{RANK}||§e加入日期: §f{DATE}||§e对战;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§7§n右击以...||  §f查看玩家详细信息.{CRANK}{CKICK}"
 	set {SG::Messages::Member_Information_Kick} to "||||§7§n按住shift左击以...||  §f踢出该成员."
@@ -599,3 +599,80 @@ on load:
 	set {SG::Messages::ScoreBrd_4_New} to "§c➙ {GUILD2}:"
 	set {SG::Messages::ScoreBrd_5_New} to "§f{PLY2}/{MAX} ☆§f"
 
+	set {SG::Messages::Claim_Name} to "§7§o(你可以改变该领地名称||§7§o使用 §e/g claimname §7§o以改变领地名称.)"
+	set {SG::Messages::Guild_Management_PlayerInfo_New} to "||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§f点击以查看种族列表."
+	set {SG::Messages::PlayerStats_1} to "||§e公会: §f{GUILD}||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||||§e贡献;||{DONATEINFO}"
+	set {SG::Messages::PlayerStats_2} to "||§e玩家: §f{PLAYER}||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||§7 → KDA: §f{KDA}||§e贡献;||{DONATEINFO}"
+	set {SG::Messages::PlayerStats_3} to "||§e血量: §f{HEALTH}/10||§e饥饿值: §f{HUNGER}/10||§e坐标: §f{LOCATION}"
+	set {SG::Messages::PlayerStats_4} to "||§7玩家离线.||§e最后一次上线时间: §f{SEEN}"
+	set {SG::Messages::RaceSelectGUI_Header} to "选择种族"
+	set {SG::Messages::RaceInfo_Name_0} to "§f[无]"
+	set {SG::Messages::RaceInfo_Name_1} to "§f[§6§l人类§f]"
+	set {SG::Messages::RaceInfo_Name_2} to "§f[§7§l亡灵§f]"
+	set {SG::Messages::RaceInfo_Name_3} to "§f[§2§l侏儒§f]"
+	set {SG::Messages::RaceInfo_Name_4} to "§f[§e§l精灵§f]"
+	set {SG::Messages::RaceInfo_Passive_1} to "§c§l力量提升 §f§l| §8§l挖掘疲劳||"
+	set {SG::Messages::RaceInfo_Passive_2} to "§c§l急迫 §f§l| §8§l虚弱||"
+	set {SG::Messages::RaceInfo_Passive_3} to "§c§l速度提升 §f§l| §8§l虚弱||"
+	set {SG::Messages::RaceInfo_Passive_4} to "§c§l抗性提升 §f§l| §8§l缓慢||"
+	set {SG::Messages::RaceInfo_Lore_1} to "||§7人类懂得如何去战斗||§7但是他们的攻速受到了限制."
+	set {SG::Messages::RaceInfo_Lore_2} to "||§7亡灵擅长挖掘矿物||§7但是当战争来临,他们往往不懂得如何反抗."
+	set {SG::Messages::RaceInfo_Lore_3} to "||§7侏儒的速度很快||§7危机的时刻来临之际,他们往往可以躲过一劫."
+	set {SG::Messages::RaceInfo_Lore_4} to "||§7精灵具有很高的抗性||§7他们时时刻刻防伪着周围潜在的危险."
+	set {SG::Messages::RaceSelectGUI_Select} to "||||§f点击以选择该种族."
+	set {SG::Messages::RaceSelectGUI_Select_2} to "||||§f点击以选择该种族."
+	set {SG::Messages::RaceSelectGUI_Features} to "§a种族特性[效果]:"
+	set {SG::Messages::RaceSelectGUI_Features_0} to "||§7关闭||§7种族特性.||||§f点击以启用种族特性."
+	set {SG::Messages::RaceSelectGUI_Features_1} to "||§7开启||§7种族特性.||||§f点击以关闭种族特性."
+	set {SG::Messages::RaceSelectGUI_Features_2} to "||§7请先选择一个种族||§7已开启种族特性."
+	set {SG::Messages::RaceSelectGUI_Info} to "§a信息:"
+	set {SG::Messages::RaceSelectGUI_Info_1} to "§7种族: §f{RACE}||§7改变种族次数: §f{NUM}||||§7你无法在无种族的状态下||§7加入一个公会."
+	set {SG::Messages::Race_Left_No} to "§7改变种族次数已用完,你无法改变种族状态."
+	set {SG::Messages::Race_Selected} to "§7玩家 §a{PLAYER}§7 加入种族 §r{RACE}§7."
+	set {SG::Messages::Select_Race} to "§7请先选择你的种族. §6(/g race)"
+	set {SG::Messages::MemberInformation_Lore} to "§e(最后一次上线时间: §f{SEEN}§e)||||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§7§n右击以...||  §f查看玩家详细信息.{CRANK}{CKICK}"
+	set {SG::Messages::Race_Permission} to "§7你没有权限开启/关闭种族特性."
+	set {SG::Messages::Guild_Chat_Spy_Ops} to "GC 监视"
+	set {SG::Messages::Break_Claimed_Areas_Only} to "§7你仅能破坏公会领地."
+	set {SG::Messages::You_Cant_War_2} to "§7你无法发起公会对战 请将指定公会 §9兵营 §7升级至 §6等级 I§7."
+	set {SG::Messages::TimeSpanText_Year} to "年"
+	set {SG::Messages::TimeSpanText_Month} to "月"
+	set {SG::Messages::TimeSpanText_Day} to "天"
+	set {SG::Messages::TimeSpanText_Hour} to "时"
+	set {SG::Messages::TimeSpanText_Minute} to "分"
+	set {SG::Messages::TimeSpanText_Second} to "秒"
+	set {SG::Messages::Enemy_War_Shield} to "§7该公会开启了对战保护. 对战保护将于 §c{EXPIRE}§7 后失效."
+	set {SG::Messages::War_Invite_Send_2} to "§7备战! 你的公会向 §c{GUILD} §7公会发起了对战."
+	set {SG::Messages::War_Invite_Send_3} to "§7备战! §c{GUILD} 公会向你的公会发起了对战."
+	set {SG::Messages::War_Shield_Enable_Name} to "§a对战保护已启用"
+	set {SG::Messages::War_Shield_Enable_Lore} to "||§7公会对战失败||§9对战保护 §7已启用.||||§7其他公会无法在此期间向你的公会发起对战.||||§9对战保护 §7将在 §c{TIME}§7 后失效."
+	set {SG::Messages::War_Shield_Disable_Name} to "§c对战保护已禁用"
+	set {SG::Messages::War_Shield_Disable_Lore} to "||§7你的公会没有 §9对战保护§7.||§7所以任何公会都可以向你的公会发起对战.||§7如果你的公会在对战中失败 将会获得一定时间的 §9对战保护§7."
+	set {SG::Messages::Click_To_Info_New} to "||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以查看该公会的更多信息."
+	set {SG::Messages::Click_To_War_New} to "||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以向该公会发起对战."
+	set {SG::Messages::RankGUI_PermName_Break} to "§f§n公会领地破坏"
+	set {SG::Messages::RankGUI_PermName_Place} to "§f§n公会领地建造"
+	set {SG::Messages::Click_To_Join_New} to "||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以加入该公会."
+	set {SG::Messages::Enemy_War_Shield_New} to "§7该公会对战保护已启用.护盾将于 §c{EXPIRE}§7 后失效."
+	set {SG::Messages::War_Invite_Send_2_New} to "§7祝你们好运! 你的公会向 §c{GUILD} §7公会发起对战."
+	set {SG::Messages::War_Invite_Send_3_New} to "§7战士们别愣着 准备迎击! §c{GUILD} §7向你的公会发起对战."
+	set {SG::Messages::War_Death_2_New} to "§c☠ §f{VICTIM} ({VGUILD}) §7[+{POINTS} ☆]"
+	set {SG::Messages::War_Death_3} to "§a♜ §a§l赛点!§r §a♜"
+	set {SG::Messages::War_Start_1} to "§2♜§r §2§l§n公会对战§r §2♜"
+	set {SG::Messages::War_Left} to "§c{PLAYER} ({PLAYERGUILD}) §7从对战中离开."
+	set {SG::Messages::War_Shield_GUI_Lore_1} to "§a(对战保护已启用)"
+	set {SG::Messages::War_Shield_GUI_Lore_2} to "§c(无对战保护)"
+	set {SG::Messages::You_Cant_War_New} to "§7你无法发起对战要求 请先将 §9兵营 §7升级至 §6等级 {LEVEL}§7."
+	set {SG::Messages::No_Guild_Perm} to "§7你没有权限使用该命令."
+	set {SG::Messages::WarShield_Give_Usage} to "§7正确使用方式: §e/sgadmin warshield [公会名称] [天数]§7, 例如: §6/sgadmin warshield Spigot 3"
+	set {SG::Messages::WarShield_Set_Admin} to "§7添加 §a+{NUMBER} §7天 对战保护 至公会 §b{GUILD}."
+	set {SG::Resource_DonateItemType_Wood} to wooditems
+	set {SG::Resource_DonateItemType_Stone} to stone
+	set {SG::Resource_DonateItemType_Iron} to iron ingot
+	set {SG::Resource_DonateItemType_Gold} to gold ingot
+	set {SG::Resource_DonateItemType_Diamond} to diamond
+	set {SG::Resource_DonateItemType_Wool} to woolitems
+	set {SG::Messages::ItemTypeSupport_SGEnch} to sgench
+	set {SG::Messages::ItemTypeSupport_SGCraft} to sgcraft
+	set {SG::Messages::ItemTypeSupport_SGAnvil} to sganvil
+	set {SG::Messages::ItemTypeSupport_SGBed} to sgbed
