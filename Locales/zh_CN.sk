@@ -3,6 +3,7 @@ aliases:
 	wooditems = 17:0, 17:1, 17:2, 17:3,	162:0, 162:1
 	woolitems = 35:0, 35:1, 35:2, 35:3, 35:4, 35:5, 35:6, 35:7, 35:8, 35:9, 35:10, 35:11, 35:12, 35:13, 35:14, 35:15
 on load:
+	send "&2[SUPERGUILDS] &aTHIS CH LOCALE IS FOR ONLY UNDER 1.13 SERVERS" to all ops
 	set {SG::Locale_Version} to "1006"
 	set {SG::Messages::Prefix} to "§f§l[§6§l公会§f§l] §6➥§7"
 	set {SG::Messages::Char_Error} to "§7TEXT中包含不正确的字符."
