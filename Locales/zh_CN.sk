@@ -507,7 +507,7 @@ on load:
 	addMessageLine("PageAPI_PreviousPage_Name", "zh_CN", "§a上一页")
 	addMessageLine("PageAPI_MainPage_Name", "zh_CN", "§a主页")
 	addMessageLine("Menu_PreviousMenu_Name", "zh_CN", "§c上一菜单")
-	addMessageLine("Dont_Have_Money_To_Create", "zh_CN", "§7你没有足够的金钱创建公会.你必须有 §e("{NUMBER}§7.")
+	addMessageLine("Dont_Have_Money_To_Create", "zh_CN", "§7你没有足够的金钱创建公会.你必须有 §e{NUMBER}§7.")
 	addMessageLine("RankGUI_PermName_Disband", "zh_CN", "§f§n解散公会")
 	addMessageLine("RankGUI_PermName_Upgrade", "zh_CN", "§f§n升级公会建筑")
 	addMessageLine("RankGUI_PermName_Alchemy", "zh_CN", "§f§n使用公会能力")
