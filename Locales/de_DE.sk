@@ -72,10 +72,6 @@ on load:
 	addMessageLine("Chunk_Error_You", "de_DE", "§7Dieses Land ist nicht deins.")
 	addMessageLine("Chunk_Unclaimed", "de_DE", "§7Du gabst das Land bei §e{LAND}§7 auf.")
 	addMessageLine("Buildings_GUI", "de_DE", "Guild Gebaeude")
-	addMessageLine("Buildings_Item_Townhall} to crafting table
-	addMessageLine("Buildings_Item_Barrack} to any sword
-	addMessageLine("Buildings_Item_Storage} to gold ingot
-	addMessageLine("Buildings_Item_Alchemy} to xp bottle
 	addMessageLine("Buildings_Name_Townhall", "de_DE", "§6Townhall")
 	addMessageLine("Buildings_Name_Barrack", "de_DE", "§6Barrack")
 	addMessageLine("Buildings_Name_Storage", "de_DE", "§6Store")
