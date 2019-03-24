@@ -318,7 +318,7 @@ on load:
 	addMessageLine("Tournaments_Join_Lore", "ru_RU", "||§7Нажмите, чтобы присоединиться к турниру.")
 	addMessageLine("Tournaments_List", "ru_RU", "§6§nТурнирные матчи")
 	addMessageLine("Tournaments_Guild_List", "ru_RU", "§6§nГильдии турниров")
-	addMessageLine("Tournaments_List_Waiting", "ru_RU", "§7§o(ожидание гильдий...)")")
+	addMessageLine("Tournaments_List_Waiting", "ru_RU", "§7§o(ожидание гильдий...)")
 	addMessageLine("Tournaments_Ingame_Lore", "ru_RU", "§8(§7§oin progress§8)")
 	addMessageLine("Tournaments_Waiting_Lore", "ru_RU", "§8(§7§owaiting§8)")
 	addMessageLine("Tournaments_Won_Lore", "ru_RU", "§8(§f{G}§8)")
@@ -363,7 +363,6 @@ on load:
 	addMessageLine("Guild_Home_Menu_Lore", "ru_RU", "||§7Кликни, чтобы телепортироваться на точку дома.")
 	addMessageLine("Tournament_Cooldown", "ru_RU", "§7Matches will be set in §e{SECOND} §7second(s). §7Join with §e/tournament§7.")
 	addMessageLine("You_Need_More_Resource", "ru_RU", "§7Вам не хватает §f{AMOUNT} §7{RESOURCE}§r §7в хранилище.")
-	addMessageLine("Main_Page_Item} to sign item
 	addMessageLine("Enemy_Leader_Not_Online", "ru_RU", "§7Right now, no one has the permission of answer the invite in this guild.")
 	addMessageLine("Enemy_Leader_Not_Online", "ru_RU", "§7В той гильдии нет человека, который в данный момент онлайн и имеет права.")
 	addMessageLine("Menu_War_Lore_New", "ru_RU", "§eГильдия;||§7 → Дивизия: §f{LEVEL}||§7 → Поинты: §f{POINTS} ✪||§7 → Стартовый сет: §f{ITEMS}||||§eПВП;||§7 → Убийства: §f{KILLS}||§7 → Смерти: §f{DEATHS}")
@@ -482,10 +481,9 @@ on load:
 	addMessageLine("PageAPI_NoVariable_5", "ru_RU", "§c§nНет публичных гильдий, чтобы присоединиться.")
 	addMessageLine("PageAPI_NextPage_Name", "ru_RU", "§aСледующая страница")
 	addMessageLine("PageAPI_PreviousPage_Name", "ru_RU", "§aПредыдущая страница")
-	addMessageLine("PageAPI_MainPage_Item} to nether star
 	addMessageLine("PageAPI_MainPage_Name", "ru_RU", "§aГлавная страница")
 	addMessageLine("Menu_PreviousMenu_Name", "ru_RU", "§cПредыдущее меню")
-	addMessageLine("Dont_Have_Money_To_Create", "ru_RU", "§7У вас не достаточно денег для создания гильдии. Вы должны иметь §e("{NUMBER}§7.")
+	addMessageLine("Dont_Have_Money_To_Create", "ru_RU", "§7У вас не достаточно денег для создания гильдии. Вы должны иметь §e{NUMBER}§7.")
 	addMessageLine("RankGUI_PermName_Disband", "ru_RU", "§f§nРасформировать Гильдию")
 	addMessageLine("RankGUI_PermName_Upgrade", "ru_RU", "§f§nУлучшить здания гильдии")
 	addMessageLine("RankGUI_PermName_Alchemy", "ru_RU", "§f§nИспользовать Алхимию Гильдии")
