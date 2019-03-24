@@ -1,679 +1,616 @@
-#Tanslated by TUCAOEVER[814697582]
-aliases:
-	wooditems = 17:0, 17:1, 17:2, 17:3,	162:0, 162:1
-	woolitems = 35:0, 35:1, 35:2, 35:3, 35:4, 35:5, 35:6, 35:7, 35:8, 35:9, 35:10, 35:11, 35:12, 35:13, 35:14, 35:15
 on load:
-	send "&2[SUPERGUILDS] &aTHIS CH LOCALE IS FOR ONLY UNDER 1.13 SERVERS" to all ops
-	set {SG::Locale_Version} to "1006"
-	set {SG::Messages::Prefix} to "§f§l[§6§l公会§f§l] §6➥§7"
-	set {SG::Messages::Char_Error} to "§7TEXT中包含不正确的字符."
-	set {SG::Messages::WorldGuard_Error} to "§7受到WorldGuard的保护."
-	set {SG::Messages::Chunk_Error} to "§7某一公会已占领该区块."
-	set {SG::Messages::Dont_Have_Gold_To_Create} to "§7你没有足够的金锭创建公会. 你必须拥有 §e{NUMBER}§7."
-	set {SG::Messages::Created_Guild} to "§e{PLAYER}§7, 创建 §b{GUILD} §7公会."
-	set {SG::Messages::Land_Error} to "§7你的位置并不安全."
-	set {SG::Messages::Guild_Name_Length} to "§7公会名过长或者过短."
-	set {SG::Messages::That_Guild_Exists} to "§7已经存在该公会."
-	set {SG::Messages::Enter_Guild_Name} to "§7输入公会名."
-	set {SG::Messages::You_Have_Guild} to "§7你已经属于一个公会."
-	set {SG::Messages::Remove_Confirm} to "§7你确定要删除该公会么? 再次输入该命令以确认."
-	set {SG::Messages::Guild_Removed} to "§7该公会已删除."
-	set {SG::Messages::No_Permission} to "§7你没有权限使用该命令."
-	set {SG::Messages::You_Dont_Have_Guild} to "§7你没有在任何公会."
-	set {SG::Messages::You_Arent_Leader} to "§7你不是公会的主席."
-	set {SG::Messages::Guild_Remove_Broadcast} to "§c{GUILD} §7被解散."
-	set {SG::Messages::Option_Disabled} to "§7该选项未被开启."
-	set {SG::Messages::No_Rank} to "§7你的公会排名未达到要求."
-	set {SG::Messages::You_Dont_Have_This_Chunk} to "§7你的公会未拥有该领地."
-	set {SG::Messages::Done_Set_Home} to "§7公会HOME已设置."
-	set {SG::Messages::Teleporting_Message} to "§7你将在 §e{TIME} §7秒后传送至公会."
-	set {SG::Messages::Teleport_Cancel} to "§7由于移动本次传送被取消."
-	set {SG::Messages::Teleport_Done} to "§7你已被传送至公会."
-	set {SG::Messages::Already_Teleport} to "§7你已经处于传送行列."
-	set {SG::Messages::Teleport_Starting} to "§7传送进行中,请勿移动."
-	set {SG::Messages::GUIPrefix} to "§8§l» §8"
-	set {SG::Messages::Guild_Management} to "公会 管理"
-	set {SG::Messages::Manage_Panel_2} to "§6游戏ID:"
-	set {SG::Messages::Rank_Leader} to "§b主席 §3★★★§b"
-	set {SG::Messages::Rank_General} to "§a总管 §2★★§a"
-	set {SG::Messages::Rank_Captain} to "§d副管 §5★§d"
-	set {SG::Messages::Rank_Member} to "§8成员"
-	set {SG::Messages::Guild_Info} to "§6公会 信息"
-	set {SG::Messages::Guild_Info_Lore} to "||§7点击以查看公会信息."
-	set {SG::Messages::Guild_Store} to "§6公会 仓库"
-	set {SG::Messages::Guild_Store_Lore} to "||§7点击以打开公会仓库."
-	set {SG::Messages::Claimed_Lands} to "§6公会 领地"
-	set {SG::Messages::Claimed_Lands_Lore} to "||§7点击以查看公会领地."
-	set {SG::Messages::Guild_Alchemy} to "§6公会 能力"
-	set {SG::Messages::Guild_Alchemy_Lore} to "||§7点击以查看公会能力."
-	set {SG::Messages::Check_Players} to "§6成员 列表"
-	set {SG::Messages::Check_Players_Lore} to "||§7点击以查看公会成员列表."
-	set {SG::Messages::Guild_Buildings} to "§6公会 建筑"
-	set {SG::Messages::Guild_Buildings_Lore} to "||§7点击以查看公会建筑."
-	set {SG::Messages::Guild_Info_Header} to "公会信息"
-	set {SG::Messages::Guild_Info_1} to "§6公会 ID"
-	set {SG::Messages::Guild_Info_1_Lore} to "||§e名字:||§f{NAME}||||§e徽章:||§f{EMBLEM}||||§e当前主席:||§f{LEADER}"
-	set {SG::Messages::Guild_Info_2} to "§6公会 创建信息"
-	set {SG::Messages::Guild_Info_2_Lore} to "||§e创立时间:||§f{TIME}||||§e创建者:||§f{CREATOR}"
-	set {SG::Messages::Guild_Info_3} to "§6公会 职责"
-	set {SG::Messages::Guild_Info_3_Lore} to "||§e对战;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||||§e公会段位:||§f{LEVEL}||||§e公会积分:||§f{POINTS} ✪||||§e公会成员:||§f{PLAYERS}/{MAX}||||§e公会领地:||§f{CLAIMED}"
-	set {SG::Messages::Kick_Error_No_Guild} to "§7该玩家不在你的公会."
-	set {SG::Messages::Kick_Error_No_Rank} to "§7你所在职位无法踢出该成员."
-	set {SG::Messages::Kicked_Player} to "§c{KICKED}§7 被 §e{PLAYER}§7从公会中踢出."
-	set {SG::Messages::You_Kicked} to "§7你被公会踢出."
-	set {SG::Messages::No_Kick_Yourself} to "§7你无法踢出你自己."
-	set {SG::Messages::Claim_Error} to "§7你已经拥有该领地."
-	set {SG::Messages::No_Claim_Level} to "§7你所在职位无法占领该领地."
-	set {SG::Messages::Attacking_You} to "§c{ATTACKER}§7 攻占了 §e{LAND}§7."
-	set {SG::Messages::Attacked_Chunk} to "§7你的公会攻占了 §e{LAND} §7原属于: §c{OWN}§7."
-	set {SG::Messages::Chunk_Claimed} to "§7你占领了领地 §e{LAND}§7."
-	set {SG::Messages::Chunk_Error_You} to "§7该领地属于其他公会."
-	set {SG::Messages::Chunk_Unclaimed} to "§7你解除了领地 §e{LAND}§7的管理权."
-	set {SG::Messages::Romen_Num_1} to "I"
-	set {SG::Messages::Romen_Num_2} to "II"
-	set {SG::Messages::Romen_Num_3} to "III"
-	set {SG::Messages::Romen_Num_4} to "IV"
-	set {SG::Messages::Romen_Num_5} to "V"
-	set {SG::Messages::Romen_Num_6} to "VI"
-	set {SG::Messages::Romen_Num_7} to "VII"
-	set {SG::Messages::Romen_Num_8} to "IIX"
-	set {SG::Messages::Store_GUI} to "公会 仓库"
-	set {SG::Messages::Store_Status} to "§7可用: §f{NUMBER}"
-	set {SG::Messages::Help_Pages_1::Line_1} to "§e/guilds help §8- §7帮助信息."
-	set {SG::Messages::Help_Pages_1::Line_2} to "§e/guilds create [公会名称] §8- §7创建公会."
-	set {SG::Messages::Help_Pages_1::Line_3} to "§e/guilds remove §8- §7删除公会."
-	set {SG::Messages::Help_Pages_1::Line_4} to "§e/guilds emblem §8- §7制作公会徽章."
-	set {SG::Messages::Help_Pages_1::Line_5} to "§e/guilds info §8- §7显示公会信息."
-	set {SG::Messages::Help_Pages_1::Line_6} to "§e/guilds leave §8- §7离开你的公会."
-	set {SG::Messages::Help_Pages_1::Line_7} to "§e/guilds storage §8- §7显示公会 仓库."
-	set {SG::Messages::Help_Pages_1::Line_8} to "§e/guilds claimname [领地名称] §8- §7设置你所在的领地名字."
-	set {SG::Messages::Help_Pages_2::Line_1} to "§e/guilds leader §8- §7提升一名玩家至主席职务."
-	set {SG::Messages::Help_Pages_2::Line_2} to "§e/guilds invite [玩家] §8- §7邀请玩家加入公会."
-	set {SG::Messages::Help_Pages_2::Line_3} to "§e/guilds claim §8- §7占领你所在领地."
-	set {SG::Messages::Help_Pages_2::Line_4} to "§e/guilds unclaim §8- §7解除领地管理权."
-	set {SG::Messages::Help_Pages_2::Line_5} to "§e/guilds rank §8- §7改变玩家的职位."
-	set {SG::Messages::Help_Pages_2::Line_6} to "§e/guilds reload §8- §7载入插件."
-	set {SG::Messages::Help_Pages_2::Line_7} to "§e/guilds home §8- §7传送至公会HOME."
-	set {SG::Messages::Help_Pages_3::Line_1} to "§e/guilds sethome §8- §7设置公会HOME."
-	set {SG::Messages::Help_Pages_3::Line_2} to "§e/guilds war §8- §7宣战."
-	set {SG::Messages::Help_Pages_3::Line_3} to "§e/guilds version §8- §7显示插件版本."
-	set {SG::Messages::Help_Pages_3::Line_4} to "§e/guilds buildings §8- §7显示公会建筑."
-	set {SG::Messages::Help_Pages_3::Line_5} to "§e/guilds showclaims §8- §7显示公会所有领地."
-	set {SG::Messages::Help_Pages_3::Line_6} to "§e/guilds alchemy §8- §7显示公会能力."
-	set {SG::Messages::Help_Pages_3::Line_7} to "§e/guilds invites §8- §7开启/关闭公会邀请."
-	set {SG::Messages::Help_Pages_3::Line_8} to "§e/guilds chat §8- §7开启/关闭公会聊天."
-	set {SG::Messages::Next_Page} to "§8§m--------§r §7使用 §6/sg help {NEXT} §7来查看下一页帮助. §8§m-------"
-	set {SG::Messages::Invite_Player_Name} to "§7输入所需邀请玩家名字."
-	set {SG::Messages::Cant_Invite_Yourself} to "§7你无法邀请你自己."
-	set {SG::Messages::Player_Closed_Invites} to "§7该玩家关闭邀请申请."
-	set {SG::Messages::Player_Has_Guild} to "§7该玩家在其他公会."
-	set {SG::Messages::Your_Guild_Is_Full} to "§7你的公会已满.你可以升级城镇来扩大人数."
-	set {SG::Messages::Invite_Wait} to "§7你必须等待 §e{TIME} §7以邀请玩家."
-	set {SG::Messages::This_Guild_Is_Full} to "§7公会已满."
-	set {SG::Messages::Invite_Send} to "§7公会邀请已发送至该玩家."
-	set {SG::Messages::Invite_GUI} to "邀请函"
-	set {SG::Messages::InviteC_Accept} to "§6同意加入 §e{GUILD}§6."
-	set {SG::Messages::InviteC_Reject} to "§c拒绝加入并关闭菜单."
-	set {SG::Messages::You_Reject} to "§7你拒绝了公会邀请."
-	set {SG::Messages::You_Joined_Guild} to "§7你加入 §e{GUILD} §7公会."
-	set {SG::Messages::Player_Joined_Guild} to "§6{PLAYER} §7加入了 §e{GUILD} §7公会."
-	set {SG::Messages::Disabled_Invites} to "§7你关闭了邀请."
-	set {SG::Messages::Enabled_Invites} to "§7你开启了邀请."
-	set {SG::Messages::Enter_An_Integer} to "§7请输入整数."
-	set {SG::Messages::No_Storage} to "§7仓库已满 §f{NUMBER} {RESOURCE}§r§7. §7你可以升级仓库以扩大容量."
-	set {SG::Messages::Player_Donated} to "{RANK} {PLAYER}§7, 将 §f{NUMBER} {RESOURCE}§r §7存入公会仓库."
-	set {SG::Messages::Donations_0} to "§7贡献必须高于0."
-	set {SG::Messages::Leader_Leave} to "§7你是主席,你无法离开公会.你可以使用 §e/g disband§7以解散公会."
-	set {SG::Messages::Player_Leave} to "{RANK} {PLAYER}§7, 离开了公会."
-	set {SG::Messages::You_Leave} to "§7你离开了 §c{GUILD}§7."
-	set {SG::Messages::Language_Select} to "§7语言设置: §a{LANG}"
-	set {SG::Messages::Unknown_Command} to "未知命令."
-	set {SG::Messages::Locale_Error} to "无法读取本地文件."
-	set {SG::Messages::Guild_Error_Upgrade} to "§7你不再属于该公会."
-	set {SG::Messages::Limit_Buildings} to "§7已经达到公会最高建筑水平."
-	set {SG::Messages::Buildings_Broadcast_1} to "§7公会人数增加: §a+{NUM}"
-	set {SG::Messages::Buildings_Broadcast_2} to "§7公会已向 {ITEM}§7发出挑战."
-	set {SG::Messages::Buildings_Broadcast_3} to "§7公会仓库容量增加: §a+500"
-	set {SG::Messages::Buildings_Broadcast_4} to "§7公会可以使用下一等级的能力."
-	set {SG::Messages::Showing_Claims} to "§7你可以看到公会所有的领地.如果你不想看到这些信息请重进游戏."
-	set {SG::Messages::No_Claims} to "§7你的公会没有领地."
-	set {SG::Messages::Show_Claim_Wait} to "§7你必须等待 §e{TIME} §7以查看领地."
-	set {SG::Messages::Status_Online} to "§a在线"
-	set {SG::Messages::Status_Offline} to "§c离线"
-	set {SG::Messages::Rank_Yourself} to "§7你无法修改你的职位."
-	set {SG::Messages::Rank_Not_Enough} to "§7你所在职位."
-	set {SG::Messages::Player_Info_No_Guild} to "||§7玩家不属于任何公会."
-	set {SG::Messages::Player_Stats} to "玩家数据"
-	set {SG::Messages::Player_Info_Name_1} to "§6公会 信息:"
-	set {SG::Messages::Player_Info_Name_2} to "§6玩家 信息:"
-	set {SG::Messages::Player_Info_Name_3} to "§6其他 信息:"
-	set {SG::Messages::Player_Info_3} to "||§e生命值: §f{HEALTH}/10||||§e饥饿: §f{HUNGER}/10||||§e位置: §f{LOCATION}"
-	set {SG::Messages::No_Guild_Like_This} to "§7没有找到该公会."
-	set {SG::Messages::No_Player_Like_This} to "§7没有找到该玩家."
-	set {SG::Messages::Guild_Emblem_GUI} to "§6公会 徽章"
-	set {SG::Messages::Guild_Emblem_Lore} to "||§7点击以制作徽章."
-	set {SG::Messages::Rank_Changed} to "§7你的职位被改变至 {RANK}§7."
-	set {SG::Messages::Ranked_Player} to "§7{OLDRANKCHANGEP} {CHANGEP} §7的职位升至 {NEWRANKCHANGEP} §7执行人: {RANKPLAYER} {PLAYER}§7."
-	set {SG::Messages::Rank_Wrong} to "§7你只能选择比你职位低的成员."
-	set {SG::Messages::Player_Info_4} to "||§7玩家不在线.||||§e上次上线时间: §f{SEEN}"
-	set {SG::Messages::You_Cant_Unclaim} to "§7你无法解除该领地的管理权 此处为§e{BUILD} §7区域."
-	set {SG::Messages::You_Cant_Action} to "§7你无法在 §e{BUILD} §7区域进行修改."
-	set {SG::Messages::Owned_By} to "§7此区领地属于 §e{GUILD}§7 公会.你无法修改."
-	set {SG::Messages::Reloading_1} to "§7正在重载插件..."
-	set {SG::Messages::Reloading_2} to "§7插件已被重载."
-	set {SG::Messages::Emblem_Saved} to "§7公会徽章一储存."
-	set {SG::Messages::Select_Color} to "§7你没有选择颜色."
-	set {SG::Messages::Select_Code} to "§7你没有选择颜色方格."
-	set {SG::Messages::Guild_Emblem_Changed} to "§7公会的徽章已被 §e{PLAYER}§7修改."
-	set {SG::Messages::Create_Guild_Disabled_World} to "§7你无法在此世界创建公会."
-	set {SG::Messages::Back_Header} to "§6返回"
-	set {SG::Messages::Menu_Alchemy_GUI} to "公会 能力"
-	set {SG::Messages::Text_Feature} to "§e特性:"
-	set {SG::Messages::Text_Price} to "§e价格:"
-	set {SG::Messages::Text_Buy} to "§e点击以购买此特性."
-	set {SG::Messages::Alchemy_Menu_Lore_1} to "§8 → §7给予公会成员 15 分钟 力量效果."
-	set {SG::Messages::Alchemy_Menu_Lore_2} to "§8 → §7为所有公会成员召唤马"
-	set {SG::Messages::Alchemy_Menu_Lore_3} to "§8 → §7给予公会成员 15 分钟 速度效果."
-	set {SG::Messages::Alchemy_Menu_Lore_4} to "§8 → §7给予公会成员 15 分钟 保护效果."
-	set {SG::Messages::Alchemy_Type_1_Item_1} to stone sword
-	set {SG::Messages::Alchemy_Type_1_Item_2} to iron sword
-	set {SG::Messages::Alchemy_Type_1_Item_3} to diamond sword
-	set {SG::Messages::Alchemy_Type_2_Item_1} to saddle
-	set {SG::Messages::Alchemy_Type_2_Item_2} to iron horse armor
-	set {SG::Messages::Alchemy_Type_2_Item_3} to diamond horse armor
-	set {SG::Messages::Alchemy_Type_3_Item_1} to leather boots
-	set {SG::Messages::Alchemy_Type_3_Item_2} to iron boots
-	set {SG::Messages::Alchemy_Type_3_Item_3} to diamond boots
-	set {SG::Messages::Alchemy_Type_4_Item_1} to leather chestplate
-	set {SG::Messages::Alchemy_Type_4_Item_2} to iron chestplate
-	set {SG::Messages::Alchemy_Type_4_Item_3} to diamond chestplate
-	set {SG::Messages::Alchemy_Type_1_Name_1} to "§6Level I 力量"
-	set {SG::Messages::Alchemy_Type_1_Name_2} to "§6Level II 力量"
-	set {SG::Messages::Alchemy_Type_1_Name_3} to "§6Level III 力量"
-	set {SG::Messages::Alchemy_Type_2_Name_1} to "§6无武装的马匹"
-	set {SG::Messages::Alchemy_Type_2_Name_2} to "§6铁甲马匹"
-	set {SG::Messages::Alchemy_Type_2_Name_3} to "§6钻石马匹"
-	set {SG::Messages::Alchemy_Type_3_Name_1} to "§6Level I 速度"
-	set {SG::Messages::Alchemy_Type_3_Name_2} to "§6Level II 速度"
-	set {SG::Messages::Alchemy_Type_3_Name_3} to "§6Level III 速度"
-	set {SG::Messages::Alchemy_Type_4_Name_1} to "§6Level I 保护"
-	set {SG::Messages::Alchemy_Type_4_Name_2} to "§6Level II 保护"
-	set {SG::Messages::Alchemy_Type_4_Name_3} to "§6Level III 保护"
-	set {SG::Messages::Bought_Alchemy_Guild} to "§e{GUILD} §7公会, 获得 §6{TYPE} §7能力."
-	set {SG::Messages::Bought_Alchemy_Own} to "§7{RANK} {PLAYER}§7, 获得 §6{TYPE} §7能力."
-	set {SG::Messages::Barrack_Upgrade_Item_1} to "§7皮革套"
-	set {SG::Messages::Barrack_Upgrade_Item_2} to "§e黄金套"
-	set {SG::Messages::Barrack_Upgrade_Item_3} to "§8链锁套"
-	set {SG::Messages::Barrack_Upgrade_Item_4} to "§f铁套"
-	set {SG::Messages::Barrack_Upgrade_Item_5} to "§b钻石套"
-	set {SG::Messages::Menu_War_GUI} to "公会 对战"
-	set {SG::Messages::Menu_War_Name_1} to "§6搜索对战公会"
-	set {SG::Messages::Menu_War_Lore_1} to "§7点击搜索对战公会."
-	set {SG::Messages::Menu_War_Name_2} to "§6对战 数据"
-	set {SG::Messages::Menu_War_Name_3} to "§6公会 排行"
-	set {SG::Messages::Menu_War_Lore_3} to "§7点击以查看公会排行."
-	set {SG::Messages::Disabled_Chat} to "§7你关闭了公会聊天频道.你的信息可以被所有玩家接收到."
-	set {SG::Messages::Enabled_Chat} to "§7你开启.你的信息只能被公会成员接收到."
-	set {SG::Messages::Guild_Chat} to "§7[{GUILD}]"
-	set {SG::Messages::Number_Online} to "§8(§a{PLAYER} §7在线§8)"
-	set {SG::Messages::Text_Month} to "月"
-	set {SG::Messages::Text_Day} to "天"
-	set {SG::Messages::Text_Hour} to "小时"
-	set {SG::Messages::Text_Minute} to "分钟"
-	set {SG::Messages::Text_Second} to "秒"
-	set {SG::Messages::Claimed_Land} to "占领 领地"
-	set {SG::Messages::Claimed_Land_Lore} to "||§7位置: §f{LOC}||||§e点击以传送至该领地."
-	set {SG::Messages::ClaimName_Usage} to "§7使用 §e/sg claimname <领地名> §7来重命名领地名."
-	set {SG::Messages::ClaimName_Changed} to "§7位于 §e{LOC} 的领地名 §7改变为 §6{NAME} §7修改者: §9{BY}§7."
-	set {SG::Messages::Arena_Created} to "§7竞技场已创建: §e{ARENA}"
-	set {SG::Messages::Arena_Exists} to "§7已经存在一个相同名字的竞技场."
-	set {SG::Messages::Enter_Arena_Name} to "§7输入竞技场名称."
-	set {SG::Messages::No_Arena} to "§7没有该竞技场."
-	set {SG::Messages::Arena_Removed} to "§7竞技场 §e{ARENA} §7已移除"
-	set {SG::Messages::Enter_Setspawn_Type} to "§7你必须输入队伍类型. (1 或者 2)"
-	set {SG::Messages::Setspawn_Done} to "§e队伍-{TYPE}§7位于 §a{ARENA} 的出生点§7已经设置."
-	set {SG::Messages::Lobby_Done} to "§7大厅设置在你所在位置.玩家将会在游戏结束传送至此位置."
-	set {SG::Messages::Restart_Kick_restart} to "§7竞技重载，你被强制离开游戏."
-	set {SG::Messages::Restart_Kick_error} to "§7竞技出错，你被强制离开游戏."
-	set {SG::Messages::Restart_Kick_time} to "§7竞技结束，你被强制离开游戏."
-	set {SG::Messages::Enemy_War_Minimum} to "§7该公会有 §e{ONLINE} §7位成员在线. (最小值为 {MINIMUM})"
-	set {SG::Messages::You_War_Minimum} to "§7公会有 §e{ONLINE} §7位玩家在线(s). (最小值为 {MINIMUM})"
-	set {SG::Messages::Enemy_Guild_In_War} to "§7该公会处于对战中."
-	set {SG::Messages::Your_Guild_In_War} to "§7公会处于对战中."
-	set {SG::Messages::Cannot_War_Yourself} to "§7不能向你自己宣战."
-	set {SG::Messages::War_Invite_Send} to "§7你的公会向 §c{GUILD} §7公会宣战."
-	set {SG::Messages::War_Invite_GUI} to "宣战 申请"
-	set {SG::Messages::War_InviteC_Accept} to "§6同意接受 §c{GUILD}§6的宣战."
-	set {SG::Messages::War_InviteC_Reject} to "§c拒绝并关闭菜单."
-	set {SG::Messages::War_Other_Reject} to "§9{GUILD} §7拒绝了你的对战申请."
-	set {SG::Messages::War_You_Reject} to "§7你拒绝了 §9{GUILD}§7的对战申请."
-	set {SG::Messages::No_Available_Arena} to "§7没有可用的竞技场."
-	set {SG::Messages::War_Starting_Timer} to "§9{GUILD1} §7vs. §c{GUILD2} §7将于 §e{SECONDS} §7秒后开始."
-	set {SG::Messages::War_Started} to "§7§9{GUILD1} §7vs. §c{GUILD2} §7已经开始.祝福勇士们!"
-	set {SG::Messages::War_Starting} to "§7对战申请已被接受!"
-	set {SG::Messages::War_End_Timer} to "§7战争将在 §e{MINUTES} §7秒后开始."
-	set {SG::Messages::Game_Finished_Time} to "§7时间接受，平局！."
-	set {SG::Messages::No_Command_War} to "§7你无法在对战中使用该命令."
-	set {SG::Messages::War_Death_1} to "§9{VICTIM} ({VGUILD}) §7被 §c{ATTACKER} ({AGUILD}) §7击杀并被移出对战."
-	set {SG::Messages::War_Win} to "§7T§9{GUILD1} §7vs. §c{GUILD2} §7对战接受. §9{GUILD1} §7赢得对战."
-	set {SG::Messages::New_Division} to "§7你的公会职位提升至 §r{NEWDIVISION} §7原职位 §r{OLDDIVISION}§7."
-	set {SG::Messages::War_Points_Add} to "§7你的公会在于 §c{GUILD} §7对战中胜利获得积分 §a+{POINTS} ✪§7."
-	set {SG::Messages::War_Points_Lose} to "§7你的公会在与 §9{GUILD} §7对战中失败失去积分 §c-{POINTS} ✪§7."
-	set {SG::Messages::Arena_Debug} to "§7竞技 §a{ARENA} §7重载."
-	set {SG::Messages::No_Arena_Found} to "§7没有找到任何竞技场."
-	set {SG::Messages::Arena_Guilds} to "§7公会 竞技场: §f"
-	set {SG::Messages::Arena_TimeLeft} to "§7时间 剩余: §f"
-	set {SG::Messages::Status_Text_0} to "§a§l等待"
-	set {SG::Messages::Status_Text_1} to "§e§l游戏中"
-	set {SG::Messages::Status_Text_2} to "§c§l关闭"
-	set {SG::Messages::Status_Text_3} to "§4§l重启中"
-	set {SG::Messages::War_Item_H_Barrack_1} to leather helmet
-	set {SG::Messages::War_Item_C_Barrack_1} to leather chestplate
-	set {SG::Messages::War_Item_L_Barrack_1} to leather leggings
-	set {SG::Messages::War_Item_B_Barrack_1} to leather boots
-	set {SG::Messages::War_Item_S_Barrack_1} to stone sword
-	set {SG::Messages::War_Item_H_Barrack_2} to gold helmet
-	set {SG::Messages::War_Item_C_Barrack_2} to gold chestplate
-	set {SG::Messages::War_Item_L_Barrack_2} to gold leggings
-	set {SG::Messages::War_Item_B_Barrack_2} to gold boots
-	set {SG::Messages::War_Item_S_Barrack_2} to golden sword of unbreaking 10
-	set {SG::Messages::War_Item_H_Barrack_3} to chain helmet
-	set {SG::Messages::War_Item_C_Barrack_3} to chain chestplate
-	set {SG::Messages::War_Item_L_Barrack_3} to chain leggings
-	set {SG::Messages::War_Item_B_Barrack_3} to chain boots
-	set {SG::Messages::War_Item_S_Barrack_3} to stone sword of sharpness 3
-	set {SG::Messages::War_Item_H_Barrack_4} to iron helmet
-	set {SG::Messages::War_Item_C_Barrack_4} to iron chestplate
-	set {SG::Messages::War_Item_L_Barrack_4} to iron leggings
-	set {SG::Messages::War_Item_B_Barrack_4} to iron boots
-	set {SG::Messages::War_Item_S_Barrack_4} to iron sword
-	set {SG::Messages::War_Item_H_Barrack_5} to diamond helmet
-	set {SG::Messages::War_Item_C_Barrack_5} to diamond chestplate
-	set {SG::Messages::War_Item_L_Barrack_5} to diamond leggings
-	set {SG::Messages::War_Item_B_Barrack_5} to diamond boots
-	set {SG::Messages::War_Item_S_Barrack_5} to diamond sword
-	set {SG::Messages::RankStar_Leader} to "§b✯ "
-	set {SG::Messages::RankStar_General} to "§a⚝ "
-	set {SG::Messages::RankStar_Captain} to "§d★ "
-	set {SG::Messages::RankStar_Member} to ""
-	set {SG::Messages::Claim_Limit} to "§7你不能占领更多的土地."
-	set {SG::Messages::Death_Broadcast} to "§3[{VGUILD}] §9{VICTIM}§7 被 §6[{AGUILD}] §e{ATTACKER}击杀 §4[-{GOLD} 金币]"
-	set {SG::Messages::Death_Gold_Gain} to "公会获得 §e+{GOLD} 金币 §7{RANK} {PLAYER}§7 击杀一名玩家."
-	set {SG::Messages::Death_Gold_Loss} to "公会损失 §4-{GOLD} 金币 §7{RANK} {PLAYER}§7 死于他人手下."
-	set {SG::Messages::Buildings_Broadcast_TNT} to "§7TNT无法在领地内爆炸."
-	set {SG::Messages::Click_To_Teleport} to "§7点击以进行传送."
-	set {SG::Messages::Click_To_Select_Color} to "§f点击以选择染料."
-	set {SG::Messages::Click_To_Dye_Here} to "§f点击以染色."
-	set {SG::Messages::Save_Emblem_Lore} to "§f点击以保存徽章."
-	set {SG::Messages::Reset_Emblem_Lore} to "§f点击以清除草稿."
-	set {SG::Messages::Use_Emblem_Lore} to "§f点击以修改公会徽章."
-	set {SG::Messages::Wilderness_Text} to "§2§l§n荒野§r §2§l⚘"
-	set {SG::Messages::Wilderness_Msg_1} to "§7§o我爱大自然..."
-	set {SG::Messages::Wilderness_Msg_2} to "§7§o我感到自由..."
-	set {SG::Messages::Wilderness_Msg_3} to "§7§o享受自由是多么美好的事情."
-	set {SG::Messages::Wilderness_Msg_4} to "§7§o快乐的源泉在于纯真."
-	set {SG::Messages::Home_Text} to "§a§l§n家§r §a§l⌂"
-	set {SG::Messages::Home_Msg_1} to "§7§o温馨的家..."
-	set {SG::Messages::Home_Msg_2} to "§7§o没有什么比得上回家."
-	set {SG::Messages::Home_Msg_3} to "§7你发现你所需要的仅仅是回家."
-	set {SG::Messages::Home_Msg_4} to "§7金窝银窝不如自家狗窝."
-	set {SG::Messages::Other_Guild_Text} to "§4§l§n{GUILD}§r §4§l☠"
-	set {SG::Messages::Other_Guild_Msg_1} to "§7§o小心."
-	set {SG::Messages::Other_Guild_Msg_2} to "§7嘘...他们能听到我们说话"
-	set {SG::Messages::Other_Guild_Msg_3} to "§7另一个公会在这."
-	set {SG::Messages::Other_Guild_Msg_4} to "§7发起战争吧!"
-	set {SG::Messages::Emblem_Menu} to "§0§l  » 公会 徽章"
-	set {SG::Messages::Save_Emblem_Button} to "§2§l[§2✓§2§l]§r"
-	set {SG::Messages::Reset_Emblem_Button} to "§4§l[§4✘§4§l]"
-	set {SG::Messages::Use_Emblem_Button} to "§0§l[§0✎§0§l]"
-	set {SG::Messages::Click_To_War} to "||§7主席: §f{LEADER}||||§7段位: §f{LEVEL}||||§e点击以发起对战申请."
-	set {SG::Messages::Score_Prefix} to "§7§6§l公会"
-	set {SG::Messages::Score_Msg_9} to "§b    "
-	set {SG::Messages::Score_Msg_8} to "§f时间: §e{TIME}"
-	set {SG::Messages::Score_Msg_7} to "§a     "
-	set {SG::Messages::Score_Msg_6} to "§9§n{GUILD1}:"
-	set {SG::Messages::Score_Msg_5} to "§f{PLY1}/{MAX1}  "
-	set {SG::Messages::Score_Msg_4} to "§2  "
-	set {SG::Messages::Score_Msg_3} to "§c§n{GUILD2}:"
-	set {SG::Messages::Score_Msg_2} to "§f{PLY2}/{MAX2} "
-	set {SG::Messages::Score_Msg_1} to "§1 "
-	set {SG::Messages::Player_No_Guild} to "§7该玩家不属于任何公会."
-	set {SG::Messages::Menu_Donate_GUI} to "将资源放入此处"
-	set {SG::Messages::Cant_Attack_Member} to "§7你无法攻击公会成员."
-	set {SG::Messages::Enter_MOTD} to "§7设置宣传标语."
-	set {SG::Messages::MOTD_Changed} to "§7宣传标语被 §a{BY}§7修改."
-	set {SG::Messages::MOTD_Removed} to "§7宣传标语被 §a{BY}§7移除."
-	set {SG::Messages::MOTD_Title} to "§f← §e§l§n标语§r §f→"
-	set {SG::Messages::MOTD_SubTitle} to "§7§o{MESSAGE}"
-	set {SG::Messages::MOTD_ActionBar} to "§f宣传标语创建信息: §a{BY}§f. §f({DATE})"
-	set {SG::Messages::Enter_Region_Name} to "§7输入WG保护名."
-	set {SG::Messages::No_Region} to "§7没有找到所输入区域."
-	set {SG::Messages::Region_Allowed} to "§7你允许 §a{REGION} §7WG区域给予公会创建区域的权限."
-	set {SG::Messages::Region_Disallowed} to "§7你关闭 §c{REGION} §7WG区域给予公会创建区域的权限."
-	set {SG::Messages::Already_Ally} to "§7该公会已经是你的公会的同盟."
-	set {SG::Messages::Wait_Ally} to "§7你需要等待 §a{TIME} §7才能使用/remove ally."
-	set {SG::Messages::Added_Ally} to "§a{GUILD} §7公会和 §9{ALLY} §7公会成为同盟."
-	set {SG::Messages::Ally_GUI} to "同盟 申请"
-	set {SG::Messages::Ally_InviteC_Accept} to "§6同意与 §e{GUILD}§6成为同盟."
-	set {SG::Messages::Ally_InviteC_Lore} to "||§7同盟之间无法攻击."
-	set {SG::Messages::Ally_Other_Reject} to "§9{GUILD} §7拒绝了同盟申请."
-	set {SG::Messages::Ally_You_Reject} to "§7你拒绝了 §9{GUILD}§7的同盟申请."
-	set {SG::Messages::No_Ally} to "§7该公会不在同盟列表中."
-	set {SG::Messages::Removed_Ally} to "§a{GUILD} §7公会和 §c{ENEMY} §7公会不再是同盟."
-	set {SG::Messages::Cannot_War_Allies} to "§7你无法与同盟进行对战."
-	set {SG::Messages::Cannot_Claim_Allies} to "§7该领地属于同盟公会.你无法占领该领地."
-	set {SG::Messages::Allies_GUI} to "同盟 列表"
-	set {SG::Messages::Allies_Lore} to "||§7时间: §e{DATE}||§7添加者: §e{BY}||||§7§o使用 §c§o'/g enemy {GUILD}' §7§o以移除."
-	set {SG::Messages::Ally_Yourself} to "§7你无法与自己成为同盟."
-	set {SG::Messages::Help_Pages_4::Line_1} to "§e/guilds ally <guild> §8- §7设置一个公会为你的同盟."
-	set {SG::Messages::Help_Pages_4::Line_2} to "§e/guilds enemy <guild> §8- §7从公会同盟列表中删除一个公会."
-	set {SG::Messages::Help_Pages_4::Line_3} to "§e/guilds allies §8- §7显示同盟公会."
-	set {SG::Messages::Updated_Locale} to "§7本地文件更新完成. (旧: {OLD} - 新: {NEW})"
-	set {SG::Messages::Locale_Update_Already} to "§7本地文件无法更新,已经是最新版本?"
-	set {SG::Messages::Updated_Locale_Replace} to "§7添加 §6{NEW} §7新的message文件至本地文件."
-	set {SG::Messages::Tournaments_Name} to "排名赛"
-	set {SG::Messages::Tournaments_Status_Off_Name} to "§4⚠"
-	set {SG::Messages::Tournaments_Status_Off_Lore} to "||§7排名赛并未启用||§7请稍后再试."
-	set {SG::Messages::Tournaments_In_Name} to "§6§n排名赛 信息"
-	set {SG::Messages::Tournaments_In_Lore} to "||§7等待对手加入..."
-	set {SG::Messages::Tournaments_Opponent_Lore} to "||§7你的对手是 §c{GUILD} §7公会.||§7你可以输入|| §e/g info §7查看详情."
-	set {SG::Messages::Tournaments_Join_Name} to "§6§n加入排名赛"
-	set {SG::Messages::Tournaments_Join_Lore} to "||§7点击以加入排名赛."
-	set {SG::Messages::Tournaments_List} to "§6§n排名赛 列表"
-	set {SG::Messages::Tournaments_Guild_List} to "§6§n排名赛 公会"
-	set {SG::Messages::Tournaments_List_Waiting} to "§7§o(等待公会中...)"
-	set {SG::Messages::Tournaments_Ingame_Lore} to "§8(§7§o进行中§8)"
-	set {SG::Messages::Tournaments_Waiting_Lore} to "§8(§7§o等待中§8)"
-	set {SG::Messages::Tournaments_Won_Lore} to "§8(§f{G}§8)"
-	set {SG::Messages::Tournaments_Eliminated_Lore} to "||§7排名赛已经开始||§7现在开始你无法加入对战.||§7在下一场比赛中期待你的发挥."
-	set {SG::Messages::Tournaments_Already_Enabled} to "§7排名赛激活."
-	set {SG::Messages::Tournament_Joins_Closed} to "§7排名赛已经设置完成.使用排名赛菜单以查看详情."
-	set {SG::Messages::Your_Guild_Already_Tournament} to "§7你的公会已经在排名赛中."
-	set {SG::Messages::Tournament_Not_Active} to "§7排名赛未被激活."
-	set {SG::Messages::Cant_Join_Closed} to "§7你的公会暂时无法加入排名赛."
-	set {SG::Messages::Guild_Joined_Tournament} to "§a{GUILD} §7已经加入排名赛. §8[§e{ALL} 加入§8]"
-	set {SG::Messages::Tournament_Not_Enough} to "§7由于参赛人员不足,排名赛关闭."
-	set {SG::Messages::You_Cant_War_Tournament} to "§7你的公会无法在排名赛过程中进行对战."
-	set {SG::Messages::Tournaments_You_Won_Waiting} to "||§7你的公会赢得一场对战.||§7你在等待新的对战."
-	set {SG::Messages::Guild_Removed_Tournament} to "§7你的公会被从排名赛中移出'"
-	set {SG::Messages::Tournament_Won_Broadcast} to "§a{GUILD} §7赢得排名赛胜利 获得积分§a+{POINTS} ✪§7."
-	set {SG::Messages::Locale_GUI_Name} to "语言选择"
-	set {SG::Messages::Click_Select_Locale} to "||§7点击以选择语言."
-	set {SG::Messages::Locale_en_US} to "§6English (United States)"
-	set {SG::Messages::Locale_es_ES} to "§6Español"
-	set {SG::Messages::Locale_de_DE} to "§6Deutsch"
-	set {SG::Messages::Locale_it_IT} to "§6Italiano"
-	set {SG::Messages::Locale_ru_RU} to "§6Руска"
-	set {SG::Messages::Locale_tr_TR} to "§6Türkçe"
-	set {SG::Messages::Allow_Or_Disallow} to "§7使用 §a'/sgallow region allow <region>' §7to 以允许在区域创建公会.如果你想删除,请输入 §c'/sgadmin region disallow <region>'§7.如果你想查看,请输入 §e'/sgadmin region list'§7."
-	set {SG::Messages::No_Region_Found} to "§7没有区域可用."
-	set {SG::Messages::Region_List} to "          §a§n可用区域 列表"
-	set {SG::Messages::Top_Guilds} to "顶级 公会"
-	set {SG::Messages::Click_To_Info} to "||§7主席: §f{LEADER}||§7对战积分s: §f{POINTS} ✪||§7段位: §f{LEVEL}||||§e点击以查看公会信息."
-	set {SG::Messages::War_Top_GUI} to "§7点击以查看顶级公会."
-	set {SG::Messages::War_Death_0} to "§9{VICTIM} ({VGUILD}) §7死亡并被淘汰出局."
-	set {SG::Messages::Locale_zh_CN} to "§6中文"
-	set {SG::Messages::Locale_vn_VN} to "§6Tiếng Việt"
-	set {SG::Messages::Locale_fr_FR} to "§6Français"
-	set {SG::Messages::Divisions_0} to "§8青铜"
-	set {SG::Messages::Divisions_1} to "§7白银"
-	set {SG::Messages::Divisions_2} to "§e黄金"
-	set {SG::Messages::Divisions_3} to "§d铂金"
-	set {SG::Messages::Divisions_4} to "§b大师"
-	set {SG::Messages::Divisions_5} to "§c宗师"
-	set {SG::Messages::Menu_Allies_Name} to "§6公会 同盟"
-	set {SG::Messages::Menu_Allies_Lore} to "||§7点击已查看同盟公会."
-	set {SG::Messages::Guild_Home_Menu_Name} to "§6公会 HOME"
-	set {SG::Messages::Guild_Home_Menu_Lore} to "||§7点击以传送至公会HOME."
-	set {SG::Messages::Tournament_Cooldown} to "§7对将要在 §e{SECOND} §7秒后开始. §7你的公会可以使用 '§e/g§7' 命令以加入对战."
-	set {SG::Messages::You_Need_More_Resource} to "§7你需要更多的 §f{AMOUNT} §7的 {RESOURCE}§r §7."
-	set {SG::Messages::Main_Page_Item} to sign item
-	set {SG::Messages::Enemy_Leader_Not_Online} to "§7现在没有人有权限同意申请."
-	set {SG::Messages::Menu_War_Lore_New} to "§e公会;||§7 → 段位: §f{LEVEL}||§7 → 公会积分: §f{POINTS} ✪||§7 → 初始 物品: §f{ITEMS}||||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}"
-	set {SG::Messages::Resource_Wood} to "§6§n木资源"
-	set {SG::Messages::Resource_Stone} to "§7§n石资源"
-	set {SG::Messages::Resource_Iron} to "§f§n铁资源"
-	set {SG::Messages::Resource_Gold} to "§e§n金资源"
-	set {SG::Messages::Resource_Diamond} to "§b§n钻石资源"
-	set {SG::Messages::Resource_Wool} to "§3§n羊毛资源"
-	set {SG::Messages::Resource_Worker} to "§e§n建筑工"
-	set {SG::Messages::Resource_Unicode_Wood} to "✚"
-	set {SG::Messages::Resource_Unicode_Stone} to "⚒"
-	set {SG::Messages::Resource_Unicode_Iron} to "ℓ"
-	set {SG::Messages::Resource_Unicode_Gold} to "⊂"
-	set {SG::Messages::Resource_Unicode_Diamond} to "∑"
-	set {SG::Messages::Resource_Unicode_Wool} to "⎈"
-	set {SG::Messages::Resource_Unicode_Worker} to "☯"
-	set {SG::Messages::Resource_Color_Wood} to "§6"
-	set {SG::Messages::Resource_Color_Stone} to "§7"
-	set {SG::Messages::Resource_Color_Iron} to "§f"
-	set {SG::Messages::Resource_Color_Gold} to "§e"
-	set {SG::Messages::Resource_Color_Diamond} to "§b"
-	set {SG::Messages::Resource_Color_Wool} to "§3"
-	set {SG::Messages::Resource_Color_Worker} to "§e"
-	set {SG::Messages::Resource_Donate_Lore} to "§7点击以贡献资源."
-	set {SG::Messages::Resource_Donate_Usage} to "§7你可以使用命令:	§e/g donate <wood/stone/iron/gold/diamond/wool> <number>§7以贡献资源."
-	set {SG::Messages::Resource_DonateItemType_Wood} to wooditems
-	set {SG::Messages::Resource_DonateItemType_Stone} to stone
-	set {SG::Messages::Resource_DonateItemType_Iron} to iron ingot
-	set {SG::Messages::Resource_DonateItemType_Gold} to gold ingot
-	set {SG::Messages::Resource_DonateItemType_Diamond} to diamond
-	set {SG::Messages::Resource_DonateItemType_Wool} to woolitems
-	set {SG::Messages::No_Item_Resouce} to "§7ni==你没有足够的 §c{NUMBER} §7这种资源贡献."
-	set {SG::Messages::SYNC_Done} to "§7SYNC§a{FILE} §7完成."
-	set {SG::Messages::SYNC_Enter_File_Type} to "§7将文件输入SYN. (/sg sync <config/locale>)"
-	set {SG::Messages::Buildings_GUI} to "公会 建筑"
-	set {SG::Messages::Buildings_Name_Townhall} to "§6居民房"
-	set {SG::Messages::Buildings_Name_Barrack} to "§6兵营"
-	set {SG::Messages::Buildings_Name_Storage} to "§6仓库"
-	set {SG::Messages::Buildings_Name_Alchemy} to "§6能力"
-	set {SG::Messages::Building_Status_0} to "准备升级"
-	set {SG::Messages::Building_Status_1} to "正在升级..."
-	set {SG::Messages::Building_Status_2} to "升级完成..."
-	set {SG::Messages::Buildings_Lore} to "||§e建筑等级: §f{LEVEL}||§e职位: §f{STATUS}||{TIMESHOW}||||§7点击以查看详情."
-	set {SG::Messages::Buildings_Time_Remaining} to "||§e剩余时间: §f{TIME}"
-	set {SG::Messages::Allies_4_Lore} to "||§7时间: §e{DATE}||§7添加者: §e{BY}||||§7§o使用 §c§o'/g enemy {GUILD}' §7§o以移除."
-	set {SG::Messages::Upgrade_Emblem_Button} to "§a§l【▲】"
-	set {SG::Messages::Quit_Emblem_Button} to "§4§l【⏎】"
-	set {SG::Messages::Timer_Emblem_Button} to "§c§l【⌛】"
-	set {SG::Messages::Done_Emblem_Button} to "§2§l【✔】"
-	set {SG::Messages::Max_Emblem_Button} to "§0§l【✕】"
-	set {SG::Messages::Upgrade_Emblem_Lore} to "§f点击以升级该建筑."
-	set {SG::Messages::Quit_Emblem_Lore} to "§f点击以返回菜单."
-	set {SG::Messages::Done_Emblem_Lore} to "§f点击以完成建筑."
-	set {SG::Messages::Enter_Building_Type} to "§7输入建筑名称. (Townhall/Barrack/Storage/Alchemy)"
-	set {SG::Messages::Header_Build_Book} to "§8§l  » 建筑 信息:"
-	set {SG::Messages::Book_Build_Name} to "§8建筑 名称: §0"
-	set {SG::Messages::Book_Build_Level} to "§8建筑 等级: §0"
-	set {SG::Messages::Building_Upgrade} to "§7{RANK} {PLAYER}§7, 升级了 {BUILD} §7至 等级§e{NUMBER}§7."
-	set {SG::Messages::Building_Upgrade_Guild} to "§a{GUILD}§7, 升级 {BUILD} §7至等级 §e{NUMBER}§7."
-	set {SG::Messages::Book_Build_Requires} to "§8建筑 材料:"
-	set {SG::Messages::Book_Required_Text} to "§8需要:§f "
-	set {SG::Messages::Book_Have_Text} to "§8你拥有:§f "
-	set {SG::Messages::Player_Info_1_New} to "||§e公会: §f{GUILD}||||§e排名: §f{RANK}||||§e加入时间: §f{DATE}||||§e对战;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||||§e工会贡献值;||{DONATEINFO}"
-	set {SG::Messages::Player_Info_2_New} to "||§e玩家: §f{PLAYER}||||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||§7 → KDA: §f{KDA}||||§e总贡献值;||{DONATEINFO}"
-	set {SG::Messages::Alchemy_Menu_Price_1} to " §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}|| §8 → §7Level III: §f{AMOUNT3}"
-	set {SG::Messages::Alchemy_Menu_Price_2} to " §8 → §7基础设施: §f{AMOUNT1}|| §8 → §7进阶设施: §f{AMOUNT2}|| §8 → §7顶级设施: §f{AMOUNT3}"
-	set {SG::Messages::Alchemy_Menu_Price_3} to " §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}|| §8 → §7Level III: §f{AMOUNT3}"
-	set {SG::Messages::Alchemy_Menu_Price_4} to " §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}|| §8 → §7Level III: §f{AMOUNT3}"
-	set {SG::Messages::Build_Max} to "§7该建筑已达到最高等级."
-	set {SG::Messages::Build_Started} to "{RANK} {PLAYER} §7开始了 §e{BUILD}的建筑工程 §7建筑等级 §e{LEVEL}§7. 工程将于 §a{TIME}§7后完成."
-	set {SG::Messages::Build_Wait} to "§7升级将于 §e{TIME}§7后完成."
-	set {SG::Messages::You_Cant_Edit_Here} to "§7你无法破坏已存在 §e{BUILD} §7区域. 你只能在原有的建筑上放置方块"
-	set {SG::Messages::You_Cant_Build_Here} to "§7你无法在 §e{BUILD} §7建筑."
-	set {SG::Messages::You_Cant_Alchemy} to "§7你无法使用 §9能力§7.你必须先将 §9能力 §7升级至 §6Level I§7."
-	set {SG::Messages::You_Cant_War} to "§7你无法进行公会对战 §9兵营 §7升级至 §6Level I§7."
-	set {SG::Messages::Land_Protection} to "§7系统将会生成一个平台,请确保空间空阔."
-	set {SG::Messages::Creation_Point} to "创建点"
-	set {SG::Messages::Romen_Num_0} to "0"
-	set {SG::Messages::Building_Status_3} to "最高等级"
-	set {SG::Messages::Barrack_Upgrade_Item_0} to "无物品"
-	set {SG::Messages::Join_Status_Name_0} to "§c§l私人"
-	set {SG::Messages::Join_Status_Lore_0} to "§4§o'仅限邀请玩家加入公会.'"
-	set {SG::Messages::Join_Status_Name_1} to "§a§l公开"
-	set {SG::Messages::Join_Status_Lore_1} to "§2§o'任何人都可以加入.'"
-	set {SG::Messages::ChangeJoinStatus_Lore} to "||||§7点击以改变状态."
-	set {SG::Messages::This_Guild_Is_Not_Public} to "§7公会不是公开的, 你必须收到邀请."
-	set {SG::Messages::Click_To_Join} to "||§7主席: §f{LEADER}||§7对战积分: §f{POINTS} ✪||§7段位: §f{LEVEL}||||§e点击以加入此公会."
-	set {SG::Messages::GuildSelectGUI_Header} to "页眉"
-	set {SG::Messages::GuildSelectGUIName_1} to "§6加入一个公会"
-	set {SG::Messages::GuildSelectGUIName_2} to "§6获得公会帮助"
-	set {SG::Messages::GuildSelectGUILore_1} to "||§7点击以查看公开的公会."
-	set {SG::Messages::GuildSelectGUILore_2} to "||§7点击以查看公会创建帮助."
-	set {SG::Messages::Resource_Worker_Time_Ready} to "||§7建筑工人 §a准备 §7好开始建筑施工."
-	set {SG::Messages::Resource_Worker_Time_Rest} to "||§7建筑工人冷却中.||§c冷却时间:{TIME} "
-	set {SG::Messages::Worker_Rest} to "§7建筑工人需要休息 §a{TIME} §7以开始新的建筑施工."
-	set {SG::Messages::Resource_Give_Usage} to "§7使用方法: §e/sgadmin resource <guild> <resource> <add/remove/set> <amount>"
-	set {SG::Messages::Resource_Give_Admin} to "§7你添加 §a{NUMBER} §7至 §f{GUILD}§7的 {RESOURCE}§7."
-	set {SG::Messages::Resource_Remove_Admin} to "§7You removed §c{NUMBER} §7from §f{GUILD}§7的 {RESOURCE}§7."
-	set {SG::Messages::Resource_Set_Admin} to "§7你设置 §f{GUILD}§7的 {RESOURCE} §7至 §a{NUMBER}§7."
-	set {SG::Messages::Disabled_ChatSpy} to "§7你关闭了公会聊天频道."
-	set {SG::Messages::Enabled_ChatSpy} to "§7你开启了公会聊天频道."
-	set {SG::Messages::Holo_Message_Claim} to "物品堆叠:金铲;§e§l- {GUILD} 已经占领该领地 -;§7占领者: §f{PLAYER};§7总区块: §f{CHUNKS};"
-	set {SG::Messages::Holo_Message_Build} to "物品堆叠:砖块;§6§l- {BUILD} 建筑区域 -;§7公会: §f{GUILD};§7完成时间: §f{DATE};"
-	set {SG::Messages::Guild_Vault_Header} to "公会 经济"
-	set {SG::Messages::You_Cant_Vault} to "§7你无法使用 §e公会 经济§7 你必须先将 §9仓库 §7升级至 §6Level I§7."
-	set {SG::Messages::Building_Desc_Townhall} to "城镇可以提高公会最大人数,同时可以保护成员免于TNT的爆炸伤害"
-	set {SG::Messages::Building_Desc_Barrack} to "兵营可以为公会对战提高更好的武器,使公会更容易在对战中获得胜利."
-	set {SG::Messages::Building_Desc_Storage} to "仓库可以存放建筑资源, 升级此项可以为公会提供更大的仓库容量."
-	set {SG::Messages::Building_Desc_Alchemy} to "能力可以使成员在各方面中更具优势."
-	set {SG::Messages::Guild_Vault_ItemName} to "§6公会 经济"
-	set {SG::Messages::Guild_Vault_ItemLore} to "||§7点击以打开公会经济信息."
-	set {SG::Messages::Help_Pages_4::Line_4} to "§e/guilds vault §8- §7打开公会经济信息."
-	set {SG::Messages::PageAPI_Header_0} to "公会 列表"
-	set {SG::Messages::PageAPI_Header_1} to "领地 列表"
-	set {SG::Messages::PageAPI_Header_2} to "搜索 公会"
-	set {SG::Messages::PageAPI_Header_3} to "公会 成员"
-	set {SG::Messages::PageAPI_Header_4} to "同盟 列表"
-	set {SG::Messages::PageAPI_Header_5} to "公开 公会"
-	set {SG::Messages::PageAPI_NoVariable_0} to "§c§n无公会."
-	set {SG::Messages::PageAPI_NoVariable_1} to "§c§n无领地."
-	set {SG::Messages::PageAPI_NoVariable_2} to "§c§n没有搜索到对战公会."
-	set {SG::Messages::PageAPI_NoVariable_3} to "§c§n没有找到玩家."
-	set {SG::Messages::PageAPI_NoVariable_4} to "§c§n没有找到同盟公会."
-	set {SG::Messages::PageAPI_NoVariable_5} to "§c§n没有找到公开公会."
-	set {SG::Messages::PageAPI_NextPage_Name} to "§a下一页"
-	set {SG::Messages::PageAPI_PreviousPage_Name} to "§a上一页"
-	set {SG::Messages::PageAPI_MainPage_Item} to nether star
-	set {SG::Messages::PageAPI_MainPage_Name} to "§a主页"
-	set {SG::Messages::Menu_PreviousMenu_Name} to "§c上一菜单"
-	set {SG::Messages::Menu_PreviousMenu_Item} to "160:14" parsed as material
-	set {SG::Messages::Menu_Item} to "160:15" parsed as material
-	set {SG::Messages::Dont_Have_Money_To_Create} to "§7你没有足够的金钱创建公会.你必须有 §e${NUMBER}§7."
-	set {SG::Messages::RankGUI_PermName_Disband} to "§f§n解散公会"
-	set {SG::Messages::RankGUI_PermName_Upgrade} to "§f§n升级公会建筑"
-	set {SG::Messages::RankGUI_PermName_Alchemy} to "§f§n使用公会能力"
-	set {SG::Messages::RankGUI_PermName_Vault} to "§f§n使用公会经济"
-	set {SG::Messages::RankGUI_PermName_Kick} to "§f§n踢出 成员"
-	set {SG::Messages::RankGUI_PermName_Rank} to "§f§n改变公会成员权限"
-	set {SG::Messages::RankGUI_PermName_Condition} to "§f§n改变加入状态"
-	set {SG::Messages::RankGUI_PermName_Sethome} to "§f§n设置公会HOME"
-	set {SG::Messages::RankGUI_PermName_Claim} to "§f§n占领 / 解除占领 / 领地名称"
-	set {SG::Messages::RankGUI_PermName_Emblem} to "§f§n公会 徽章"
-	set {SG::Messages::RankGUI_PermName_Motd} to "§f§n公会 简介"
-	set {SG::Messages::RankGUI_PermName_Invite} to "§f§n邀请 玩家"
-	set {SG::Messages::RankGUI_PermName_Ally} to "§f§n同盟 / 敌人"
-	set {SG::Messages::RankGUI_PermName_War} to "§f§n申请公会对战"
-	set {SG::Messages::RankGUI_PermName_Donate} to "§f§n向公会贡献物资"
-	set {SG::Messages::RankGUI_Header} to "职位 设置"
-	set {SG::Messages::RankGUI_CurrentRank} to "||§7当前职位: §f{RANK}||||§7玩家权限:||"
-	set {SG::Messages::RankGUI_UsePresetRank} to "||§7当前职位权限"
-	set {SG::Messages::RankGUI_ChangePermission} to "||§7点击以给予该权限."
-	set {SG::Messages::Member_Information_Lore} to "§e(可见: §f{SEEN}§e)||||§e排名: §f{RANK}||§e加入日期: §f{DATE}||§e对战;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§7§n右击以...||  §f查看玩家详细信息.{CRANK}{CKICK}"
-	set {SG::Messages::Member_Information_Kick} to "||||§7§n按住shift左击以...||  §f踢出该成员."
-	set {SG::Messages::Member_Information_Rank} to "||||§7§n左击以...||  §f改变玩家排名."
-	set {SG::Messages::Guild_Management_PlayerInfo} to "||§e排名: §f{RANK}||§e加入日期: §f{DATE}||§eWar;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§eDonated;||{DONATEINFO}"
-	set {SG::Messages::Tournament_Started_Broadcast} to "§7公会排名赛启用! 使用 '§e/g§7' 参加对战."
-	set {SG::Messages::Donated_List_New} to "§6 → 木材: §f{DWOOD}||§7 → 石: §f{DSTONE}||§f → 铁: §f{DIRON}||§e → 金: §f{DGOLD}||§b → 钻石: §f{DDIAMOND}||§3 → 羊毛: §f{DWOOL}"
-	set {SG::Messages::Placeholder_NoVariable_guild_name} to "没有该公会"
-	set {SG::Messages::Placeholder_NoVariable_guild_rank} to "?"
-	set {SG::Messages::Placeholder_NoVariable_guild_leader} to "?"
-	set {SG::Messages::Placeholder_NoVariable_guild_division} to "?"
-	set {SG::Messages::Vault_Using} to "§7Vault 正在被 §a{PLAYER} §7使用."
-	set {SG::Messages::Top_Calc_Time_Name} to "§a§n刷新倒计时:"
-	set {SG::Messages::War_Death_1_New} to "§f{ATTACKER} ({AGUILD}) §c⚔ §f{VICTIM} ({VGUILD}) §7[+{POINTS} ☆]"
-	set {SG::Messages::War_Points_New} to "§9{AGUILD}: {APOINTS} ☆ §7vs. §c{VGUILD}: {VPOINTS} ☆"
-	set {SG::Messages::Score_Prefix_New} to "§6§l§n公会 对战"
-	set {SG::Messages::ScoreBrd_1_New} to "§e⊙ 时间: §f{TIME}"
-	set {SG::Messages::ScoreBrd_2_New} to "§9➙ {GUILD1}:"
-	set {SG::Messages::ScoreBrd_3_New} to "§f{PLY1}/{MAX} ☆"
-	set {SG::Messages::ScoreBrd_4_New} to "§c➙ {GUILD2}:"
-	set {SG::Messages::ScoreBrd_5_New} to "§f{PLY2}/{MAX} ☆§f"
-
-	set {SG::Messages::Claim_Name} to "§7§o(你可以改变该领地名称||§7§o使用 §e/g claimname §7§o以改变领地名称.)"
-	set {SG::Messages::Guild_Management_PlayerInfo_New} to "||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§f点击以查看种族列表."
-	set {SG::Messages::PlayerStats_1} to "||§e公会: §f{GUILD}||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||||§e贡献;||{DONATEINFO}"
-	set {SG::Messages::PlayerStats_2} to "||§e玩家: §f{PLAYER}||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||§7 → KDA: §f{KDA}||§e贡献;||{DONATEINFO}"
-	set {SG::Messages::PlayerStats_3} to "||§e血量: §f{HEALTH}/10||§e饥饿值: §f{HUNGER}/10||§e坐标: §f{LOCATION}"
-	set {SG::Messages::PlayerStats_4} to "||§7玩家离线.||§e最后一次上线时间: §f{SEEN}"
-	set {SG::Messages::RaceSelectGUI_Header} to "选择种族"
-	set {SG::Messages::RaceInfo_Name_0} to "§f[无]"
-	set {SG::Messages::RaceInfo_Name_1} to "§f[§6§l人类§f]"
-	set {SG::Messages::RaceInfo_Name_2} to "§f[§7§l亡灵§f]"
-	set {SG::Messages::RaceInfo_Name_3} to "§f[§2§l侏儒§f]"
-	set {SG::Messages::RaceInfo_Name_4} to "§f[§e§l精灵§f]"
-	set {SG::Messages::RaceInfo_Passive_1} to "§c§l力量提升 §f§l| §8§l挖掘疲劳||"
-	set {SG::Messages::RaceInfo_Passive_2} to "§c§l急迫 §f§l| §8§l虚弱||"
-	set {SG::Messages::RaceInfo_Passive_3} to "§c§l速度提升 §f§l| §8§l虚弱||"
-	set {SG::Messages::RaceInfo_Passive_4} to "§c§l抗性提升 §f§l| §8§l缓慢||"
-	set {SG::Messages::RaceInfo_Lore_1} to "||§7人类懂得如何去战斗||§7但是他们的攻速受到了限制."
-	set {SG::Messages::RaceInfo_Lore_2} to "||§7亡灵擅长挖掘矿物||§7但是当战争来临,他们往往不懂得如何反抗."
-	set {SG::Messages::RaceInfo_Lore_3} to "||§7侏儒的速度很快||§7危机的时刻来临之际,他们往往可以躲过一劫."
-	set {SG::Messages::RaceInfo_Lore_4} to "||§7精灵具有很高的抗性||§7他们时时刻刻防伪着周围潜在的危险."
-	set {SG::Messages::RaceSelectGUI_Select} to "||||§f点击以选择该种族."
-	set {SG::Messages::RaceSelectGUI_Select_2} to "||||§f点击以选择该种族."
-	set {SG::Messages::RaceSelectGUI_Features} to "§a种族特性[效果]:"
-	set {SG::Messages::RaceSelectGUI_Features_0} to "||§7关闭||§7种族特性.||||§f点击以启用种族特性."
-	set {SG::Messages::RaceSelectGUI_Features_1} to "||§7开启||§7种族特性.||||§f点击以关闭种族特性."
-	set {SG::Messages::RaceSelectGUI_Features_2} to "||§7请先选择一个种族||§7已开启种族特性."
-	set {SG::Messages::RaceSelectGUI_Info} to "§a信息:"
-	set {SG::Messages::RaceSelectGUI_Info_1} to "§7种族: §f{RACE}||§7改变种族次数: §f{NUM}||||§7你无法在无种族的状态下||§7加入一个公会."
-	set {SG::Messages::Race_Left_No} to "§7改变种族次数已用完,你无法改变种族状态."
-	set {SG::Messages::Race_Selected} to "§7玩家 §a{PLAYER}§7 加入种族 §r{RACE}§7."
-	set {SG::Messages::Select_Race} to "§7请先选择你的种族. §6(/g race)"
-	set {SG::Messages::MemberInformation_Lore} to "§e(最后一次上线时间: §f{SEEN}§e)||||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§7§n右击以...||  §f查看玩家详细信息.{CRANK}{CKICK}"
-	set {SG::Messages::Race_Permission} to "§7你没有权限开启/关闭种族特性."
-	set {SG::Messages::Guild_Chat_Spy_Ops} to "GC 监视"
-	set {SG::Messages::Break_Claimed_Areas_Only} to "§7你仅能破坏公会领地."
-	set {SG::Messages::You_Cant_War_2} to "§7你无法发起公会对战 请将指定公会 §9兵营 §7升级至 §6等级 I§7."
-	set {SG::Messages::TimeSpanText_Year} to "年"
-	set {SG::Messages::TimeSpanText_Month} to "月"
-	set {SG::Messages::TimeSpanText_Day} to "天"
-	set {SG::Messages::TimeSpanText_Hour} to "时"
-	set {SG::Messages::TimeSpanText_Minute} to "分"
-	set {SG::Messages::TimeSpanText_Second} to "秒"
-	set {SG::Messages::Enemy_War_Shield} to "§7该公会开启了对战保护. 对战保护将于 §c{EXPIRE}§7 后失效."
-	set {SG::Messages::War_Invite_Send_2} to "§7备战! 你的公会向 §c{GUILD} §7公会发起了对战."
-	set {SG::Messages::War_Invite_Send_3} to "§7备战! §c{GUILD} 公会向你的公会发起了对战."
-	set {SG::Messages::War_Shield_Enable_Name} to "§a对战保护已启用"
-	set {SG::Messages::War_Shield_Enable_Lore} to "||§7公会对战失败||§9对战保护 §7已启用.||||§7其他公会无法在此期间向你的公会发起对战.||||§9对战保护 §7将在 §c{TIME}§7 后失效."
-	set {SG::Messages::War_Shield_Disable_Name} to "§c对战保护已禁用"
-	set {SG::Messages::War_Shield_Disable_Lore} to "||§7你的公会没有 §9对战保护§7.||§7所以任何公会都可以向你的公会发起对战.||§7如果你的公会在对战中失败 将会获得一定时间的 §9对战保护§7."
-	set {SG::Messages::Click_To_Info_New} to "||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以查看该公会的更多信息."
-	set {SG::Messages::Click_To_War_New} to "||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以向该公会发起对战."
-	set {SG::Messages::RankGUI_PermName_Break} to "§f§n公会领地破坏"
-	set {SG::Messages::RankGUI_PermName_Place} to "§f§n公会领地建造"
-	set {SG::Messages::Click_To_Join_New} to "||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以加入该公会."
-	set {SG::Messages::Enemy_War_Shield_New} to "§7该公会对战保护已启用.护盾将于 §c{EXPIRE}§7 后失效."
-	set {SG::Messages::War_Invite_Send_2_New} to "§7祝你们好运! 你的公会向 §c{GUILD} §7公会发起对战."
-	set {SG::Messages::War_Invite_Send_3_New} to "§7战士们别愣着 准备迎击! §c{GUILD} §7向你的公会发起对战."
-	set {SG::Messages::War_Death_2_New} to "§c☠ §f{VICTIM} ({VGUILD}) §7[+{POINTS} ☆]"
-	set {SG::Messages::War_Death_3} to "§a♜ §a§l赛点!§r §a♜"
-	set {SG::Messages::War_Start_1} to "§2♜§r §2§l§n公会对战§r §2♜"
-	set {SG::Messages::War_Left} to "§c{PLAYER} ({PLAYERGUILD}) §7从对战中离开."
-	set {SG::Messages::War_Shield_GUI_Lore_1} to "§a(对战保护已启用)"
-	set {SG::Messages::War_Shield_GUI_Lore_2} to "§c(无对战保护)"
-	set {SG::Messages::You_Cant_War_New} to "§7你无法发起对战要求 请先将 §9兵营 §7升级至 §6等级 {LEVEL}§7."
-	set {SG::Messages::No_Guild_Perm} to "§7你没有权限使用该命令."
-	set {SG::Messages::WarShield_Give_Usage} to "§7正确使用方式: §e/sgadmin warshield [公会名称] [天数]§7, 例如: §6/sgadmin warshield Spigot 3"
-	set {SG::Messages::WarShield_Set_Admin} to "§7添加 §a+{NUMBER} §7天 对战保护 至公会 §b{GUILD}."
-	set {SG::Resource_DonateItemType_Wood} to wooditems
-	set {SG::Resource_DonateItemType_Stone} to stone
-	set {SG::Resource_DonateItemType_Iron} to iron ingot
-	set {SG::Resource_DonateItemType_Gold} to gold ingot
-	set {SG::Resource_DonateItemType_Diamond} to diamond
-	set {SG::Resource_DonateItemType_Wool} to woolitems
-	set {SG::Messages::ItemTypeSupport_SGEnch} to sgench
-	set {SG::Messages::ItemTypeSupport_SGCraft} to sgcraft
-	set {SG::Messages::ItemTypeSupport_SGAnvil} to sganvil
-	set {SG::Messages::ItemTypeSupport_SGBed} to sgbed
+	addMessageLine("Translator", "zh_CN", "TUCAOEVER[814697582]")
+	addMessageLine("Prefix", "zh_CN", "§f§l[§6§l公会§f§l] §6➥§7")
+	addMessageLine("Char_Error", "zh_CN", "§7TEXT中包含不正确的字符.")
+	addMessageLine("WorldGuard_Error", "zh_CN", "§7受到WorldGuard的保护.")
+	addMessageLine("Chunk_Error", "zh_CN", "§7某一公会已占领该区块.")
+	addMessageLine("Dont_Have_Gold_To_Create", "zh_CN", "§7你没有足够的金锭创建公会. 你必须拥有 §e{NUMBER}§7.")
+	addMessageLine("Created_Guild", "zh_CN", "§e{PLAYER}§7, 创建 §b{GUILD} §7公会.")
+	addMessageLine("Land_Error", "zh_CN", "§7你的位置并不安全.")
+	addMessageLine("Guild_Name_Length", "zh_CN", "§7公会名过长或者过短.")
+	addMessageLine("That_Guild_Exists", "zh_CN", "§7已经存在该公会.")
+	addMessageLine("Enter_Guild_Name", "zh_CN", "§7输入公会名.")
+	addMessageLine("You_Have_Guild", "zh_CN", "§7你已经属于一个公会.")
+	addMessageLine("Remove_Confirm", "zh_CN", "§7你确定要删除该公会么? 再次输入该命令以确认.")
+	addMessageLine("Guild_Removed", "zh_CN", "§7该公会已删除.")
+	addMessageLine("No_Permission", "zh_CN", "§7你没有权限使用该命令.")
+	addMessageLine("You_Dont_Have_Guild", "zh_CN", "§7你没有在任何公会.")
+	addMessageLine("You_Arent_Leader", "zh_CN", "§7你不是公会的主席.")
+	addMessageLine("Guild_Remove_Broadcast", "zh_CN", "§c{GUILD} §7被解散.")
+	addMessageLine("Option_Disabled", "zh_CN", "§7该选项未被开启.")
+	addMessageLine("No_Rank", "zh_CN", "§7你的公会排名未达到要求.")
+	addMessageLine("You_Dont_Have_This_Chunk", "zh_CN", "§7你的公会未拥有该领地.")
+	addMessageLine("Done_Set_Home", "zh_CN", "§7公会HOME已设置.")
+	addMessageLine("Teleporting_Message", "zh_CN", "§7你将在 §e{TIME} §7秒后传送至公会.")
+	addMessageLine("Teleport_Cancel", "zh_CN", "§7由于移动本次传送被取消.")
+	addMessageLine("Teleport_Done", "zh_CN", "§7你已被传送至公会.")
+	addMessageLine("Already_Teleport", "zh_CN", "§7你已经处于传送行列.")
+	addMessageLine("Teleport_Starting", "zh_CN", "§7传送进行中,请勿移动.")
+	addMessageLine("GUIPrefix", "zh_CN", "§8§l» §8")
+	addMessageLine("Guild_Management", "zh_CN", "公会 管理")
+	addMessageLine("Manage_Panel_2", "zh_CN", "§6游戏ID:")
+	addMessageLine("Rank_Leader", "zh_CN", "§b主席 §3★★★§b")
+	addMessageLine("Rank_General", "zh_CN", "§a总管 §2★★§a")
+	addMessageLine("Rank_Captain", "zh_CN", "§d副管 §5★§d")
+	addMessageLine("Rank_Member", "zh_CN", "§8成员")
+	addMessageLine("Guild_Info", "zh_CN", "§6公会 信息")
+	addMessageLine("Guild_Info_Lore", "zh_CN", "||§7点击以查看公会信息.")
+	addMessageLine("Guild_Store", "zh_CN", "§6公会 仓库")
+	addMessageLine("Guild_Store_Lore", "zh_CN", "||§7点击以打开公会仓库.")
+	addMessageLine("Claimed_Lands", "zh_CN", "§6公会 领地")
+	addMessageLine("Claimed_Lands_Lore", "zh_CN", "||§7点击以查看公会领地.")
+	addMessageLine("Guild_Alchemy", "zh_CN", "§6公会 能力")
+	addMessageLine("Guild_Alchemy_Lore", "zh_CN", "||§7点击以查看公会能力.")
+	addMessageLine("Check_Players", "zh_CN", "§6成员 列表")
+	addMessageLine("Check_Players_Lore", "zh_CN", "||§7点击以查看公会成员列表.")
+	addMessageLine("Guild_Buildings", "zh_CN", "§6公会 建筑")
+	addMessageLine("Guild_Buildings_Lore", "zh_CN", "||§7点击以查看公会建筑.")
+	addMessageLine("Guild_Info_Header", "zh_CN", "公会信息")
+	addMessageLine("Guild_Info_1", "zh_CN", "§6公会 ID")
+	addMessageLine("Guild_Info_1_Lore", "zh_CN", "||§e名字:||§f{NAME}||||§e徽章:||§f{EMBLEM}||||§e当前主席:||§f{LEADER}")
+	addMessageLine("Guild_Info_2", "zh_CN", "§6公会 创建信息")
+	addMessageLine("Guild_Info_2_Lore", "zh_CN", "||§e创立时间:||§f{TIME}||||§e创建者:||§f{CREATOR}")
+	addMessageLine("Guild_Info_3", "zh_CN", "§6公会 职责")
+	addMessageLine("Guild_Info_3_Lore", "zh_CN", "||§e对战;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||||§e公会段位:||§f{LEVEL}||||§e公会积分:||§f{POINTS} ✪||||§e公会成员:||§f{PLAYERS}/{MAX}||||§e公会领地:||§f{CLAIMED}")
+	addMessageLine("Kick_Error_No_Guild", "zh_CN", "§7该玩家不在你的公会.")
+	addMessageLine("Kick_Error_No_Rank", "zh_CN", "§7你所在职位无法踢出该成员.")
+	addMessageLine("Kicked_Player", "zh_CN", "§c{KICKED}§7 被 §e{PLAYER}§7从公会中踢出.")
+	addMessageLine("You_Kicked", "zh_CN", "§7你被公会踢出.")
+	addMessageLine("No_Kick_Yourself", "zh_CN", "§7你无法踢出你自己.")
+	addMessageLine("Claim_Error", "zh_CN", "§7你已经拥有该领地.")
+	addMessageLine("No_Claim_Level", "zh_CN", "§7你所在职位无法占领该领地.")
+	addMessageLine("Attacking_You", "zh_CN", "§c{ATTACKER}§7 攻占了 §e{LAND}§7.")
+	addMessageLine("Attacked_Chunk", "zh_CN", "§7你的公会攻占了 §e{LAND} §7原属于: §c{OWN}§7.")
+	addMessageLine("Chunk_Claimed", "zh_CN", "§7你占领了领地 §e{LAND}§7.")
+	addMessageLine("Chunk_Error_You", "zh_CN", "§7该领地属于其他公会.")
+	addMessageLine("Chunk_Unclaimed", "zh_CN", "§7你解除了领地 §e{LAND}§7的管理权.")
+	addMessageLine("Romen_Num_1", "zh_CN", "I")
+	addMessageLine("Romen_Num_2", "zh_CN", "II")
+	addMessageLine("Romen_Num_3", "zh_CN", "III")
+	addMessageLine("Romen_Num_4", "zh_CN", "IV")
+	addMessageLine("Romen_Num_5", "zh_CN", "V")
+	addMessageLine("Romen_Num_6", "zh_CN", "VI")
+	addMessageLine("Romen_Num_7", "zh_CN", "VII")
+	addMessageLine("Romen_Num_8", "zh_CN", "IIX")
+	addMessageLine("Store_GUI", "zh_CN", "公会 仓库")
+	addMessageLine("Store_Status", "zh_CN", "§7可用: §f{NUMBER}")
+	addMessageLine("Help_Pages_1::Line_1", "zh_CN", "§e/guilds help §8- §7帮助信息.")
+	addMessageLine("Help_Pages_1::Line_2", "zh_CN", "§e/guilds create [公会名称] §8- §7创建公会.")
+	addMessageLine("Help_Pages_1::Line_3", "zh_CN", "§e/guilds remove §8- §7删除公会.")
+	addMessageLine("Help_Pages_1::Line_4", "zh_CN", "§e/guilds emblem §8- §7制作公会徽章.")
+	addMessageLine("Help_Pages_1::Line_5", "zh_CN", "§e/guilds info §8- §7显示公会信息.")
+	addMessageLine("Help_Pages_1::Line_6", "zh_CN", "§e/guilds leave §8- §7离开你的公会.")
+	addMessageLine("Help_Pages_1::Line_7", "zh_CN", "§e/guilds storage §8- §7显示公会 仓库.")
+	addMessageLine("Help_Pages_1::Line_8", "zh_CN", "§e/guilds claimname [领地名称] §8- §7设置你所在的领地名字.")
+	addMessageLine("Help_Pages_2::Line_1", "zh_CN", "§e/guilds leader §8- §7提升一名玩家至主席职务.")
+	addMessageLine("Help_Pages_2::Line_2", "zh_CN", "§e/guilds invite [玩家] §8- §7邀请玩家加入公会.")
+	addMessageLine("Help_Pages_2::Line_3", "zh_CN", "§e/guilds claim §8- §7占领你所在领地.")
+	addMessageLine("Help_Pages_2::Line_4", "zh_CN", "§e/guilds unclaim §8- §7解除领地管理权.")
+	addMessageLine("Help_Pages_2::Line_5", "zh_CN", "§e/guilds rank §8- §7改变玩家的职位.")
+	addMessageLine("Help_Pages_2::Line_6", "zh_CN", "§e/guilds reload §8- §7载入插件.")
+	addMessageLine("Help_Pages_2::Line_7", "zh_CN", "§e/guilds home §8- §7传送至公会HOME.")
+	addMessageLine("Help_Pages_3::Line_1", "zh_CN", "§e/guilds sethome §8- §7设置公会HOME.")
+	addMessageLine("Help_Pages_3::Line_2", "zh_CN", "§e/guilds war §8- §7宣战.")
+	addMessageLine("Help_Pages_3::Line_3", "zh_CN", "§e/guilds version §8- §7显示插件版本.")
+	addMessageLine("Help_Pages_3::Line_4", "zh_CN", "§e/guilds buildings §8- §7显示公会建筑.")
+	addMessageLine("Help_Pages_3::Line_5", "zh_CN", "§e/guilds showclaims §8- §7显示公会所有领地.")
+	addMessageLine("Help_Pages_3::Line_6", "zh_CN", "§e/guilds alchemy §8- §7显示公会能力.")
+	addMessageLine("Help_Pages_3::Line_7", "zh_CN", "§e/guilds invites §8- §7开启/关闭公会邀请.")
+	addMessageLine("Help_Pages_3::Line_8", "zh_CN", "§e/guilds chat §8- §7开启/关闭公会聊天.")
+	addMessageLine("Next_Page", "zh_CN", "§8§m--------§r §7使用 §6/sg help {NEXT} §7来查看下一页帮助. §8§m-------")
+	addMessageLine("Invite_Player_Name", "zh_CN", "§7输入所需邀请玩家名字.")
+	addMessageLine("Cant_Invite_Yourself", "zh_CN", "§7你无法邀请你自己.")
+	addMessageLine("Player_Closed_Invites", "zh_CN", "§7该玩家关闭邀请申请.")
+	addMessageLine("Player_Has_Guild", "zh_CN", "§7该玩家在其他公会.")
+	addMessageLine("Your_Guild_Is_Full", "zh_CN", "§7你的公会已满.你可以升级城镇来扩大人数.")
+	addMessageLine("Invite_Wait", "zh_CN", "§7你必须等待 §e{TIME} §7以邀请玩家.")
+	addMessageLine("This_Guild_Is_Full", "zh_CN", "§7公会已满.")
+	addMessageLine("Invite_Send", "zh_CN", "§7公会邀请已发送至该玩家.")
+	addMessageLine("Invite_GUI", "zh_CN", "邀请函")
+	addMessageLine("InviteC_Accept", "zh_CN", "§6同意加入 §e{GUILD}§6.")
+	addMessageLine("InviteC_Reject", "zh_CN", "§c拒绝加入并关闭菜单.")
+	addMessageLine("You_Reject", "zh_CN", "§7你拒绝了公会邀请.")
+	addMessageLine("You_Joined_Guild", "zh_CN", "§7你加入 §e{GUILD} §7公会.")
+	addMessageLine("Player_Joined_Guild", "zh_CN", "§6{PLAYER} §7加入了 §e{GUILD} §7公会.")
+	addMessageLine("Disabled_Invites", "zh_CN", "§7你关闭了邀请.")
+	addMessageLine("Enabled_Invites", "zh_CN", "§7你开启了邀请.")
+	addMessageLine("Enter_An_Integer", "zh_CN", "§7请输入整数.")
+	addMessageLine("No_Storage", "zh_CN", "§7仓库已满 §f{NUMBER} {RESOURCE}§r§7. §7你可以升级仓库以扩大容量.")
+	addMessageLine("Player_Donated", "zh_CN", "{RANK} {PLAYER}§7, 将 §f{NUMBER} {RESOURCE}§r §7存入公会仓库.")
+	addMessageLine("Donations_0", "zh_CN", "§7贡献必须高于0.")
+	addMessageLine("Leader_Leave", "zh_CN", "§7你是主席,你无法离开公会.你可以使用 §e/g disband§7以解散公会.")
+	addMessageLine("Player_Leave", "zh_CN", "{RANK} {PLAYER}§7, 离开了公会.")
+	addMessageLine("You_Leave", "zh_CN", "§7你离开了 §c{GUILD}§7.")
+	addMessageLine("Language_Select", "zh_CN", "§7语言设置: §a{LANG}")
+	addMessageLine("Unknown_Command", "zh_CN", "未知命令.")
+	addMessageLine("Locale_Error", "zh_CN", "无法读取本地文件.")
+	addMessageLine("Guild_Error_Upgrade", "zh_CN", "§7你不再属于该公会.")
+	addMessageLine("Limit_Buildings", "zh_CN", "§7已经达到公会最高建筑水平.")
+	addMessageLine("Buildings_Broadcast_1", "zh_CN", "§7公会人数增加: §a+{NUM}")
+	addMessageLine("Buildings_Broadcast_2", "zh_CN", "§7公会已向 {ITEM}§7发出挑战.")
+	addMessageLine("Buildings_Broadcast_3", "zh_CN", "§7公会仓库容量增加: §a+500")
+	addMessageLine("Buildings_Broadcast_4", "zh_CN", "§7公会可以使用下一等级的能力.")
+	addMessageLine("Showing_Claims", "zh_CN", "§7你可以看到公会所有的领地.如果你不想看到这些信息请重进游戏.")
+	addMessageLine("No_Claims", "zh_CN", "§7你的公会没有领地.")
+	addMessageLine("Show_Claim_Wait", "zh_CN", "§7你必须等待 §e{TIME} §7以查看领地.")
+	addMessageLine("Status_Online", "zh_CN", "§a在线")
+	addMessageLine("Status_Offline", "zh_CN", "§c离线")
+	addMessageLine("Rank_Yourself", "zh_CN", "§7你无法修改你的职位.")
+	addMessageLine("Rank_Not_Enough", "zh_CN", "§7你所在职位.")
+	addMessageLine("Player_Info_No_Guild", "zh_CN", "||§7玩家不属于任何公会.")
+	addMessageLine("Player_Stats", "zh_CN", "玩家数据")
+	addMessageLine("Player_Info_Name_1", "zh_CN", "§6公会 信息:")
+	addMessageLine("Player_Info_Name_2", "zh_CN", "§6玩家 信息:")
+	addMessageLine("Player_Info_Name_3", "zh_CN", "§6其他 信息:")
+	addMessageLine("Player_Info_3", "zh_CN", "||§e生命值: §f{HEALTH}/10||||§e饥饿: §f{HUNGER}/10||||§e位置: §f{LOCATION}")
+	addMessageLine("No_Guild_Like_This", "zh_CN", "§7没有找到该公会.")
+	addMessageLine("No_Player_Like_This", "zh_CN", "§7没有找到该玩家.")
+	addMessageLine("Guild_Emblem_GUI", "zh_CN", "§6公会 徽章")
+	addMessageLine("Guild_Emblem_Lore", "zh_CN", "||§7点击以制作徽章.")
+	addMessageLine("Rank_Changed", "zh_CN", "§7你的职位被改变至 {RANK}§7.")
+	addMessageLine("Ranked_Player", "zh_CN", "§7{OLDRANKCHANGEP} {CHANGEP} §7的职位升至 {NEWRANKCHANGEP} §7执行人: {RANKPLAYER} {PLAYER}§7.")
+	addMessageLine("Rank_Wrong", "zh_CN", "§7你只能选择比你职位低的成员.")
+	addMessageLine("Player_Info_4", "zh_CN", "||§7玩家不在线.||||§e上次上线时间: §f{SEEN}")
+	addMessageLine("You_Cant_Unclaim", "zh_CN", "§7你无法解除该领地的管理权 此处为§e{BUILD} §7区域.")
+	addMessageLine("You_Cant_Action", "zh_CN", "§7你无法在 §e{BUILD} §7区域进行修改.")
+	addMessageLine("Owned_By", "zh_CN", "§7此区领地属于 §e{GUILD}§7 公会.你无法修改.")
+	addMessageLine("Reloading_1", "zh_CN", "§7正在重载插件...")
+	addMessageLine("Reloading_2", "zh_CN", "§7插件已被重载.")
+	addMessageLine("Emblem_Saved", "zh_CN", "§7公会徽章一储存.")
+	addMessageLine("Select_Color", "zh_CN", "§7你没有选择颜色.")
+	addMessageLine("Select_Code", "zh_CN", "§7你没有选择颜色方格.")
+	addMessageLine("Guild_Emblem_Changed", "zh_CN", "§7公会的徽章已被 §e{PLAYER}§7修改.")
+	addMessageLine("Create_Guild_Disabled_World", "zh_CN", "§7你无法在此世界创建公会.")
+	addMessageLine("Back_Header", "zh_CN", "§6返回")
+	addMessageLine("Menu_Alchemy_GUI", "zh_CN", "公会 能力")
+	addMessageLine("Text_Feature", "zh_CN", "§e特性:")
+	addMessageLine("Text_Price", "zh_CN", "§e价格:")
+	addMessageLine("Text_Buy", "zh_CN", "§e点击以购买此特性.")
+	addMessageLine("Alchemy_Menu_Lore_1", "zh_CN", "§8 → §7给予公会成员 15 分钟 力量效果.")
+	addMessageLine("Alchemy_Menu_Lore_2", "zh_CN", "§8 → §7为所有公会成员召唤马")
+	addMessageLine("Alchemy_Menu_Lore_3", "zh_CN", "§8 → §7给予公会成员 15 分钟 速度效果.")
+	addMessageLine("Alchemy_Menu_Lore_4", "zh_CN", "§8 → §7给予公会成员 15 分钟 保护效果.")
+	addMessageLine("Alchemy_Type_1_Name_1", "zh_CN", "§6Level I 力量")
+	addMessageLine("Alchemy_Type_1_Name_2", "zh_CN", "§6Level II 力量")
+	addMessageLine("Alchemy_Type_1_Name_3", "zh_CN", "§6Level III 力量")
+	addMessageLine("Alchemy_Type_2_Name_1", "zh_CN", "§6无武装的马匹")
+	addMessageLine("Alchemy_Type_2_Name_2", "zh_CN", "§6铁甲马匹")
+	addMessageLine("Alchemy_Type_2_Name_3", "zh_CN", "§6钻石马匹")
+	addMessageLine("Alchemy_Type_3_Name_1", "zh_CN", "§6Level I 速度")
+	addMessageLine("Alchemy_Type_3_Name_2", "zh_CN", "§6Level II 速度")
+	addMessageLine("Alchemy_Type_3_Name_3", "zh_CN", "§6Level III 速度")
+	addMessageLine("Alchemy_Type_4_Name_1", "zh_CN", "§6Level I 保护")
+	addMessageLine("Alchemy_Type_4_Name_2", "zh_CN", "§6Level II 保护")
+	addMessageLine("Alchemy_Type_4_Name_3", "zh_CN", "§6Level III 保护")
+	addMessageLine("Bought_Alchemy_Guild", "zh_CN", "§e{GUILD} §7公会, 获得 §6{TYPE} §7能力.")
+	addMessageLine("Bought_Alchemy_Own", "zh_CN", "§7{RANK} {PLAYER}§7, 获得 §6{TYPE} §7能力.")
+	addMessageLine("Barrack_Upgrade_Item_1", "zh_CN", "§7皮革套")
+	addMessageLine("Barrack_Upgrade_Item_2", "zh_CN", "§e黄金套")
+	addMessageLine("Barrack_Upgrade_Item_3", "zh_CN", "§8链锁套")
+	addMessageLine("Barrack_Upgrade_Item_4", "zh_CN", "§f铁套")
+	addMessageLine("Barrack_Upgrade_Item_5", "zh_CN", "§b钻石套")
+	addMessageLine("Menu_War_GUI", "zh_CN", "公会 对战")
+	addMessageLine("Menu_War_Name_1", "zh_CN", "§6搜索对战公会")
+	addMessageLine("Menu_War_Lore_1", "zh_CN", "§7点击搜索对战公会.")
+	addMessageLine("Menu_War_Name_2", "zh_CN", "§6对战 数据")
+	addMessageLine("Menu_War_Name_3", "zh_CN", "§6公会 排行")
+	addMessageLine("Menu_War_Lore_3", "zh_CN", "§7点击以查看公会排行.")
+	addMessageLine("Disabled_Chat", "zh_CN", "§7你关闭了公会聊天频道.你的信息可以被所有玩家接收到.")
+	addMessageLine("Enabled_Chat", "zh_CN", "§7你开启.你的信息只能被公会成员接收到.")
+	addMessageLine("Guild_Chat", "zh_CN", "§7[{GUILD}]")
+	addMessageLine("Number_Online", "zh_CN", "§8(§a{PLAYER} §7在线§8)")
+	addMessageLine("Text_Month", "zh_CN", "月")
+	addMessageLine("Text_Day", "zh_CN", "天")
+	addMessageLine("Text_Hour", "zh_CN", "小时")
+	addMessageLine("Text_Minute", "zh_CN", "分钟")
+	addMessageLine("Text_Second", "zh_CN", "秒")
+	addMessageLine("Claimed_Land", "zh_CN", "占领 领地")
+	addMessageLine("Claimed_Land_Lore", "zh_CN", "||§7位置: §f{LOC}||||§e点击以传送至该领地.")
+	addMessageLine("ClaimName_Usage", "zh_CN", "§7使用 §e/sg claimname <领地名> §7来重命名领地名.")
+	addMessageLine("ClaimName_Changed", "zh_CN", "§7位于 §e{LOC} 的领地名 §7改变为 §6{NAME} §7修改者: §9{BY}§7.")
+	addMessageLine("Arena_Created", "zh_CN", "§7竞技场已创建: §e{ARENA}")
+	addMessageLine("Arena_Exists", "zh_CN", "§7已经存在一个相同名字的竞技场.")
+	addMessageLine("Enter_Arena_Name", "zh_CN", "§7输入竞技场名称.")
+	addMessageLine("No_Arena", "zh_CN", "§7没有该竞技场.")
+	addMessageLine("Arena_Removed", "zh_CN", "§7竞技场 §e{ARENA} §7已移除")
+	addMessageLine("Enter_Setspawn_Type", "zh_CN", "§7你必须输入队伍类型. (1 或者 2)")
+	addMessageLine("Setspawn_Done", "zh_CN", "§e队伍-{TYPE}§7位于 §a{ARENA} 的出生点§7已经设置.")
+	addMessageLine("Lobby_Done", "zh_CN", "§7大厅设置在你所在位置.玩家将会在游戏结束传送至此位置.")
+	addMessageLine("Restart_Kick_restart", "zh_CN", "§7竞技重载，你被强制离开游戏.")
+	addMessageLine("Restart_Kick_error", "zh_CN", "§7竞技出错，你被强制离开游戏.")
+	addMessageLine("Restart_Kick_time", "zh_CN", "§7竞技结束，你被强制离开游戏.")
+	addMessageLine("Enemy_War_Minimum", "zh_CN", "§7该公会有 §e{ONLINE} §7位成员在线. (最小值为 {MINIMUM})")
+	addMessageLine("You_War_Minimum", "zh_CN", "§7公会有 §e{ONLINE} §7位玩家在线(s). (最小值为 {MINIMUM})")
+	addMessageLine("Enemy_Guild_In_War", "zh_CN", "§7该公会处于对战中.")
+	addMessageLine("Your_Guild_In_War", "zh_CN", "§7公会处于对战中.")
+	addMessageLine("Cannot_War_Yourself", "zh_CN", "§7不能向你自己宣战.")
+	addMessageLine("War_Invite_Send", "zh_CN", "§7你的公会向 §c{GUILD} §7公会宣战.")
+	addMessageLine("War_Invite_GUI", "zh_CN", "宣战 申请")
+	addMessageLine("War_InviteC_Accept", "zh_CN", "§6同意接受 §c{GUILD}§6的宣战.")
+	addMessageLine("War_InviteC_Reject", "zh_CN", "§c拒绝并关闭菜单.")
+	addMessageLine("War_Other_Reject", "zh_CN", "§9{GUILD} §7拒绝了你的对战申请.")
+	addMessageLine("War_You_Reject", "zh_CN", "§7你拒绝了 §9{GUILD}§7的对战申请.")
+	addMessageLine("No_Available_Arena", "zh_CN", "§7没有可用的竞技场.")
+	addMessageLine("War_Starting_Timer", "zh_CN", "§9{GUILD1} §7vs. §c{GUILD2} §7将于 §e{SECONDS} §7秒后开始.")
+	addMessageLine("War_Started", "zh_CN", "§7§9{GUILD1} §7vs. §c{GUILD2} §7已经开始.祝福勇士们!")
+	addMessageLine("War_Starting", "zh_CN", "§7对战申请已被接受!")
+	addMessageLine("War_End_Timer", "zh_CN", "§7战争将在 §e{MINUTES} §7秒后开始.")
+	addMessageLine("Game_Finished_Time", "zh_CN", "§7时间接受，平局！.")
+	addMessageLine("No_Command_War", "zh_CN", "§7你无法在对战中使用该命令.")
+	addMessageLine("War_Death_1", "zh_CN", "§9{VICTIM} ({VGUILD}) §7被 §c{ATTACKER} ({AGUILD}) §7击杀并被移出对战.")
+	addMessageLine("War_Win", "zh_CN", "§7T§9{GUILD1} §7vs. §c{GUILD2} §7对战接受. §9{GUILD1} §7赢得对战.")
+	addMessageLine("New_Division", "zh_CN", "§7你的公会职位提升至 §r{NEWDIVISION} §7原职位 §r{OLDDIVISION}§7.")
+	addMessageLine("War_Points_Add", "zh_CN", "§7你的公会在于 §c{GUILD} §7对战中胜利获得积分 §a+{POINTS} ✪§7.")
+	addMessageLine("War_Points_Lose", "zh_CN", "§7你的公会在与 §9{GUILD} §7对战中失败失去积分 §c-{POINTS} ✪§7.")
+	addMessageLine("Arena_Debug", "zh_CN", "§7竞技 §a{ARENA} §7重载.")
+	addMessageLine("No_Arena_Found", "zh_CN", "§7没有找到任何竞技场.")
+	addMessageLine("Arena_Guilds", "zh_CN", "§7公会 竞技场: §f")
+	addMessageLine("Arena_TimeLeft", "zh_CN", "§7时间 剩余: §f")
+	addMessageLine("Status_Text_0", "zh_CN", "§a§l等待")
+	addMessageLine("Status_Text_1", "zh_CN", "§e§l游戏中")
+	addMessageLine("Status_Text_2", "zh_CN", "§c§l关闭")
+	addMessageLine("Status_Text_3", "zh_CN", "§4§l重启中")
+	addMessageLine("RankStar_Leader", "zh_CN", "§b✯ ")
+	addMessageLine("RankStar_General", "zh_CN", "§a⚝ ")
+	addMessageLine("RankStar_Captain", "zh_CN", "§d★ ")
+	addMessageLine("RankStar_Member", "zh_CN", "")
+	addMessageLine("Claim_Limit", "zh_CN", "§7你不能占领更多的土地.")
+	addMessageLine("Death_Broadcast", "zh_CN", "§3[{VGUILD}] §9{VICTIM}§7 被 §6[{AGUILD}] §e{ATTACKER}击杀 §4[-{GOLD} 金币]")
+	addMessageLine("Death_Gold_Gain", "zh_CN", "公会获得 §e+{GOLD} 金币 §7{RANK} {PLAYER}§7 击杀一名玩家.")
+	addMessageLine("Death_Gold_Loss", "zh_CN", "公会损失 §4-{GOLD} 金币 §7{RANK} {PLAYER}§7 死于他人手下.")
+	addMessageLine("Buildings_Broadcast_TNT", "zh_CN", "§7TNT无法在领地内爆炸.")
+	addMessageLine("Click_To_Teleport", "zh_CN", "§7点击以进行传送.")
+	addMessageLine("Click_To_Select_Color", "zh_CN", "§f点击以选择染料.")
+	addMessageLine("Click_To_Dye_Here", "zh_CN", "§f点击以染色.")
+	addMessageLine("Save_Emblem_Lore", "zh_CN", "§f点击以保存徽章.")
+	addMessageLine("Reset_Emblem_Lore", "zh_CN", "§f点击以清除草稿.")
+	addMessageLine("Use_Emblem_Lore", "zh_CN", "§f点击以修改公会徽章.")
+	addMessageLine("Wilderness_Text", "zh_CN", "§2§l§n荒野§r §2§l⚘")
+	addMessageLine("Wilderness_Msg_1", "zh_CN", "§7§o我爱大自然...")
+	addMessageLine("Wilderness_Msg_2", "zh_CN", "§7§o我感到自由...")
+	addMessageLine("Wilderness_Msg_3", "zh_CN", "§7§o享受自由是多么美好的事情.")
+	addMessageLine("Wilderness_Msg_4", "zh_CN", "§7§o快乐的源泉在于纯真.")
+	addMessageLine("Home_Text", "zh_CN", "§a§l§n家§r §a§l⌂")
+	addMessageLine("Home_Msg_1", "zh_CN", "§7§o温馨的家...")
+	addMessageLine("Home_Msg_2", "zh_CN", "§7§o没有什么比得上回家.")
+	addMessageLine("Home_Msg_3", "zh_CN", "§7你发现你所需要的仅仅是回家.")
+	addMessageLine("Home_Msg_4", "zh_CN", "§7金窝银窝不如自家狗窝.")
+	addMessageLine("Other_Guild_Text", "zh_CN", "§4§l§n{GUILD}§r §4§l☠")
+	addMessageLine("Other_Guild_Msg_1", "zh_CN", "§7§o小心.")
+	addMessageLine("Other_Guild_Msg_2", "zh_CN", "§7嘘...他们能听到我们说话")
+	addMessageLine("Other_Guild_Msg_3", "zh_CN", "§7另一个公会在这.")
+	addMessageLine("Other_Guild_Msg_4", "zh_CN", "§7发起战争吧!")
+	addMessageLine("Emblem_Menu", "zh_CN", "§0§l  » 公会 徽章")
+	addMessageLine("Save_Emblem_Button", "zh_CN", "§2§l[§2✓§2§l]§r")
+	addMessageLine("Reset_Emblem_Button", "zh_CN", "§4§l[§4✘§4§l]")
+	addMessageLine("Use_Emblem_Button", "zh_CN", "§0§l[§0✎§0§l]")
+	addMessageLine("Click_To_War", "zh_CN", "||§7主席: §f{LEADER}||||§7段位: §f{LEVEL}||||§e点击以发起对战申请.")
+	addMessageLine("Score_Prefix", "zh_CN", "§7§6§l公会")
+	addMessageLine("Score_Msg_9", "zh_CN", "§b    ")
+	addMessageLine("Score_Msg_8", "zh_CN", "§f时间: §e{TIME}")
+	addMessageLine("Score_Msg_7", "zh_CN", "§a     ")
+	addMessageLine("Score_Msg_6", "zh_CN", "§9§n{GUILD1}:")
+	addMessageLine("Score_Msg_5", "zh_CN", "§f{PLY1}/{MAX1}  ")
+	addMessageLine("Score_Msg_4", "zh_CN", "§2  ")
+	addMessageLine("Score_Msg_3", "zh_CN", "§c§n{GUILD2}:")
+	addMessageLine("Score_Msg_2", "zh_CN", "§f{PLY2}/{MAX2} ")
+	addMessageLine("Score_Msg_1", "zh_CN", "§1 ")
+	addMessageLine("Player_No_Guild", "zh_CN", "§7该玩家不属于任何公会.")
+	addMessageLine("Menu_Donate_GUI", "zh_CN", "将资源放入此处")
+	addMessageLine("Cant_Attack_Member", "zh_CN", "§7你无法攻击公会成员.")
+	addMessageLine("Enter_MOTD", "zh_CN", "§7设置宣传标语.")
+	addMessageLine("MOTD_Changed", "zh_CN", "§7宣传标语被 §a{BY}§7修改.")
+	addMessageLine("MOTD_Removed", "zh_CN", "§7宣传标语被 §a{BY}§7移除.")
+	addMessageLine("MOTD_Title", "zh_CN", "§f← §e§l§n标语§r §f→")
+	addMessageLine("MOTD_SubTitle", "zh_CN", "§7§o{MESSAGE}")
+	addMessageLine("MOTD_ActionBar", "zh_CN", "§f宣传标语创建信息: §a{BY}§f. §f({DATE})")
+	addMessageLine("Enter_Region_Name", "zh_CN", "§7输入WG保护名.")
+	addMessageLine("No_Region", "zh_CN", "§7没有找到所输入区域.")
+	addMessageLine("Region_Allowed", "zh_CN", "§7你允许 §a{REGION} §7WG区域给予公会创建区域的权限.")
+	addMessageLine("Region_Disallowed", "zh_CN", "§7你关闭 §c{REGION} §7WG区域给予公会创建区域的权限.")
+	addMessageLine("Already_Ally", "zh_CN", "§7该公会已经是你的公会的同盟.")
+	addMessageLine("Wait_Ally", "zh_CN", "§7你需要等待 §a{TIME} §7才能使用/remove ally.")
+	addMessageLine("Added_Ally", "zh_CN", "§a{GUILD} §7公会和 §9{ALLY} §7公会成为同盟.")
+	addMessageLine("Ally_GUI", "zh_CN", "同盟 申请")
+	addMessageLine("Ally_InviteC_Accept", "zh_CN", "§6同意与 §e{GUILD}§6成为同盟.")
+	addMessageLine("Ally_InviteC_Lore", "zh_CN", "||§7同盟之间无法攻击.")
+	addMessageLine("Ally_Other_Reject", "zh_CN", "§9{GUILD} §7拒绝了同盟申请.")
+	addMessageLine("Ally_You_Reject", "zh_CN", "§7你拒绝了 §9{GUILD}§7的同盟申请.")
+	addMessageLine("No_Ally", "zh_CN", "§7该公会不在同盟列表中.")
+	addMessageLine("Removed_Ally", "zh_CN", "§a{GUILD} §7公会和 §c{ENEMY} §7公会不再是同盟.")
+	addMessageLine("Cannot_War_Allies", "zh_CN", "§7你无法与同盟进行对战.")
+	addMessageLine("Cannot_Claim_Allies", "zh_CN", "§7该领地属于同盟公会.你无法占领该领地.")
+	addMessageLine("Allies_GUI", "zh_CN", "同盟 列表")
+	addMessageLine("Allies_Lore", "zh_CN", "||§7时间: §e{DATE}||§7添加者: §e{BY}||||§7§o使用 §c§o'/g enemy {GUILD}' §7§o以移除.")
+	addMessageLine("Ally_Yourself", "zh_CN", "§7你无法与自己成为同盟.")
+	addMessageLine("Help_Pages_4::Line_1", "zh_CN", "§e/guilds ally <guild> §8- §7设置一个公会为你的同盟.")
+	addMessageLine("Help_Pages_4::Line_2", "zh_CN", "§e/guilds enemy <guild> §8- §7从公会同盟列表中删除一个公会.")
+	addMessageLine("Help_Pages_4::Line_3", "zh_CN", "§e/guilds allies §8- §7显示同盟公会.")
+	addMessageLine("Updated_Locale", "zh_CN", "§7本地文件更新完成. (旧: {OLD} - 新: {NEW})")
+	addMessageLine("Locale_Update_Already", "zh_CN", "§7本地文件无法更新,已经是最新版本?")
+	addMessageLine("Updated_Locale_Replace", "zh_CN", "§7添加 §6{NEW} §7新的message文件至本地文件.")
+	addMessageLine("Tournaments_Name", "zh_CN", "排名赛")
+	addMessageLine("Tournaments_Status_Off_Name", "zh_CN", "§4⚠")
+	addMessageLine("Tournaments_Status_Off_Lore", "zh_CN", "||§7排名赛并未启用||§7请稍后再试.")
+	addMessageLine("Tournaments_In_Name", "zh_CN", "§6§n排名赛 信息")
+	addMessageLine("Tournaments_In_Lore", "zh_CN", "||§7等待对手加入...")
+	addMessageLine("Tournaments_Opponent_Lore", "zh_CN", "||§7你的对手是 §c{GUILD} §7公会.||§7你可以输入|| §e/g info §7查看详情.")
+	addMessageLine("Tournaments_Join_Name", "zh_CN", "§6§n加入排名赛")
+	addMessageLine("Tournaments_Join_Lore", "zh_CN", "||§7点击以加入排名赛.")
+	addMessageLine("Tournaments_List", "zh_CN", "§6§n排名赛 列表")
+	addMessageLine("Tournaments_Guild_List", "zh_CN", "§6§n排名赛 公会")
+	addMessageLine("Tournaments_List_Waiting", "zh_CN", "§7§o(等待公会中...)")
+	addMessageLine("Tournaments_Ingame_Lore", "zh_CN", "§8(§7§o进行中§8)")
+	addMessageLine("Tournaments_Waiting_Lore", "zh_CN", "§8(§7§o等待中§8)")
+	addMessageLine("Tournaments_Won_Lore", "zh_CN", "§8(§f{G}§8)")
+	addMessageLine("Tournaments_Eliminated_Lore", "zh_CN", "||§7排名赛已经开始||§7现在开始你无法加入对战.||§7在下一场比赛中期待你的发挥.")
+	addMessageLine("Tournaments_Already_Enabled", "zh_CN", "§7排名赛激活.")
+	addMessageLine("Tournament_Joins_Closed", "zh_CN", "§7排名赛已经设置完成.使用排名赛菜单以查看详情.")
+	addMessageLine("Your_Guild_Already_Tournament", "zh_CN", "§7你的公会已经在排名赛中.")
+	addMessageLine("Tournament_Not_Active", "zh_CN", "§7排名赛未被激活.")
+	addMessageLine("Cant_Join_Closed", "zh_CN", "§7你的公会暂时无法加入排名赛.")
+	addMessageLine("Guild_Joined_Tournament", "zh_CN", "§a{GUILD} §7已经加入排名赛. §8[§e{ALL} 加入§8]")
+	addMessageLine("Tournament_Not_Enough", "zh_CN", "§7由于参赛人员不足,排名赛关闭.")
+	addMessageLine("You_Cant_War_Tournament", "zh_CN", "§7你的公会无法在排名赛过程中进行对战.")
+	addMessageLine("Tournaments_You_Won_Waiting", "zh_CN", "||§7你的公会赢得一场对战.||§7你在等待新的对战.")
+	addMessageLine("Guild_Removed_Tournament", "zh_CN", "§7你的公会被从排名赛中移出'")
+	addMessageLine("Tournament_Won_Broadcast", "zh_CN", "§a{GUILD} §7赢得排名赛胜利 获得积分§a+{POINTS} ✪§7.")
+	addMessageLine("Locale_GUI_Name", "zh_CN", "语言选择")
+	addMessageLine("Click_Select_Locale", "zh_CN", "||§7点击以选择语言.")
+	addMessageLine("Locale_en_US", "zh_CN", "§6English (United States)")
+	addMessageLine("Locale_es_ES", "zh_CN", "§6Español")
+	addMessageLine("Locale_de_DE", "zh_CN", "§6Deutsch")
+	addMessageLine("Locale_it_IT", "zh_CN", "§6Italiano")
+	addMessageLine("Locale_ru_RU", "zh_CN", "§6Руска")
+	addMessageLine("Locale_tr_TR", "zh_CN", "§6Türkçe")
+	addMessageLine("Allow_Or_Disallow", "zh_CN", "§7使用 §a'/sgallow region allow <region>' §7to 以允许在区域创建公会.如果你想删除,请输入 §c'/sgadmin region disallow <region>'§7.如果你想查看,请输入 §e'/sgadmin region list'§7.")
+	addMessageLine("No_Region_Found", "zh_CN", "§7没有区域可用.")
+	addMessageLine("Region_List", "zh_CN", "          §a§n可用区域 列表")
+	addMessageLine("Top_Guilds", "zh_CN", "顶级 公会")
+	addMessageLine("Click_To_Info", "zh_CN", "||§7主席: §f{LEADER}||§7对战积分s: §f{POINTS} ✪||§7段位: §f{LEVEL}||||§e点击以查看公会信息.")
+	addMessageLine("War_Top_GUI", "zh_CN", "§7点击以查看顶级公会.")
+	addMessageLine("War_Death_0", "zh_CN", "§9{VICTIM} ({VGUILD}) §7死亡并被淘汰出局.")
+	addMessageLine("Locale_zh_CN", "zh_CN", "§6中文")
+	addMessageLine("Locale_vn_VN", "zh_CN", "§6Tiếng Việt")
+	addMessageLine("Locale_fr_FR", "zh_CN", "§6Français")
+	addMessageLine("Divisions_0", "zh_CN", "§8青铜")
+	addMessageLine("Divisions_1", "zh_CN", "§7白银")
+	addMessageLine("Divisions_2", "zh_CN", "§e黄金")
+	addMessageLine("Divisions_3", "zh_CN", "§d铂金")
+	addMessageLine("Divisions_4", "zh_CN", "§b大师")
+	addMessageLine("Divisions_5", "zh_CN", "§c宗师")
+	addMessageLine("Menu_Allies_Name", "zh_CN", "§6公会 同盟")
+	addMessageLine("Menu_Allies_Lore", "zh_CN", "||§7点击已查看同盟公会.")
+	addMessageLine("Guild_Home_Menu_Name", "zh_CN", "§6公会 HOME")
+	addMessageLine("Guild_Home_Menu_Lore", "zh_CN", "||§7点击以传送至公会HOME.")
+	addMessageLine("Tournament_Cooldown", "zh_CN", "§7对将要在 §e{SECOND} §7秒后开始. §7你的公会可以使用 '§e/g§7' 命令以加入对战.")
+	addMessageLine("You_Need_More_Resource", "zh_CN", "§7你需要更多的 §f{AMOUNT} §7的 {RESOURCE}§r §7.")
+	addMessageLine("Enemy_Leader_Not_Online", "zh_CN", "§7现在没有人有权限同意申请.")
+	addMessageLine("Menu_War_Lore_New", "zh_CN", "§e公会;||§7 → 段位: §f{LEVEL}||§7 → 公会积分: §f{POINTS} ✪||§7 → 初始 物品: §f{ITEMS}||||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}")
+	addMessageLine("Resource_Wood", "zh_CN", "§6§n木资源")
+	addMessageLine("Resource_Stone", "zh_CN", "§7§n石资源")
+	addMessageLine("Resource_Iron", "zh_CN", "§f§n铁资源")
+	addMessageLine("Resource_Gold", "zh_CN", "§e§n金资源")
+	addMessageLine("Resource_Diamond", "zh_CN", "§b§n钻石资源")
+	addMessageLine("Resource_Wool", "zh_CN", "§3§n羊毛资源")
+	addMessageLine("Resource_Worker", "zh_CN", "§e§n建筑工")
+	addMessageLine("Resource_Unicode_Wood", "zh_CN", "✚")
+	addMessageLine("Resource_Unicode_Stone", "zh_CN", "⚒")
+	addMessageLine("Resource_Unicode_Iron", "zh_CN", "ℓ")
+	addMessageLine("Resource_Unicode_Gold", "zh_CN", "⊂")
+	addMessageLine("Resource_Unicode_Diamond", "zh_CN", "∑")
+	addMessageLine("Resource_Unicode_Wool", "zh_CN", "⎈")
+	addMessageLine("Resource_Unicode_Worker", "zh_CN", "☯")
+	addMessageLine("Resource_Color_Wood", "zh_CN", "§6")
+	addMessageLine("Resource_Color_Stone", "zh_CN", "§7")
+	addMessageLine("Resource_Color_Iron", "zh_CN", "§f")
+	addMessageLine("Resource_Color_Gold", "zh_CN", "§e")
+	addMessageLine("Resource_Color_Diamond", "zh_CN", "§b")
+	addMessageLine("Resource_Color_Wool", "zh_CN", "§3")
+	addMessageLine("Resource_Color_Worker", "zh_CN", "§e")
+	addMessageLine("Resource_Donate_Lore", "zh_CN", "§7点击以贡献资源.")
+	addMessageLine("Resource_Donate_Usage", "zh_CN", "§7你可以使用命令:	§e/g donate <wood/stone/iron/gold/diamond/wool> <number>§7以贡献资源.")
+	addMessageLine("No_Item_Resouce", "zh_CN", "§7ni==你没有足够的 §c{NUMBER} §7这种资源贡献.")
+	addMessageLine("SYNC_Done", "zh_CN", "§7SYNC§a{FILE} §7完成.")
+	addMessageLine("SYNC_Enter_File_Type", "zh_CN", "§7将文件输入SYN. (/sg sync <config/locale>)")
+	addMessageLine("Buildings_GUI", "zh_CN", "公会 建筑")
+	addMessageLine("Buildings_Name_Townhall", "zh_CN", "§6居民房")
+	addMessageLine("Buildings_Name_Barrack", "zh_CN", "§6兵营")
+	addMessageLine("Buildings_Name_Storage", "zh_CN", "§6仓库")
+	addMessageLine("Buildings_Name_Alchemy", "zh_CN", "§6能力")
+	addMessageLine("Building_Status_0", "zh_CN", "准备升级")
+	addMessageLine("Building_Status_1", "zh_CN", "正在升级...")
+	addMessageLine("Building_Status_2", "zh_CN", "升级完成...")
+	addMessageLine("Buildings_Lore", "zh_CN", "||§e建筑等级: §f{LEVEL}||§e职位: §f{STATUS}||{TIMESHOW}||||§7点击以查看详情.")
+	addMessageLine("Buildings_Time_Remaining", "zh_CN", "||§e剩余时间: §f{TIME}")
+	addMessageLine("Allies_4_Lore", "zh_CN", "||§7时间: §e{DATE}||§7添加者: §e{BY}||||§7§o使用 §c§o'/g enemy {GUILD}' §7§o以移除.")
+	addMessageLine("Upgrade_Emblem_Button", "zh_CN", "§a§l【▲】")
+	addMessageLine("Quit_Emblem_Button", "zh_CN", "§4§l【⏎】")
+	addMessageLine("Timer_Emblem_Button", "zh_CN", "§c§l【⌛】")
+	addMessageLine("Done_Emblem_Button", "zh_CN", "§2§l【✔】")
+	addMessageLine("Max_Emblem_Button", "zh_CN", "§0§l【✕】")
+	addMessageLine("Upgrade_Emblem_Lore", "zh_CN", "§f点击以升级该建筑.")
+	addMessageLine("Quit_Emblem_Lore", "zh_CN", "§f点击以返回菜单.")
+	addMessageLine("Done_Emblem_Lore", "zh_CN", "§f点击以完成建筑.")
+	addMessageLine("Enter_Building_Type", "zh_CN", "§7输入建筑名称. (Townhall/Barrack/Storage/Alchemy)")
+	addMessageLine("Header_Build_Book", "zh_CN", "§8§l  » 建筑 信息:")
+	addMessageLine("Book_Build_Name", "zh_CN", "§8建筑 名称: §0")
+	addMessageLine("Book_Build_Level", "zh_CN", "§8建筑 等级: §0")
+	addMessageLine("Building_Upgrade", "zh_CN", "§7{RANK} {PLAYER}§7, 升级了 {BUILD} §7至 等级§e{NUMBER}§7.")
+	addMessageLine("Building_Upgrade_Guild", "zh_CN", "§a{GUILD}§7, 升级 {BUILD} §7至等级 §e{NUMBER}§7.")
+	addMessageLine("Book_Build_Requires", "zh_CN", "§8建筑 材料:")
+	addMessageLine("Book_Required_Text", "zh_CN", "§8需要:§f ")
+	addMessageLine("Book_Have_Text", "zh_CN", "§8你拥有:§f ")
+	addMessageLine("Player_Info_1_New", "zh_CN", "||§e公会: §f{GUILD}||||§e排名: §f{RANK}||||§e加入时间: §f{DATE}||||§e对战;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||||§e工会贡献值;||{DONATEINFO}")
+	addMessageLine("Player_Info_2_New", "zh_CN", "||§e玩家: §f{PLAYER}||||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||§7 → KDA: §f{KDA}||||§e总贡献值;||{DONATEINFO}")
+	addMessageLine("Alchemy_Menu_Price_1", "zh_CN", " §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}|| §8 → §7Level III: §f{AMOUNT3}")
+	addMessageLine("Alchemy_Menu_Price_2", "zh_CN", " §8 → §7基础设施: §f{AMOUNT1}|| §8 → §7进阶设施: §f{AMOUNT2}|| §8 → §7顶级设施: §f{AMOUNT3}")
+	addMessageLine("Alchemy_Menu_Price_3", "zh_CN", " §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}|| §8 → §7Level III: §f{AMOUNT3}")
+	addMessageLine("Alchemy_Menu_Price_4", "zh_CN", " §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}|| §8 → §7Level III: §f{AMOUNT3}")
+	addMessageLine("Build_Max", "zh_CN", "§7该建筑已达到最高等级.")
+	addMessageLine("Build_Started", "zh_CN", "{RANK} {PLAYER} §7开始了 §e{BUILD}的建筑工程 §7建筑等级 §e{LEVEL}§7. 工程将于 §a{TIME}§7后完成.")
+	addMessageLine("Build_Wait", "zh_CN", "§7升级将于 §e{TIME}§7后完成.")
+	addMessageLine("You_Cant_Edit_Here", "zh_CN", "§7你无法破坏已存在 §e{BUILD} §7区域. 你只能在原有的建筑上放置方块")
+	addMessageLine("You_Cant_Build_Here", "zh_CN", "§7你无法在 §e{BUILD} §7建筑.")
+	addMessageLine("You_Cant_Alchemy", "zh_CN", "§7你无法使用 §9能力§7.你必须先将 §9能力 §7升级至 §6Level I§7.")
+	addMessageLine("You_Cant_War", "zh_CN", "§7你无法进行公会对战 §9兵营 §7升级至 §6Level I§7.")
+	addMessageLine("Land_Protection", "zh_CN", "§7系统将会生成一个平台,请确保空间空阔.")
+	addMessageLine("Creation_Point", "zh_CN", "创建点")
+	addMessageLine("Romen_Num_0", "zh_CN", "0")
+	addMessageLine("Building_Status_3", "zh_CN", "最高等级")
+	addMessageLine("Barrack_Upgrade_Item_0", "zh_CN", "无物品")
+	addMessageLine("Join_Status_Name_0", "zh_CN", "§c§l私人")
+	addMessageLine("Join_Status_Lore_0", "zh_CN", "§4§o'仅限邀请玩家加入公会.'")
+	addMessageLine("Join_Status_Name_1", "zh_CN", "§a§l公开")
+	addMessageLine("Join_Status_Lore_1", "zh_CN", "§2§o'任何人都可以加入.'")
+	addMessageLine("ChangeJoinStatus_Lore", "zh_CN", "||||§7点击以改变状态.")
+	addMessageLine("This_Guild_Is_Not_Public", "zh_CN", "§7公会不是公开的, 你必须收到邀请.")
+	addMessageLine("Click_To_Join", "zh_CN", "||§7主席: §f{LEADER}||§7对战积分: §f{POINTS} ✪||§7段位: §f{LEVEL}||||§e点击以加入此公会.")
+	addMessageLine("GuildSelectGUI_Header", "zh_CN", "页眉")
+	addMessageLine("GuildSelectGUIName_1", "zh_CN", "§6加入一个公会")
+	addMessageLine("GuildSelectGUIName_2", "zh_CN", "§6获得公会帮助")
+	addMessageLine("GuildSelectGUILore_1", "zh_CN", "||§7点击以查看公开的公会.")
+	addMessageLine("GuildSelectGUILore_2", "zh_CN", "||§7点击以查看公会创建帮助.")
+	addMessageLine("Resource_Worker_Time_Ready", "zh_CN", "||§7建筑工人 §a准备 §7好开始建筑施工.")
+	addMessageLine("Resource_Worker_Time_Rest", "zh_CN", "||§7建筑工人冷却中.||§c冷却时间:{TIME} ")
+	addMessageLine("Worker_Rest", "zh_CN", "§7建筑工人需要休息 §a{TIME} §7以开始新的建筑施工.")
+	addMessageLine("Resource_Give_Usage", "zh_CN", "§7使用方法: §e/sgadmin resource <guild> <resource> <add/remove/set> <amount>")
+	addMessageLine("Resource_Give_Admin", "zh_CN", "§7你添加 §a{NUMBER} §7至 §f{GUILD}§7的 {RESOURCE}§7.")
+	addMessageLine("Resource_Remove_Admin", "zh_CN", "§7You removed §c{NUMBER} §7from §f{GUILD}§7的 {RESOURCE}§7.")
+	addMessageLine("Resource_Set_Admin", "zh_CN", "§7你设置 §f{GUILD}§7的 {RESOURCE} §7至 §a{NUMBER}§7.")
+	addMessageLine("Disabled_ChatSpy", "zh_CN", "§7你关闭了公会聊天频道.")
+	addMessageLine("Enabled_ChatSpy", "zh_CN", "§7你开启了公会聊天频道.")
+	addMessageLine("Holo_Message_Claim", "zh_CN", "物品堆叠:金铲;§e§l- {GUILD} 已经占领该领地 -;§7占领者: §f{PLAYER};§7总区块: §f{CHUNKS};")
+	addMessageLine("Holo_Message_Build", "zh_CN", "物品堆叠:砖块;§6§l- {BUILD} 建筑区域 -;§7公会: §f{GUILD};§7完成时间: §f{DATE};")
+	addMessageLine("Guild_Vault_Header", "zh_CN", "公会 经济")
+	addMessageLine("You_Cant_Vault", "zh_CN", "§7你无法使用 §e公会 经济§7 你必须先将 §9仓库 §7升级至 §6Level I§7.")
+	addMessageLine("Building_Desc_Townhall", "zh_CN", "城镇可以提高公会最大人数,同时可以保护成员免于TNT的爆炸伤害")
+	addMessageLine("Building_Desc_Barrack", "zh_CN", "兵营可以为公会对战提高更好的武器,使公会更容易在对战中获得胜利.")
+	addMessageLine("Building_Desc_Storage", "zh_CN", "仓库可以存放建筑资源, 升级此项可以为公会提供更大的仓库容量.")
+	addMessageLine("Building_Desc_Alchemy", "zh_CN", "能力可以使成员在各方面中更具优势.")
+	addMessageLine("Guild_Vault_ItemName", "zh_CN", "§6公会 经济")
+	addMessageLine("Guild_Vault_ItemLore", "zh_CN", "||§7点击以打开公会经济信息.")
+	addMessageLine("Help_Pages_4::Line_4", "zh_CN", "§e/guilds vault §8- §7打开公会经济信息.")
+	addMessageLine("PageAPI_Header_0", "zh_CN", "公会 列表")
+	addMessageLine("PageAPI_Header_1", "zh_CN", "领地 列表")
+	addMessageLine("PageAPI_Header_2", "zh_CN", "搜索 公会")
+	addMessageLine("PageAPI_Header_3", "zh_CN", "公会 成员")
+	addMessageLine("PageAPI_Header_4", "zh_CN", "同盟 列表")
+	addMessageLine("PageAPI_Header_5", "zh_CN", "公开 公会")
+	addMessageLine("PageAPI_NoVariable_0", "zh_CN", "§c§n无公会.")
+	addMessageLine("PageAPI_NoVariable_1", "zh_CN", "§c§n无领地.")
+	addMessageLine("PageAPI_NoVariable_2", "zh_CN", "§c§n没有搜索到对战公会.")
+	addMessageLine("PageAPI_NoVariable_3", "zh_CN", "§c§n没有找到玩家.")
+	addMessageLine("PageAPI_NoVariable_4", "zh_CN", "§c§n没有找到同盟公会.")
+	addMessageLine("PageAPI_NoVariable_5", "zh_CN", "§c§n没有找到公开公会.")
+	addMessageLine("PageAPI_NextPage_Name", "zh_CN", "§a下一页")
+	addMessageLine("PageAPI_PreviousPage_Name", "zh_CN", "§a上一页")
+	addMessageLine("PageAPI_MainPage_Name", "zh_CN", "§a主页")
+	addMessageLine("Menu_PreviousMenu_Name", "zh_CN", "§c上一菜单")
+	addMessageLine("Dont_Have_Money_To_Create", "zh_CN", "§7你没有足够的金钱创建公会.你必须有 §e("{NUMBER}§7.")
+	addMessageLine("RankGUI_PermName_Disband", "zh_CN", "§f§n解散公会")
+	addMessageLine("RankGUI_PermName_Upgrade", "zh_CN", "§f§n升级公会建筑")
+	addMessageLine("RankGUI_PermName_Alchemy", "zh_CN", "§f§n使用公会能力")
+	addMessageLine("RankGUI_PermName_Vault", "zh_CN", "§f§n使用公会经济")
+	addMessageLine("RankGUI_PermName_Kick", "zh_CN", "§f§n踢出 成员")
+	addMessageLine("RankGUI_PermName_Rank", "zh_CN", "§f§n改变公会成员权限")
+	addMessageLine("RankGUI_PermName_Condition", "zh_CN", "§f§n改变加入状态")
+	addMessageLine("RankGUI_PermName_Sethome", "zh_CN", "§f§n设置公会HOME")
+	addMessageLine("RankGUI_PermName_Claim", "zh_CN", "§f§n占领 / 解除占领 / 领地名称")
+	addMessageLine("RankGUI_PermName_Emblem", "zh_CN", "§f§n公会 徽章")
+	addMessageLine("RankGUI_PermName_Motd", "zh_CN", "§f§n公会 简介")
+	addMessageLine("RankGUI_PermName_Invite", "zh_CN", "§f§n邀请 玩家")
+	addMessageLine("RankGUI_PermName_Ally", "zh_CN", "§f§n同盟 / 敌人")
+	addMessageLine("RankGUI_PermName_War", "zh_CN", "§f§n申请公会对战")
+	addMessageLine("RankGUI_PermName_Donate", "zh_CN", "§f§n向公会贡献物资")
+	addMessageLine("RankGUI_Header", "zh_CN", "职位 设置")
+	addMessageLine("RankGUI_CurrentRank", "zh_CN", "||§7当前职位: §f{RANK}||||§7玩家权限:||")
+	addMessageLine("RankGUI_UsePresetRank", "zh_CN", "||§7当前职位权限")
+	addMessageLine("RankGUI_ChangePermission", "zh_CN", "||§7点击以给予该权限.")
+	addMessageLine("Member_Information_Lore", "zh_CN", "§e(可见: §f{SEEN}§e)||||§e排名: §f{RANK}||§e加入日期: §f{DATE}||§e对战;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§7§n右击以...||  §f查看玩家详细信息.{CRANK}{CKICK}")
+	addMessageLine("Member_Information_Kick", "zh_CN", "||||§7§n按住shift左击以...||  §f踢出该成员.")
+	addMessageLine("Member_Information_Rank", "zh_CN", "||||§7§n左击以...||  §f改变玩家排名.")
+	addMessageLine("Guild_Management_PlayerInfo", "zh_CN", "||§e排名: §f{RANK}||§e加入日期: §f{DATE}||§eWar;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§eDonated;||{DONATEINFO}")
+	addMessageLine("Tournament_Started_Broadcast", "zh_CN", "§7公会排名赛启用! 使用 '§e/g§7' 参加对战.")
+	addMessageLine("Donated_List_New", "zh_CN", "§6 → 木材: §f{DWOOD}||§7 → 石: §f{DSTONE}||§f → 铁: §f{DIRON}||§e → 金: §f{DGOLD}||§b → 钻石: §f{DDIAMOND}||§3 → 羊毛: §f{DWOOL}")
+	addMessageLine("Placeholder_NoVariable_guild_name", "zh_CN", "没有该公会")
+	addMessageLine("Placeholder_NoVariable_guild_rank", "zh_CN", "?")
+	addMessageLine("Placeholder_NoVariable_guild_leader", "zh_CN", "?")
+	addMessageLine("Placeholder_NoVariable_guild_division", "zh_CN", "?")
+	addMessageLine("Vault_Using", "zh_CN", "§7Vault 正在被 §a{PLAYER} §7使用.")
+	addMessageLine("Top_Calc_Time_Name", "zh_CN", "§a§n刷新倒计时:")
+	addMessageLine("War_Death_1_New", "zh_CN", "§f{ATTACKER} ({AGUILD}) §c⚔ §f{VICTIM} ({VGUILD}) §7[+{POINTS} ☆]")
+	addMessageLine("War_Points_New", "zh_CN", "§9{AGUILD}: {APOINTS} ☆ §7vs. §c{VGUILD}: {VPOINTS} ☆")
+	addMessageLine("Score_Prefix_New", "zh_CN", "§6§l§n公会 对战")
+	addMessageLine("ScoreBrd_1_New", "zh_CN", "§e⊙ 时间: §f{TIME}")
+	addMessageLine("ScoreBrd_2_New", "zh_CN", "§9➙ {GUILD1}:")
+	addMessageLine("ScoreBrd_3_New", "zh_CN", "§f{PLY1}/{MAX} ☆")
+	addMessageLine("ScoreBrd_4_New", "zh_CN", "§c➙ {GUILD2}:")
+	addMessageLine("ScoreBrd_5_New", "zh_CN", "§f{PLY2}/{MAX} ☆§f")
+	addMessageLine("Claim_Name", "zh_CN", "§7§o(你可以改变该领地名称||§7§o使用 §e/g claimname §7§o以改变领地名称.)")
+	addMessageLine("Guild_Management_PlayerInfo_New", "zh_CN", "||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§f点击以查看种族列表.")
+	addMessageLine("PlayerStats_1", "zh_CN", "||§e公会: §f{GUILD}||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||||§e贡献;||{DONATEINFO}")
+	addMessageLine("PlayerStats_2", "zh_CN", "||§e玩家: §f{PLAYER}||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||§7 → KDA: §f{KDA}||§e贡献;||{DONATEINFO}")
+	addMessageLine("PlayerStats_3", "zh_CN", "||§e血量: §f{HEALTH}/10||§e饥饿值: §f{HUNGER}/10||§e坐标: §f{LOCATION}")
+	addMessageLine("PlayerStats_4", "zh_CN", "||§7玩家离线.||§e最后一次上线时间: §f{SEEN}")
+	addMessageLine("RaceSelectGUI_Header", "zh_CN", "选择种族")
+	addMessageLine("RaceInfo_Name_0", "zh_CN", "§f[无]")
+	addMessageLine("RaceInfo_Name_1", "zh_CN", "§f[§6§l人类§f]")
+	addMessageLine("RaceInfo_Name_2", "zh_CN", "§f[§7§l亡灵§f]")
+	addMessageLine("RaceInfo_Name_3", "zh_CN", "§f[§2§l侏儒§f]")
+	addMessageLine("RaceInfo_Name_4", "zh_CN", "§f[§e§l精灵§f]")
+	addMessageLine("RaceInfo_Passive_1", "zh_CN", "§c§l力量提升 §f§l| §8§l挖掘疲劳||")
+	addMessageLine("RaceInfo_Passive_2", "zh_CN", "§c§l急迫 §f§l| §8§l虚弱||")
+	addMessageLine("RaceInfo_Passive_3", "zh_CN", "§c§l速度提升 §f§l| §8§l虚弱||")
+	addMessageLine("RaceInfo_Passive_4", "zh_CN", "§c§l抗性提升 §f§l| §8§l缓慢||")
+	addMessageLine("RaceInfo_Lore_1", "zh_CN", "||§7人类懂得如何去战斗||§7但是他们的攻速受到了限制.")
+	addMessageLine("RaceInfo_Lore_2", "zh_CN", "||§7亡灵擅长挖掘矿物||§7但是当战争来临,他们往往不懂得如何反抗.")
+	addMessageLine("RaceInfo_Lore_3", "zh_CN", "||§7侏儒的速度很快||§7危机的时刻来临之际,他们往往可以躲过一劫.")
+	addMessageLine("RaceInfo_Lore_4", "zh_CN", "||§7精灵具有很高的抗性||§7他们时时刻刻防伪着周围潜在的危险.")
+	addMessageLine("RaceSelectGUI_Select", "zh_CN", "||||§f点击以选择该种族.")
+	addMessageLine("RaceSelectGUI_Select_2", "zh_CN", "||||§f点击以选择该种族.")
+	addMessageLine("RaceSelectGUI_Features", "zh_CN", "§a种族特性[效果]:")
+	addMessageLine("RaceSelectGUI_Features_0", "zh_CN", "||§7关闭||§7种族特性.||||§f点击以启用种族特性.")
+	addMessageLine("RaceSelectGUI_Features_1", "zh_CN", "||§7开启||§7种族特性.||||§f点击以关闭种族特性.")
+	addMessageLine("RaceSelectGUI_Features_2", "zh_CN", "||§7请先选择一个种族||§7已开启种族特性.")
+	addMessageLine("RaceSelectGUI_Info", "zh_CN", "§a信息:")
+	addMessageLine("RaceSelectGUI_Info_1", "zh_CN", "§7种族: §f{RACE}||§7改变种族次数: §f{NUM}||||§7你无法在无种族的状态下||§7加入一个公会.")
+	addMessageLine("Race_Left_No", "zh_CN", "§7改变种族次数已用完,你无法改变种族状态.")
+	addMessageLine("Race_Selected", "zh_CN", "§7玩家 §a{PLAYER}§7 加入种族 §r{RACE}§7.")
+	addMessageLine("Select_Race", "zh_CN", "§7请先选择你的种族. §6(/g race)")
+	addMessageLine("MemberInformation_Lore", "zh_CN", "§e(最后一次上线时间: §f{SEEN}§e)||||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§7§n右击以...||  §f查看玩家详细信息.{CRANK}{CKICK}")
+	addMessageLine("Race_Permission", "zh_CN", "§7你没有权限开启/关闭种族特性.")
+	addMessageLine("Guild_Chat_Spy_Ops", "zh_CN", "GC 监视")
+	addMessageLine("Break_Claimed_Areas_Only", "zh_CN", "§7你仅能破坏公会领地.")
+	addMessageLine("You_Cant_War_2", "zh_CN", "§7你无法发起公会对战 请将指定公会 §9兵营 §7升级至 §6等级 I§7.")
+	addMessageLine("TimeSpanText_Year", "zh_CN", "年")
+	addMessageLine("TimeSpanText_Month", "zh_CN", "月")
+	addMessageLine("TimeSpanText_Day", "zh_CN", "天")
+	addMessageLine("TimeSpanText_Hour", "zh_CN", "时")
+	addMessageLine("TimeSpanText_Minute", "zh_CN", "分")
+	addMessageLine("TimeSpanText_Second", "zh_CN", "秒")
+	addMessageLine("Enemy_War_Shield", "zh_CN", "§7该公会开启了对战保护. 对战保护将于 §c{EXPIRE}§7 后失效.")
+	addMessageLine("War_Invite_Send_2", "zh_CN", "§7备战! 你的公会向 §c{GUILD} §7公会发起了对战.")
+	addMessageLine("War_Invite_Send_3", "zh_CN", "§7备战! §c{GUILD} 公会向你的公会发起了对战.")
+	addMessageLine("War_Shield_Enable_Name", "zh_CN", "§a对战保护已启用")
+	addMessageLine("War_Shield_Enable_Lore", "zh_CN", "||§7公会对战失败||§9对战保护 §7已启用.||||§7其他公会无法在此期间向你的公会发起对战.||||§9对战保护 §7将在 §c{TIME}§7 后失效.")
+	addMessageLine("War_Shield_Disable_Name", "zh_CN", "§c对战保护已禁用")
+	addMessageLine("War_Shield_Disable_Lore", "zh_CN", "||§7你的公会没有 §9对战保护§7.||§7所以任何公会都可以向你的公会发起对战.||§7如果你的公会在对战中失败 将会获得一定时间的 §9对战保护§7.")
+	addMessageLine("Click_To_Info_New", "zh_CN", "||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以查看该公会的更多信息.")
+	addMessageLine("Click_To_War_New", "zh_CN", "||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以向该公会发起对战.")
+	addMessageLine("RankGUI_PermName_Break", "zh_CN", "§f§n公会领地破坏")
+	addMessageLine("RankGUI_PermName_Place", "zh_CN", "§f§n公会领地建造")
+	addMessageLine("Click_To_Join_New", "zh_CN", "||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以加入该公会.")
+	addMessageLine("Enemy_War_Shield_New", "zh_CN", "§7该公会对战保护已启用.护盾将于 §c{EXPIRE}§7 后失效.")
+	addMessageLine("War_Invite_Send_2_New", "zh_CN", "§7祝你们好运! 你的公会向 §c{GUILD} §7公会发起对战.")
+	addMessageLine("War_Invite_Send_3_New", "zh_CN", "§7战士们别愣着 准备迎击! §c{GUILD} §7向你的公会发起对战.")
+	addMessageLine("War_Death_2_New", "zh_CN", "§c☠ §f{VICTIM} ({VGUILD}) §7[+{POINTS} ☆]")
+	addMessageLine("War_Death_3", "zh_CN", "§a♜ §a§l赛点!§r §a♜")
+	addMessageLine("War_Start_1", "zh_CN", "§2♜§r §2§l§n公会对战§r §2♜")
+	addMessageLine("War_Left", "zh_CN", "§c{PLAYER} ({PLAYERGUILD}) §7从对战中离开.")
+	addMessageLine("War_Shield_GUI_Lore_1", "zh_CN", "§a(对战保护已启用)")
+	addMessageLine("War_Shield_GUI_Lore_2", "zh_CN", "§c(无对战保护)")
+	addMessageLine("You_Cant_War_New", "zh_CN", "§7你无法发起对战要求 请先将 §9兵营 §7升级至 §6等级 {LEVEL}§7.")
+	addMessageLine("No_Guild_Perm", "zh_CN", "§7你没有权限使用该命令.")
+	addMessageLine("WarShield_Give_Usage", "zh_CN", "§7正确使用方式: §e/sgadmin warshield [公会名称] [天数]§7, 例如: §6/sgadmin warshield Spigot 3")
+	addMessageLine("WarShield_Set_Admin", "zh_CN", "§7添加 §a+{NUMBER} §7天 对战保护 至公会 §b{GUILD}.")
