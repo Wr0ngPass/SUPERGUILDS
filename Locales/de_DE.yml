@@ -1,0 +1,247 @@
+Messages:
+  Prefix: §6§lSUPERGUILDS §6➥§7
+  Char_Error: §7Der Text enthaelt Unangemesse woerter.
+  WorldGuard_Error: §7Hier ist ne WorldGuard Sicherung.
+  Chunk_Error: §7Hier ist ein Anderes Guild.
+  Dont_Have_Gold_To_Create: §7Du hast nicht genug Gold im inventar um ein Guild zu
+    Erstellen.
+  Created_Guild: §e{PLAYER}§7, erstellte §b{GUILD} §7Guild.
+  Land_Error: §7Deine Position ist nicht Sicher.
+  Guild_Name_Length: §7Der Guild Name ist zu lang oder zu kurtz.
+  That_Guild_Exists: §7Da ist bereits so ein Guild.
+  Enter_Guild_Name: §7Fuege den Guild Name ein.
+  You_Have_Guild: §7Du hast schon ein Guild.
+  Chunk_Middle: §7Bitte bleib in der Mitte der angezeigten Flaesche.
+  Remove_Confirm: §7Bist du sicher das du den Guild loeschen willst? Wenn du sicher
+    bist, wiederhole den Kommand.
+  Guild_Removed: §7Guild wurde geloescht.
+  No_Permission: §7Du hast nicht genug Rechte.
+  You_Dont_Have_Guild: §7Du hast kein Guild.
+  You_Arent_Leader: §7Du bist nicht der Guild Leader.
+  Guild_Remove_Broadcast: §c{GUILD} §7wurde Aufgeloest.
+  Option_Disabled: §7Dieses Feature ist Ausgeschaltet.
+  No_Rank: §7dein Guild Rang ist nicht ausreichend.
+  You_Dont_Have_This_Chunk: §7Dein Guild hat diesen Chunk nicht.
+  Done_Set_Home: §7Guild Home wurde gesetzt.
+  Teleporting_Message: §7Du wirst in §e{TIME} §7sekunden Teleportiert.
+  Teleport_Cancel: §7Teleportation wurde abgebrochen weil du dich bewegt hast.
+  Teleport_Done: §7Du wurdest erfolgreich Teleportiert.
+  Already_Teleport: §7Du bist schon am Teleportieren.
+  Teleport_Starting: §7Teleportation gestartet, beweg dich nicht.
+  GUIPrefix: §8§l» §8
+  Guild_Management: Guild Einstellungen
+  Manage_Panel_1: §6Guild Operationen
+  Manage_Panel_2: '§6ID:'
+  Manage_Panel_3: §6Krieg Operationen
+  Manage_Panel_2_Lore: '||§ePlayer: §f{NAME}||||§eStatus: §f{STATUS}||||§eLetstens
+    gesehen: §f{SEEN}||||§eRank: §f{RANK}||||§eMitglied seit: §f{DATE}||||§eKrieg;||§7
+    → Kills: §f{WARKILLS}||§7 → Deaths: §f{WARDEATHS}||||§eGespendet;||§7 → Gold:
+    §f{DGOLD}||§7 → Magic: §f{DMAGIC}'
+  Rank_Leader: §bFuehrer §3★★★§b
+  Rank_General: §aGeneral §2★★§a
+  Rank_Captain: §dCaptain §5★§d
+  Rank_Member: §8Mitglied
+  Guild_Info: §6Guild Information
+  Guild_Info_Lore: '||§7Click um die Guild informationen zu sehen.'
+  Guild_Store: §6Guild Store
+  Guild_Store_Lore: '||§7Click um den Guild Store zu oeffnen.'
+  Claimed_Lands: §6Claimed Lands
+  Claimed_Lands_Lore: '||§7Click to see claims of your guild.'
+  Guild_Alchemy: §6Guild Alchemy
+  Guild_Alchemy_Lore: '||§7Click hier um das Alchemy menu zu oeffnen.'
+  Check_Players: §6Player Liste
+  Check_Players_Lore: '||§7Click hier um die Liste alles Guild Spieler zu Sehen.'
+  Guild_Buildings: §6Guild Gebaeude
+  Guild_Buildings_Lore: '||§7Click um Guild Gebaeude zu sehen.'
+  Guild_Info_Header: Guild Information
+  Guild_Info_1: §6Guild ID
+  Guild_Info_1_Lore: '||§eName:||§f{NAME}||||§eEmblem:||§f{EMBLEM}||||§eJetziger Leader:||§f{LEADER}'
+  Guild_Info_2: §6Guild Foundation
+  Guild_Info_2_Lore: '||§eDate Of Foundation:||§f{TIME}||||§eErsteller:||§f{CREATOR}'
+  Guild_Info_3: §6Guild Status
+  Guild_Info_3_Lore: '||§eKrieg;||§7 → Kills: §f{KILLS}||§7 → Deaths: §f{DEATHS}||||§eGuild
+    Division:||§f{LEVEL}||||§eNummer der Spieler:||§f{PLAYERS}/{MAX}||||§eClaimed
+    Land:||§f{CLAIMED}'
+  Guild_Header_Kick: Kick Spieler
+  Guild_Kick_Lore: '||§eRank: §f{RANK}||||§7Click um den spieler aus dem Guild zu
+    schmeisen.'
+  Kick_Error_No_Guild: §7Dieser Spieler ist nicht im Guild.
+  Kick_Error_No_Rank: §7Dein Guild Rang ist nicht ausreichend um den Spieler zu kicken.
+  Kicked_Player: §c{KICKED}§7 wurde von §e{PLAYER}§7 aus dem Guild rausgeworfen.
+  You_Kicked: §7Du wurdest aus dem Guild rausgeworfen.
+  No_Kick_Yourself: §7Du kannst dich nicht selber Rauswerfen.
+  Guild_Header_List: Guild Members
+  Claim_Error: §7Du hast schon dieses Land.
+  No_Gold_Guild: §7Dein Guild hat nicht genug Gold.
+  No_Claim_Level: §7Das guild das dieses Land besitzt hat eine hoerere Division als
+    dein Guild.
+  Attacking_You: §c{ATTACKER}§7 hat dir dein land bei §e{LAND}§7 weggenommen.
+  Attacked_Chunk: §7Dein Guild eroberte das land bei §e{LAND} §7Besitzer §c{OWN}§7.
+  Chunk_Claimed: §7Du uebernammst Land bei §e{LAND}§7.
+  Chunk_Error_You: §7Dieses Land ist nicht deins.
+  Chunk_Unclaimed: §7Du gabst das Land bei §e{LAND}§7 auf.
+  Buildings_GUI: Guild Gebaeude
+  Buildings_Name_Townhall: §6Townhall
+  Buildings_Name_Barrack: §6Barrack
+  Buildings_Name_Storage: §6Store
+  Buildings_Name_Alchemy: §6Alchemy
+  Buildings_Upgrade: §aClick um das Gebaeude abzugraden.
+  Buildings_Lore_0: §9§nWenn Upgegraded;
+  Buildings_Lore_Townhall: §7 → Erhoeht Guild Spieler Limit.
+  Buildings_Lore_Barrack: §7 → Starte ein Krieg mit Staerkeren Items.
+  Buildings_Lore_Storage: §7 → Erhoeht Store kapazitaet.
+  Buildings_Lore_Alchemy: §7 → Erhalte Staerkere Effekte.
+  Buildings_Level: '§eGebaeude Level: §f{LEVEL}'
+  Romen_Num_1: I
+  Romen_Num_2: II
+  Romen_Num_3: III
+  Romen_Num_4: IV
+  Romen_Num_5: V
+  Romen_Num_6: VI
+  Romen_Num_7: VII
+  Romen_Num_8: IIX
+  Store_GUI: Guild Store
+  Store_Name_Gold: §e§nGold Source
+  Store_Name_Magic: §9§nMagic Source
+  Store_Color_1: §e
+  Store_Color_2: §9
+  Store_Status: '§7Verfuegbar: §f{NUMBER}'
+  Help_Pages_1::Line_1: §e/guilds help §8- §7Oeffnet Hilfe Seite.
+  Help_Pages_1::Line_2: §e/guilds create <guild name> §8- §7Erstelle ein Guild.
+  Help_Pages_1::Line_3: §e/guilds remove §8- §7Loesche das jetzige Guild.
+  Help_Pages_1::Line_4: §e/guilds emblem §8- §7Mache das Guild Emblem.
+  Help_Pages_1::Line_5: §e/guilds info §8- §7Zeigt die Guild Stats.
+  Help_Pages_1::Line_6: §e/guilds leave §8- §7Verlass dein Guild.
+  Help_Pages_1::Line_7: §e/guilds store §8- §7Zeigt den Guild Store.
+  Help_Pages_1::Line_8: §e/guilds claimname <name> §8- §7Set name of claim where you
+    at.
+  Help_Pages_2::Line_1: §e/guilds leader §8- §7Berfoedert ein Spieler zum Leader.
+  Help_Pages_2::Line_2: §e/guilds invite <player> §8- §7Lade ein Spieler zu dein Guild
+    ein.
+  Help_Pages_2::Line_3: §e/guilds claim §8- §7Erobere da wo du bist.
+  Help_Pages_2::Line_4: §e/guilds unclaim §8- §7Unclaim da wo du bist.
+  Help_Pages_2::Line_5: §e/guilds Rang §8- §7Aendere den Spieler Rang.
+  Help_Pages_2::Line_6: §e/guilds reload §8- §7Reloadet das Plugin.
+  Help_Pages_2::Line_7: §e/guilds home §8- §7Teleportiert dich zum Guild Home.
+  Help_Pages_3::Line_1: §e/guilds sethome §8- §7Setz dein Guild Home.
+  Help_Pages_3::Line_2: §e/guilds war §8- §7Fange ein Krieg an mit nem anderen Guild.
+  Help_Pages_3::Line_3: §e/guilds version §8- §7Zeigt die Plugin Version.
+  Help_Pages_3::Line_4: §e/guilds buildings §8- §7Zeigt Guild Gebaeude.
+  Help_Pages_3::Line_5: §e/guilds showclaims §8- §7Shows guild's all claims.
+  Help_Pages_3::Line_6: §e/guilds alchemy §8- §7Zeight eine Guild Alchemy.
+  Help_Pages_3::Line_7: §e/guilds invites §8- §7Enable/Disable guild invites.
+  Help_Pages_3::Line_8: §e/guilds chat §8- §7Enables/Disables guild chat.
+  Next_Page: §8§m--------§r §7Use §6/sg help {NEXT} §7um die naechste Seite zu sehen.
+    §8§m-------
+  Invite_Player_Name: §7Schreib ein Spieler Name um ihn einziladen.
+  Cant_Invite_Yourself: §7Du kannst dich nicht selber einladen.
+  Player_Closed_Invites: §7Dieser Spieler hat Einladungen Ausgemacht.
+  Player_Has_Guild: §7Dieser Spielet hat schon ein Guild.
+  Your_Guild_Is_Full: §7Dein Guild ist Voll. Upgrade deine Townhall um Mehr Spieler
+    einzuladen.
+  Invite_Wait: §7You have to wait §e{TIME} §7to invite someone.
+  This_Guild_Is_Full: §7Dieses Guild ist voll.
+  Invite_Send: §7Guild Einladung wurde and den Spieler geschickt.
+  Invite_GUI: Einladungs Karte
+  InviteC_Accept: §6Akzeptiere und joine §e{GUILD}§6.
+  InviteC_Reject: §cLehne ab und schliese das Menu.
+  You_Reject: §7Du hast die Einladung abgelehnt.
+  You_Joined_Guild: §7Du bist den Guild §e{GUILD} §7beigetreten.
+  Player_Joined_Guild: §6{PLAYER} §7istn den Guild §e{GUILD} §7beigetretet.
+  Disabled_Invites: §7Du hast Einladungskarten ausgeschaltet.
+  Enabled_Invites: §7Du hast Einladungskarten eingeschaltet.
+  Donate_Usage: §7Du kannst mit §e/g donate <gold/magic> <number>§7 Spenden.
+  Donate_Must_Be_Gold_Magic: §7Spenden koennen nur §e§ngold§r§7 oder §e§nmagic§r§7
+    sein.
+  Enter_An_Integer: §7Fuege eine Ganze Zahl ein.
+  No_Storage: §7Kein Platz fuer §f{NUMBER} {RESOURCE}§r§7. §7Upgrade damit du es Lagern
+    kannst.
+  Player_Donated: '{RANK} {PLAYER}§7, Spendete §f{NUMBER} {RESOURCE}§r §7zum Guild
+    Store.'
+  You_Donated: §7Du hast §f{NUMBER} {RESOURCE}§r §7Zum Guild Store gespendet.
+  Donations_0: §7Spenden muessen mehr als 0 Sein.
+  Leader_Leave: §7Du bist Leiter, leader Leiter koennen kein Guild verlassen. Du kannst
+    den Guild Aufloesen mit §e/g disband§7.
+  Player_Leave: '{RANK} {PLAYER}§7, hat den Guild verlassen.'
+  You_Leave: §7Du bist aus §c{GUILD}§7 ausgetreten.
+  Language_GUI: Sprache
+  Language_Lore: '||§7Click um deine Sprache auszuwaehlen.'
+  Language_Select: '§7Sparche ausgewaelt: §a{LANG}'
+  Unknown_Command: Unbekannter Kommand.
+  Locale_Error: Konnte keine Verbindung zu den Webdaten für die Gebietsschema-Datei
+    herstellen.
+  Enter_Language: Gib die Sprache ein.
+  Guild_Error_Upgrade: §7Du bist nicht megr im diesen Guild.
+  Buildings_Required_Lore_0: §b§nUpgrade kosten;
+  Buildings_Required_Lore_1: '§7 → {GOLD}: §f{GNEED}||§7 → {MAGIC}: §f{MNEED}'
+  No_Magic_Guild: §7Dein Guild hat nicht genug Magic.
+  Limit_Buildings: §7Du hast den Maximalen Gebaeude Level Erreicht.
+  Building_Upgrade: §7{RANK} {PLAYER}§7, upgradete {BUILD} §7zum level §e{NUMBER}§7.
+  Buildings_Broadcast_1: '§7Guild Kapazitaet erhoeht: §a+4'
+  Buildings_Broadcast_2::1: §7Dein Guild startet Kriege mit {ITEM}§7.
+  Buildings_Broadcast_3: '§7Guild Store Erhoeht: §a+500'
+  Buildings_Broadcast_4: §7Dein Guild kann den naechsten Alchemy Level benutzen.
+  Showing_Claims: §7Du kannst alle deine Guild Claims sehen. Wenn du sie nicht sehen
+    willst, Re-joine den Server.
+  No_Claims: §7Dein Guild hat nichts erobert.
+  Show_Claim_Wait: §7You have to wait §e{TIME} §7to show all claims.
+  Change_Rank: '||§7Click um den Rang des Spielers zu aendern.'
+  Status_Online: §aOnline
+  Status_Offline: §cOffline
+  Rank_Yourself: §7Du kannst dein Rang nicht Aendern.
+  Rank_Not_Enough: §7Dein Rang ist nicht Genug fuer diese aktion.
+  Guild_Rank_Lore: '||§7Jetziger Rang: §f{RANK}'
+  Guild_Header_Rank: Aendere Rangs
+  Select_GUI: List Type
+  Player_Info_No_Guild: '||§7Spieler hat kein Guild.'
+  Player_Stats: Player Status
+  Player_Info_Name_1: '§6Guild Information:'
+  Player_Info_Name_2: '§6SPieler Information:'
+  Player_Info_Name_3: '§6Andere Information:'
+  Player_Info_1: '||§eGuild: §f{GUILD}||||§eRank: §f{RANK}||||§eJoin Datum: §f{DATE}||||§eKrieg;||§7
+    → Kills: §f{KILLS}||§7 → Deaths: §f{DEATHS}||||§eFuer Guild Gespendet;||§7 → Gold:
+    §f{DGOLD}||§7 → Magic: §f{DMAGIC}'
+  Player_Info_2: '||§ePlayer: §f{PLAYER}||||§ePvP;||§7 → Kills: §f{KILLS}||§7 → Deaths:
+    §f{DEATHS}||§7 → KDA: §f{KDA}||||§eAn alle Gespendet;||§7 → Gold: §f{DGOLD}||§7
+    → Magic: §f{DMAGIC}'
+  Player_Info_3: '||§eGesundheit: §f{HEALTH}/10||||§eHunger: §f{HUNGER}/10||||§ePosition:
+    §f{LOCATION}'
+  No_Guild_Like_This: §7Kein Guild mit diesem Namen gefunden.
+  No_Player_Like_This: §7Kein Spieler mit diesem Namen gefunden.
+  Guild_Emblem_GUI: §6Guild Emblem
+  Guild_Emblem_Lore: '||§7Click um ein Guild Emblem zu machen.'
+  See_Stats: '||§7Click um Spieler Statistiken zu sehen.'
+  Rank_Changed: §7Dein Rang wurde zu {RANK}§7 geaendert.
+  Ranked_Player: §7{OLDRANKCHANGEP} {CHANGEP}§7's Rag wurde zu {NEWRANKCHANGEP} §7g
+    {RANKPLAYER} {PLAYER}§7.
+  Rank_Wrong: §7Du kannst nur low-ranking Rangs benutzen, schwaecher denn deiner.
+  Player_Info_4: '||§7Spieler ist nicht Online.||||§eLetztes mal gesehen: §f{SEEN}'
+  You_Cant_Unclaim: §7Du kannst hier nicht Unclaimen weil das deine §e{BUILD} §7zone
+    ist.
+  You_Cant_Action: §7Du kannst nicht bei §e{BUILD} §7zone aendern.
+  Owned_By: §7This chunk is owned by §e{GUILD}§7 guild. You can't change anything.
+  Reloading_1: §7Alle Datein laden Neu...
+  Reloading_2: §7Alle Datein wurden Neu geladen.
+  Version: §eSUPERGUILDS {VERSION} §7by §bRepublicanSensei§7.
+  Emblem_Menu: '                   §8§l» §7§lSUPERGUILDS GUILD EMBLEM'
+  Emblem_Saved: §7Guild emblem wurde gespeichert.
+  Color_Select: 'Color Select:'
+  Save_Emblem_Button: '                §a§l[SAVE §a✓§a§l]§r'
+  Reset_Emblem_Button: '                    §c§l[RESET §c✘§c§l]'
+  Use_Guild_Button: '                      §7§l[EDIT GUILDS EMBLEM §7✎§7§l]'
+  Select_Color: §7Du hast keine Farbe ausgewaelt.
+  Select_Code: §7Du hast nicht die Box ausgewaelt.
+  Guild_Emblem_Changed: §7Dein Guild emblem wurde von §e{PLAYER}§7 geaendert.
+  Create_Guild_Disabled_World: §7Du kannst kein Guild in dieser Welt erstellen.
+  Divisions_0: §8Bronze
+  Divisions_1: §7Silver
+  Divisions_2: §eGold
+  Divisions_3: §dCrystal
+  Divisions_4: §bMaster
+  Divisions_5: §cChampionship
+  Chat_Addon_Click_To_Stats: §7Click hier um Spieler Statistiken anzusehen.
+  Back_Header: §6Zurueck
+  SYNC_Done: §7SYNC fuer §a{FILE} §7Datei ist zu ende.
+  SYNC_Load_Error: §7Konnte nicht §c{FILE} §7Datei laden.
+  SYNC_Delete_Failed: §7Konnte nicht die §c{FILE}§7 Datei Loeschen/Restoren.
+  SYNC_Enter_File: §7Gin die Datei zum Syncen ein. (locale or config)

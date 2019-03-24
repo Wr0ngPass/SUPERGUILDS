@@ -1,0 +1,690 @@
+Messages:
+  Prefix: §6§lSUPERGUILDS §6➥§7
+  Char_Error: §7Текст содержит неприемлемые символы.
+  WorldGuard_Error: §7Защищено WorldGuard..
+  Chunk_Error: §7Здесь находится другая гильдия.
+  Dont_Have_Gold_To_Create: §7У вас недостаточно золота для создания гильдии. Необходимо
+    §e{NUMBER}§7.
+  Created_Guild: §e{PLAYER}§7 создал гильдию §b{GUILD} §7!
+  Land_Error: §7Ваша позиция небезопасна.
+  Guild_Name_Length: §7Это название гильдии слишком длинное, либо короткое.
+  That_Guild_Exists: §7Данное название уже занято.
+  Enter_Guild_Name: §7Введите название гильдии.
+  You_Have_Guild: §7У вас уже есть гильдия.
+  Remove_Confirm: §7Вы уверены, что хотите удалить гильдию? Если да, то введите команду
+    ещё раз.
+  Guild_Removed: §7Гильдия была удалена.
+  No_Permission: §7У вас нет прав.
+  You_Dont_Have_Guild: §7У вас нет гильдии.
+  You_Arent_Leader: §7Вы не лидер гильдии.
+  Guild_Remove_Broadcast: §c{GUILD} §7была распущена.
+  Option_Disabled: §7Эта функция отключена.
+  No_Rank: §7Недостаточно прав для данного действия.
+  You_Dont_Have_This_Chunk: §7У вашей гильдии нет этого чанка.
+  Done_Set_Home: §7Точка дома гильдии поставлена.
+  Teleporting_Message: §7Вы будете телепортированны через §e{TIME} §7секунд.
+  Teleport_Cancel: §7Телепортация была отменена, из-за того, что вы двинулись.
+  Teleport_Done: §7Вы успешно телепортировались.
+  Already_Teleport: §7Вы уже телепортируетесь.
+  Teleport_Starting: §7Телепортация начинается, не двигайтесь.
+  GUIPrefix: §8§l» §8
+  Guild_Management: Управление Гильдией
+  Manage_Panel_2: '§6ID:'
+  Rank_Leader: §6✯ Лидер
+  Rank_General: §a⚝ Генерал
+  Rank_Captain: §b❈ Капитан
+  Rank_Member: §3◆ Рядовой
+  Guild_Info: §6Информация о гильдии
+  Guild_Info_Lore: '||§7Кликни, чтобы посмотреть информацию о гильдии.'
+  Guild_Store: §6Склад гильдии
+  Guild_Store_Lore: '||§7Кликни, чтобы открыть склад.'
+  Claimed_Lands: §6Захваченые земли
+  Claimed_Lands_Lore: '||§7Кликни, чтобы посмотреть список земель.'
+  Guild_Alchemy: §6Алхимия гильдии
+  Guild_Alchemy_Lore: '||§7Кликни, чтобы открыть меню снаряжения.'
+  Check_Players: §6Участники гильдии
+  Check_Players_Lore: '||§7Кликни, чтобы посмотреть список участников.'
+  Guild_Buildings: §6Постройки гильдии
+  Guild_Buildings_Lore: '||§7Кликни, чтобы посмотреть постройки.'
+  Guild_Info_Header: Информация о Гильдии
+  Guild_Info_1: §6ID Гильдии
+  Guild_Info_1_Lore: '||§eНазвание:||§f{NAME}||||§eЭмблема:||§f{EMBLEM}||||§eЛидер:||§f{LEADER}'
+  Guild_Info_2: §6Создание гильдии
+  Guild_Info_2_Lore: '||§eДата создания:||§f{TIME}||||§eСоздатель:||§f{CREATOR}'
+  Guild_Info_3: §6Статистика гильдии
+  Guild_Info_3_Lore: '||§eВойны;||§7 → Убийств: §f{KILLS}||§7 → Смертей: §f{DEATHS}||||§eДивизия:||§f{LEVEL}||||§eОчки:||§f{POINTS}
+    ✪||||§eЧисло людей:||§f{PLAYERS}/{MAX}||||§eЗахваченые земли:||§f{CLAIMED}'
+  Kick_Error_No_Guild: §7Этот игрок не в Гильдии.
+  Kick_Error_No_Rank: §7Ваш ранг недостаточен чтобы исключить игрока.
+  Kicked_Player: §c{KICKED}§7 исключен из гильдии игроком §e{PLAYER}§7.
+  You_Kicked: §7Вы были кикнуты из гильдии.
+  No_Kick_Yourself: §7Вы не можете кикнуть себя.
+  Claim_Error: §7Вы уже захватили эти земли.
+  No_Claim_Level: §7Дивизия, гильдии которая владеет этой землёй лучше, чем дивизия
+    вашей гильдии.
+  Attacking_You: §c{ATTACKER}§7 захватила вашу землю в §e{LAND}§7.
+  Attacked_Chunk: §7Ваша гильдия захватила землю §e{LAND} §7у §c{OWN}§7.
+  Chunk_Claimed: §7Вы захватили землю §e{LAND}§7.
+  Chunk_Error_You: §7Эта земля не ваша.
+  Chunk_Unclaimed: §7Вы ушли с земли §e{LAND}§7.
+  Romen_Num_1: I
+  Romen_Num_2: II
+  Romen_Num_3: III
+  Romen_Num_4: IV
+  Romen_Num_5: V
+  Romen_Num_6: VI
+  Romen_Num_7: VII
+  Romen_Num_8: IIX
+  Store_GUI: Склад гильдии
+  Store_Status: '§7Кол-во: §f{NUMBER}'
+  Help_Pages_1::Line_1: §e/guilds help §8- §7Страница помощи.
+  Help_Pages_1::Line_2: §e/guilds create <название> §8- §7Создать гильдию.
+  Help_Pages_1::Line_3: §e/guilds remove §8- §7Удалить гильдию.
+  Help_Pages_1::Line_4: §e/guilds emblem §8- §7Изменить эмблему гильдии.
+  Help_Pages_1::Line_5: §e/guilds info §8- §7Показать информации гильдии.
+  Help_Pages_1::Line_6: §e/guilds leave §8- §7LВыйти из гильдии.
+  Help_Pages_1::Line_7: §e/guilds storage §8- §7Показать склад гильдии.
+  Help_Pages_1::Line_8: §e/guilds claimname <название> §8- §7Установить название земле.
+  Help_Pages_2::Line_1: §e/guilds leader §8- §7Передать звание лидера.
+  Help_Pages_2::Line_2: §e/guilds invite <ник> §8- §7Пригласить игрока в гильдию.
+  Help_Pages_2::Line_3: §e/guilds claim §8- §7Захватить землю под вами.
+  Help_Pages_2::Line_4: §e/guilds unclaim §8- §7Уйти с земли под вами.
+  Help_Pages_2::Line_5: §e/guilds rank §8- §7Изменить ранг участника.
+  Help_Pages_2::Line_6: §e/guilds reload §8- §7Перезагрузить плагин.
+  Help_Pages_2::Line_7: §e/guilds home §8- §7Телепортироваться на точку дома.
+  Help_Pages_3::Line_1: §e/guilds sethome §8- §7Установить точку дома.
+  Help_Pages_3::Line_2: §e/guilds war §8- §7Война с другими гильдиями.
+  Help_Pages_3::Line_3: §e/guilds version §8- §7Версия плагина.
+  Help_Pages_3::Line_4: §e/guilds buildings §8- §7Показать постройки гильдии.
+  Help_Pages_3::Line_5: §e/guilds showclaims §8- §7Показать список захваченых земель.
+  Help_Pages_3::Line_6: §e/guilds alchemy §8- §7Показать Алхимия гильдии.
+  Help_Pages_3::Line_7: §e/guilds invites §8- §7ВКЛ/ВЫКЛ приглашения в гильдию.
+  Help_Pages_3::Line_8: §e/guilds chat §8- §7ВКЛ/ВЫКЛ чат гильдии.
+  Next_Page: §8§m--------------------------------------------
+  Invite_Player_Name: §7Введите имя, чтобы пригласить.
+  Cant_Invite_Yourself: §7Вы не можете приглосить себя.
+  Player_Closed_Invites: §7Этот игрок отключил приглашения.
+  Player_Has_Guild: §7Этот игрок уже состоит в гильдии.
+  Your_Guild_Is_Full: §7Ваша гильдия заполнена. Улучшите ратушу, чтобы увеличить слоты.
+  Invite_Wait: §7Вы должны подождать §e{TIME} §7чтобы пригласить кого-то.
+  This_Guild_Is_Full: §7Эта гильдия заполнена
+  Invite_Send: §7Приглашение было отправлено.
+  Invite_GUI: Приглашение в гильдию
+  InviteC_Accept: §6Присоедениться к §e{GUILD}§6.
+  InviteC_Reject: §cОтклонить и закрыть меню.
+  You_Reject: §7Вы отклонили приглашение в гильдию.
+  You_Joined_Guild: §7Вы присоеденились к гильдии §e{GUILD} §7.
+  Player_Joined_Guild: §6{PLAYER} §7присоединился к гильдии §e{GUILD} §7.
+  Disabled_Invites: §7Вы выключили приглашения.
+  Enabled_Invites: §7Вы включили приглашения.
+  Enter_An_Integer: §7Введите целое число.
+  No_Storage: §7Недостаточно места для §f{NUMBER} {RESOURCE}§r§7. §7Вы можете улучшить
+    склад.
+  Player_Donated: '{RANK} {PLAYER}§7, положил §f{NUMBER} {RESOURCE}§r §7на склад гильдии.'
+  Donations_0: §7Вложение должно быть больше нуля.
+  Leader_Leave: §7Вы лидер, лидеры не могут покинуть гильдию. Вы можете распустить
+    гильдию используя §e/g disband§7.
+  Player_Leave: '{RANK} {PLAYER}§7, покинул гильдию.'
+  You_Leave: §7Вы ушли из гильдии §c{GUILD}§7.
+  Language_Select: '§7Язык изменен на: §a{LANG}'
+  Unknown_Command: Неизвестная команда.
+  Locale_Error: Не удалось подключиться к веб-данным для локальных файлов.
+  Guild_Error_Upgrade: §7Вы больше не в этой гильдии.
+  Limit_Buildings: §7Вы достигли максимальной улучшения этого здания.
+  Buildings_Broadcast_1: '§7Слотов в гильдии: §a+{NUM}'
+  Buildings_Broadcast_2: §7Ваша гильдия начнёт войну с бронёй {ITEM}§7.
+  Buildings_Broadcast_3: '§7Хранилище гильдии увеличено: §a+500'
+  Buildings_Broadcast_4: §7Теперь ваша гильдия может использовать следующий уровень
+    алхимии.
+  Showing_Claims: §7Теперь вы можете увидеть все завоёванные земли. Если вы не хотите
+    их видеть, перезайдите на сервер.
+  No_Claims: §7У вашей гильдии нет земель.
+  Show_Claim_Wait: §7Вам нужно подождать §e{TIME} §7чтобы показать все земли.
+  Status_Online: §aОнлайн
+  Status_Offline: §cОффлайн
+  Rank_Yourself: §7Вы не можете изменить свой ранг.
+  Rank_Not_Enough: §7Ваш ранг недостаточен для этого действия.
+  Player_Info_No_Guild: '||§7Игрок не состоит в гильдии.'
+  Player_Stats: Статистика игрока
+  Player_Info_Name_1: '§6Информация о Гильдии:'
+  Player_Info_Name_2: '§6Информация о Игроке:'
+  Player_Info_Name_3: '§6Другая Информация:'
+  No_Guild_Like_This: §7Не найдено гильдий с этим названием.
+  No_Player_Like_This: §7Не найдено игроков с этим именем.
+  Guild_Emblem_GUI: §6Эмблема гильдии
+  Guild_Emblem_Lore: '||§7Кликни, чтобы изменить эмблему.'
+  Rank_Changed: §7Ваш ранг был изменён на {RANK}§7.
+  Ranked_Player: §7Ранг игрока {OLDRANKCHANGEP} {CHANGEP}§7 был изменён на {NEWRANKCHANGEP}
+    §7игроком {RANKPLAYER} {PLAYER}§7.
+  Rank_Wrong: §7Вы можете выбрать только младших по рангу.
+  You_Cant_Unclaim: §7Вы не можете освободить эту зону, так как это ваша зона §e{BUILD}.
+  You_Cant_Action: §7Вы не можете ничего изменять на зоне §e{BUILD}.
+  Owned_By: §7Этот чанк принадлежит гильдии §e{GUILD}§7. Вы не можете ничего менять.
+  Reloading_1: §7Все файлы перезагружаются...
+  Reloading_2: §7Все файлы были перезагружены.
+  Emblem_Saved: §7Эмблема гильдии была сохранена.
+  Select_Color: §7Вы не выбрали цвет.
+  Select_Code: §7Вы не выбрали ячейку.
+  Guild_Emblem_Changed: §7Эмблема вашей гильдии была изменена игроком §e{PLAYER}§7.
+  Create_Guild_Disabled_World: §7Вы не можете создать гильдию в этом мире.
+  Back_Header: §6Назад
+  Menu_Alchemy_GUI: Алхимия гильдии
+  Text_Feature: '§eОсобенность:'
+  Text_Price: '§eЦена:'
+  Text_Buy: §eНажмите для покупки.
+  Alchemy_Menu_Lore_1: §8 → §7Даёт на 15мин. силу всем участникам гильдии.
+  Alchemy_Menu_Lore_2: §8 → §7Спавнит лошадь для каждого участника гильдии
+  Alchemy_Menu_Lore_3: §8 → §7Даёт на 15мин. скорость всем участникам гильдии.
+  Alchemy_Menu_Lore_4: §8 → §7Даёт на 15мин. сопротивление урону всем участникам гильдии.
+  Alchemy_Type_1_Name_1: §6Уровень I силы
+  Alchemy_Type_1_Name_2: §6Уровень II силы
+  Alchemy_Type_1_Name_3: §6Уровень III силы
+  Alchemy_Type_2_Name_1: §6Призыв лошадей
+  Alchemy_Type_2_Name_2: §6Лошади с железной бронёй
+  Alchemy_Type_2_Name_3: §6Лошади с алмазной бронёй
+  Alchemy_Type_3_Name_1: §6Уровень I скорости
+  Alchemy_Type_3_Name_2: §6Уровень II скорости
+  Alchemy_Type_3_Name_3: §6Уровень III скорости
+  Alchemy_Type_4_Name_1: §6Уровень I сопротивления урона
+  Alchemy_Type_4_Name_2: §6Уровень II сопротивления урона
+  Alchemy_Type_4_Name_3: §6Уровень III сопротивления урона
+  Bought_Alchemy_Guild: §e{GUILD} §7гильдия, купила §6{TYPE}§7.
+  Bought_Alchemy_Own: §7{RANK} {PLAYER}§7, купил §6{TYPE}§7.
+  Barrack_Upgrade_Item_1: §7Кожаный сет
+  Barrack_Upgrade_Item_2: §eЗолотой сет
+  Barrack_Upgrade_Item_3: §8Кольчужный сет
+  Barrack_Upgrade_Item_4: §fЖелезный сет
+  Barrack_Upgrade_Item_5: §bАлмазный сет
+  Menu_War_GUI: Войны Гильдий
+  Menu_War_Name_1: §6Поиск гильдии для битвы
+  Menu_War_Lore_1: §7Нажмите здесь, чтобы найти гильдию для сражения.
+  Menu_War_Name_2: §6Статистика войн
+  Menu_War_Name_3: §6Топ гильдий
+  Menu_War_Lore_3: §7Кликни, чтобы посмотреть топ.
+  Disabled_Chat: §7Вы отключили режим чата гильдии.
+  Enabled_Chat: §7Вы включили режим чата гильдии.
+  Guild_Chat: §7§l(§a§lГильдия§7§l)
+  Number_Online: §8(§a{PLAYER} §7онлайн§8)
+  Claimed_Land: Захваченная Земля
+  Claimed_Land_Lore: '||§7Координаты: §f{LOC}||||§eКликни, чтобы телепортироваться.'
+  ClaimName_Usage: §7Используй §e/s claimname <название> §7, чтобы дать название земле.
+  ClaimName_Changed: §7Имя земли §e{LOC} §7было изменено на §6{NAME} §7игроком §9{BY}§7.
+  Arena_Created: '§7Арена создана: §e{ARENA}'
+  Arena_Exists: §7Уже есть арена с таким именем.
+  Enter_Arena_Name: §7Введите имя арены.
+  No_Arena: §7Нет такой арены.
+  Arena_Removed: '§7Удалена арена: §e{ARENA}'
+  Enter_Setspawn_Type: §7Вы должны ввести тип команды. (1 или 2)
+  Setspawn_Done: §eТочка спавна {TYPE} §7команды на §a{ARENA} §7была поставлена.
+  Lobby_Done: §7Лобби было поставлено на этом месте. Игроки будут телепортированны
+    сюда после конца игры.
+  Restart_Kick_restart: §7Вы были кикнуты, так как арена перезагружается.
+  Restart_Kick_error: §7Вы были кикнуты, так как на арене появились ошибки.
+  Restart_Kick_time: §7Вы были кикнуты, потому что время арены истекло.
+  Enemy_War_Minimum: §7В этой гильдии §e{ONLINE} §7онлайн участник(а)(ов). (Минимум
+    {MINIMUM})
+  You_War_Minimum: §7У вас §e{ONLINE} §7онлайн участник(а)(ов). (Минимум {MINIMUM})
+  Enemy_Guild_In_War: §7Эта гильдия на войне.
+  Your_Guild_In_War: §7Ваша гильдия на войне.
+  Cannot_War_Yourself: §7Вы не можете воевать с собой.
+  War_Invite_Send: §7Ваша гильдия отправила объявление войны гильдии §c{GUILD} §7.
+  War_Invite_GUI: Объявление Войны
+  War_InviteC_Accept: §6Принять войну от §c{GUILD}§6.
+  War_InviteC_Reject: §cОтклонить войну.
+  War_Other_Reject: §9{GUILD} §7отклонила ваше объявление войны.
+  War_You_Reject: §9{GUILD} §7отклонила ваше объявление войны.
+  No_Available_Arena: §7Нет доступных арен.
+  War_Starting_Timer: §9{GUILD1} §7против §c{GUILD2} §7начнется через §e{SECONDS}
+    §7секунд.
+  War_Started: §7Война между §9{GUILD1} §7и §c{GUILD2} §7началась. Удачной войны!
+  War_End_Timer: §7Война закончится через §e{MINUTES} §7минут(у)(ы).
+  Game_Finished_Time: §7Время вышло, никто не победил.
+  No_Command_War: §7Время закончилось, никто не выйграл.
+  War_Win: §7Война между §9{GUILD1} §7и §c{GUILD2} §7закончилась. §9{GUILD1} §7победила
+    в войне.
+  New_Division: §7Ваша гильдия перешла вновую дивизию - §r{NEWDIVISION} §7из §r{OLDDIVISION}§7.
+  War_Points_Add: §7Ваша гильдия выиграла войну против §c{GUILD} §7и получила §a+{POINTS}
+    ✪§7.
+  War_Points_Lose: §7Ваша гильдия проиграла войну против §9{GUILD} §7и потеряла §c-{POINTS}
+    ✪§7.
+  Arena_Debug: §7Арена §a{ARENA} §7была перезапушена.
+  No_Arena_Found: §7Арена не найдена.
+  Arena_Guilds: '§7Арена Гильдий: §f'
+  Arena_TimeLeft: '§7Осталось времени: §f'
+  Status_Text_0: §a§lОЖИДАНИЕ
+  Status_Text_1: §e§lВ ИГРЕ
+  Status_Text_2: §c§lЗАКРЫТА
+  Status_Text_3: §4§lПЕРЕЗАГРУЖАЕТСЯ
+  RankStar_Leader: '§6✯ '
+  RankStar_General: '§a⚝ '
+  RankStar_Captain: '§b❈ '
+  RankStar_Member: '§3◆ '
+  Claim_Limit: §7Вы не можете больше захвачивать земли.
+  Death_Broadcast: §c⚔ §e§o{AGUILD} §3{ATTACKER} §fубил игрока §e§o{VGUILD} §3{VICTIM}
+    §7(§6-{GOLD} золота§7)
+  Death_Gold_Gain: Ваша гильдия получила §e+{GOLD} Золота §7так как §7{RANK} {PLAYER}§7
+    убил кого-то.
+  Death_Gold_Loss: Ваша гильдия потеряла §4-{GOLD} Золота §7так как §7{RANK} {PLAYER}§7
+    был убит кем-то.
+  Buildings_Broadcast_TNT: §7Динамит не будет взрываться на захваченных землях.
+  Click_To_Teleport: §7Кликни, чтобы телепортироваться.
+  Click_To_Select_Color: §fНажмите здесь, чтобы выбрать краситель.
+  Click_To_Dye_Here: Кликните, чтобы раскрасить здесь.
+  Save_Emblem_Lore: §fКликни, чтобы сохранить эмблему.
+  Reset_Emblem_Lore: §fКликни, чтобы отчистить всё.
+  Use_Emblem_Lore: §fКликните, чтобы изменить эмблему вашей гильдии.
+  Wilderness_Text: §2§l§nСвободные земли§r §2§l⚘
+  Wilderness_Msg_1: §7§oЯ люблю природу...
+  Wilderness_Msg_2: §7§oЯ чувствую себя свободным...
+  Wilderness_Msg_3: §7§oЯ свободный человек, и мне нужна моя свобода.
+  Wilderness_Msg_4: §7§oСекрет счастья - это природа.
+  Home_Text: §a§l§nДом§r §a§l⌂
+  Home_Msg_1: §7§oДом, сладкий дом...
+  Home_Msg_2: §7§oНичто не лучше, чем идти домой.
+  Home_Msg_3: §7Вы нашли то, что вам нужно, и вернетесь домой.
+  Home_Msg_4: §7Мужской дом - его замок.
+  Other_Guild_Text: §4§l§n{GUILD}§r §4§l☠
+  Other_Guild_Msg_1: §7§oБудь осторожен.
+  Other_Guild_Msg_2: §7Они слышат нас.
+  Other_Guild_Msg_3: §7Другая гильдия здесь.
+  Other_Guild_Msg_4: §7На войну!
+  Emblem_Menu: §0§l  » Эмблема гильдии
+  Save_Emblem_Button: §2§l[§2✓§2§l]§r
+  Reset_Emblem_Button: §4§l[§4✘§4§l]
+  Use_Emblem_Button: §0§l[§0✎§0§l]
+  Player_No_Guild: §7Этот игрока не имеет гильдии.
+  Menu_Donate_GUI: Положите сюда ресурсы
+  Cant_Attack_Member: §7Вы не можете атаковать согильдийцев.
+  Enter_MOTD: §7Введите сообщение дня.
+  MOTD_Changed: §7МОТД было изменено игроком §a{BY}§7.
+  MOTD_Removed: §7МОТД было удалено игрокомy §a{BY}§7.
+  MOTD_Title: §f← §e§l§nМОТД§r §f→
+  MOTD_SubTitle: §7§o{MESSAGE}
+  MOTD_ActionBar: §fМОТД от игрока §a{BY}§f. §f({DATE})
+  Enter_Region_Name: §7Введите название региона WORLDGUARD.
+  No_Region: §7Регион WG с таким названием не найден.
+  Region_Allowed: §7Вы разрешили §a{REGION} §7WorldGuard региону создать в данном
+    регионе гильдию.
+  Region_Disallowed: §7Вы запретили §c{REGION} §7WorldGuard региону создать в данном
+    регионе гильдию.
+  Already_Ally: §7Эта гильдия уже в альянсе с вами.
+  Wait_Ally: §7Вам нужно подождать §a{TIME} §7для удаления/добавления в альянс.
+  Added_Ally: §a{GUILD} §7и §9{ALLY} §7объявили альянс.
+  Ally_GUI: Приглашение в альянс
+  Ally_InviteC_Accept: §6Принять альянс с §e{GUILD}§6.
+  Ally_InviteC_Lore: '||§7Союзники не могут атаковать друг друга.'
+  Ally_Other_Reject: §9{GUILD} §7отклонил приглашение.
+  Ally_You_Reject: §7Вы отклонили приглашение §9{GUILD}§7о альянсе.
+  No_Ally: §7Эта гильдия не входит в ваш список альянсов.
+  Removed_Ally: §a{GUILD} §7и §c{ENEMY} §7разовали договор альянса.
+  Cannot_War_Allies: §7Вы не можете сражаться с гильдиями которые в альянсе с вами.
+  Cannot_Claim_Allies: §7Эта земля захвачена собзником из альянса, вы не можете захватить
+    её.
+  Allies_GUI: Список альянсов
+  Allies_Lore: '||§7Дата: §e{DATE}||§7Добавлено: §e{BY}||||§7§oИспользуйте §c§o''/g
+    enemy {GUILD}'' §7§o чтобы убрать.'
+  Ally_Yourself: §7Вы не можете предложить альянс себе.
+  Help_Pages_4::Line_1: §e/guilds ally <гильдия> §8- §7Установить альянс с другой
+    гильдией.
+  Help_Pages_4::Line_2: §e/guilds enemy <гильдия> §8- §7Удалить гильдию из списка
+    альянса.
+  Help_Pages_4::Line_3: §e/guilds allies §8- §7Показать список альянсов.
+  Updated_Locale: '§7Файл был обновлён. (Old: {OLD} - New: {NEW})'
+  Locale_Update_Already: §7Файл уже был обновлён, обновить ещё раз?
+  Updated_Locale_Replace: §7Добавлено §6{NEW} §7новое сообщение в файл.
+  Tournaments_Name: Турниры
+  Tournaments_Status_Off_Name: §4⚠
+  Tournaments_Status_Off_Lore: '||§7Турнир неактивен||§7на данный момент, повторите
+    попытку позже.'
+  Tournaments_In_Name: §6§nИнформация о турнире
+  Tournaments_In_Lore: '||§7Ожидание противника...'
+  Tournaments_Opponent_Lore: '||§7Ваш противник - §c{GUILD} §7.||§7Вы можете посмотреть
+    информацию об этой||§7гильдии, написав §e/g info §7.'
+  Tournaments_Join_Name: §6§nПрисоединиться к турниру
+  Tournaments_Join_Lore: '||§7Нажмите, чтобы присоединиться к турниру.'
+  Tournaments_List: §6§nТурнирные матчи
+  Tournaments_Guild_List: §6§nГильдии турниров
+  Tournaments_Ingame_Lore: §8(§7§oin progress§8)
+  Tournaments_Waiting_Lore: §8(§7§owaiting§8)
+  Tournaments_Won_Lore: §8(§f{G}§8)
+  Tournaments_Eliminated_Lore: '||§7The tournament has begun||§7and you can''t join
+    at the moment.||§7See you soon in a new Tournament.'
+  Tournaments_Already_Enabled: §7The tournament is already enabled.
+  Tournament_Joins_Closed: §7The tournament matches has been set. Check it with tournament
+    menu.
+  Your_Guild_Already_Tournament: §7Your guild is already in the Tournament.
+  Tournament_Not_Active: §7The tournament is not active at the moment.
+  Cant_Join_Closed: §7Your guild can't join the Tournament at the moment.
+  Guild_Joined_Tournament: §a{GUILD} §7has joined to tournament. §8[§e{ALL} joined§8]
+  Tournament_Not_Enough: §7Tournament has closed because there were not enough teams
+    to participate in the Tournament.
+  You_Cant_War_Tournament: §7Sorry, your guild can't war while tournament is active.
+  Tournaments_You_Won_Waiting: '||§7Your guild won a battle so.||§7you''re waiting
+    for new match.'
+  Guild_Removed_Tournament: §7Your guild has been removed from tournament due to 'guild
+    count must be double'
+  Tournament_Won_Broadcast: §a{GUILD} §7won the Tournament and gained §a+{POINTS}
+    ✪§7.
+  Locale_GUI_Name: Выбор языка
+  Click_Select_Locale: '||§7Нажмите, чтобы выбрать локализацию.'
+  Locale_en_US: §6English (США)
+  Locale_es_ES: §6Español
+  Locale_de_DE: §6Deutsch
+  Locale_it_IT: §6Italiano
+  Locale_ru_RU: §6Руска
+  Locale_tr_TR: §6Türkçe
+  Allow_Or_Disallow: §7Используйте §a'/sgallow region allow <region>' §7чтобы разрешить
+    создавать гильдию в регионе. Чтобы удалить используйте §c'/sgadmin region disallow
+    <region>'§7. Для проверки регионов используйте §e'/sgadmin region list'§7.
+  No_Region_Found: §7Нет разрешенных регионов.
+  Region_List: '          §a§nСписок разрешенных регионов'
+  Top_Guilds: Топ гильдий
+  War_Top_GUI: §7Нажмите, чтобы посмотреть список лучших гильдий.
+  War_Death_0: §9{VICTIM} ({VGUILD}) §7умер и отстранен от сражений.
+  Locale_zh_CN: §6渔乐
+  Locale_vn_VN: §6Tiếng Việt
+  Locale_fr_FR: §6Français
+  Divisions_0: §8Бронза
+  Divisions_1: §7Серебро
+  Divisions_2: §eЗолото
+  Divisions_3: §dКристалл
+  Divisions_4: §bМастер
+  Divisions_5: §cЧемпион
+  Menu_Allies_Name: §6Список альянсов
+  Menu_Allies_Lore: '||§7Нажмите, чтобы проверить союзников вашей гильдии.'
+  Guild_Home_Menu_Name: §6Дом гильдии
+  Guild_Home_Menu_Lore: '||§7Кликни, чтобы телепортироваться на точку дома.'
+  Tournament_Cooldown: §7Matches will be set in §e{SECOND} §7second(s). §7Join with
+    §e/tournament§7.
+  You_Need_More_Resource: §7Вам не хватает §f{AMOUNT} §7{RESOURCE}§r §7в хранилище.
+  Enemy_Leader_Not_Online: §7Right now, no one has the permission of answer the invite
+    in this guild.
+  Menu_War_Lore_New: '§eГильдия;||§7 → Дивизия: §f{LEVEL}||§7 → Поинты: §f{POINTS}
+    ✪||§7 → Стартовый сет: §f{ITEMS}||||§eПВП;||§7 → Убийства: §f{KILLS}||§7 → Смерти:
+    §f{DEATHS}'
+  Resource_Wood: §6§nДерево
+  Resource_Stone: §7§nКамень
+  Resource_Iron: §f§nЖелезо
+  Resource_Gold: §e§nзолото
+  Resource_Diamond: §b§nАлмазы
+  Resource_Wool: §3§nШерсть
+  Resource_Worker: §e§nРабочий
+  Resource_Unicode_Wood: ✚
+  Resource_Unicode_Stone: ⚒
+  Resource_Unicode_Iron: ℓ
+  Resource_Unicode_Gold: ⊂
+  Resource_Unicode_Diamond: ∑
+  Resource_Unicode_Wool: ⎈
+  Resource_Unicode_Worker: ☯
+  Resource_Color_Wood: §6
+  Resource_Color_Stone: §7
+  Resource_Color_Iron: §f
+  Resource_Color_Gold: §e
+  Resource_Color_Diamond: §b
+  Resource_Color_Wool: §3
+  Resource_Color_Worker: §e
+  Resource_Donate_Lore: §7Кликни, чтобы пожертвовать ресурсы.
+  Resource_Donate_Usage: §7Вы можете внести ресурсы, используя §e/g donate <wood/stone/iron/gold/diamond/wool>
+    <number>§7.
+  No_Item_Resouce: §7Вы не имеете §c{NUMBER} §7этого ресурсу для пожертвования.
+  SYNC_Done: §7Синхронизация файла §a{FILE} §7завершена успешно.
+  SYNC_Enter_File_Type: §7Введите файл синхронизации. (/sg sync <config/locale>)
+  Buildings_GUI: Постройки
+  Buildings_Name_Townhall: §6Ратуша
+  Buildings_Name_Barrack: §6Бараки
+  Buildings_Name_Storage: §6Склад
+  Buildings_Name_Alchemy: §6Алхимия
+  Building_Status_0: Готово к улучшению
+  Building_Status_1: Улучшается...
+  Building_Status_2: Ждёт подтверждения...
+  Buildings_Lore: '||§eТип здания: §f{LEVEL}||§eСтатус: §f{STATUS}||{TIMESHOW}||||§7Кликни,
+    чтобы увидеть информаию.'
+  Buildings_Time_Remaining: '||§eВремени осталось: §f{TIME}'
+  Allies_4_Lore: '||§7Дата: §e{DATE}||§7Добавил: §e{BY}||||§7§oИспользуй §c§o''/g
+    enemy [Гильдия]'' §7§,чтобы удалить.'
+  Upgrade_Emblem_Button: §a§l【▲】
+  Quit_Emblem_Button: §4§l【⏎】
+  Timer_Emblem_Button: §c§l【⌛】
+  Done_Emblem_Button: §2§l【✔】
+  Max_Emblem_Button: §0§l【✕】
+  Upgrade_Emblem_Lore: §fКликни, чтобы построить.
+  Quit_Emblem_Lore: §fКликни, чтобы выйти в меню.
+  Done_Emblem_Lore: §fКликни, чтобы подтвердить постройку.
+  Enter_Building_Type: §7Введите название строения. (Townhall/Barrack/Storage/Alchemy)
+  Header_Build_Book: '§8§l  » Информация:'
+  Book_Build_Name: '§8Название постройки: §0'
+  Book_Build_Level: '§8Тир здания: §0'
+  Building_Upgrade: §7{RANK} {PLAYER}§7, улучшил {BUILD} §7до уровня §e{NUMBER}§7.
+  Building_Upgrade_Guild: §a{GUILD}§7, улучшила {BUILD} §7до уровня §e{NUMBER}§7.
+  Book_Build_Requires: '§8Ресурсы для постройки:'
+  Book_Required_Text: '§8Необходимые:§f '
+  Book_Have_Text: '§8Вы имеете:§f '
+  Alchemy_Menu_Price_1: ' §8 → §7Уровень I: §f{AMOUNT1}|| §8 → §7Уровень II: §f{AMOUNT2}||
+    §8 → §7Уровень III: §f{AMOUNT3}'
+  Alchemy_Menu_Price_2: ' §8 → §7Лошадь: §f{AMOUNT1}|| §8 → §7Лошадь в железной броне:
+    §f{AMOUNT2}|| §8 → §7Лошадь в алмазной броне: §f{AMOUNT3}'
+  Alchemy_Menu_Price_3: ' §8 → §7Уровень I: §f{AMOUNT1}|| §8 → §7Уровень II: §f{AMOUNT2}||
+    §8 → §7Уровень III: §f{AMOUNT3}'
+  Alchemy_Menu_Price_4: ' §8 → §7Уровень: §f{AMOUNT1}|| §8 → §7Уровень II: §f{AMOUNT2}||
+    §8 → §7Уровень III: §f{AMOUNT3}'
+  Build_Max: §7Это здание достигло последнего тира.
+  Build_Started: '{RANK} {PLAYER} §7начал строительство §e{BUILD} §7до уровня §e{LEVEL}§7.
+    Строительство закончится через §a{TIME}§7.'
+  Build_Wait: §7Постройка будет завершена через §e{TIME}§7.
+  You_Cant_Edit_Here: §7Вы не можете строить и ломать в зоне §e{BUILD}. §7Вы можете
+    ломать и ставить сундуки и печки.
+  You_Cant_Build_Here: §7Вы не можете строить другие постройке в зоне §e{BUILD}
+  You_Cant_Alchemy: §7Вы не можете использовать §9Алхимия§7 для этого постройте §9Алхимия
+    §6Уровень I§7.
+  You_Cant_War: §7Чтобы участвовать в войне вам нужно здние §9Бараки §6Уровень I§7.
+  Land_Protection: §7Система создаст базу, пожалуйста выберите пустую землю.
+  Creation_Point: Точка создания
+  Romen_Num_0: '0'
+  Building_Status_3: Максимальный уровень
+  Barrack_Upgrade_Item_0: Нет вещей
+  Join_Status_Name_0: §c§lПриватная
+  Join_Status_Lore_0: §4§o'Игроки могут вступать только по приглашениям.'
+  Join_Status_Name_1: §a§lПубличная
+  Join_Status_Lore_1: §2§o'Любой игрок может вступить в вашу гильдию.'
+  ChangeJoinStatus_Lore: '||||§7Нажмите, чтобы сменить статус.'
+  This_Guild_Is_Not_Public: §7Гильдия не публичная, вам нужно приглашение.
+  GuildSelectGUI_Header: Выберите
+  GuildSelectGUIName_1: §6Вступить в гильдию
+  GuildSelectGUIName_2: §6Помощь о гильдиях
+  GuildSelectGUILore_1: '||§7Нажмите, чтобы вступить в одну из публичных гильдий.'
+  GuildSelectGUILore_2: '||§7Нажмите, чтобы получить помощь о гильдиях.'
+  Resource_Worker_Time_Ready: '||§7Рабочий §aготов §7строить здания.'
+  Resource_Worker_Time_Rest: '||§7Работник должен отдохнуть, чтобы строить новые здания.||§cПодождите
+    {TIME}§7......'
+  Worker_Rest: §7Работник должен отдохнуть §a{TIME} §7, чтобы строить новые здания.
+  Resource_Give_Usage: '§7Используйте: §e/sgadmin resource <guild> <resource> <add/remove/set>
+    <amount>'
+  Resource_Give_Admin: §7Вы добавили §a{NUMBER} §7к §f{GUILD}§7's {RESOURCE}§7.
+  Resource_Remove_Admin: §7Вы убрали §c{NUMBER} §7с §f{GUILD}§7's {RESOURCE}§7.
+  Resource_Set_Admin: §7Вы установили §f{GUILD}§7's {RESOURCE} §7для §a{NUMBER}§7.
+  Disabled_ChatSpy: §7Вы отключили наблюдение для чата гильдии.
+  Enabled_ChatSpy: §7Вы включили наблюдение для чата гильдии.
+  Holo_Message_Claim: 'ItemStack:GOLD_SPADE;§e§l- {GUILD} ЗАНЯЛА ЭТУ ТЕРРИТОРИЮ -;§7Занял:
+    §f{PLAYER};§7Всего чанков: §f{CHUNKS};'
+  Holo_Message_Build: 'ItemStack:BRICK;§6§l- СТРОИТСЯ ЗДАНИЕ {BUILD}  -;§7Гильдия:
+    §f{GUILD};§7Дата окончания: §f{DATE};'
+  Guild_Vault_Header: Склад Гильдии
+  You_Cant_Vault: §7Вы не можете использовать §9Склад §7, так как вам нужно его построить.
+  Building_Desc_Townhall: Ратуша увеличивает кол-
+  Building_Desc_Barrack: Бараки улучшают Снаряжение для войны.
+  Building_Desc_Storage: Склад увеличивает лимит ресурсов.
+  Building_Desc_Alchemy: Алхимия даёт баффы игрокам.
+  Guild_Vault_ItemName: §6Склад гильдии
+  Guild_Vault_ItemLore: '||§7Нажмите, чтобы открыть склад гильдии.'
+  Help_Pages_4::Line_4: §e/guilds vault §8- §7Открыть хранилище гильдии.
+  PageAPI_Header_0: Список гильдий
+  PageAPI_Header_1: Список территорий
+  PageAPI_Header_2: Поиск гильдии
+  PageAPI_Header_3: Участники гильдии
+  PageAPI_Header_4: Список союзников
+  PageAPI_Header_5: Публичные гильдии
+  PageAPI_NoVariable_0: §c§nГильдии не найдены.
+  PageAPI_NoVariable_1: §c§nТерриторий не найдено.
+  PageAPI_NoVariable_2: §c§nГильдии не найдены для войны.
+  PageAPI_NoVariable_3: §c§nИгроки не найдены.
+  PageAPI_NoVariable_4: §c§nСоюзники не найдены.
+  PageAPI_NoVariable_5: §c§nНет публичных гильдий, чтобы присоединиться.
+  PageAPI_NextPage_Name: §aСледующая страница
+  PageAPI_PreviousPage_Name: §aПредыдущая страница
+  PageAPI_MainPage_Name: §aГлавная страница
+  Menu_PreviousMenu_Name: §cПредыдущее меню
+  RankGUI_PermName_Disband: §f§nРасформировать Гильдию
+  RankGUI_PermName_Upgrade: §f§nУлучшить здания гильдии
+  RankGUI_PermName_Alchemy: §f§nИспользовать Алхимию Гильдии
+  RankGUI_PermName_Vault: §f§nИспользовать склад Гильдии
+  RankGUI_PermName_Kick: §f§nИсключить участников гильдии
+  RankGUI_PermName_Rank: §f§nИзменить полномочия членов гильдии
+  RankGUI_PermName_Condition: §f§nИзменить условия вступления
+  RankGUI_PermName_Sethome: §f§nУстановить дом Гильдии
+  RankGUI_PermName_Claim: §f§nТерритории / Освобождённые территории / Названия
+  RankGUI_PermName_Emblem: §f§nЭмблема гильдии
+  RankGUI_PermName_Motd: §f§nСообщение дня
+  RankGUI_PermName_Invite: §f§nПригласить игроков
+  RankGUI_PermName_Ally: §f§nСоюзники / Враги
+  RankGUI_PermName_War: §f§nОбъявить войну гильдии
+  RankGUI_PermName_Donate: §f§nВнести ресурсы в казну Гильдии
+  RankGUI_Header: Настройки рангов
+  RankGUI_CurrentRank: '||§7Текущий ранг: §f{RANK}||||§7Права игрока:||'
+  RankGUI_UsePresetRank: '||§7Нажмите, чтобы изменить ранг.'
+  RankGUI_ChangePermission: '||§7Нажмите, чтобы выдать/забрать права.'
+  Member_Information_Kick: '||||§7§nЛевая кнопка мыши и Shift...||  §fисключить из
+    гильдии.'
+  Member_Information_Rank: '||||§7§nЛевая кнопка мыши...||  §fизменить ранг игрока.'
+  Tournament_Started_Broadcast: §7The guild tournament has enabled! Join with '§e/g§7'
+    command.
+  Donated_List_New: '§6 → Дерево: §f{DWOOD}||§7 → Камень: §f{DSTONE}||§f → Железные
+    слитки: §f{DIRON}||§e → Золотые слитки: §f{DGOLD}||§b → Алмазы: §f{DDIAMOND}||§3
+    → Шерсть: §f{DWOOL}'
+  Placeholder_NoVariable_guild_name: Нет гильдии
+  Placeholder_NoVariable_guild_rank: '?'
+  Placeholder_NoVariable_guild_leader: '?'
+  Placeholder_NoVariable_guild_division: '?'
+  Vault_Using: §7Vault испльзуется игроком §a{PLAYER} §7сейчас.
+  Top_Calc_Time_Name: '§a§nВремя до обновления Топа:'
+  War_Death_1_New: §f{ATTACKER} ({AGUILD}) §c⚔ §f{VICTIM} ({VGUILD}) §7[+{POINTS}
+    ☆]
+  War_Points_New: '§9{AGUILD}: {APOINTS} ☆ §7vs. §c{VGUILD}: {VPOINTS} ☆'
+  Score_Prefix_New: §6§l§nPRIMEGUILDS
+  ScoreBrd_1_New: '§e⊙ Время: §f{TIME}'
+  ScoreBrd_2_New: '§9➙ {GUILD1}:'
+  ScoreBrd_3_New: §f{PLY1}/{MAX} ☆
+  ScoreBrd_4_New: '§c➙ {GUILD2}:'
+  ScoreBrd_5_New: §f{PLY2}/{MAX} ☆§f
+  Guild_Management_PlayerInfo_New: '||§eРанг: §f{RANK}||§eВступил: §f{DATE}||§eСражения;||§7
+    → Убийств: §f{WARKILLS}||§7 → Смертей: §f{WARDEATHS}||§eВнёс;||{DONATEINFO}'
+  PlayerStats_1: '||§eГильдия: §f{GUILD}||§eРанг: §f{RANK}||§eРаса: §fЧеловек||§eДата
+    входа: §f{DATE}||§eВойна;||§7 → Убийств: §f{KILLS}||§7 → Смертей: §f{DEATHS}||||§eВнёс
+    в казну;||{DONATEINFO}'
+  PlayerStats_2: '||§eИгрок: §f{PLAYER}||§ePvP;||§7 → Убийств: §f{KILLS}||§7 → Смертей:
+    §f{DEATHS}||§7 → KDA: §f{KDA}||§eПожертвовано всего;||{DONATEINFO}'
+  PlayerStats_3: '||§eЗдоровье: §f{HEALTH}/10||§eГолод: §f{HUNGER}/10||§eМестоположение:
+    §f{LOCATION}'
+  PlayerStats_4: '||§7Игрок не онлайн.||§eВ последний раз: §f{SEEN}'
+  RaceSelectGUI_Header: Выберите расу
+  RaceInfo_Name_0: §fБез расы
+  RaceInfo_Name_1: §6Человек
+  RaceInfo_Name_2: §2Дворф
+  RaceInfo_Name_3: §dЭльф
+  RaceInfo_Name_4: §4Орк
+  RaceInfo_Passive_1: §aСила §8& §cСкорость добычи||
+  RaceInfo_Passive_2: §aБыстрый §8& §cСлабость||
+  RaceInfo_Passive_3: §aСкорость §8& §cСлабость||
+  RaceInfo_Passive_4: §aЗащита §8& §cМедлительность||
+  RaceInfo_Lore_1: '||§7Люди сильны в бою||§7но их атаки достаточно медленные.'
+  RaceInfo_Lore_2: '||§7Дворфы хороши в добыче ископаемых||§7но они не сильны в защите.'
+  RaceInfo_Lore_3: '||§7Эльфы быстрые||§7но наносят меньше урона.'
+  RaceInfo_Lore_4: '||§7Орки словно крепости||§7 в защите, но достаточно медлительные.'
+  RaceSelectGUI_Select: '||||§fНажмите, чтобы выбрать расу.'
+  RaceSelectGUI_Select_2: '||||§fНажмите, чтобы изменить расу.'
+  RaceSelectGUI_Features: '§aЭффекты расы:'
+  RaceSelectGUI_Features_0: '||§7Вы не используете||§7эффекты вашей расы.||||§fНажмите,
+    чтобы включить.'
+  RaceSelectGUI_Features_1: '||§7Вы используете||§7эффекты вашей расы.||||§fНажмите,
+    чтобы выключить.'
+  RaceSelectGUI_Features_2: '||§7Вы должны выбрать расу||§7чтобы использовать эффекты.'
+  RaceSelectGUI_Info: '§aИнформация:'
+  RaceSelectGUI_Info_1: '§7Ваша раса: §f{RACE}||§7Возможностей сменить: §f{NUM}||||§7Вы
+    не можете создать или вступить в||§7гильдию без выбора расы.'
+  Race_Left_No: §7Вы больше не можете сменить расу.
+  Race_Selected: §7Боги восхвалили решение игрока §a{PLAYER}§7 и превратили его в
+    §r{RACE}§7.
+  Select_Race: §7Вы должы выбрать расу, чтобы использовать это. §6(/g race)
+  MemberInformation_Lore: '§e(Заходил: §f{SEEN}§e)||||§eРанг: §f{RANK}||§eРаса: §f{RACE}||§eДата
+    присоединения: §f{DATE}||§eВойна;||§7 → Убийств: §f{WARKILLS}||§7 → Смертей: §f{WARDEATHS}||§eПожертвовано;||{DONATEINFO}||||§7§nПКМ,
+    чтобы...||  §fпосмотреть об игроке детальнее.{CRANK}{CKICK}'
+  Race_Permission: §7Вы не имеет достаточно прав, чтобы изменять расу.
+  Guild_Chat_Spy_Ops: Наблюдение гильдии
+  Break_Claimed_Areas_Only: §7Вы можете только редактировать земли гильдии.
+  You_Cant_War_2: §7Вы не можете участвовать в войне гильдии, пока не улучшили §9Бараки
+    §7до §6Уровня I§7.
+  TimeSpanText_Year: г
+  TimeSpanText_Month: мес
+  TimeSpanText_Day: дн
+  TimeSpanText_Hour: ч
+  TimeSpanText_Minute: мин
+  TimeSpanText_Second: с
+  Enemy_War_Shield: §7Эта гильдия имеет военный щит. Щит истекает в §c{EXPIRE}§7.
+  War_Invite_Send_2: §7Всем воинам приготовиться! Ваша гильдия начала войну с §c{GUILD}
+    §7.
+  War_Invite_Send_3: §7Всем воинам приготовиться! Гильдия §c{GUILD} начала войну с
+    вами.
+  War_Shield_Enable_Name: §aВоенный щит включён
+  War_Shield_Enable_Lore: '||§7Вы проиграли в войне и получили §9военный||§9щит §7до
+    следующей войны.||||§7Другие гильдии не могут начать войну с вами||§7когда ваш
+    §9военный щит §7работает.||||§9Военный щит §7спадёт в §c{TIME}§7.'
+  War_Shield_Disable_Name: §cБез военного щита
+  War_Shield_Disable_Lore: '||§7У вас нет §9военного щита §7.||§7Любая гильдия может
+    начать с вами войну.||§7Если вы проиграете, вы получите §9военный щит§7.'
+  Click_To_Info_New: '||§7Лидер: §f{LEADER}||§7Очки Войны: §f{POINTS} ✪||§7Дивизион:
+    §f{LEVEL}||||{EMBLEM}||||§eНажмите, чтобы посмотреть о гильдии подробнее.'
+  Click_To_War_New: '||§7Лидер: §f{LEADER}||§7Очки Войны: §f{POINTS} ✪||§7Дивизион:
+    §f{LEVEL}||||{EMBLEM}||||§eНажмите, чтобы начать войну с гильдией.'
+  Click_To_Join: '||§7Лидер: §f{LEADER}||§7Очки Войны: §f{POINTS} ✪||§7Дивизион: §f{LEVEL}||||{EMBLEM}||||§eНажмите,
+    чтобы вступить в гильдию.'
+  RankGUI_PermName_Break: §f§nЛомать блоки на захваченых землях гильдии
+  RankGUI_PermName_Place: §f§nРазмещать блоки на захваченных землях гильдии
+  Tournaments_List_Waiting: §7§o(waiting for guilds...)
+  Claim_Name: §7§o(You can change this claim's name||§7§ousing §e/g claimname §7§ocommand.)
+  Dont_Have_Money_To_Create: §7You do not have enough money in your balance to create
+    the guild. You must have §e${NUMBER}§7.
+  Enemy_War_Shield_New: §7This guild has shield for instant guild war. Their war shield
+    expires in §c{EXPIRE}§7.
+  War_Invite_Send_2_New: §7Good luck warriors! Your guild starts a guild war with
+    §c{GUILD} §7guild.
+  War_Invite_Send_3_New: §7Prepare right now! §c{GUILD} §7starts a guild war with
+    you.
+  Click_To_Join_New: '||§7Leader: §f{LEADER}||§7War Points: §f{POINTS} ✪||§7Division:
+    §f{LEVEL}||||{EMBLEM}||||§eClick to join this guild.'
+  War_Death_2_New: §c☠ §f{VICTIM} ({VGUILD}) §7[+{POINTS} ☆]
+  War_Death_3: §a♜ §a§lMATCH POINT!§r §a♜
+  War_Start_1: §2♜§r §2§l§nGUILD WARS§r §2♜
+  War_Left: §c{PLAYER} ({PLAYERGUILD}) §7left from war.
+  War_Shield_GUI_Lore_1: §a(War Shield Enabled)
+  War_Shield_GUI_Lore_2: §c(No War Shield)
+  You_Cant_War_New: §7You can't guild war because you need to make §9Barrack §7to
+    §6Level {LEVEL}§7.
+  No_Guild_Perm: §7You can't do this with your permissions.
+  WarShield_Give_Usage: '§7Usage: §e/sgadmin warshield <guild name> <days (number)>§7,
+    example: §6/sgadmin warshield Spigot 3'
+  WarShield_Set_Admin: §7You added §a+{NUMBER} §7days of war protection to §b{GUILD}.
+  Land_Protection_2: §7Ground must be fully solid. (16x16)
+  Sent_Ally_Request: §7You sent an ally request to §e{GUILD}§7.
+  PageAPI_Header_21: 'Sort: No War Shield'
+  PageAPI_Header_22: 'Sort: Online'
+  PageAPI_Header_23: 'Sort: All'
+  PageAPI_NoVariable_21: §c§nNo Guilds Without War Shield Found.
+  PageAPI_NoVariable_22: §c§nNo Online Guilds Found.
+  Attack_GuildMembers: §cYou can't attack your guildmates!
+  Attack_GuildClaim: §cYou can't war in this zone.
+  Wipe_Confirm: §7Are you sure to wipe §4{GUILDS} guilds §7inactive for §c{NUMBER}
+    days§7? If you sure, use this command again.
+  Wipe_Error: §7You can't wipe guilds under §c3 days §7inactivity
+  Wipe_Happen: §7Wiping inactive for §c{DAYS} days§7 guilds...
+  Wipe_NoData: §7No guild found inactive for this day long.
+  Wipe_Done: §7Guild wipe is done, §a{TOTAL} §7inactive guilds wiped.
+  Wipe_Usage: '§aUsage: §7/g wipe <inactive days count>'

@@ -1,0 +1,641 @@
+Messages:
+  Translator: TUCAOEVER[814697582]
+  Prefix: §f§l[§6§l公会§f§l] §6➥§7
+  Char_Error: §7TEXT中包含不正确的字符.
+  WorldGuard_Error: §7受到WorldGuard的保护.
+  Chunk_Error: §7某一公会已占领该区块.
+  Dont_Have_Gold_To_Create: §7你没有足够的金锭创建公会. 你必须拥有 §e{NUMBER}§7.
+  Created_Guild: §e{PLAYER}§7, 创建 §b{GUILD} §7公会.
+  Land_Error: §7你的位置并不安全.
+  Guild_Name_Length: §7公会名过长或者过短.
+  That_Guild_Exists: §7已经存在该公会.
+  Enter_Guild_Name: §7输入公会名.
+  You_Have_Guild: §7你已经属于一个公会.
+  Remove_Confirm: §7你确定要删除该公会么? 再次输入该命令以确认.
+  Guild_Removed: §7该公会已删除.
+  No_Permission: §7你没有权限使用该命令.
+  You_Dont_Have_Guild: §7你没有在任何公会.
+  You_Arent_Leader: §7你不是公会的主席.
+  Guild_Remove_Broadcast: §c{GUILD} §7被解散.
+  Option_Disabled: §7该选项未被开启.
+  No_Rank: §7你的公会排名未达到要求.
+  You_Dont_Have_This_Chunk: §7你的公会未拥有该领地.
+  Done_Set_Home: §7公会HOME已设置.
+  Teleporting_Message: §7你将在 §e{TIME} §7秒后传送至公会.
+  Teleport_Cancel: §7由于移动本次传送被取消.
+  Teleport_Done: §7你已被传送至公会.
+  Already_Teleport: §7你已经处于传送行列.
+  Teleport_Starting: §7传送进行中,请勿移动.
+  GUIPrefix: §8§l» §8
+  Guild_Management: 公会 管理
+  Manage_Panel_2: '§6游戏ID:'
+  Rank_Leader: §b主席 §3★★★§b
+  Rank_General: §a总管 §2★★§a
+  Rank_Captain: §d副管 §5★§d
+  Rank_Member: §8成员
+  Guild_Info: §6公会 信息
+  Guild_Info_Lore: '||§7点击以查看公会信息.'
+  Guild_Store: §6公会 仓库
+  Guild_Store_Lore: '||§7点击以打开公会仓库.'
+  Claimed_Lands: §6公会 领地
+  Claimed_Lands_Lore: '||§7点击以查看公会领地.'
+  Guild_Alchemy: §6公会 能力
+  Guild_Alchemy_Lore: '||§7点击以查看公会能力.'
+  Check_Players: §6成员 列表
+  Check_Players_Lore: '||§7点击以查看公会成员列表.'
+  Guild_Buildings: §6公会 建筑
+  Guild_Buildings_Lore: '||§7点击以查看公会建筑.'
+  Guild_Info_Header: 公会信息
+  Guild_Info_1: §6公会 ID
+  Guild_Info_1_Lore: '||§e名字:||§f{NAME}||||§e徽章:||§f{EMBLEM}||||§e当前主席:||§f{LEADER}'
+  Guild_Info_2: §6公会 创建信息
+  Guild_Info_2_Lore: '||§e创立时间:||§f{TIME}||||§e创建者:||§f{CREATOR}'
+  Guild_Info_3: §6公会 职责
+  Guild_Info_3_Lore: '||§e对战;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||||§e公会段位:||§f{LEVEL}||||§e公会积分:||§f{POINTS}
+    ✪||||§e公会成员:||§f{PLAYERS}/{MAX}||||§e公会领地:||§f{CLAIMED}'
+  Kick_Error_No_Guild: §7该玩家不在你的公会.
+  Kick_Error_No_Rank: §7你所在职位无法踢出该成员.
+  Kicked_Player: §c{KICKED}§7 被 §e{PLAYER}§7从公会中踢出.
+  You_Kicked: §7你被公会踢出.
+  No_Kick_Yourself: §7你无法踢出你自己.
+  Claim_Error: §7你已经拥有该领地.
+  No_Claim_Level: §7你所在职位无法占领该领地.
+  Attacking_You: §c{ATTACKER}§7 攻占了 §e{LAND}§7.
+  Attacked_Chunk: '§7你的公会攻占了 §e{LAND} §7原属于: §c{OWN}§7.'
+  Chunk_Claimed: §7你占领了领地 §e{LAND}§7.
+  Chunk_Error_You: §7该领地属于其他公会.
+  Chunk_Unclaimed: §7你解除了领地 §e{LAND}§7的管理权.
+  Romen_Num_1: I
+  Romen_Num_2: II
+  Romen_Num_3: III
+  Romen_Num_4: IV
+  Romen_Num_5: V
+  Romen_Num_6: VI
+  Romen_Num_7: VII
+  Romen_Num_8: IIX
+  Store_GUI: 公会 仓库
+  Store_Status: '§7可用: §f{NUMBER}'
+  Help_Pages_1::Line_1: §e/guilds help §8- §7帮助信息.
+  Help_Pages_1::Line_2: §e/guilds create [公会名称] §8- §7创建公会.
+  Help_Pages_1::Line_3: §e/guilds remove §8- §7删除公会.
+  Help_Pages_1::Line_4: §e/guilds emblem §8- §7制作公会徽章.
+  Help_Pages_1::Line_5: §e/guilds info §8- §7显示公会信息.
+  Help_Pages_1::Line_6: §e/guilds leave §8- §7离开你的公会.
+  Help_Pages_1::Line_7: §e/guilds storage §8- §7显示公会 仓库.
+  Help_Pages_1::Line_8: §e/guilds claimname [领地名称] §8- §7设置你所在的领地名字.
+  Help_Pages_2::Line_1: §e/guilds leader §8- §7提升一名玩家至主席职务.
+  Help_Pages_2::Line_2: §e/guilds invite [玩家] §8- §7邀请玩家加入公会.
+  Help_Pages_2::Line_3: §e/guilds claim §8- §7占领你所在领地.
+  Help_Pages_2::Line_4: §e/guilds unclaim §8- §7解除领地管理权.
+  Help_Pages_2::Line_5: §e/guilds rank §8- §7改变玩家的职位.
+  Help_Pages_2::Line_6: §e/guilds reload §8- §7载入插件.
+  Help_Pages_2::Line_7: §e/guilds home §8- §7传送至公会HOME.
+  Help_Pages_3::Line_1: §e/guilds sethome §8- §7设置公会HOME.
+  Help_Pages_3::Line_2: §e/guilds war §8- §7宣战.
+  Help_Pages_3::Line_3: §e/guilds version §8- §7显示插件版本.
+  Help_Pages_3::Line_4: §e/guilds buildings §8- §7显示公会建筑.
+  Help_Pages_3::Line_5: §e/guilds showclaims §8- §7显示公会所有领地.
+  Help_Pages_3::Line_6: §e/guilds alchemy §8- §7显示公会能力.
+  Help_Pages_3::Line_7: §e/guilds invites §8- §7开启/关闭公会邀请.
+  Help_Pages_3::Line_8: §e/guilds chat §8- §7开启/关闭公会聊天.
+  Next_Page: §8§m--------§r §7使用 §6/sg help {NEXT} §7来查看下一页帮助. §8§m-------
+  Invite_Player_Name: §7输入所需邀请玩家名字.
+  Cant_Invite_Yourself: §7你无法邀请你自己.
+  Player_Closed_Invites: §7该玩家关闭邀请申请.
+  Player_Has_Guild: §7该玩家在其他公会.
+  Your_Guild_Is_Full: §7你的公会已满.你可以升级城镇来扩大人数.
+  Invite_Wait: §7你必须等待 §e{TIME} §7以邀请玩家.
+  This_Guild_Is_Full: §7公会已满.
+  Invite_Send: §7公会邀请已发送至该玩家.
+  Invite_GUI: 邀请函
+  InviteC_Accept: §6同意加入 §e{GUILD}§6.
+  InviteC_Reject: §c拒绝加入并关闭菜单.
+  You_Reject: §7你拒绝了公会邀请.
+  You_Joined_Guild: §7你加入 §e{GUILD} §7公会.
+  Player_Joined_Guild: §6{PLAYER} §7加入了 §e{GUILD} §7公会.
+  Disabled_Invites: §7你关闭了邀请.
+  Enabled_Invites: §7你开启了邀请.
+  Enter_An_Integer: §7请输入整数.
+  No_Storage: §7仓库已满 §f{NUMBER} {RESOURCE}§r§7. §7你可以升级仓库以扩大容量.
+  Player_Donated: '{RANK} {PLAYER}§7, 将 §f{NUMBER} {RESOURCE}§r §7存入公会仓库.'
+  Donations_0: §7贡献必须高于0.
+  Leader_Leave: §7你是主席,你无法离开公会.你可以使用 §e/g disband§7以解散公会.
+  Player_Leave: '{RANK} {PLAYER}§7, 离开了公会.'
+  You_Leave: §7你离开了 §c{GUILD}§7.
+  Language_Select: '§7语言设置: §a{LANG}'
+  Unknown_Command: 未知命令.
+  Locale_Error: 无法读取本地文件.
+  Guild_Error_Upgrade: §7你不再属于该公会.
+  Limit_Buildings: §7已经达到公会最高建筑水平.
+  Buildings_Broadcast_1: '§7公会人数增加: §a+{NUM}'
+  Buildings_Broadcast_2: §7公会已向 {ITEM}§7发出挑战.
+  Buildings_Broadcast_3: '§7公会仓库容量增加: §a+500'
+  Buildings_Broadcast_4: §7公会可以使用下一等级的能力.
+  Showing_Claims: §7你可以看到公会所有的领地.如果你不想看到这些信息请重进游戏.
+  No_Claims: §7你的公会没有领地.
+  Show_Claim_Wait: §7你必须等待 §e{TIME} §7以查看领地.
+  Status_Online: §a在线
+  Status_Offline: §c离线
+  Rank_Yourself: §7你无法修改你的职位.
+  Rank_Not_Enough: §7你所在职位.
+  Player_Info_No_Guild: '||§7玩家不属于任何公会.'
+  Player_Stats: 玩家数据
+  Player_Info_Name_1: '§6公会 信息:'
+  Player_Info_Name_2: '§6玩家 信息:'
+  Player_Info_Name_3: '§6其他 信息:'
+  Player_Info_3: '||§e生命值: §f{HEALTH}/10||||§e饥饿: §f{HUNGER}/10||||§e位置: §f{LOCATION}'
+  No_Guild_Like_This: §7没有找到该公会.
+  No_Player_Like_This: §7没有找到该玩家.
+  Guild_Emblem_GUI: §6公会 徽章
+  Guild_Emblem_Lore: '||§7点击以制作徽章.'
+  Rank_Changed: §7你的职位被改变至 {RANK}§7.
+  Ranked_Player: '§7{OLDRANKCHANGEP} {CHANGEP} §7的职位升至 {NEWRANKCHANGEP} §7执行人: {RANKPLAYER}
+    {PLAYER}§7.'
+  Rank_Wrong: §7你只能选择比你职位低的成员.
+  Player_Info_4: '||§7玩家不在线.||||§e上次上线时间: §f{SEEN}'
+  You_Cant_Unclaim: §7你无法解除该领地的管理权 此处为§e{BUILD} §7区域.
+  You_Cant_Action: §7你无法在 §e{BUILD} §7区域进行修改.
+  Owned_By: §7此区领地属于 §e{GUILD}§7 公会.你无法修改.
+  Reloading_1: §7正在重载插件...
+  Reloading_2: §7插件已被重载.
+  Emblem_Saved: §7公会徽章一储存.
+  Select_Color: §7你没有选择颜色.
+  Select_Code: §7你没有选择颜色方格.
+  Guild_Emblem_Changed: §7公会的徽章已被 §e{PLAYER}§7修改.
+  Create_Guild_Disabled_World: §7你无法在此世界创建公会.
+  Back_Header: §6返回
+  Menu_Alchemy_GUI: 公会 能力
+  Text_Feature: '§e特性:'
+  Text_Price: '§e价格:'
+  Text_Buy: §e点击以购买此特性.
+  Alchemy_Menu_Lore_1: §8 → §7给予公会成员 15 分钟 力量效果.
+  Alchemy_Menu_Lore_2: §8 → §7为所有公会成员召唤马
+  Alchemy_Menu_Lore_3: §8 → §7给予公会成员 15 分钟 速度效果.
+  Alchemy_Menu_Lore_4: §8 → §7给予公会成员 15 分钟 保护效果.
+  Alchemy_Type_1_Name_1: §6Level I 力量
+  Alchemy_Type_1_Name_2: §6Level II 力量
+  Alchemy_Type_1_Name_3: §6Level III 力量
+  Alchemy_Type_2_Name_1: §6无武装的马匹
+  Alchemy_Type_2_Name_2: §6铁甲马匹
+  Alchemy_Type_2_Name_3: §6钻石马匹
+  Alchemy_Type_3_Name_1: §6Level I 速度
+  Alchemy_Type_3_Name_2: §6Level II 速度
+  Alchemy_Type_3_Name_3: §6Level III 速度
+  Alchemy_Type_4_Name_1: §6Level I 保护
+  Alchemy_Type_4_Name_2: §6Level II 保护
+  Alchemy_Type_4_Name_3: §6Level III 保护
+  Bought_Alchemy_Guild: §e{GUILD} §7公会, 获得 §6{TYPE} §7能力.
+  Bought_Alchemy_Own: §7{RANK} {PLAYER}§7, 获得 §6{TYPE} §7能力.
+  Barrack_Upgrade_Item_1: §7皮革套
+  Barrack_Upgrade_Item_2: §e黄金套
+  Barrack_Upgrade_Item_3: §8链锁套
+  Barrack_Upgrade_Item_4: §f铁套
+  Barrack_Upgrade_Item_5: §b钻石套
+  Menu_War_GUI: 公会 对战
+  Menu_War_Name_1: §6搜索对战公会
+  Menu_War_Lore_1: §7点击搜索对战公会.
+  Menu_War_Name_2: §6对战 数据
+  Menu_War_Name_3: §6公会 排行
+  Menu_War_Lore_3: §7点击以查看公会排行.
+  Disabled_Chat: §7你关闭了公会聊天频道.你的信息可以被所有玩家接收到.
+  Enabled_Chat: §7你开启.你的信息只能被公会成员接收到.
+  Guild_Chat: §7[{GUILD}]
+  Number_Online: §8(§a{PLAYER} §7在线§8)
+  Text_Month: 月
+  Text_Day: 天
+  Text_Hour: 小时
+  Text_Minute: 分钟
+  Text_Second: 秒
+  Claimed_Land: 占领 领地
+  Claimed_Land_Lore: '||§7位置: §f{LOC}||||§e点击以传送至该领地.'
+  ClaimName_Usage: §7使用 §e/sg claimname <领地名> §7来重命名领地名.
+  ClaimName_Changed: '§7位于 §e{LOC} 的领地名 §7改变为 §6{NAME} §7修改者: §9{BY}§7.'
+  Arena_Created: '§7竞技场已创建: §e{ARENA}'
+  Arena_Exists: §7已经存在一个相同名字的竞技场.
+  Enter_Arena_Name: §7输入竞技场名称.
+  No_Arena: §7没有该竞技场.
+  Arena_Removed: §7竞技场 §e{ARENA} §7已移除
+  Enter_Setspawn_Type: §7你必须输入队伍类型. (1 或者 2)
+  Setspawn_Done: §e队伍-{TYPE}§7位于 §a{ARENA} 的出生点§7已经设置.
+  Lobby_Done: §7大厅设置在你所在位置.玩家将会在游戏结束传送至此位置.
+  Restart_Kick_restart: §7竞技重载，你被强制离开游戏.
+  Restart_Kick_error: §7竞技出错，你被强制离开游戏.
+  Restart_Kick_time: §7竞技结束，你被强制离开游戏.
+  Enemy_War_Minimum: §7该公会有 §e{ONLINE} §7位成员在线. (最小值为 {MINIMUM})
+  You_War_Minimum: §7公会有 §e{ONLINE} §7位玩家在线(s). (最小值为 {MINIMUM})
+  Enemy_Guild_In_War: §7该公会处于对战中.
+  Your_Guild_In_War: §7公会处于对战中.
+  Cannot_War_Yourself: §7不能向你自己宣战.
+  War_Invite_Send: §7你的公会向 §c{GUILD} §7公会宣战.
+  War_Invite_GUI: 宣战 申请
+  War_InviteC_Accept: §6同意接受 §c{GUILD}§6的宣战.
+  War_InviteC_Reject: §c拒绝并关闭菜单.
+  War_Other_Reject: §9{GUILD} §7拒绝了你的对战申请.
+  War_You_Reject: §7你拒绝了 §9{GUILD}§7的对战申请.
+  No_Available_Arena: §7没有可用的竞技场.
+  War_Starting_Timer: §9{GUILD1} §7vs. §c{GUILD2} §7将于 §e{SECONDS} §7秒后开始.
+  War_Started: §7§9{GUILD1} §7vs. §c{GUILD2} §7已经开始.祝福勇士们!
+  War_Starting: §7对战申请已被接受!
+  War_End_Timer: §7战争将在 §e{MINUTES} §7秒后开始.
+  Game_Finished_Time: §7时间接受，平局！.
+  No_Command_War: §7你无法在对战中使用该命令.
+  War_Death_1: §9{VICTIM} ({VGUILD}) §7被 §c{ATTACKER} ({AGUILD}) §7击杀并被移出对战.
+  War_Win: §7T§9{GUILD1} §7vs. §c{GUILD2} §7对战接受. §9{GUILD1} §7赢得对战.
+  New_Division: §7你的公会职位提升至 §r{NEWDIVISION} §7原职位 §r{OLDDIVISION}§7.
+  War_Points_Add: §7你的公会在于 §c{GUILD} §7对战中胜利获得积分 §a+{POINTS} ✪§7.
+  War_Points_Lose: §7你的公会在与 §9{GUILD} §7对战中失败失去积分 §c-{POINTS} ✪§7.
+  Arena_Debug: §7竞技 §a{ARENA} §7重载.
+  No_Arena_Found: §7没有找到任何竞技场.
+  Arena_Guilds: '§7公会 竞技场: §f'
+  Arena_TimeLeft: '§7时间 剩余: §f'
+  Status_Text_0: §a§l等待
+  Status_Text_1: §e§l游戏中
+  Status_Text_2: §c§l关闭
+  Status_Text_3: §4§l重启中
+  RankStar_Leader: '§b✯ '
+  RankStar_General: '§a⚝ '
+  RankStar_Captain: '§d★ '
+  RankStar_Member: ''
+  Claim_Limit: §7你不能占领更多的土地.
+  Death_Broadcast: §3[{VGUILD}] §9{VICTIM}§7 被 §6[{AGUILD}] §e{ATTACKER}击杀 §4[-{GOLD}
+    金币]
+  Death_Gold_Gain: 公会获得 §e+{GOLD} 金币 §7{RANK} {PLAYER}§7 击杀一名玩家.
+  Death_Gold_Loss: 公会损失 §4-{GOLD} 金币 §7{RANK} {PLAYER}§7 死于他人手下.
+  Buildings_Broadcast_TNT: §7TNT无法在领地内爆炸.
+  Click_To_Teleport: §7点击以进行传送.
+  Click_To_Select_Color: §f点击以选择染料.
+  Click_To_Dye_Here: §f点击以染色.
+  Save_Emblem_Lore: §f点击以保存徽章.
+  Reset_Emblem_Lore: §f点击以清除草稿.
+  Use_Emblem_Lore: §f点击以修改公会徽章.
+  Wilderness_Text: §2§l§n荒野§r §2§l⚘
+  Wilderness_Msg_1: §7§o我爱大自然...
+  Wilderness_Msg_2: §7§o我感到自由...
+  Wilderness_Msg_3: §7§o享受自由是多么美好的事情.
+  Wilderness_Msg_4: §7§o快乐的源泉在于纯真.
+  Home_Text: §a§l§n家§r §a§l⌂
+  Home_Msg_1: §7§o温馨的家...
+  Home_Msg_2: §7§o没有什么比得上回家.
+  Home_Msg_3: §7你发现你所需要的仅仅是回家.
+  Home_Msg_4: §7金窝银窝不如自家狗窝.
+  Other_Guild_Text: §4§l§n{GUILD}§r §4§l☠
+  Other_Guild_Msg_1: §7§o小心.
+  Other_Guild_Msg_2: §7嘘...他们能听到我们说话
+  Other_Guild_Msg_3: §7另一个公会在这.
+  Other_Guild_Msg_4: §7发起战争吧!
+  Emblem_Menu: §0§l  » 公会 徽章
+  Save_Emblem_Button: §2§l[§2✓§2§l]§r
+  Reset_Emblem_Button: §4§l[§4✘§4§l]
+  Use_Emblem_Button: §0§l[§0✎§0§l]
+  Click_To_War: '||§7主席: §f{LEADER}||||§7段位: §f{LEVEL}||||§e点击以发起对战申请.'
+  Score_Prefix: §7§6§l公会
+  Score_Msg_9: '§b    '
+  Score_Msg_8: '§f时间: §e{TIME}'
+  Score_Msg_7: '§a     '
+  Score_Msg_6: '§9§n{GUILD1}:'
+  Score_Msg_5: '§f{PLY1}/{MAX1}  '
+  Score_Msg_4: '§2  '
+  Score_Msg_3: '§c§n{GUILD2}:'
+  Score_Msg_2: '§f{PLY2}/{MAX2} '
+  Score_Msg_1: '§1 '
+  Player_No_Guild: §7该玩家不属于任何公会.
+  Menu_Donate_GUI: 将资源放入此处
+  Cant_Attack_Member: §7你无法攻击公会成员.
+  Enter_MOTD: §7设置宣传标语.
+  MOTD_Changed: §7宣传标语被 §a{BY}§7修改.
+  MOTD_Removed: §7宣传标语被 §a{BY}§7移除.
+  MOTD_Title: §f← §e§l§n标语§r §f→
+  MOTD_SubTitle: §7§o{MESSAGE}
+  MOTD_ActionBar: '§f宣传标语创建信息: §a{BY}§f. §f({DATE})'
+  Enter_Region_Name: §7输入WG保护名.
+  No_Region: §7没有找到所输入区域.
+  Region_Allowed: §7你允许 §a{REGION} §7WG区域给予公会创建区域的权限.
+  Region_Disallowed: §7你关闭 §c{REGION} §7WG区域给予公会创建区域的权限.
+  Already_Ally: §7该公会已经是你的公会的同盟.
+  Wait_Ally: §7你需要等待 §a{TIME} §7才能使用/remove ally.
+  Added_Ally: §a{GUILD} §7公会和 §9{ALLY} §7公会成为同盟.
+  Ally_GUI: 同盟 申请
+  Ally_InviteC_Accept: §6同意与 §e{GUILD}§6成为同盟.
+  Ally_InviteC_Lore: '||§7同盟之间无法攻击.'
+  Ally_Other_Reject: §9{GUILD} §7拒绝了同盟申请.
+  Ally_You_Reject: §7你拒绝了 §9{GUILD}§7的同盟申请.
+  No_Ally: §7该公会不在同盟列表中.
+  Removed_Ally: §a{GUILD} §7公会和 §c{ENEMY} §7公会不再是同盟.
+  Cannot_War_Allies: §7你无法与同盟进行对战.
+  Cannot_Claim_Allies: §7该领地属于同盟公会.你无法占领该领地.
+  Allies_GUI: 同盟 列表
+  Allies_Lore: '||§7时间: §e{DATE}||§7添加者: §e{BY}||||§7§o使用 §c§o''/g enemy {GUILD}''
+    §7§o以移除.'
+  Ally_Yourself: §7你无法与自己成为同盟.
+  Help_Pages_4::Line_1: §e/guilds ally <guild> §8- §7设置一个公会为你的同盟.
+  Help_Pages_4::Line_2: §e/guilds enemy <guild> §8- §7从公会同盟列表中删除一个公会.
+  Help_Pages_4::Line_3: §e/guilds allies §8- §7显示同盟公会.
+  Updated_Locale: '§7本地文件更新完成. (旧: {OLD} - 新: {NEW})'
+  Locale_Update_Already: §7本地文件无法更新,已经是最新版本?
+  Updated_Locale_Replace: §7添加 §6{NEW} §7新的message文件至本地文件.
+  Tournaments_Name: 排名赛
+  Tournaments_Status_Off_Name: §4⚠
+  Tournaments_Status_Off_Lore: '||§7排名赛并未启用||§7请稍后再试.'
+  Tournaments_In_Name: §6§n排名赛 信息
+  Tournaments_In_Lore: '||§7等待对手加入...'
+  Tournaments_Opponent_Lore: '||§7你的对手是 §c{GUILD} §7公会.||§7你可以输入|| §e/g info §7查看详情.'
+  Tournaments_Join_Name: §6§n加入排名赛
+  Tournaments_Join_Lore: '||§7点击以加入排名赛.'
+  Tournaments_List: §6§n排名赛 列表
+  Tournaments_Guild_List: §6§n排名赛 公会
+  Tournaments_List_Waiting: §7§o(等待公会中...)
+  Tournaments_Ingame_Lore: §8(§7§o进行中§8)
+  Tournaments_Waiting_Lore: §8(§7§o等待中§8)
+  Tournaments_Won_Lore: §8(§f{G}§8)
+  Tournaments_Eliminated_Lore: '||§7排名赛已经开始||§7现在开始你无法加入对战.||§7在下一场比赛中期待你的发挥.'
+  Tournaments_Already_Enabled: §7排名赛激活.
+  Tournament_Joins_Closed: §7排名赛已经设置完成.使用排名赛菜单以查看详情.
+  Your_Guild_Already_Tournament: §7你的公会已经在排名赛中.
+  Tournament_Not_Active: §7排名赛未被激活.
+  Cant_Join_Closed: §7你的公会暂时无法加入排名赛.
+  Guild_Joined_Tournament: §a{GUILD} §7已经加入排名赛. §8[§e{ALL} 加入§8]
+  Tournament_Not_Enough: §7由于参赛人员不足,排名赛关闭.
+  You_Cant_War_Tournament: §7你的公会无法在排名赛过程中进行对战.
+  Tournaments_You_Won_Waiting: '||§7你的公会赢得一场对战.||§7你在等待新的对战.'
+  Guild_Removed_Tournament: §7你的公会被从排名赛中移出'
+  Tournament_Won_Broadcast: §a{GUILD} §7赢得排名赛胜利 获得积分§a+{POINTS} ✪§7.
+  Locale_GUI_Name: 语言选择
+  Click_Select_Locale: '||§7点击以选择语言.'
+  Locale_en_US: §6English (United States)
+  Locale_es_ES: §6Español
+  Locale_de_DE: §6Deutsch
+  Locale_it_IT: §6Italiano
+  Locale_ru_RU: §6Руска
+  Locale_tr_TR: §6Türkçe
+  Allow_Or_Disallow: §7使用 §a'/sgallow region allow <region>' §7to 以允许在区域创建公会.如果你想删除,请输入
+    §c'/sgadmin region disallow <region>'§7.如果你想查看,请输入 §e'/sgadmin region list'§7.
+  No_Region_Found: §7没有区域可用.
+  Region_List: '          §a§n可用区域 列表'
+  Top_Guilds: 顶级 公会
+  Click_To_Info: '||§7主席: §f{LEADER}||§7对战积分s: §f{POINTS} ✪||§7段位: §f{LEVEL}||||§e点击以查看公会信息.'
+  War_Top_GUI: §7点击以查看顶级公会.
+  War_Death_0: §9{VICTIM} ({VGUILD}) §7死亡并被淘汰出局.
+  Locale_zh_CN: §6中文
+  Locale_vn_VN: §6Tiếng Việt
+  Locale_fr_FR: §6Français
+  Divisions_0: §8青铜
+  Divisions_1: §7白银
+  Divisions_2: §e黄金
+  Divisions_3: §d铂金
+  Divisions_4: §b大师
+  Divisions_5: §c宗师
+  Menu_Allies_Name: §6公会 同盟
+  Menu_Allies_Lore: '||§7点击已查看同盟公会.'
+  Guild_Home_Menu_Name: §6公会 HOME
+  Guild_Home_Menu_Lore: '||§7点击以传送至公会HOME.'
+  Tournament_Cooldown: §7对将要在 §e{SECOND} §7秒后开始. §7你的公会可以使用 '§e/g§7' 命令以加入对战.
+  You_Need_More_Resource: §7你需要更多的 §f{AMOUNT} §7的 {RESOURCE}§r §7.
+  Enemy_Leader_Not_Online: §7现在没有人有权限同意申请.
+  Menu_War_Lore_New: '§e公会;||§7 → 段位: §f{LEVEL}||§7 → 公会积分: §f{POINTS} ✪||§7 → 初始
+    物品: §f{ITEMS}||||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}'
+  Resource_Wood: §6§n木资源
+  Resource_Stone: §7§n石资源
+  Resource_Iron: §f§n铁资源
+  Resource_Gold: §e§n金资源
+  Resource_Diamond: §b§n钻石资源
+  Resource_Wool: §3§n羊毛资源
+  Resource_Worker: §e§n建筑工
+  Resource_Unicode_Wood: ✚
+  Resource_Unicode_Stone: ⚒
+  Resource_Unicode_Iron: ℓ
+  Resource_Unicode_Gold: ⊂
+  Resource_Unicode_Diamond: ∑
+  Resource_Unicode_Wool: ⎈
+  Resource_Unicode_Worker: ☯
+  Resource_Color_Wood: §6
+  Resource_Color_Stone: §7
+  Resource_Color_Iron: §f
+  Resource_Color_Gold: §e
+  Resource_Color_Diamond: §b
+  Resource_Color_Wool: §3
+  Resource_Color_Worker: §e
+  Resource_Donate_Lore: §7点击以贡献资源.
+  Resource_Donate_Usage: "§7你可以使用命令:\t§e/g donate <wood/stone/iron/gold/diamond/wool>\
+    \ <number>§7以贡献资源."
+  No_Item_Resouce: §7ni==你没有足够的 §c{NUMBER} §7这种资源贡献.
+  SYNC_Done: §7SYNC§a{FILE} §7完成.
+  SYNC_Enter_File_Type: §7将文件输入SYN. (/sg sync <config/locale>)
+  Buildings_GUI: 公会 建筑
+  Buildings_Name_Townhall: §6居民房
+  Buildings_Name_Barrack: §6兵营
+  Buildings_Name_Storage: §6仓库
+  Buildings_Name_Alchemy: §6能力
+  Building_Status_0: 准备升级
+  Building_Status_1: 正在升级...
+  Building_Status_2: 升级完成...
+  Buildings_Lore: '||§e建筑等级: §f{LEVEL}||§e职位: §f{STATUS}||{TIMESHOW}||||§7点击以查看详情.'
+  Buildings_Time_Remaining: '||§e剩余时间: §f{TIME}'
+  Allies_4_Lore: '||§7时间: §e{DATE}||§7添加者: §e{BY}||||§7§o使用 §c§o''/g enemy {GUILD}''
+    §7§o以移除.'
+  Upgrade_Emblem_Button: §a§l【▲】
+  Quit_Emblem_Button: §4§l【⏎】
+  Timer_Emblem_Button: §c§l【⌛】
+  Done_Emblem_Button: §2§l【✔】
+  Max_Emblem_Button: §0§l【✕】
+  Upgrade_Emblem_Lore: §f点击以升级该建筑.
+  Quit_Emblem_Lore: §f点击以返回菜单.
+  Done_Emblem_Lore: §f点击以完成建筑.
+  Enter_Building_Type: §7输入建筑名称. (Townhall/Barrack/Storage/Alchemy)
+  Header_Build_Book: '§8§l  » 建筑 信息:'
+  Book_Build_Name: '§8建筑 名称: §0'
+  Book_Build_Level: '§8建筑 等级: §0'
+  Building_Upgrade: §7{RANK} {PLAYER}§7, 升级了 {BUILD} §7至 等级§e{NUMBER}§7.
+  Building_Upgrade_Guild: §a{GUILD}§7, 升级 {BUILD} §7至等级 §e{NUMBER}§7.
+  Book_Build_Requires: '§8建筑 材料:'
+  Book_Required_Text: '§8需要:§f '
+  Book_Have_Text: '§8你拥有:§f '
+  Player_Info_1_New: '||§e公会: §f{GUILD}||||§e排名: §f{RANK}||||§e加入时间: §f{DATE}||||§e对战;||§7
+    → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||||§e工会贡献值;||{DONATEINFO}'
+  Player_Info_2_New: '||§e玩家: §f{PLAYER}||||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||§7
+    → KDA: §f{KDA}||||§e总贡献值;||{DONATEINFO}'
+  Alchemy_Menu_Price_1: ' §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}||
+    §8 → §7Level III: §f{AMOUNT3}'
+  Alchemy_Menu_Price_2: ' §8 → §7基础设施: §f{AMOUNT1}|| §8 → §7进阶设施: §f{AMOUNT2}|| §8
+    → §7顶级设施: §f{AMOUNT3}'
+  Alchemy_Menu_Price_3: ' §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}||
+    §8 → §7Level III: §f{AMOUNT3}'
+  Alchemy_Menu_Price_4: ' §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}||
+    §8 → §7Level III: §f{AMOUNT3}'
+  Build_Max: §7该建筑已达到最高等级.
+  Build_Started: '{RANK} {PLAYER} §7开始了 §e{BUILD}的建筑工程 §7建筑等级 §e{LEVEL}§7. 工程将于 §a{TIME}§7后完成.'
+  Build_Wait: §7升级将于 §e{TIME}§7后完成.
+  You_Cant_Edit_Here: §7你无法破坏已存在 §e{BUILD} §7区域. 你只能在原有的建筑上放置方块
+  You_Cant_Build_Here: §7你无法在 §e{BUILD} §7建筑.
+  You_Cant_Alchemy: §7你无法使用 §9能力§7.你必须先将 §9能力 §7升级至 §6Level I§7.
+  You_Cant_War: §7你无法进行公会对战 §9兵营 §7升级至 §6Level I§7.
+  Land_Protection: §7系统将会生成一个平台,请确保空间空阔.
+  Creation_Point: 创建点
+  Romen_Num_0: '0'
+  Building_Status_3: 最高等级
+  Barrack_Upgrade_Item_0: 无物品
+  Join_Status_Name_0: §c§l私人
+  Join_Status_Lore_0: §4§o'仅限邀请玩家加入公会.'
+  Join_Status_Name_1: §a§l公开
+  Join_Status_Lore_1: §2§o'任何人都可以加入.'
+  ChangeJoinStatus_Lore: '||||§7点击以改变状态.'
+  This_Guild_Is_Not_Public: §7公会不是公开的, 你必须收到邀请.
+  Click_To_Join: '||§7主席: §f{LEADER}||§7对战积分: §f{POINTS} ✪||§7段位: §f{LEVEL}||||§e点击以加入此公会.'
+  GuildSelectGUI_Header: 页眉
+  GuildSelectGUIName_1: §6加入一个公会
+  GuildSelectGUIName_2: §6获得公会帮助
+  GuildSelectGUILore_1: '||§7点击以查看公开的公会.'
+  GuildSelectGUILore_2: '||§7点击以查看公会创建帮助.'
+  Resource_Worker_Time_Ready: '||§7建筑工人 §a准备 §7好开始建筑施工.'
+  Resource_Worker_Time_Rest: '||§7建筑工人冷却中.||§c冷却时间:{TIME} '
+  Worker_Rest: §7建筑工人需要休息 §a{TIME} §7以开始新的建筑施工.
+  Resource_Give_Usage: '§7使用方法: §e/sgadmin resource <guild> <resource> <add/remove/set>
+    <amount>'
+  Resource_Give_Admin: §7你添加 §a{NUMBER} §7至 §f{GUILD}§7的 {RESOURCE}§7.
+  Resource_Remove_Admin: §7You removed §c{NUMBER} §7from §f{GUILD}§7的 {RESOURCE}§7.
+  Resource_Set_Admin: §7你设置 §f{GUILD}§7的 {RESOURCE} §7至 §a{NUMBER}§7.
+  Disabled_ChatSpy: §7你关闭了公会聊天频道.
+  Enabled_ChatSpy: §7你开启了公会聊天频道.
+  Holo_Message_Claim: '物品堆叠:金铲;§e§l- {GUILD} 已经占领该领地 -;§7占领者: §f{PLAYER};§7总区块: §f{CHUNKS};'
+  Holo_Message_Build: '物品堆叠:砖块;§6§l- {BUILD} 建筑区域 -;§7公会: §f{GUILD};§7完成时间: §f{DATE};'
+  Guild_Vault_Header: 公会 经济
+  You_Cant_Vault: §7你无法使用 §e公会 经济§7 你必须先将 §9仓库 §7升级至 §6Level I§7.
+  Building_Desc_Townhall: 城镇可以提高公会最大人数,同时可以保护成员免于TNT的爆炸伤害
+  Building_Desc_Barrack: 兵营可以为公会对战提高更好的武器,使公会更容易在对战中获得胜利.
+  Building_Desc_Storage: 仓库可以存放建筑资源, 升级此项可以为公会提供更大的仓库容量.
+  Building_Desc_Alchemy: 能力可以使成员在各方面中更具优势.
+  Guild_Vault_ItemName: §6公会 经济
+  Guild_Vault_ItemLore: '||§7点击以打开公会经济信息.'
+  Help_Pages_4::Line_4: §e/guilds vault §8- §7打开公会经济信息.
+  PageAPI_Header_0: 公会 列表
+  PageAPI_Header_1: 领地 列表
+  PageAPI_Header_2: 搜索 公会
+  PageAPI_Header_3: 公会 成员
+  PageAPI_Header_4: 同盟 列表
+  PageAPI_Header_5: 公开 公会
+  PageAPI_NoVariable_0: §c§n无公会.
+  PageAPI_NoVariable_1: §c§n无领地.
+  PageAPI_NoVariable_2: §c§n没有搜索到对战公会.
+  PageAPI_NoVariable_3: §c§n没有找到玩家.
+  PageAPI_NoVariable_4: §c§n没有找到同盟公会.
+  PageAPI_NoVariable_5: §c§n没有找到公开公会.
+  PageAPI_NextPage_Name: §a下一页
+  PageAPI_PreviousPage_Name: §a上一页
+  PageAPI_MainPage_Name: §a主页
+  Menu_PreviousMenu_Name: §c上一菜单
+  RankGUI_PermName_Disband: §f§n解散公会
+  RankGUI_PermName_Upgrade: §f§n升级公会建筑
+  RankGUI_PermName_Alchemy: §f§n使用公会能力
+  RankGUI_PermName_Vault: §f§n使用公会经济
+  RankGUI_PermName_Kick: §f§n踢出 成员
+  RankGUI_PermName_Rank: §f§n改变公会成员权限
+  RankGUI_PermName_Condition: §f§n改变加入状态
+  RankGUI_PermName_Sethome: §f§n设置公会HOME
+  RankGUI_PermName_Claim: §f§n占领 / 解除占领 / 领地名称
+  RankGUI_PermName_Emblem: §f§n公会 徽章
+  RankGUI_PermName_Motd: §f§n公会 简介
+  RankGUI_PermName_Invite: §f§n邀请 玩家
+  RankGUI_PermName_Ally: §f§n同盟 / 敌人
+  RankGUI_PermName_War: §f§n申请公会对战
+  RankGUI_PermName_Donate: §f§n向公会贡献物资
+  RankGUI_Header: 职位 设置
+  RankGUI_CurrentRank: '||§7当前职位: §f{RANK}||||§7玩家权限:||'
+  RankGUI_UsePresetRank: '||§7当前职位权限'
+  RankGUI_ChangePermission: '||§7点击以给予该权限.'
+  Member_Information_Lore: '§e(可见: §f{SEEN}§e)||||§e排名: §f{RANK}||§e加入日期: §f{DATE}||§e对战;||§7
+    → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§7§n右击以...||  §f查看玩家详细信息.{CRANK}{CKICK}'
+  Member_Information_Kick: '||||§7§n按住shift左击以...||  §f踢出该成员.'
+  Member_Information_Rank: '||||§7§n左击以...||  §f改变玩家排名.'
+  Guild_Management_PlayerInfo: '||§e排名: §f{RANK}||§e加入日期: §f{DATE}||§eWar;||§7 → 击杀:
+    §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§eDonated;||{DONATEINFO}'
+  Tournament_Started_Broadcast: §7公会排名赛启用! 使用 '§e/g§7' 参加对战.
+  Donated_List_New: '§6 → 木材: §f{DWOOD}||§7 → 石: §f{DSTONE}||§f → 铁: §f{DIRON}||§e
+    → 金: §f{DGOLD}||§b → 钻石: §f{DDIAMOND}||§3 → 羊毛: §f{DWOOL}'
+  Placeholder_NoVariable_guild_name: 没有该公会
+  Placeholder_NoVariable_guild_rank: '?'
+  Placeholder_NoVariable_guild_leader: '?'
+  Placeholder_NoVariable_guild_division: '?'
+  Vault_Using: §7Vault 正在被 §a{PLAYER} §7使用.
+  Top_Calc_Time_Name: '§a§n刷新倒计时:'
+  War_Death_1_New: §f{ATTACKER} ({AGUILD}) §c⚔ §f{VICTIM} ({VGUILD}) §7[+{POINTS}
+    ☆]
+  War_Points_New: '§9{AGUILD}: {APOINTS} ☆ §7vs. §c{VGUILD}: {VPOINTS} ☆'
+  Score_Prefix_New: §6§l§n公会 对战
+  ScoreBrd_1_New: '§e⊙ 时间: §f{TIME}'
+  ScoreBrd_2_New: '§9➙ {GUILD1}:'
+  ScoreBrd_3_New: §f{PLY1}/{MAX} ☆
+  ScoreBrd_4_New: '§c➙ {GUILD2}:'
+  ScoreBrd_5_New: §f{PLY2}/{MAX} ☆§f
+  Claim_Name: §7§o(你可以改变该领地名称||§7§o使用 §e/g claimname §7§o以改变领地名称.)
+  Guild_Management_PlayerInfo_New: '||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7
+    → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§f点击以查看种族列表.'
+  PlayerStats_1: '||§e公会: §f{GUILD}||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间: §f{DATE}||§e对战;||§7
+    → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||||§e贡献;||{DONATEINFO}'
+  PlayerStats_2: '||§e玩家: §f{PLAYER}||§ePvP;||§7 → 击杀: §f{KILLS}||§7 → 死亡: §f{DEATHS}||§7
+    → KDA: §f{KDA}||§e贡献;||{DONATEINFO}'
+  PlayerStats_3: '||§e血量: §f{HEALTH}/10||§e饥饿值: §f{HUNGER}/10||§e坐标: §f{LOCATION}'
+  PlayerStats_4: '||§7玩家离线.||§e最后一次上线时间: §f{SEEN}'
+  RaceSelectGUI_Header: 选择种族
+  RaceInfo_Name_0: §f[无]
+  RaceInfo_Name_1: §f[§6§l人类§f]
+  RaceInfo_Name_2: §f[§7§l亡灵§f]
+  RaceInfo_Name_3: §f[§2§l侏儒§f]
+  RaceInfo_Name_4: §f[§e§l精灵§f]
+  RaceInfo_Passive_1: §c§l力量提升 §f§l| §8§l挖掘疲劳||
+  RaceInfo_Passive_2: §c§l急迫 §f§l| §8§l虚弱||
+  RaceInfo_Passive_3: §c§l速度提升 §f§l| §8§l虚弱||
+  RaceInfo_Passive_4: §c§l抗性提升 §f§l| §8§l缓慢||
+  RaceInfo_Lore_1: '||§7人类懂得如何去战斗||§7但是他们的攻速受到了限制.'
+  RaceInfo_Lore_2: '||§7亡灵擅长挖掘矿物||§7但是当战争来临,他们往往不懂得如何反抗.'
+  RaceInfo_Lore_3: '||§7侏儒的速度很快||§7危机的时刻来临之际,他们往往可以躲过一劫.'
+  RaceInfo_Lore_4: '||§7精灵具有很高的抗性||§7他们时时刻刻防伪着周围潜在的危险.'
+  RaceSelectGUI_Select: '||||§f点击以选择该种族.'
+  RaceSelectGUI_Select_2: '||||§f点击以选择该种族.'
+  RaceSelectGUI_Features: '§a种族特性[效果]:'
+  RaceSelectGUI_Features_0: '||§7关闭||§7种族特性.||||§f点击以启用种族特性.'
+  RaceSelectGUI_Features_1: '||§7开启||§7种族特性.||||§f点击以关闭种族特性.'
+  RaceSelectGUI_Features_2: '||§7请先选择一个种族||§7已开启种族特性.'
+  RaceSelectGUI_Info: '§a信息:'
+  RaceSelectGUI_Info_1: '§7种族: §f{RACE}||§7改变种族次数: §f{NUM}||||§7你无法在无种族的状态下||§7加入一个公会.'
+  Race_Left_No: §7改变种族次数已用完,你无法改变种族状态.
+  Race_Selected: §7玩家 §a{PLAYER}§7 加入种族 §r{RACE}§7.
+  Select_Race: §7请先选择你的种族. §6(/g race)
+  MemberInformation_Lore: '§e(最后一次上线时间: §f{SEEN}§e)||||§e职位: §f{RANK}||§e种族: §f{RACE}||§e加入时间:
+    §f{DATE}||§e对战;||§7 → 击杀: §f{WARKILLS}||§7 → 死亡: §f{WARDEATHS}||§e贡献;||{DONATEINFO}||||§7§n右击以...||  §f查看玩家详细信息.{CRANK}{CKICK}'
+  Race_Permission: §7你没有权限开启/关闭种族特性.
+  Guild_Chat_Spy_Ops: GC 监视
+  Break_Claimed_Areas_Only: §7你仅能破坏公会领地.
+  You_Cant_War_2: §7你无法发起公会对战 请将指定公会 §9兵营 §7升级至 §6等级 I§7.
+  TimeSpanText_Year: 年
+  TimeSpanText_Month: 月
+  TimeSpanText_Day: 天
+  TimeSpanText_Hour: 时
+  TimeSpanText_Minute: 分
+  TimeSpanText_Second: 秒
+  Enemy_War_Shield: §7该公会开启了对战保护. 对战保护将于 §c{EXPIRE}§7 后失效.
+  War_Invite_Send_2: §7备战! 你的公会向 §c{GUILD} §7公会发起了对战.
+  War_Invite_Send_3: §7备战! §c{GUILD} 公会向你的公会发起了对战.
+  War_Shield_Enable_Name: §a对战保护已启用
+  War_Shield_Enable_Lore: '||§7公会对战失败||§9对战保护 §7已启用.||||§7其他公会无法在此期间向你的公会发起对战.||||§9对战保护
+    §7将在 §c{TIME}§7 后失效.'
+  War_Shield_Disable_Name: §c对战保护已禁用
+  War_Shield_Disable_Lore: '||§7你的公会没有 §9对战保护§7.||§7所以任何公会都可以向你的公会发起对战.||§7如果你的公会在对战中失败
+    将会获得一定时间的 §9对战保护§7.'
+  Click_To_Info_New: '||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以查看该公会的更多信息.'
+  Click_To_War_New: '||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以向该公会发起对战.'
+  RankGUI_PermName_Break: §f§n公会领地破坏
+  RankGUI_PermName_Place: §f§n公会领地建造
+  Click_To_Join_New: '||§7首领: §f{LEADER}||§7竞技点: §f{POINTS} ✪||§7分类: §f{LEVEL}||||{EMBLEM}||||§e点击以加入该公会.'
+  Enemy_War_Shield_New: §7该公会对战保护已启用.护盾将于 §c{EXPIRE}§7 后失效.
+  War_Invite_Send_2_New: §7祝你们好运! 你的公会向 §c{GUILD} §7公会发起对战.
+  War_Invite_Send_3_New: §7战士们别愣着 准备迎击! §c{GUILD} §7向你的公会发起对战.
+  War_Death_2_New: §c☠ §f{VICTIM} ({VGUILD}) §7[+{POINTS} ☆]
+  War_Death_3: §a♜ §a§l赛点!§r §a♜
+  War_Start_1: §2♜§r §2§l§n公会对战§r §2♜
+  War_Left: §c{PLAYER} ({PLAYERGUILD}) §7从对战中离开.
+  War_Shield_GUI_Lore_1: §a(对战保护已启用)
+  War_Shield_GUI_Lore_2: §c(无对战保护)
+  You_Cant_War_New: §7你无法发起对战要求 请先将 §9兵营 §7升级至 §6等级 {LEVEL}§7.
+  No_Guild_Perm: §7你没有权限使用该命令.
+  WarShield_Give_Usage: '§7正确使用方式: §e/sgadmin warshield [公会名称] [天数]§7, 例如: §6/sgadmin
+    warshield Spigot 3'
+  WarShield_Set_Admin: §7添加 §a+{NUMBER} §7天 对战保护 至公会 §b{GUILD}.

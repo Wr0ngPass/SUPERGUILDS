@@ -1,0 +1,310 @@
+Messages:
+  Prefix: §6§lSUPERGUILDS §6➥§7
+  Char_Error: §7Il testo contiene caratteri inappropriati.
+  WorldGuard_Error: §7Questo è protetto da WorldGuard.
+  Chunk_Error: §7Questo posto è già occupato da un'altra gilda.
+  Dont_Have_Gold_To_Create: §7Non hai abbastanza lingotti d'oro per creare la gilda.
+  Created_Guild: '§e{PLAYER}§7 ha fondato la nuova Gilda: §b{GUILD}§7.'
+  Land_Error: §7La tua posizione non è sicura.
+  Guild_Name_Length: §7Il nome della gilda non è valido, perché o troppo lungo o troppo
+    corto.
+  That_Guild_Exists: §7C'è già una gilda simile.
+  Enter_Guild_Name: §7Inserire il nome della Gilda.
+  You_Have_Guild: §7Hai già una Gilda.
+  Chunk_Middle: §7Si invita a stare al centro dell'area mostrata.
+  Remove_Confirm: §7Sei sicuro di voler cancellare la gilda? Se si, riesegui il comando
+    per confermare.
+  Guild_Removed: §7La gilda è stata correttamente eliminata.
+  No_Permission: §7Non hai il permesso per fare questa azione.
+  You_Dont_Have_Guild: §7Non hai nessuna Gilda.
+  You_Arent_Leader: §7Non sei il Leader della Gilda.
+  Guild_Remove_Broadcast: §7La Gilda §c{GUILD} §7è stata sciolta.
+  Option_Disabled: §7Questa funzione è disabilitata.
+  No_Rank: §7Il tuo rango gilda non è sufficiente.
+  You_Dont_Have_This_Chunk: §7La tua Gilda non possiede questo terreno.
+  Done_Set_Home: §7La sede principale della Gilda è stata impostata.
+  Teleporting_Message: §7Sarai teletrasportato in §e{TIME} §7secondi.
+  Teleport_Cancel: §7Il teletrasporto è stato annullato, perché ti sei mosso.
+  Teleport_Done: §7Teletrasporto avvenuto con successo.
+  Already_Teleport: §7Ti sei appena teletrasportato.
+  Teleport_Starting: §7Il processo di teletrasporto è iniziato, non ti muovere.
+  GUIPrefix: §8§l» §8
+  Guild_Management: Gestione Gilda
+  Manage_Panel_1: §6Operazioni di Gilda
+  Manage_Panel_2: '§6ID:'
+  Manage_Panel_3: §6Operazioni Guerre
+  Manage_Panel_2_Lore: '||§ePlayer: §f{NAME}||||§eStatus: §f{STATUS}||||§eUltimo Ingresso:
+    §f{SEEN}||||§eGrado: §f{RANK}||||§eData di ingresso: §f{DATE}||||§eWar;||§7 →
+    Uccisioni: §f{WARKILLS}||§7 → Morti: §f{WARDEATHS}||||§eDonazioni;||§7 → Oro:
+    §f{DGOLD}||§7 → Magico: §f{DMAGIC}'
+  Rank_Leader: §bLeader §3★★★§b
+  Rank_General: §aVice Leader §2★★§a
+  Rank_Captain: §dUfficiale §5★§d
+  Rank_Member: §8Membro
+  Guild_Info: §6Informazioni
+  Guild_Info_Lore: '||§7Click per vedere le informazioni di Gilda.'
+  Guild_Store: §6Deposito
+  Guild_Store_Lore: '||§7Click per aprire il deposito della Gilda.'
+  Claimed_Lands: §6Terreni rivendicati
+  Claimed_Lands_Lore: '||§7Click per vedere i territori rivendicati.'
+  Guild_Alchemy: §6Alchimia
+  Guild_Alchemy_Lore: '||§7Click per aprire il menu alchemico.'
+  Check_Players: §6Lista membri
+  Check_Players_Lore: '||§7Click per vedere la lista dei membri.'
+  Guild_Buildings: §6Edifici
+  Guild_Buildings_Lore: '||§7Click per vedere gli edifici di gilda.'
+  Guild_Info_Header: Informazioni di Gilda
+  Guild_Info_1: §6Gilda ID
+  Guild_Info_1_Lore: '||§eNome:||§f{NAME}||||§eStemma:||§f{EMBLEM}||||§eLeader Attuale:||§f{LEADER}'
+  Guild_Info_2: §6Fondazione della Gilda
+  Guild_Info_2_Lore: '||§eData della Fondazione:||§f{TIME}||||§eCreatore:||§f{CREATOR}'
+  Guild_Info_3: §6Stato della Gilda
+  Guild_Info_3_Lore: '||§eGuerra;||§7 → Uccisioni: §f{KILLS}||§7 → Morti: §f{DEATHS}||||§eDivisione
+    Gilda:||§f{LEVEL}||||§eAffiliati:||§f{PLAYERS}/{MAX}||||§eTerre Rivendicate:||§f{CLAIMED}'
+  Guild_Header_Kick: Allontana Membri
+  Guild_Kick_Lore: '||§eGrado: §f{RANK}||||§7Click per allontanare membri dalla gilda.'
+  Kick_Error_No_Guild: §7Questo giocatore non fa parte della gilda.
+  Kick_Error_No_Rank: §7Il tuo grado di gilda non è sufficiente per allontanare altri
+    membri.
+  Kicked_Player: §c{KICKED}§7 è stato allontanato dalla Gilda da §e{PLAYER}§7.
+  You_Kicked: §7Sei stato allontanato dalla Gilda.
+  No_Kick_Yourself: §7Vuoi davvero allontanare te stesso? XD.
+  Guild_Header_List: Affiliati
+  Claim_Error: §7La Gilda possiede già questo terreno.
+  No_Gold_Guild: §7La Gilda non possiede abbastanza oro.
+  No_Claim_Level: §7La divisione della Gilda proprietaria di questa terra è più alta
+    di quella della tua Gilda.
+  Attacking_You: §c{ATTACKER}§7 a preso la tua terra a §e{LAND}§7.
+  Attacked_Chunk: §7La tua Gilda ha preso la terra a §e{LAND} §7della Gilda §c{OWN}§7.
+  Chunk_Claimed: §7Hai rivendicato la terra §e{LAND}§7.
+  Chunk_Error_You: §7Questa terra non ti appartiene.
+  Chunk_Unclaimed: §7Hai lasciato la terra §e{LAND}§7.
+  Buildings_GUI: Edifici di Gilda
+  Buildings_Name_Townhall: §6Sede Principale
+  Buildings_Name_Barrack: §6Addestramento
+  Buildings_Name_Storage: §6Deposito
+  Buildings_Name_Alchemy: §6Alchimia
+  Buildings_Upgrade: §aClick per migliorare e sviluppare novità.
+  Buildings_Lore_0: §9§nAl prossimo livello;
+  Buildings_Lore_Townhall: §7 → Aumenta numero limite di affiliati.
+  Buildings_Lore_Barrack: §7 → Inizia una guerra con items molto più potenti.
+  Buildings_Lore_Storage: §7 → Incrementa la capacità del deposito.
+  Buildings_Lore_Alchemy: §7 → Acquisisci più effetti potenti.
+  Buildings_Level: '§eLivello: §f{LEVEL}'
+  Romen_Num_1: I
+  Romen_Num_2: II
+  Romen_Num_3: III
+  Romen_Num_4: IV
+  Romen_Num_5: V
+  Romen_Num_6: VI
+  Romen_Num_7: VII
+  Romen_Num_8: IIX
+  Store_GUI: Deposito di Gilda
+  Store_Name_Gold: §e§nQuantità Oro
+  Store_Name_Magic: §9§nQuantità Magico
+  Store_Color_1: §e
+  Store_Color_2: §9
+  Store_Status: '§7Disponibile: §f{NUMBER}'
+  Help_Pages_1::Line_1: §e/guilds help §8- §7Lista comandi.
+  Help_Pages_1::Line_2: §e/guilds create <guild name> §8- §7Crea Gilda.
+  Help_Pages_1::Line_3: §e/guilds remove §8- §7Cancella Gilda.
+  Help_Pages_1::Line_4: §e/guilds emblem §8- §7Crea Stemma.
+  Help_Pages_1::Line_5: §e/guilds info §8- §7Mostra statistiche Gilda.
+  Help_Pages_1::Line_6: §e/guilds leave §8- §7Lascia la Gilda.
+  Help_Pages_1::Line_7: §e/guilds store §8- §7Mostra Deposito Gilda.
+  Help_Pages_2::Line_1: §e/guilds leader §8- §7Nomina nuovo Leader.
+  Help_Pages_2::Line_2: §e/guilds invite <player> §8- §7Invita PG nella gilda.
+  Help_Pages_2::Line_3: §e/guilds claim §8- §7Rivendica la terra dove ti trovi.
+  Help_Pages_2::Line_4: §e/guilds unclaim §8- §7Lascia la terra dove ti trovi.
+  Help_Pages_2::Line_5: §e/guilds rank §8- §7Modifica Grado a un PG.
+  Help_Pages_2::Line_6: §e/guilds reload §8- §7Ricarica il plugin.
+  Help_Pages_2::Line_7: §e/guilds home §8- §7Teletrasportati alla sede della tua gilda.
+  Help_Pages_3::Line_1: §e/guilds sethome §8- §7Imposta sede principale della gilda.
+  Help_Pages_3::Line_2: §e/guilds war §8- §7Guerra contro altre gilde.
+  Help_Pages_3::Line_3: §e/guilds version §8- §7Mostra versione del plugin.
+  Help_Pages_3::Line_4: §e/guilds buildings §8- §7Mostra Edifici di Gilda.
+  Help_Pages_3::Line_5: §e/guilds showclaims §8- §7Mostra lista terre rivendicate.
+  Help_Pages_3::Line_6: §e/guilds alchemy §8- §7Mostra Alchimia di Gilda.
+  Help_Pages_3::Line_7: §e/guilds invites §8- §7Abilita/Disabilita inviti di gilda.
+  Help_Pages_3::Line_8: §e/guilds chat §8- §7Abilita/Disabilita chat.
+  Next_Page: §8§m--------§r §7Use §6/sg help {NEXT} §7per la pagina successiva. §8§m-------
+  Invite_Player_Name: §7Inserisci nome PG per invitarlo.
+  Cant_Invite_Yourself: §7Che fai? ti auto inviti? XD.
+  Player_Closed_Invites: §7Questo giocatore ha disabilitato gli inviti.
+  Player_Has_Guild: §7Questo giocatore ha già una Gilda.
+  Your_Guild_Is_Full: §7La tua gilda è piena. Puoi migliorare la sede principale per
+    aumentare il limite di affiliati.
+  Invite_Wait: §7Devi aspettare §e{TIME} §7prima di invitare qualcuno.
+  This_Guild_Is_Full: §7Questa gilda è piena.
+  Invite_Send: §7L'invito è stato correttamente inviato.
+  Invite_GUI: Invito Ufficiale
+  InviteC_Accept: §6Accetta ed unisciti alla Gilda §e{GUILD}§6.
+  InviteC_Reject: §cRifiuta e getta l'invito.
+  You_Reject: §7Hai rifiutato l'invito.
+  You_Joined_Guild: §7Sei entrato a far parte della Gilda §e{GUILD} §7.
+  Player_Joined_Guild: §6{PLAYER} §7è entrato a far parte della Gilda §e{GUILD} §7.
+  Disabled_Invites: '§7Inviti ufficiali: disabilitati.'
+  Enabled_Invites: '§7Inviti ufficiali: abilitati.'
+  Donate_Usage: §7Puoi donare usando §e/g donate <gold/magic> <number>§7.
+  Donate_Must_Be_Gold_Magic: §7Donazioni possono essere solo di §e§ngold§r§7 o §e§nmagic§r§7.
+  Enter_An_Integer: §7Inserisci numero intero.
+  No_Storage: §7Spazio insufficiente per §f{NUMBER} {RESOURCE}§r§7. §7Devi migliorare
+    prima il deposito.
+  Player_Donated: '{RANK} {PLAYER}§7, ha donato §f{NUMBER} {RESOURCE}§r §7al deposito
+    di Gilda.'
+  You_Donated: §7Hai donato §f{NUMBER} {RESOURCE}§r §7al deposito della tua Gilda.
+  Donations_0: §7Donazioni devono essere superiori di zero.
+  Leader_Leave: §7Sei il Leader, non puoi mica lasciare la Gilda cosi... Puoi scioglierla
+    eseguendo §e/g remove§7.
+  Player_Leave: '{RANK} {PLAYER}§7 ha lasciato la Gilda.'
+  You_Leave: §7Hai lasciato la Gilda §c{GUILD}§7.
+  Language_GUI: Lingua
+  Language_Lore: '||§7Click per selezionare questa lingua.'
+  Language_Select: '§7Lingua selezionata: §a{LANG}'
+  Unknown_Command: Comando Sconosciuto.
+  Locale_Error: Impossibile connettersi ai dati web per il file locale.
+  Enter_Language: Inserisci la lingua.
+  Guild_Error_Upgrade: §7Non fai più parte di questa Gilda.
+  Buildings_Required_Lore_0: §b§nCosto per migliorare;
+  Buildings_Required_Lore_1: '§7 → {GOLD}: §f{GNEED}||§7 → {MAGIC}: §f{MNEED}'
+  No_Magic_Guild: §7La tua gilda non ha non abbastanza magia.
+  Limit_Buildings: §7Hai raggiunto il livello massimo per questo edificio.
+  Building_Upgrade: §7{RANK} {PLAYER}§7, ha migliorato {BUILD} §7al livello §e{NUMBER}§7.
+  Buildings_Broadcast_1: '§7Limite membri aumentato: §a+4'
+  Buildings_Broadcast_2: §7La tua gilda inizierà le guerre con {ITEM}§7.
+  Buildings_Broadcast_3: '§7Deposito di Gilda migliorato: §a+500'
+  Buildings_Broadcast_4: §7La gilda può utilizzare il prossimo livello di alchimia
+    ora.
+  Showing_Claims: §7Ora puoi vedere tutti i territori rivendicata dalla tua Gilda.
+    Se desideri annullare questa visualizzazione, ti basterà uscire e rientrare nel
+    gioco.
+  No_Claims: §7La tua gilda non ha rivendicato nessuna terra.
+  Show_Claim_Wait: §7Devi aspettare §e{TIME} §7per vedere tutte le terre rivendicate.
+  Change_Rank: '||§7Click per modificare il grado del pg.'
+  Status_Online: §aOnline
+  Status_Offline: §cOffline
+  Rank_Yourself: §7Non puoi modificare il tuo Grado.
+  Rank_Not_Enough: §7Il tuo grado non ti permette di fare questa azione.
+  Guild_Rank_Lore: '||§7Grado attuale: §f{RANK}'
+  Guild_Header_Rank: Modifica Grado
+  Select_GUI: Elenco Tipo
+  Player_Info_No_Guild: '||§7Il Giocatore non ha una Gilda.'
+  Player_Stats: Statistiche Giocatore
+  Player_Info_Name_1: '§6Info Gilda:'
+  Player_Info_Name_2: '§6Info Mmebri:'
+  Player_Info_Name_3: '§6Altre Info:'
+  Player_Info_1: '||§eGilda: §f{GUILD}||||§eGrado: §f{RANK}||||§eData d''Ingresso:
+    §f{DATE}||||§eGuerra;||§7 → Uccisioni: §f{KILLS}||§7 → Morti: §f{DEATHS}||||§eDonazioni;||§7
+    → Oro: §f{DGOLD}||§7 → Magico: §f{DMAGIC}'
+  Player_Info_2: '||§ePlayer: §f{PLAYER}||||§ePvP;||§7 → Uccisioni: §f{KILLS}||§7
+    → Morti: §f{DEATHS}||§7 → KDA: §f{KDA}||||§eDonazioni globali;||§7 → Oro: §f{DGOLD}||§7
+    → Magico: §f{DMAGIC}'
+  Player_Info_3: '||§eSalute: §f{HEALTH}/10||||§eFame: §f{HUNGER}/10||||§eCoordinate:
+    §f{LOCATION}'
+  No_Guild_Like_This: §7Nessuna Gilda ha questo nome.
+  No_Player_Like_This: §7Nessun giocatore ha questo nome.
+  Guild_Emblem_GUI: §6Stemma della Gilda
+  Guild_Emblem_Lore: '||§7Click per creare uno Stemma.'
+  See_Stats: '||§7Click per vedere le statistiche del pg.'
+  Rank_Changed: §7Il tuo grado è stato cambiato in {RANK}§7.
+  Ranked_Player: §7Il Grado di {OLDRANKCHANGEP} {CHANGEP}§7 è stato cambiato in {NEWRANKCHANGEP}
+    §7da {RANKPLAYER} {PLAYER}§7.
+  Rank_Wrong: §7È possibile scegliere solo gradi più bassi di quello di appartenenza.
+  Player_Info_4: '||§7Giocatore OFFLine.||||§eUltimo Ingresso: §f{SEEN}'
+  You_Cant_Unclaim: §7Non si può annullare la rivendicazione di questa zona perché
+    corrisponde a §e{BUILD} §7.
+  You_Cant_Action: §7Non puoi cambiare nulla nella zona §e{BUILD} §7.
+  Owned_By: §7Questa terra è di proprietà della Gilda §e{GUILD}§7. Non puoi toccare
+    nulla.
+  Reloading_1: §7Caricamento di tutti i files in corso...
+  Reloading_2: §7Caricamento avvenuto con successo!
+  Version: §eSUPERGUILDS {VERSION} §7by §bRepublicanSensei§7.
+  Emblem_Menu: '                   §8§l» §7§lSUPERGUILDS Stemma di Gilda'
+  Emblem_Saved: §7Stemma di Gilda salvato.
+  Color_Select: 'Selezione Colori:'
+  Save_Emblem_Button: '                §a§l[SALVA §a✓§a§l]§r'
+  Reset_Emblem_Button: '                    §c§l[RESET §c✘§c§l]'
+  Use_Guild_Button: '                      §7§l[EDIT STEMMA GILDA §7✎§7§l]'
+  Select_Color: §7Non hai selezionato il colore.
+  Select_Code: §7Non hai selezionato la box.
+  Guild_Emblem_Changed: §7Lo stemma della tua gilda è stato cambiato da §e{PLAYER}§7.
+  Create_Guild_Disabled_World: §7Non è possibile creare gilda nel mondo dove ti trovi.
+  Divisions_0: §8Bronzo
+  Divisions_1: §7Argento
+  Divisions_2: §eOro
+  Divisions_3: §dCristallo
+  Divisions_4: §bDiamante
+  Divisions_5: §cCampione
+  Chat_Addon_Click_To_Stats: §7Click per vedere le statistiche del pg.
+  Back_Header: §6Indietro
+  SYNC_Done: §7SYNC for §a{FILE} §7file is done.
+  SYNC_Load_Error: §7Impossibile caricare §c{FILE} §7file.
+  SYNC_Delete_Failed: §7Impossibile eliminare / ripristinare il file §c{FILE}§7.
+  SYNC_Enter_File: §7Inserisci file per syncronizzarlo. (locale or config)
+  Menu_Alchemy_GUI: Alchimia di Gilda
+  Text_Feature: '§eFunzione:'
+  Text_Price: '§ePrezzo:'
+  Text_Buy: §eClick per comprare questa utilità.
+  Alchemy_Menu_Lore_1: §8 → §7Dà 15 minuti forza a tutti i membri della gilda.
+  Alchemy_Menu_Lore_2: §8 → §7Spawna un cavallo per tutti i membri della gilda.
+  Alchemy_Menu_Lore_3: §8 → §7Dà 15 minuti velocità a tutti i membri della gilda.
+  Alchemy_Menu_Lore_4: §8 → §7Dà 15 minuti resistenza a tutti i membri della gilda.
+  Alchemy_Menu_Price_1: ' §8 → §7Livello I: §f{MAGIC1} magico|| §8 → §7Livello II:
+    §f{MAGIC2} magico|| §8 → §7Livello III: §f{MAGIC3} magico'
+  Alchemy_Menu_Price_2: ' §8 → §7Cavallo Senza arm: §f{MAGIC1} magico|| §8 → §7Cavallo
+    Arm Ferro: §f{MAGIC2} magic|| §8 → §7Cavallo Arm Diamante: §f{MAGIC3} magic'
+  Alchemy_Menu_Price_3: ' §8 → §7Livello I: §f{MAGIC1} magico|| §8 → §7Livello II:
+    §f{MAGIC2} magico|| §8 → §7Livello III: §f{MAGIC3} magico'
+  Alchemy_Menu_Price_4: ' §8 → §7Livello I: §f{MAGIC1} magico|| §8 → §7Livello II:
+    §f{MAGIC2} magico|| §8 → §7Livello III: §f{MAGIC3} magico'
+  Alchemy_Type_1_Name_1: §6Livello I Forza
+  Alchemy_Type_1_Name_2: §6Livello II Forza
+  Alchemy_Type_1_Name_3: §6Livello III Forza
+  Alchemy_Type_2_Name_1: §6Cavallo No Armor
+  Alchemy_Type_2_Name_2: §6Cavallo Arm Ferro
+  Alchemy_Type_2_Name_3: §6Cavallo Arm Diamante
+  Alchemy_Type_3_Name_1: §6Livello I Velocità
+  Alchemy_Type_3_Name_2: §6Livello II Velocità
+  Alchemy_Type_3_Name_3: §6Livello III Velocità
+  Alchemy_Type_4_Name_1: §6Livello I Resistenza
+  Alchemy_Type_4_Name_2: §6Livello II Resistenza
+  Alchemy_Type_4_Name_3: §6Livello III Resistenza
+  Bought_Alchemy_Guild: §7Gilda §e{GUILD} §7, acquistati §6{TYPE} §7dal centro alchemico.
+  Bought_Alchemy_Own: §7{RANK} {PLAYER}§7, acquistati §6{TYPE} §7dal centro alchemico.
+  Barrack_Upgrade_Item_1: §7Set in Pelle
+  Barrack_Upgrade_Item_2: §eSet in Oro
+  Barrack_Upgrade_Item_3: §8Set in Maglia
+  Barrack_Upgrade_Item_4: §fSet in Ferro
+  Barrack_Upgrade_Item_5: §bSet in Diamante
+  Menu_War_GUI: Guerre
+  Menu_War_Name_1: §6Cerca Gilda da combattere
+  Menu_War_Lore_1: §7Click per trovare una Gilda da combattere.
+  Menu_War_Name_2: §6Statistiche Guerra
+  Menu_War_Lore_2: '§eGilda;||§7 → Divisione: §f{LEVEL}||§7 → Punti: §f{POINTS} ✪||§7
+    → Item di inizio: §f{ITEMS}||||§ePvP;||§7 → Uccisioni: §f{KILLS}||§7 → Morti:
+    §f{DEATHS}||||§eTop Killer;||§7 → {RANK} {TOP}§8: §f{NUM} Uccisioni'
+  Menu_War_Name_3: §6Top Gilde
+  Menu_War_Lore_3: §7Click per vedere le migliori gilde.
+  Disabled_Chat: '§7Chat di Gilda: Disabilitata! I messaggi saranno ora visibili nella
+    chat pubblica.'
+  Enabled_Chat: '§7Chat di Gilda: Abilitata! I messaggi saranno ora visibili solo
+    dalla Gilda.'
+  Guild_Chat: §7[GC]
+  Number_Online: §8(§a{PLAYER} §7online§8)
+  Text_Month: mese(i)
+  Text_Day: giorno(i)
+  Text_Hour: ora(e)
+  Text_Minute: minuto(i)
+  Text_Second: secondo(i)
+  No_Variable_List_0: §7No Gilde.
+  Header_0: Lista Gilde
+  Header_1: Lista terre rivendicate
+  Forward_Header: §6Inoltra ➙
+  Claimed_Land: Terre Rivendicate
+  Claimed_Land_Lore: '||§7Coordinate: §f{LOC}||||§eClick per essere teletrasportato.'
+  Click_To_Info: '||§7Leader: §f{LEADER}||||§7Divisione: §f{LEVEL}||||§eClick per
+    vedere info sulla gilda.'
+  ClaimName_Usage: §7Usa §e/sg claimname <name> §7per rinominare la terra dove ti
+    trovi.
+  ClaimName_Changed: §7Il nome della terra situata a §e{LOC} §7è stato cambiato in
+    §6{NAME} §7da §9{BY}§7.
