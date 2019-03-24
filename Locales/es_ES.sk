@@ -1,4 +1,4 @@
-on load
+on load:
 	addMessageLine("Prefix", "es_ES", "§6§lSUPERGUILDS §6➥§7")
 	addMessageLine("Char_Error", "es_ES", "§7El texto tiene carácteres inapropiados.")
 	addMessageLine("WorldGuard_Error", "es_ES", "§7Este lugar esta bajo una protección.")
