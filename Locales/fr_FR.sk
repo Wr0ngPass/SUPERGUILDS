@@ -1,626 +1,415 @@
-aliases:
-	wooditems = minecraft:oak_log, minecraft:spruce_log, minecraft:birch_log, minecraft:jungle_log, minecraft:acacia_log, minecraft:dark_oak_log
-	woolitems = minecraft:orange_wool, minecraft:magenta_wool, minecraft:light_blue_wool, minecraft:yellow_wool, minecraft:lime_wool, minecraft:pink_wool, minecraft:gray_wool, minecraft:light_gray_wool, minecraft:cyan_wool, minecraft:purple_wool, minecraft:blue_wool, minecraft:brown_wool, minecraft:green_wool, minecraft:red_wool, minecraft:black_wool
-	sgench = minecraft:enchanting_table
-	sgcraft = minecraft:crafting_table
-	sganvil = minecraft:anvil
-	sgbed = minecraft:orange_bed, minecraft:magenta_bed, minecraft:light_blue_bed, minecraft:yellow_bed, minecraft:lime_bed, minecraft:pink_bed, minecraft::gray_bed, minecraft:light_gray_bed, minecraft:cyan_bed, minecraft:purple_bed, minecraft:blue_bed, minecraft:brown_bed, minecraft:green_bed, minecraft:red_bed, minecraft:black_bed
 on load:
-	set {SG::Locale_Version} to "2001"
-	set {SG::Messages::Prefix} to "§6§lSUPERGUILDS §6➥§7"
-	set {SG::Messages::Char_Error} to "§7Ce texte contient des caractères inappropriés."
-	set {SG::Messages::WorldGuard_Error} to "§7Il y a une protection WorldGuard ici."
-	set {SG::Messages::Chunk_Error} to "§7Il y a une autre Guilde ici."
-	set {SG::Messages::Dont_Have_Gold_To_Create} to "§7Vous n'avez pas assez de lingots d'or dans votre inventaire pour créer la Guilde. Vous devez en avoir §e{NUMBER}§7."
-	set {SG::Messages::Created_Guild} to "§e{PLAYER}§7, crée la guilde §b{GUILD}."
-	set {SG::Messages::Land_Error} to "§7Votre position n'est pas fiable."
-	set {SG::Messages::Guild_Name_Length} to "§7Ce nom de guilde est trop long ou trop court."
-	set {SG::Messages::That_Guild_Exists} to "§7Cette guilde existe déjà."
-	set {SG::Messages::Enter_Guild_Name} to "§7Entrez un nom de guilde."
-	set {SG::Messages::You_Have_Guild} to "§7Vous avez déjà une guilde."
-	set {SG::Messages::Chunk_Middle} to "§7Placez-vous au milieu de la zone et essayez à nouveau."
-	set {SG::Messages::Remove_Confirm} to "§7Voulez-vous vraiment effacer votre guilde? Si vous êtes sûr tapez la commande à nouveau."
-	set {SG::Messages::Guild_Removed} to "§7La guilde a été effacée."
-	set {SG::Messages::No_Permission} to "§7Vous n'avez pas la permission."
-	set {SG::Messages::You_Dont_Have_Guild} to "§7Vous n'avez pas de guilde."
-	set {SG::Messages::You_Arent_Leader} to "§7Vous n'êtes pas le leader de la guilde."
-	set {SG::Messages::Guild_Remove_Broadcast} to "§c{GUILD} §7a été supprimée."
-	set {SG::Messages::Option_Disabled} to "§7Cette fonction est désactivée."
-	set {SG::Messages::No_Rank} to "§7Votre rang de guilde n'est pas suffisant."
-	set {SG::Messages::You_Dont_Have_This_Chunk} to "§7Votre guilde ne possède pas ce chunk."
-	set {SG::Messages::Done_Set_Home} to "§7Votre home de guilde a été défini."
-	set {SG::Messages::Teleporting_Message} to "§7Vous serez téléporté dans §e{TIME} §7secondes."
-	set {SG::Messages::Teleport_Cancel} to "§7Vous avez bougé et la téléportation a été annulée."
-	set {SG::Messages::Teleport_Done} to "§7Vous avez été téléporté avec succès."
-	set {SG::Messages::Already_Teleport} to "§7Vous êtes déjà en cours de téléportation."
-	set {SG::Messages::Teleport_Starting} to "§7Début de la téléportation, ne bougez pas."
-	set {SG::Messages::GUIPrefix} to "§8§l» §8"
-	set {SG::Messages::Guild_Management} to "Gestion de guilde"
-	set {SG::Messages::Manage_Panel_1} to "§6Opérations de guilde"
-	set {SG::Messages::Manage_Panel_2} to "§6ID:"
-	set {SG::Messages::Manage_Panel_3} to "§6Opérations de guerre"
-	set {SG::Messages::Manage_Panel_2_Lore} to "||§eJoueurs: §f{NAME}||||§eStatus: §f{STATUS}||||§eDernière connexion: §f{SEEN}||||§eRang: §f{RANK}||||§eDate de création: §f{DATE}||||§eGuerre;||§7 → Kills: §f{WARKILLS}||§7 → Décès: §f{WARDEATHS}||||§eDons;||§7 → Or: §f{DGOLD}||§7 → Magic: §f{DMAGIC}"
-	set {SG::Messages::Rank_Leader} to "§bLeader §3★★★§b"
-	set {SG::Messages::Rank_General} to "§aGénéral §2★★§a"
-	set {SG::Messages::Rank_Captain} to "§dCapitaine §5★§d"
-	set {SG::Messages::Rank_Member} to "§8Membre"
-	set {SG::Messages::Guild_Info} to "§6Information de Guilde"
-	set {SG::Messages::Guild_Info_Lore} to "||§7Cliquez pour voir les informations de guilde."
-	set {SG::Messages::Guild_Store} to "§6Stock de guilde"
-	set {SG::Messages::Guild_Store_Lore} to "||§7Cliquez pour ouvrir le stock de guilde."
-	set {SG::Messages::Claimed_Lands} to "§6Lands claims"
-	set {SG::Messages::Claimed_Lands_Lore} to "||§7Cliquez pour voir les claims de guilde."
-	set {SG::Messages::Guild_Alchemy} to "§6Alchimie de guilde"
-	set {SG::Messages::Guild_Alchemy_Lore} to "||§7Cliquez pour ouvrir le menu d'alchimie."
-	set {SG::Messages::Check_Players} to "§6Liste des joueurs"
-	set {SG::Messages::Check_Players_Lore} to "||§7Cliquez pour voir la liste des joueurs."
-	set {SG::Messages::Guild_Buildings} to "§6Buildings de guilde"
-	set {SG::Messages::Guild_Buildings_Lore} to "||§7Cliquez pour voir les buildings de guilde."
-	set {SG::Messages::Guild_Info_Header} to "Information de guilde"
-	set {SG::Messages::Guild_Info_1} to "§6Guild ID"
-	set {SG::Messages::Guild_Info_1_Lore} to "||§eNom:||§f{NAME}||||§eEmblème:||§f{EMBLEM}||||§eLeader:||§f{LEADER}"
-	set {SG::Messages::Guild_Info_2} to "§6Création de guilde"
-	set {SG::Messages::Guild_Info_2_Lore} to "||§eDate de Création:||§f{TIME}||||§eCréateur:||§f{CREATOR}"
-	set {SG::Messages::Guild_Info_3} to "§6Status de guilde"
-	set {SG::Messages::Guild_Info_3_Lore} to "||§eGuerre;||§7 → Kills: §f{KILLS}||§7 → Décès: §f{DEATHS}||||§eDivision:||§f{LEVEL}||||§ePoints:||§f{POINTS} ✪||||§eNombre de joueurs:||§f{PLAYERS}/{MAX}||||§eClaims:||§f{CLAIMED}"
-	set {SG::Messages::Guild_Header_Kick} to "Kickez Joueurs"
-	set {SG::Messages::Guild_Kick_Lore} to "||§eRang: §f{RANK}||||§7Cliquez pour kicker un joueur de la guilde."
-	set {SG::Messages::Kick_Error_No_Guild} to "§7Ce joueur n'est pas dans la guilde."
-	set {SG::Messages::Kick_Error_No_Rank} to "§7Vous ne pouvez pas kicker ce joueur."
-	set {SG::Messages::Kicked_Player} to "§c{KICKED}§7 kick de la guilde par §e{PLAYER}§7."
-	set {SG::Messages::You_Kicked} to "§7Vous avez été kick de la guilde."
-	set {SG::Messages::No_Kick_Yourself} to "§7Vous ne pouvez pas vous kicker vous même."
-	set {SG::Messages::Guild_Header_List} to "Membres de guilde"
-	set {SG::Messages::Claim_Error} to "§7Vous possédez déjà ces terres."
-	set {SG::Messages::No_Gold_Guild} to "§7Votre guilde n'a pas assez d'or."
-	set {SG::Messages::No_Claim_Level} to "§7La division de la guilde qui possède cette terre est plus grande que la votre."
-	set {SG::Messages::Attacking_You} to "§c{ATTACKER}§7 capture votre terre à §e{LAND}§7."
-	set {SG::Messages::Attacked_Chunk} to "§7Votre guilde capture une terre à §e{LAND} §7appartenant à §c{OWN}§7."
-	set {SG::Messages::Chunk_Claimed} to "§7Vous protégez une terre ici §e{LAND}§7."
-	set {SG::Messages::Chunk_Error_You} to "§7Cette terre est la votre."
-	set {SG::Messages::Chunk_Unclaimed} to "§7Vous retirez la protection de la terre située §e{LAND}§7."
-	set {SG::Messages::Buildings_GUI} to "Batiment de guilde"
-	set {SG::Messages::Buildings_Item_Townhall} to crafting table
-	set {SG::Messages::Buildings_Item_Barrack} to any sword
-	set {SG::Messages::Buildings_Item_Storage} to gold ingot
-	set {SG::Messages::Buildings_Name_Townhall} to "§6Mairie"
-	set {SG::Messages::Buildings_Name_Barrack} to "§6Caserne"
-	set {SG::Messages::Buildings_Name_Storage} to "§6Stockage"
-	set {SG::Messages::Buildings_Name_Alchemy} to "§6Alchimie"
-	set {SG::Messages::Buildings_Upgrade} to "§aCliquer pour améliorer le batiment."
-	set {SG::Messages::Buildings_Lore_0} to "§9§nquand mis à jour;"
-	set {SG::Messages::Buildings_Lore_Townhall} to "§7 → Augmenter la limite de joueur de la guilde."
-	set {SG::Messages::Buildings_Lore_Barrack} to "§7 → Commencer la guerre avec plus de pouvoir d'items."
-	set {SG::Messages::Buildings_Lore_Storage} to "§7 → Augmenter la capacité de stockage."
-	set {SG::Messages::Buildings_Lore_Alchemy} to "§7 → Obtenir des effets plus puissants."
-	set {SG::Messages::Buildings_Level} to "§eNiveau de contruction: §f{LEVEL}"
-	set {SG::Messages::Romen_Num_1} to "1"
-	set {SG::Messages::Romen_Num_2} to "2"
-	set {SG::Messages::Romen_Num_3} to "3"
-	set {SG::Messages::Romen_Num_4} to "4"
-	set {SG::Messages::Romen_Num_5} to "5"
-	set {SG::Messages::Romen_Num_6} to "6"
-	set {SG::Messages::Romen_Num_7} to "7"
-	set {SG::Messages::Romen_Num_8} to "8"
-	set {SG::Messages::Store_GUI} to "Stockage de guilde"
-	set {SG::Messages::Store_Name_Gold} to "§e§nSource d'or"
-	set {SG::Messages::Store_Color_1} to "§e"
-	set {SG::Messages::Store_Status} to "§7Disponible: §f{NUMBER}"
-	set {SG::Messages::Donate_Lore_Gold} to "§7Cliquez pour donner de la ressource en or."
-	set {SG::Messages::Donate_Lore_Magic} to "§7Cliquez pour donner de la ressource en magie (diamant)."
-	set {SG::Messages::Help_Pages_1::Line_1} to "§e/guilds help §8- §7Ouvrir la page d'aide."
-	set {SG::Messages::Help_Pages_1::Line_2} to "§e/guilds create <guild name> §8- §7Créer une guilde."
-	set {SG::Messages::Help_Pages_1::Line_3} to "§e/guilds remove §8- §7Supprimer la guilde."
-	set {SG::Messages::Help_Pages_1::Line_4} to "§e/guilds emblem §8- §7Fabriquer l'emblême de la guilde."
-	set {SG::Messages::Help_Pages_1::Line_5} to "§e/guilds info §8- §7Voir les statistiques de la guilde."
-	set {SG::Messages::Help_Pages_1::Line_6} to "§e/guilds leave §8- §7Quitter votre guilde."
-	set {SG::Messages::Help_Pages_1::Line_7} to "§e/guilds storage §8- §7Voir le stock de la guilde."
-	set {SG::Messages::Help_Pages_1::Line_8} to "§e/guilds claimname <name> §8- §7Définissez le nom du claim."
-	set {SG::Messages::Help_Pages_2::Line_1} to "§e/guilds leader §8- §7Promouvoir un joueur au rang de leader."
-	set {SG::Messages::Help_Pages_2::Line_2} to "§e/guilds invite <player> §8- §7Inviter un joueur dans la guilde."
-	set {SG::Messages::Help_Pages_2::Line_3} to "§e/guilds claim §8- §7Protèger la zone dans laquelle vous êtes."
-	set {SG::Messages::Help_Pages_2::Line_4} to "§e/guilds unclaim §8- §7Retirer la protection de la zone dans laquelle vous êtes."
-	set {SG::Messages::Help_Pages_2::Line_5} to "§e/guilds rank §8- §7Changer le rang du joueur."
-	set {SG::Messages::Help_Pages_2::Line_6} to "§e/guilds reload §8- §7Reloads plugin."
-	set {SG::Messages::Help_Pages_2::Line_7} to "§e/guilds home §8- §7Téléporte au home de la guilde."
-	set {SG::Messages::Help_Pages_3::Line_1} to "§e/guilds sethome §8- §7Définir le home de la guilde."
-	set {SG::Messages::Help_Pages_3::Line_2} to "§e/guilds war §8- §7Entrer en guerre avec une autre guilde."
-	set {SG::Messages::Help_Pages_3::Line_3} to "§e/guilds version §8- §7Voir la version du plugin."
-	set {SG::Messages::Help_Pages_3::Line_4} to "§e/guilds buildings §8- §7Voir les batiments de guilde."
-	set {SG::Messages::Help_Pages_3::Line_5} to "§e/guilds showclaims §8- §7Voir toutes les zones protègées par les guildes."
-	set {SG::Messages::Help_Pages_3::Line_6} to "§e/guilds alchemy §8- §7Afficher votre alchimie de guilde."
-	set {SG::Messages::Help_Pages_3::Line_7} to "§e/guilds invites §8- §7Activer/desactiver les invitations de guilde."
-	set {SG::Messages::Help_Pages_3::Line_8} to "§e/guilds chat §8- §7Activer/desactiver le chat de guilde."
-	set {SG::Messages::Next_Page} to "§8§m--------§r §7Utilisez §6/sg help {NEXT} §7pour voir la page suivante. §8§m-------"
-	set {SG::Messages::Invite_Player_Name} to "§7Entrez le nom du joueur à inviter"
-	set {SG::Messages::Cant_Invite_Yourself} to "§7Vous ne pouvez vous inviter vous même."
-	set {SG::Messages::Player_Closed_Invites} to "§7Le joueur a refusé l'invitation."
-	set {SG::Messages::Player_Has_Guild} to "§7Le joueur est déjà dans une guilde."
-	set {SG::Messages::Your_Guild_Is_Full} to "§7Votre guilde est pleine. Vous pouvez mettre à niveau votre Mairie pour avoir plus d'emplacements de joueurs."
-	set {SG::Messages::Invite_Wait} to "§7Vous devez attendre §e{TIME} §7pour inviter quelqu'un."
-	set {SG::Messages::This_Guild_Is_Full} to "§7Cette guilde est complète"
-	set {SG::Messages::Invite_Send} to "§7L'invitation de guilde a été envoyée au joueur."
-	set {SG::Messages::Invite_GUI} to "Carte d'invitation"
-	set {SG::Messages::InviteC_Accept} to "§6Accepter et joindre la guilde §e{GUILD}§6."
-	set {SG::Messages::InviteC_Reject} to "§cRejeter et fermer le menu."
-	set {SG::Messages::You_Reject} to "§7Vous avez rejeté l'invitation de guilde."
-	set {SG::Messages::You_Joined_Guild} to "§7Vous rejoignez la guilde §e{GUILD}."
-	set {SG::Messages::Player_Joined_Guild} to "§6{PLAYER} §7rejoins la guilde §e{GUILD} ."
-	set {SG::Messages::Disabled_Invites} to "§7Vous avez désactivé les invitations de guilde."
-	set {SG::Messages::Enabled_Invites} to "§7Vous avez activé les invitations de guilde."
-	set {SG::Messages::Donate_Usage} to "§7Vous pouvez donner de l'argent via la commande §e/g donate <gold/magic> <number>§7."
-	set {SG::Messages::Enter_An_Integer} to "§7Entrer un nombre entier."
-	set {SG::Messages::No_Storage} to "§7Pas de capacité pour stoquer §f{NUMBER} {RESOURCE}§r§7. §7Vous devez mettre à niveau la capacité de stockage."
-	set {SG::Messages::Player_Donated} to "{RANK} {PLAYER}§7, donné §f{NUMBER} {RESOURCE}§r §7pour le stockage de guilde."
-	set {SG::Messages::You_Donated} to "§7Vous donnez §f{NUMBER} {RESOURCE}§r §7pour le stockage de guilde."
-	set {SG::Messages::Donations_0} to "§7Les dons doivent être supérieurs à zéro."
-	set {SG::Messages::Leader_Leave} to "§7Vous êtes leader, le leader ne peut pas quitter la guilde. Vous pouvez dissoudre la guilde en utilisant §e/g disband§7."
-	set {SG::Messages::Player_Leave} to "{RANK} {PLAYER}§7, quitte la guilde."
-	set {SG::Messages::You_Leave} to "§7Vous êtes parti de §c{GUILD}§7."
-	set {SG::Messages::Language_GUI} to "Langage"
-	set {SG::Messages::Language_Lore} to "||§7Cliquez pour selectionner le langage."
-	set {SG::Messages::Language_Select} to "§7Langage selectionner: §a{LANG}"
-	set {SG::Messages::Unknown_Command} to "Commande introuvable."
-	set {SG::Messages::Locale_Error} to "Could not connect to web data for locale file."
-	set {SG::Messages::Enter_Language} to "Entrer le langage."
-	set {SG::Messages::Guild_Error_Upgrade} to "§7vous n'êtes plus dans cette guilde."
-	set {SG::Messages::Buildings_Required_Lore_0} to "§b§nCoût de mise à niveau;"
-	set {SG::Messages::Buildings_Required_Lore_1} to "§7 → {GOLD}: §f{GNEED}||§7 → {MAGIC}: §f{MNEED}"
-	set {SG::Messages::No_Magic_Guild} to "§7Votre guilde n'a pas assez de magie (diamant)."
-	set {SG::Messages::Limit_Buildings} to "§7Vous avez atteint le niveau maximum pour ce bâtiment."
-	set {SG::Messages::Building_Upgrade} to "§7{RANK} {PLAYER}§7, mis à niveau {BUILD} §7au level §e{NUMBER}§7."
-	set {SG::Messages::Buildings_Broadcast_1} to "§7Capacité de guilde augmentée: §a+{NUM}"
-	set {SG::Messages::Buildings_Broadcast_2} to "§7Votre guilde commencera les guerres avec {ITEM}§7."
-	set {SG::Messages::Buildings_Broadcast_3} to "§7Stockage de guilde augmentée: §a+500"
-	set {SG::Messages::Buildings_Broadcast_4} to "§7votre guilde peut utiliser le prochain niveau d'alchimie maintenant."
-	set {SG::Messages::Showing_Claims} to "§7Vous pouvez voir tous vos territoires de guilde maintenant. Si vous ne voulez pas les voir, vous pouvez vous reconnecter au serveur."
-	set {SG::Messages::No_Claims} to "§7Votre guilde n'a pas de territoire."
-	set {SG::Messages::Show_Claim_Wait} to "§7Vous devez attendre §e{TIME} §7pour afficher tout vos territoires."
-	set {SG::Messages::Change_Rank} to "||§7Cliquez pour changer le rang du joueur."
-	set {SG::Messages::Status_Online} to "§aEn ligne"
-	set {SG::Messages::Status_Offline} to "§cHors ligne"
-	set {SG::Messages::Rank_Yourself} to "§7Vous ne pouvez pas changer votre rang."
-	set {SG::Messages::Rank_Not_Enough} to "§7Votre rang n'est pas suffisant pour cette action."
-	set {SG::Messages::Guild_Rank_Lore} to "||§7Votre rang: §f{RANK}"
-	set {SG::Messages::Guild_Header_Rank} to "Changez le rang"
-	set {SG::Messages::Select_GUI} to "Type de liste"
-	set {SG::Messages::Player_Info_No_Guild} to "||§7Le joueur n'a pas de guilde."
-	set {SG::Messages::Player_Stats} to "Stats joueurs"
-	set {SG::Messages::Player_Info_Name_1} to "§6Information de guilde:"
-	set {SG::Messages::Player_Info_Name_2} to "§6Information du joueur:"
-	set {SG::Messages::Player_Info_Name_3} to "§6Autre information:"
-	set {SG::Messages::Player_Info_1} to "||§eGuilde: §f{GUILD}||||§eRang: §f{RANK}||||§eRejoins le: §f{DATE}||||§eGuerre;||§7 → Tués: §f{KILLS}||§7 → Décès: §f{DEATHS}||||§eDonation à la guilde;||§7 → Or: §f{DGOLD}||§7 → Magie: §f{DMAGIC}"
-	set {SG::Messages::Player_Info_2} to "||§eJoueur: §f{PLAYER}||||§ePvP;||§7 → Tués: §f{KILLS}||§7 → Décès: §f{DEATHS}||§7 → KDA: §f{KDA}||||§eLes dons;||§7 → Or: §f{DGOLD}||§7 → Magie: §f{DMAGIC}"
-	set {SG::Messages::Player_Info_3} to "||§eVie: §f{HEALTH}/10||||§eFaim: §f{HUNGER}/10||||§eLocalisation: §f{LOCATION}"
-	set {SG::Messages::No_Guild_Like_This} to "§7Pas de guilde trouvé avec ce nom."
-	set {SG::Messages::No_Player_Like_This} to "§7Pas de joueur trouvé avec ce nom."
-	set {SG::Messages::Guild_Emblem_GUI} to "§6Emblème de guilde"
-	set {SG::Messages::Guild_Emblem_Lore} to "||§7Cliquez pour fabriquer l'emblème de guilde."
-	set {SG::Messages::See_Stats} to "||§7Cliquez pour voir les informations joueur."
-	set {SG::Messages::Rank_Changed} to "§7Votre rang change pour {RANK}§7."
-	set {SG::Messages::Ranked_Player} to "§7{OLDRANKCHANGEP} {CHANGEP}§7le rang a été changé en {NEWRANKCHANGEP} §7par {RANKPLAYER} {PLAYER}§7."
-	set {SG::Messages::Rank_Wrong} to "§7Vous ne pouvez choisir que des rangs inférieurs à vos rangs."
-	set {SG::Messages::Player_Info_4} to "||§7Le joueur n'est pas en ligne.||||§eDernière connexion: §f{SEEN}"
-	set {SG::Messages::You_Cant_Unclaim} to "§7Vous ne pouvez pas retirer votre territoire car §e{BUILD} §7n'est pas à vous."
-	set {SG::Messages::You_Cant_Action} to "§7Vous ne pouvez rien changer sur §e{BUILD} §7zone."
-	set {SG::Messages::Owned_By} to "§7Ce chunk appartient à §e{GUILD}§7 guilde. Vous ne pouvez rien changer ici."
-	set {SG::Messages::Reloading_1} to "§7Tout les fichiers sont rechargés..."
-	set {SG::Messages::Reloading_2} to "§7Tous les fichiers sont rechargés."
-	set {SG::Messages::Version} to "§eSUPER GUILDE {VERSION} §7par §bRepublicanSensei§7."
-	set {SG::Messages::Emblem_Saved} to "§7L'emblême de guilde a été sauvé."
-	set {SG::Messages::Select_Color} to "§7Vous ne pouvez pas selectionner cette couleur."
-	set {SG::Messages::Select_Code} to "§7Vous ne pouvez pas selectionner cette boite."
-	set {SG::Messages::Guild_Emblem_Changed} to "§7L'emblème de votre guilde a été modifié par §e{PLAYER}§7."
-	set {SG::Messages::Create_Guild_Disabled_World} to "§7Vous ne pouvez pas créer de guilde dans ce monde."
-	set {SG::Messages::Divisions_0} to "§8Bronze"
-	set {SG::Messages::Divisions_1} to "§7Argent"
-	set {SG::Messages::Divisions_2} to "§eOr"
-	set {SG::Messages::Divisions_3} to "§dCrystal"
-	set {SG::Messages::Divisions_4} to "§bMaître"
-	set {SG::Messages::Divisions_5} to "§cChampion"
-	set {SG::Messages::Chat_Addon_Click_To_Stats} to "§7Cliquez ici pour voir les statistiques du joueur."
-	set {SG::Messages::Back_Header} to "§6Retour"
-	set {SG::Messages::SYNC_Done} to "§7SYNC pour le fichier §a{FILE} §7complété."
-	set {SG::Messages::SYNC_Load_Error} to "§7Impossible de charger le fichier §c{FILE}."
-	set {SG::Messages::SYNC_Delete_Failed} to "§7Impossible de supprimer/restaurer le fichier §c{FILE}§7."
-	set {SG::Messages::SYNC_Enter_File} to "§7Entrez le fichier à synchroniser. (locale ou config)"
-	set {SG::Messages::Menu_Alchemy_GUI} to "Alchimie de guilde"
-	set {SG::Messages::Text_Feature} to "§eFonctionnalité:"
-	set {SG::Messages::Text_Price} to "§ePrix:"
-	set {SG::Messages::Text_Buy} to "§eCliquez ici pour acheter la fonctionnalité."
-	set {SG::Messages::Alchemy_Menu_Lore_1} to "§8 → §7Octroit 15 minutes de force à tous les membres de la guilde."
-	set {SG::Messages::Alchemy_Menu_Lore_2} to "§8 → §7Invoquer un cheval pour tous les membres de la guilde"
-	set {SG::Messages::Alchemy_Menu_Lore_3} to "§8 → §7Octroit 15 minutes de vitesse à tous les membres de la guilde."
-	set {SG::Messages::Alchemy_Menu_Lore_4} to "§8 → §7Octroit 15 minutes de résistance à tous les membres de la guilde."
-	set {SG::Messages::Alchemy_Menu_Price_1} to " §8 → §7Niveau 1: §f{MAGIC1} magie|| §8 → §7Niveau 2: §f{MAGIC2} magie|| §8 → §7Niveau 3: §f{MAGIC3} magie"
-	set {SG::Messages::Alchemy_Menu_Price_2} to " §8 → §7Cheval non armé: §f{MAGIC1} magie|| §8 → §7Armure en fer pour cheval: §f{MAGIC2} magie|| §8 → §7Armure en diamant pour cheval: §f{MAGIC3} magie"
-	set {SG::Messages::Alchemy_Menu_Price_3} to " §8 → §7Niveau 1: §f{MAGIC1} magie|| §8 → §7Niveau 2: §f{MAGIC2} magie|| §8 → §7Niveau 3: §f{MAGIC3} magie"
-	set {SG::Messages::Alchemy_Menu_Price_4} to " §8 → §7Niveau 1: §f{MAGIC1} magie|| §8 → §7Niveau 2: §f{MAGIC2} magie|| §8 → §7Niveau 3: §f{MAGIC3} magie"
-	set {SG::Messages::Alchemy_Type_1_Item_1} to stone sword
-	set {SG::Messages::Alchemy_Type_1_Item_2} to iron sword
-	set {SG::Messages::Alchemy_Type_1_Item_3} to diamond sword
-	set {SG::Messages::Alchemy_Type_2_Item_1} to saddle
-	set {SG::Messages::Alchemy_Type_2_Item_2} to iron horse armor
-	set {SG::Messages::Alchemy_Type_2_Item_3} to diamond horse armor
-	set {SG::Messages::Alchemy_Type_3_Item_1} to leather boots
-	set {SG::Messages::Alchemy_Type_3_Item_2} to iron boots
-	set {SG::Messages::Alchemy_Type_3_Item_3} to diamond boots
-	set {SG::Messages::Alchemy_Type_4_Item_1} to leather chestplate
-	set {SG::Messages::Alchemy_Type_4_Item_2} to iron chestplate
-	set {SG::Messages::Alchemy_Type_4_Item_3} to diamond chestplate
-	set {SG::Messages::Alchemy_Type_1_Name_1} to "§6Force niveau 1"
-	set {SG::Messages::Alchemy_Type_1_Name_2} to "§6Force niveau 2"
-	set {SG::Messages::Alchemy_Type_1_Name_3} to "§6Force niveau 3"
-	set {SG::Messages::Alchemy_Type_2_Name_1} to "§6Cheval non armée"
-	set {SG::Messages::Alchemy_Type_2_Name_2} to "§6Armure en fer pour cheval"
-	set {SG::Messages::Alchemy_Type_2_Name_3} to "§6Armure en diamant pour cheval"
-	set {SG::Messages::Alchemy_Type_3_Name_1} to "§6Vitesse niveau 1"
-	set {SG::Messages::Alchemy_Type_3_Name_2} to "§6Vitesse niveau 2"
-	set {SG::Messages::Alchemy_Type_3_Name_3} to "§6Vitesse niveau 3"
-	set {SG::Messages::Alchemy_Type_4_Name_1} to "§6Resistance niveau 1"
-	set {SG::Messages::Alchemy_Type_4_Name_2} to "§6Resistance niveau 2"
-	set {SG::Messages::Alchemy_Type_4_Name_3} to "§6Resistance niveau 3"
-	set {SG::Messages::Bought_Alchemy_Guild} to "§e{GUILD} §7achète §6{TYPE} §7à partir de l'alchimie de guilde."
-	set {SG::Messages::Bought_Alchemy_Own} to "§7{RANK} {PLAYER}§7, achète §6{TYPE} §7à partir de l'alchimie de guilde"
-	set {SG::Messages::Barrack_Upgrade_Item_1} to "§7Ensemble en cuir"
-	set {SG::Messages::Barrack_Upgrade_Item_2} to "§eEnsemble en or"
-	set {SG::Messages::Barrack_Upgrade_Item_3} to "§8Ensemble de maille"
-	set {SG::Messages::Barrack_Upgrade_Item_4} to "§fEnsemble en fer"
-	set {SG::Messages::Barrack_Upgrade_Item_5} to "§bEnsemble en diamant"
-	set {SG::Messages::Divisions_Item_0} to coal item
-	set {SG::Messages::Divisions_Item_1} to iron ingot
-	set {SG::Messages::Divisions_Item_2} to gold ingot
-	set {SG::Messages::Divisions_Item_3} to diamond
-	set {SG::Messages::Divisions_Item_4} to emerald
-	set {SG::Messages::Divisions_Item_5} to nether star
-	set {SG::Messages::Menu_War_GUI} to "Guerres de guilde"
-	set {SG::Messages::Menu_War_Name_1} to "§6Rechercher une Guilde à combattre"
-	set {SG::Messages::Menu_War_Lore_1} to "§7Cliquez ici pour trouver une Guilde à combattre."
-	set {SG::Messages::Menu_War_Name_2} to "§6Statistiques de guerre"
-	set {SG::Messages::Menu_War_Lore_2} to "§eGuilde;||§7 → Division: §f{LEVEL}||§7 → Points: §f{POINTS} ✪||§7 → Items de départ: §f{ITEMS}||||§ePvP;||§7 → Tués: §f{KILLS}||§7 → Décès: §f{DEATHS}||||§eTop tueurs;||§7 → {RANK} {TOP}§8: §f{NUM} tués"
-	set {SG::Messages::Menu_War_Name_3} to "§6Top Guildes"
-	set {SG::Messages::Menu_War_Lore_3} to "§7Cliquez ici pour voir le top des guildes."
-	set {SG::Messages::Disabled_Chat} to "§7Vous avez désactivé le chat de guilde. Tout les joueurs peuvent voir vos messages"
-	set {SG::Messages::Enabled_Chat} to "§7Vous avez activé le chat de guilde. Seuls les joueurs de votre guilde peuvent voir vos messages"
-	set {SG::Messages::Guild_Chat} to "§7[CG]"
-	set {SG::Messages::Number_Online} to "§8(§a{PLAYER} §7en ligne§8)"
-	set {SG::Messages::Text_Month} to "mois"
-	set {SG::Messages::Text_Day} to "jour(s)"
-	set {SG::Messages::Text_Hour} to "heure(s)"
-	set {SG::Messages::Text_Minute} to "minute(s)"
-	set {SG::Messages::Text_Second} to "seconde(s)"
-	set {SG::Messages::No_Variable_List_0} to "§7Pas de guilde."
-	set {SG::Messages::Header_0} to "Liste des guildes"
-	set {SG::Messages::Header_1} to "Liste des territoires"
-	set {SG::Messages::Forward_Header} to "§6Récompenses ➙"
-	set {SG::Messages::Claimed_Land} to "Territoire revendiqué"
-	set {SG::Messages::Claimed_Land_Lore} to "||§7Localisation: §f{LOC}||||§eCliquez pour être téléporter au territoire."
-	set {SG::Messages::Click_To_Info} to "||§7Chef: §f{LEADER}||||§7Division: §f{LEVEL}||||§eCliquez ici pour voir les informations guilde."
-	set {SG::Messages::ClaimName_Usage} to "§7Utilisez §e/sg claimname <name> §7pour modifier le nom de votre territoire."
-	set {SG::Messages::ClaimName_Changed} to "§7Nom du territoire situé à §e{LOC} §7changer pour §6{NAME} §7par §9{BY}§7."
-	set {SG::Messages::No_Item_Gold} to "§7Vous n'avez pas §e{NUMBER} lingots d'or §7à donner."
-	set {SG::Messages::Arena_Created} to "§7Arène créée: §e{ARENA}"
-	set {SG::Messages::Arena_Exists} to "§7Il y a déjà une arène avec ce nom."
-	set {SG::Messages::Enter_Arena_Name} to "§7Entrer le nom de l'arène."
-	set {SG::Messages::No_Arena} to "§7Cette arène n'existe pas."
-	set {SG::Messages::Arena_Removed} to "§7Arène supprimée: §e{ARENA}"
-	set {SG::Messages::Enter_Setspawn_Type} to "§7Vous devez entrer le type d'équipe (1 or 2)"
-	set {SG::Messages::Setspawn_Done} to "§eTeam-{TYPE}§7's point de spawn §a{ARENA} §7est ajouté."
-	set {SG::Messages::Lobby_Done} to "§7Le loby a été crée ici. Les joueurs seront téléportés ici à la fin de la partie."
-	set {SG::Messages::Restart_Kick_restart} to "§7Vous avez été éjecté car l'arène à redémarré."
-	set {SG::Messages::Restart_Kick_error} to "§7Vous avez été éjecté car l'arène à buggé."
-	set {SG::Messages::Restart_Kick_time} to "§7Vous avez été éjecté car c'est la fin du jeu."
-	set {SG::Messages::Enemy_War_Minimum} to "§7Cette guilde a §e{ONLINE} §7membre(s) en ligne. (Minimum est {MINIMUM})"
-	set {SG::Messages::You_War_Minimum} to "§7Vous avez §e{ONLINE} §7membre(s) en ligne. (Minimum est {MINIMUM})"
-	set {SG::Messages::Enemy_Leader_Not_Online} to "§7Le leader de la guilde n'est pas en ligne."
-	set {SG::Messages::Enemy_Guild_In_War} to "§7Cette guilde est en guerre."
-	set {SG::Messages::Your_Guild_In_War} to "§7Votre guilde est en guerre."
-	set {SG::Messages::Cannot_War_Yourself} to "§7Vous ne pouvez pas faire la guerre avec vous-même."
-	set {SG::Messages::War_Invite_Send} to "§7Votre guilde a envoyé une invitation de guerre à §c{GUILD} §7guilde."
-	set {SG::Messages::War_Invite_GUI} to "Invitation de guerre"
-	set {SG::Messages::War_InviteC_Accept} to "§6Accepter et faire la guerre avec §c{GUILD}§6."
-	set {SG::Messages::War_InviteC_Reject} to "§cRejeter et fermer le menu."
-	set {SG::Messages::War_Other_Reject} to "§9{GUILD} §7a rejeté votre invitation de guerre."
-	set {SG::Messages::War_You_Reject} to "§7Vous avez rejeté l'invitation de guerre de §9{GUILD}§7."
-	set {SG::Messages::No_Available_Arena} to "§7Aucune arène disponible trouvée."
-	set {SG::Messages::War_Starting_Timer} to "§9{GUILD1} §7vs. §c{GUILD2} §7commencera dans §e{SECONDS} §7second(s)."
-	set {SG::Messages::War_Started} to "§7La guerre entre §9{GUILD1} §7et §c{GUILD2} §7a commencé. Bonne chance guerriers!"
-	set {SG::Messages::War_Starting} to "§7Invitation de guerre acceptée, préparez vous pour la guerre!"
-	set {SG::Messages::War_End_Timer} to "§7La guerre se termine dans §e{MINUTES} §7minute(s)."
-	set {SG::Messages::Game_Finished_Time} to "§7La guerre est terminée, personne n'a gagné."
-	set {SG::Messages::No_Command_War} to "§7Vous ne pouvez pas utiliser cette commande durant la guerre."
-	set {SG::Messages::War_Death_1} to "§9{VICTIM} ({VGUILD}) §7tué par §c{ATTACKER} ({AGUILD}) §7et est éliminée de la guerre."
-	set {SG::Messages::War_Win} to "§7La guerre entre §9{GUILD1} §7et §c{GUILD2} §7est terminée. §9{GUILD1} §7a gagné la guerre."
-	set {SG::Messages::New_Division} to "§7La division de votre guilde a changé de §r{OLDDIVISION} §7à §r{NEWDIVISION}§7."
-	set {SG::Messages::War_Points_Add} to "§7Votre guilde a gagné la guerre contre §c{GUILD} §7et gagne §a+{POINTS} ✪§7."
-	set {SG::Messages::War_Points_Lose} to "§7Votre guilde a perdu la guerre contre §9{GUILD} §7et perd §c-{POINTS} ✪§7."
-	set {SG::Messages::Arena_Debug} to "§7Arène §a{ARENA} §7redémarrée."
-	set {SG::Messages::No_Arena_Found} to "§7Pas d'arène trouvée."
-	set {SG::Messages::Arena_Guilds} to "§7Arène de guilde: §f"
-	set {SG::Messages::Arena_TimeLeft} to "§7Temps restant: §f"
-	set {SG::Messages::Status_Text_0} to "§a§lEn attente"
-	set {SG::Messages::Status_Text_1} to "§e§lEn jeux"
-	set {SG::Messages::Status_Text_2} to "§c§lTerminée"
-	set {SG::Messages::Status_Text_3} to "§4§lRedémarrage"
-	set {SG::Messages::War_Item_H_Barrack_1} to leather helmet
-	set {SG::Messages::War_Item_C_Barrack_1} to leather chestplate
-	set {SG::Messages::War_Item_L_Barrack_1} to leather leggings
-	set {SG::Messages::War_Item_B_Barrack_1} to leather boots
-	set {SG::Messages::War_Item_S_Barrack_1} to stone sword
-	set {SG::Messages::War_Item_H_Barrack_2} to gold helmet
-	set {SG::Messages::War_Item_C_Barrack_2} to gold chestplate
-	set {SG::Messages::War_Item_L_Barrack_2} to gold leggings
-	set {SG::Messages::War_Item_B_Barrack_2} to gold boots
-	set {SG::Messages::War_Item_S_Barrack_2} to golden sword of unbreaking 10
-	set {SG::Messages::War_Item_H_Barrack_3} to chain helmet
-	set {SG::Messages::War_Item_C_Barrack_3} to chain chestplate
-	set {SG::Messages::War_Item_L_Barrack_3} to chain leggings
-	set {SG::Messages::War_Item_B_Barrack_3} to chain boots
-	set {SG::Messages::War_Item_S_Barrack_3} to stone sword of sharpness 3
-	set {SG::Messages::War_Item_H_Barrack_4} to iron helmet
-	set {SG::Messages::War_Item_C_Barrack_4} to iron chestplate
-	set {SG::Messages::War_Item_L_Barrack_4} to iron leggings
-	set {SG::Messages::War_Item_B_Barrack_4} to iron boots
-	set {SG::Messages::War_Item_S_Barrack_4} to iron sword
-	set {SG::Messages::War_Item_H_Barrack_5} to diamond helmet
-	set {SG::Messages::War_Item_C_Barrack_5} to diamond chestplate
-	set {SG::Messages::War_Item_L_Barrack_5} to diamond leggings
-	set {SG::Messages::War_Item_B_Barrack_5} to diamond boots
-	set {SG::Messages::War_Item_S_Barrack_5} to diamond sword
-	set {SG::Messages::House_Protection} to "§7Le système créera une base lorsque vous créerez la guilde, veuillez donc sélectionner un terrain vide."
-	set {SG::Messages::RankStar_Leader} to "§b✯ "
-	set {SG::Messages::RankStar_General} to "§a⚝ "
-	set {SG::Messages::RankStar_Captain} to "§d★ "
-	set {SG::Messages::RankStar_Member} to ""
-	set {SG::Messages::No_Name_Guild} to "§7Vous ne pouvez pas utiliser ce nom de guilde."
-	set {SG::Messages::Claim_Limit} to "§7Vous ne pouvez pas avoir plus de territoire."
-	set {SG::Messages::Teleport_Spawn_1} to "§c{ATTACKER}§7 vous a chassé du territoire."
-	set {SG::Messages::Teleport_Spawn_2} to "§7Vous avez chassé §c{VICTIM}§7 du territoire."
-	set {SG::Messages::No_Market_Guild} to "§7Cette guilde n'a pas de marché de guilde."
-	set {SG::Messages::Done_Set_Market} to "Vous avez défini l'emplacement du marché de guilde."
-	set {SG::Messages::Teleport_Market} to "§7Vous avez été téléporté à§a{GUILD}§7."
-	set {SG::Messages::Visit_Market} to "§9{PLAYER} §7visite votre marché de guilde."
-	set {SG::Messages::Done_Remove_Market} to "§7Votre marché de guilde est supprimé."
-	set {SG::Messages::Already_Have_Market} to "§7Vous avez déjà un marché de guilde."
-	set {SG::Messages::Death_Broadcast} to "§3[{VGUILD}] §9{VICTIM}§7 tué par §6[{AGUILD}] §e{ATTACKER} §4[-{GOLD} Gold]"
-	set {SG::Messages::Death_Gold_Gain} to "Votre guilde gagne §e+{GOLD} Or §7parce que §7{RANK} {PLAYER}§7 a tué quelqu'un."
-	set {SG::Messages::Death_Gold_Loss} to "Votre guilde perd §4-{GOLD} Or §7parce que §7{RANK} {PLAYER}§7 a été tué par quelqu'un."
-	set {SG::Messages::Buildings_Broadcast_TNT} to "§7Les TNT n'exploseront pas dans vos territoires."
-	set {SG::Messages::Buildings_Lore_TNT} to "§7 → TNT n'explosera pas dans vos territoires."
-	set {SG::Messages::Guild_Info_4} to "§6Marché de guilde"
-	set {SG::Messages::Text_Status} to "§7Statuts:"
-	set {SG::Messages::Text_On} to "§fOuvert"
-	set {SG::Messages::Text_Off} to "§fFermé"
-	set {SG::Messages::Click_To_Teleport} to "§7Cliquez ici pour vous téléporter."
-	set {SG::Messages::Back_Item} to "160:14" parsed as material
-	set {SG::Messages::Forward_Item} to "160:13" parsed as material
-	set {SG::Messages::Menu_Item} to "160:15" parsed as material
-	set {SG::Messages::Click_To_Select_Color} to "§fCliquez moi pour sélectionner votre colorant."
-	set {SG::Messages::Click_To_Dye_Here} to "Cliquez moi pour teindre ici."
-	set {SG::Messages::Save_Emblem_Lore} to "§fCliquez moi pour enregistrer et appliquer l'emblème."
-	set {SG::Messages::Reset_Emblem_Lore} to "§fCliquez moi pour effacer votre brouillon."
-	set {SG::Messages::Use_Emblem_Lore} to "§fCliquez moi pour éditer l'emblème de votre guilde."
-	set {SG::Messages::Wilderness_Text} to "§2§l§nRégion sauvage§r §2§l⚘"
-	set {SG::Messages::Wilderness_Msg_1} to "§7§oJ'aime la nature..."
-	set {SG::Messages::Wilderness_Msg_2} to "§7§oJ'adore être libre..."
-	set {SG::Messages::Wilderness_Msg_3} to "§7§oJe suis un homme libre et j'ai besoin de ma liberté."
-	set {SG::Messages::Wilderness_Msg_4} to "§7§oLe secret du bonheur est la nature."
-	set {SG::Messages::Home_Text} to "§a§l§nMaison§r §a§l⌂"
-	set {SG::Messages::Home_Msg_1} to "§7§oLa douceur du foyer..."
-	set {SG::Messages::Home_Msg_2} to "§7§oRien n'est mieux que de rentrer à la maison."
-	set {SG::Messages::Home_Msg_3} to "§7Vous avez trouvé ce dont vous avez besoin et retournez chez vous."
-	set {SG::Messages::Home_Msg_4} to "§7La maison d'un homme est son château."
-	set {SG::Messages::Other_Guild_Text} to "§4§l§n{GUILD}§r §4§l☠"
-	set {SG::Messages::Other_Guild_Msg_1} to "§7§oFaites attention."
-	set {SG::Messages::Other_Guild_Msg_2} to "§7Shh, ils peuvent nous entendre."
-	set {SG::Messages::Other_Guild_Msg_3} to "§7Une autre guilde ici."
-	set {SG::Messages::Other_Guild_Msg_4} to "§7À la guerre!"
-	set {SG::Messages::Emblem_Menu} to "§0§l  » EMBLEME DE GUILDE"
-	set {SG::Messages::Save_Emblem_Button} to "§2§l[§2✓§2§l]§r"
-	set {SG::Messages::Reset_Emblem_Button} to "§4§l[§4✘§4§l]"
-	set {SG::Messages::Use_Emblem_Button} to "§0§l[§0✎§0§l]"
-	set {SG::Messages::Click_To_War} to "||§7Chef: §f{LEADER}||||§7Division: §f{LEVEL}||||§eCliquez pour faire la guerre avec cette guilde."
-	set {SG::Messages::Header_2} to "Recherche de Guilde"
-	set {SG::Messages::No_Variable_List_2} to "§7Aucune guilde en guerre."
-	set {SG::Messages::Score_Prefix} to "§7§6§lGUILDES"
-	set {SG::Messages::Score_Msg_9} to "§b    "
-	set {SG::Messages::Score_Msg_8} to "§fTEMPS: §e{TIME} min(s)"
-	set {SG::Messages::Score_Msg_7} to "§a     "
-	set {SG::Messages::Score_Msg_6} to "§9§n{GUILD1}:"
-	set {SG::Messages::Score_Msg_5} to "§f{PLY1}/{MAX1}  "
-	set {SG::Messages::Score_Msg_4} to "§2  "
-	set {SG::Messages::Score_Msg_3} to "§c§n{GUILD2}:"
-	set {SG::Messages::Score_Msg_2} to "§f{PLY2}/{MAX2} "
-	set {SG::Messages::Score_Msg_1} to "§1 "
-	set {SG::Messages::Player_No_Guild} to "§7Ce joueur n'a pas de guilde."
-	set {SG::Messages::Menu_Donate_GUI} to "Placez ressources ici"
-	set {SG::Messages::No_Item_Magic} to "§7Vous n'avez pas §9{NUMBER} diamant(s) §7a donner."
-	set {SG::Messages::Buildings_Item_Alchemy} to diamond
-	set {SG::Messages::Store_Name_Magic} to "§b§nRessource magique"
-	set {SG::Messages::Store_Color_2} to "§b"
-	set {SG::Messages::Donate_Must_Be_Gold_Magic} to "§7Les dons ne peuvent être que §e§ngold§r§7 ou §b§nmagic§r§7."
-	set {SG::Messages::Cant_Attack_Member} to "§7Vous ne pouvez pas attaquer vos compagnons de guilde."
-	set {SG::Messages::Enter_MOTD} to "§7Saisir un message du jour."
-	set {SG::Messages::MOTD_Changed} to "§7Message du jour modifié par §a{BY}§7."
-	set {SG::Messages::MOTD_Removed} to "§7Message du jour supprimé par §a{BY}§7."
-	set {SG::Messages::MOTD_Title} to "§f← §e§l§nMOTD§r §f→"
-	set {SG::Messages::MOTD_SubTitle} to "§7§o{MESSAGE}"
-	set {SG::Messages::MOTD_ActionBar} to "§fMessage du jour par §a{BY}§f. §f({DATE})"
-	set {SG::Messages::Enter_Region_Name} to "§7Entrez un nom de région Worldguard."
-	set {SG::Messages::No_Region} to "§7Pas de région WorldGuard de ce nom."
-	set {SG::Messages::Allow_Or_Disallow} to "§7Utilisez '/sgallow region allow <region>' pour donner les droits de créer une guilde sur cette région. Pour effacer '/sg region disallow <region>'"
-	set {SG::Messages::Region_Allowed} to "§7Vous autorisez la région §a{REGION} §7a donner accès à la création de guildes."
-	set {SG::Messages::Region_Disallowed} to "§7Vous refuser à la région §c{REGION} §7le droit à la création de guildes."
-	set {SG::Messages::Already_Ally} to "§7Cette guilde est déjà dans votre alliée."
-	set {SG::Messages::Wait_Ally} to "§7Vous devez attendre §a{TIME} §7pour ajouter/supprimer un allié."
-	set {SG::Messages::Added_Ally} to "§a{GUILD} §7et §9{ALLY} §7sont désormais alliés."
-	set {SG::Messages::Enemy_Leader_Not_Online} to "§7Le leader de cette guilde n'est pas connecté actuellement."
-	set {SG::Messages::Ally_GUI} to "Invitation d'Alliance"
-	set {SG::Messages::Ally_InviteC_Accept} to "§6Accepter et devenir l'allié de §e{GUILD}§6."
-	set {SG::Messages::Ally_InviteC_Lore} to "||§7Les alliés ne peuvent s'attaquer entre eux."
-	set {SG::Messages::Ally_Other_Reject} to "§9{GUILD} §7refuse votre invitation d'alliance."
-	set {SG::Messages::Ally_You_Reject} to "§7Vous refusez l'invitation d'alliance de la guilde §9{GUILD}§7."
-	set {SG::Messages::No_Ally} to "§7Cette guilde n'est pas dans votre liste d'alliés."
-	set {SG::Messages::Removed_Ally} to "§a{GUILD} §7et §c{ENEMY} §7ne sont plus alliés."
-	set {SG::Messages::Cannot_War_Allies} to "§7Vous ne pouvez pas combattre vos alliés."
-	set {SG::Messages::Cannot_Claim_Allies} to "§7Cette terre appartient à votre allié. Vous ne pouvez pas claim."
-	set {SG::Messages::Allies_GUI} to "Liste d'Alliés"
-	set {SG::Messages::Allies_Lore} to "||§7Date: §e{DATE}||§7Ajouté par: §e{BY}||||§7§oUtilisez §c§o'/g enemy {GUILD}' §7§opour supprimer."
-	set {SG::Messages::No_Allies} to "§7Votre guilde n'a pas alliés."
-	set {SG::Messages::Ally_Yourself} to "§7Vous ne pouvez pas faire d'alliance avec vous même."
-	set {SG::Messages::Help_Pages_4::Line_1} to "§e/guilds ally <guild> §8- §7Définir une guilde comme un allié."
-	set {SG::Messages::Help_Pages_4::Line_2} to "§e/guilds enemy <guild> §8- §7Retirer une guilde de votre liste d'alliés."
-	set {SG::Messages::Help_Pages_4::Line_3} to "§e/guilds allies §8- §7Voir les alliés."
-	set {SG::Messages::Updated_Locale} to "§7Locale file has been updated. (Old: {OLD} - New: {NEW})"
-	set {SG::Messages::Locale_Update_Already} to "§7Locale file couldn't be updated. Are you sure is it outdated?"
-	set {SG::Messages::Updated_Locale_Replace} to "§7Added §6{NEW} §7new messages to locale file."
-	set {SG::Messages::Tournaments_Name} to "Tournaments"
-	set {SG::Messages::Tournaments_Status_Off_Name} to "§4⚠"
-	set {SG::Messages::Tournaments_Status_Off_Lore} to "||§7The Tournament is not active||§7at the moment and try again later."
-	set {SG::Messages::Tournaments_In_Name} to "§aTournament Information"
-	set {SG::Messages::Tournaments_In_Lore} to "||§7Waiting for an opponent..."
-	set {SG::Messages::Tournaments_Opponent_Lore} to "||§7Your opponent is §c{GUILD} §7guild.||§7You can check stats of this||§7guild with §e/g info §7command."
-	set {SG::Messages::Tournaments_Join_Name} to "§aJoin the Tournament"
-	set {SG::Messages::Tournaments_Join_Lore} to "||§7Click to join the Tournament."
-	set {SG::Messages::Tournaments_List} to "§aTournament Matches"
-	set {SG::Messages::Tournaments_Guild_List} to "§aTournament Guilds"
-	set {SG::Messages::Tournaments_List_Waiting} to "||§7Waiting for guilds..."
-	set {SG::Messages::Tournaments_Player_List} to "§aPlayer List"
-	set {SG::Messages::Tournaments_Player_List_Lore} to "||§7Click to see your player team."
-	set {SG::Messages::Tournaments_Ingame_Lore} to "§8(§7§oin progress§8)"
-	set {SG::Messages::Tournaments_Waiting_Lore} to "§8(§7§owaiting§8)"
-	set {SG::Messages::Tournaments_Won_Lore} to "§8(§f{G}§8)"
-	set {SG::Messages::Tournaments_Eliminated_Lore} to "||§7The tournament has begun||§7and you can't join at the moment.||§7See you soon in a new Tournament."
-	set {SG::Messages::Tournaments_Already_Enabled} to "§7The tournament is already enabled."
-	set {SG::Messages::Tournament_Started} to "§7The guild tournament has enabled! Join with §e/tournament §7command."
-	set {SG::Messages::Tournament_Joins_Closed} to "§7The tournament matches has been set. Check it with tournament menu."
-	set {SG::Messages::Your_Guild_Already_Tournament} to "§7Your guild is already in the Tournament."
-	set {SG::Messages::Tournament_Not_Active} to "§7The tournament is not active at the moment."
-	set {SG::Messages::Cant_Join_Closed} to "§7Your guild can't join the Tournament at the moment."
-	set {SG::Messages::Tournament_Player_List} to "Online Members"
-	set {SG::Messages::Tournament_Player_Status_Lore} to "||§eRank: §f{RANK}||§eWar Kills: §f{KILLS}||§eWar Deaths: §f{DEATHS}"
-	set {SG::Messages::Guild_Joined_Tournament} to "§a{GUILD} §7has joined to tournament. §8[§e{ALL} joined§8]"
-	set {SG::Messages::Tournament_Not_Enough} to "§7Tournament has closed because there were not enough teams to participate in the Tournament."
-	set {SG::Messages::You_Cant_War_Tournament} to "§7Sorry, your guild can't war while tournament is active."
-	set {SG::Messages::Tournaments_You_Won_Waiting} to "||§7Your guild won a battle so.||§7you're waiting for new match."
-	set {SG::Messages::Guild_Removed_Tournament} to "§7Your guild has been removed from tournament due to 'guild count must be double'"
-	set {SG::Messages::Tournament_Won_Broadcast} to "§a{GUILD} §7won the Tournament and gained §a+{POINTS} ✪§7."
-	set {SG::Messages::Manage_Panel_Tournament} to "§6Guild Tournament"
-	set {SG::Messages::Locale_GUI_Name} to "Language Select"
-	set {SG::Messages::Click_Select_Locale} to "||§7Click to select this locale."
-	set {SG::Messages::Locale_en_US} to "§6English (United States)"
-	set {SG::Messages::Locale_es_ES} to "§6Español"
-	set {SG::Messages::Locale_de_DE} to "§6Deutsch"
-	set {SG::Messages::Locale_it_IT} to "§6Italiano"
-	set {SG::Messages::Locale_ru_RU} to "§6Руска"
-	set {SG::Messages::Locale_tr_TR} to "§6Türkçe"
-	set {SG::Messages::Allow_Or_Disallow} to "§7Use §a'/sgallow region allow <region>' §7to give access create guilds on region. For delete this use §c'/sgadmin region disallow <region>'§7. To check regions use §e'/sgadmin region list'§7."
-	set {SG::Messages::No_Region_Found} to "§7There are no regions allowed."
-	set {SG::Messages::Region_List} to "          §a§nAllowed Region List"
-	set {SG::Messages::Top_Guilds} to "Top Guilds"
-	set {SG::Messages::Click_To_Info} to "||§7Leader: §f{LEADER}||§7War Points: §f{POINTS} ✪||§7Division: §f{LEVEL}||||§eClick to see information of this guild."
-	set {SG::Messages::War_Top_GUI} to "§7Click to check top guilds list."
-	set {SG::Messages::War_Death_0} to "§9{VICTIM} ({VGUILD}) §7has died and eliminated from war."
-	set {SG::Messages::Locale_zh_CN} to "§6渔乐"
-	set {SG::Messages::Locale_vn_VN} to "§6Tiếng Việt"
-	set {SG::Messages::Locale_fr_FR} to "§6Français"
-	set {SG::Messages::Divisions_0} to "§8Bronze"
-	set {SG::Messages::Divisions_1} to "§7Silver"
-	set {SG::Messages::Divisions_2} to "§eGold"
-	set {SG::Messages::Divisions_3} to "§dCrystal"
-	set {SG::Messages::Divisions_4} to "§bMaster"
-	set {SG::Messages::Divisions_5} to "§cChampionship"
-	set {SG::Messages::Menu_Tournament_Lore} to "||§7Click to check Tournament status."
-	set {SG::Messages::Menu_Allies_Name} to "§6Guild Allies"
-	set {SG::Messages::Menu_Allies_Lore} to "||§7Click to check your guild's allies."
-	set {SG::Messages::Guild_Home_Menu_Name} to "§6Guild Home"
-	set {SG::Messages::Guild_Home_Menu_Lore} to "||§7Click to teleport your guild's home."
-	set {SG::Messages::Tournament_Cooldown} to "§7Matches will be set in §e{SECOND} §7second(s). §7Join with §e/tournament§7."
-	set {SG::Messages::You_Need_More_Resource} to "§7You need more §f{AMOUNT} §7of {RESOURCE}§r §7to do this."
-	set {SG::Messages::Main_Page_Header} to "§6Main Page"
-	set {SG::Messages::Select_GUI} to "Select Type"
-	set {SG::Messages::No_Variable_List_3} to "§7No players."
-	set {SG::Messages::Header_3} to "Guild Members"
-	set {SG::Messages::Enemy_Leader_Not_Online} to "§7Right now, no one has the permission of answer the invite in this guild."
-	set {SG::Messages::Menu_War_Lore_New} to "§eGuild;||§7 → Division: §f{LEVEL}||§7 → Points: §f{POINTS} ✪||§7 → Start Items: §f{ITEMS}||||§ePvP;||§7 → Kills: §f{KILLS}||§7 → Deaths: §f{DEATHS}"
-	set {SG::Messages::Resource_Wood} to "§6§nWood Resource"
-	set {SG::Messages::Resource_Stone} to "§7§nStone Resource"
-	set {SG::Messages::Resource_Iron} to "§f§nIron Resource"
-	set {SG::Messages::Resource_Gold} to "§e§nGold Resource"
-	set {SG::Messages::Resource_Diamond} to "§b§nDiamond Resource"
-	set {SG::Messages::Resource_Wool} to "§3§nWool Resource"
-	set {SG::Messages::Resource_Worker} to "§e§nWorkers"
-	set {SG::Messages::Resource_Unicode_Wood} to "✚"
-	set {SG::Messages::Resource_Unicode_Stone} to "⚒"
-	set {SG::Messages::Resource_Unicode_Iron} to "ℓ"
-	set {SG::Messages::Resource_Unicode_Gold} to "⊂"
-	set {SG::Messages::Resource_Unicode_Diamond} to "∑"
-	set {SG::Messages::Resource_Unicode_Wool} to "⎈"
-	set {SG::Messages::Resource_Unicode_Worker} to "☯"
-	set {SG::Messages::Resource_Color_Wood} to "§6"
-	set {SG::Messages::Resource_Color_Stone} to "§7"
-	set {SG::Messages::Resource_Color_Iron} to "§f"
-	set {SG::Messages::Resource_Color_Gold} to "§e"
-	set {SG::Messages::Resource_Color_Diamond} to "§b"
-	set {SG::Messages::Resource_Color_Wool} to "§3"
-	set {SG::Messages::Resource_Color_Worker} to "§e"
-	set {SG::Messages::Resource_Donate_Lore} to "§7Click to donate resources."
-	set {SG::Messages::Resource_Donate_Usage} to "§7You can donate resources using §e/g donate <wood/stone/iron/gold/diamond/wool> <number>§7."
-	set {SG::Resource_DonateItemType_Wood} to wooditems
-	set {SG::Resource_DonateItemType_Stone} to stone
-	set {SG::Resource_DonateItemType_Iron} to iron ingot
-	set {SG::Resource_DonateItemType_Gold} to gold ingot
-	set {SG::Resource_DonateItemType_Diamond} to diamond
-	set {SG::Resource_DonateItemType_Wool} to woolitems
-	set {SG::Messages::No_Item_Resouce} to "§7You don't have §c{NUMBER} §7of this resource to donate."
-	set {SG::Messages::SYNC_Done} to "§7SYNC for §a{FILE} §7file is done."
-	set {SG::Messages::SYNC_Enter_File_Type} to "§7Enter the file to sync. (/sg sync <config/locale>)"
-	set {SG::Messages::Buildings_GUI} to "Guild Buildings"
-	set {SG::Messages::Buildings_Name_Townhall} to "§6Townhall"
-	set {SG::Messages::Buildings_Name_Barrack} to "§6Barrack"
-	set {SG::Messages::Buildings_Name_Storage} to "§6Storage"
-	set {SG::Messages::Buildings_Name_Alchemy} to "§6Alchemy"
-	set {SG::Messages::Building_Status_0} to "Ready to upgrade"
-	set {SG::Messages::Building_Status_1} to "Upgrading..."
-	set {SG::Messages::Building_Status_2} to "Waiting complete action..."
-	set {SG::Messages::Buildings_Lore} to "||§eBuilding Level: §f{LEVEL}||§eStatus: §f{STATUS}||{TIMESHOW}||||§7Click to see information page."
-	set {SG::Messages::Buildings_Time_Remaining} to "||§eTime remaining: §f{TIME}"
-	set {SG::Messages::Header_4} to "Allies List"
-	set {SG::Messages::Allies_4_Lore} to "||§7Date: §e{DATE}||§7Added By: §e{BY}||||§7§oUse §c§o'/g enemy {GUILD}' §7§oto remove."
-	set {SG::Messages::No_Variable_List_4} to "§7No allies."
-	set {SG::Messages::Building_Desc_Townhall} to "Townhall increases your max-member and worker capacity, protects you from TNT(s)"
-	set {SG::Messages::Building_Desc_Barrack} to "Barracks gives you better items at guild wars to you can win wars easily."
-	set {SG::Messages::Building_Desc_Storage} to "Storage holds resources of guild, you can upgrade if you want more resource capacity."
-	set {SG::Messages::Building_Desc_Alchemy} to "Alchemy gives you more effective powers to use, upgrade it to get better."
-	set {SG::Messages::Upgrade_Emblem_Button} to "§a§l【▲】"
-	set {SG::Messages::Quit_Emblem_Button} to "§4§l【⏎】"
-	set {SG::Messages::Timer_Emblem_Button} to "§c§l【⌛】"
-	set {SG::Messages::Done_Emblem_Button} to "§2§l【✔】"
-	set {SG::Messages::Max_Emblem_Button} to "§0§l【✕】"
-	set {SG::Messages::Upgrade_Emblem_Lore} to "§fClick to upgrade this building."
-	set {SG::Messages::Quit_Emblem_Lore} to "§fClick to return to menu."
-	set {SG::Messages::Done_Emblem_Lore} to "§fClick to complete upgrade of building."
-	set {SG::Messages::Enter_Building_Type} to "§7Enter building's name. (Townhall/Barrack/Storage/Alchemy)"
-	set {SG::Messages::Header_Build_Book} to "§8§l  » Building Info:"
-	set {SG::Messages::Book_Build_Name} to "§8Build Name: §0"
-	set {SG::Messages::Book_Build_Level} to "§8Build Tier: §0"
-	set {SG::Messages::Building_Upgrade} to "§7{RANK} {PLAYER}§7, upgraded {BUILD} §7to level §e{NUMBER}§7."
-	set {SG::Messages::Building_Upgrade_Guild} to "§a{GUILD}§7, upgraded {BUILD} §7to level §e{NUMBER}§7."
-	set {SG::Messages::Book_Build_Requires} to "§8Build Requirements:"
-	set {SG::Messages::Book_Required_Text} to "§8Required:§f "
-	set {SG::Messages::Book_Have_Text} to "§8You Have:§f "
-	set {SG::Messages::Resource_Worker_Get} to "||§7§oTo get donate item of this, kill players.||§7§o(It's by chance!)"
-	set {SG::Messages::Player_Info_1_New} to "||§eGuild: §f{GUILD}||||§eRank: §f{RANK}||||§eJoin Date: §f{DATE}||||§eWar;||§7 → Kills: §f{KILLS}||§7 → Deaths: §f{DEATHS}||||§eDonated to this guild;||{DONATEINFO}"
-	set {SG::Messages::Player_Info_2_New} to "||§ePlayer: §f{PLAYER}||||§ePvP;||§7 → Kills: §f{KILLS}||§7 → Deaths: §f{DEATHS}||§7 → KDA: §f{KDA}||||§eDonated to all;||{DONATEINFO}"
-	set {SG::Messages::Donated_List} to "§6 → Wood: §f{DWOOD}||§7 → Stone: §f{DSTONE}||§f → Iron: §f{DIRON}||§e → Gold: §f{DGOLD}||§b → Diamond: §f{DDIAMOND}||§3 → Wool: §f{DWOOL}||§e → Worker: §f{DWORKER}"
-	set {SG::Messages::Manage_Panel_2_Lore_New} to "||§ePlayer: §f{NAME}||||§eStatus: §f{STATUS}||||§eLast Seen: §f{SEEN}||||§eRank: §f{RANK}||||§eDate of Participation: §f{DATE}||||§eWar;||§7 → Kills: §f{WARKILLS}||§7 → Deaths: §f{WARDEATHS}||||§eDonated;||{DONATEINFO}"
-	set {SG::Messages::Alchemy_Menu_Price_1} to " §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}|| §8 → §7Level III: §f{AMOUNT3}"
-	set {SG::Messages::Alchemy_Menu_Price_2} to " §8 → §7Unarmed Horse: §f{AMOUNT1}|| §8 → §7Iron Armored Horse: §f{AMOUNT2}|| §8 → §7Diamond Armored Horse: §f{AMOUNT3}"
-	set {SG::Messages::Alchemy_Menu_Price_3} to " §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}|| §8 → §7Level III: §f{AMOUNT3}"
-	set {SG::Messages::Alchemy_Menu_Price_4} to " §8 → §7Level I: §f{AMOUNT1}|| §8 → §7Level II: §f{AMOUNT2}|| §8 → §7Level III: §f{AMOUNT3}"
-	set {SG::Messages::SelectType_Check_Stats} to "§6Check Stats"
-	set {SG::Messages::SelectType_Kick} to "§6Kick Player"
-	set {SG::Messages::SelectType_Change_Rank} to "§6Change Rank"
-	set {SG::Messages::Build_Max} to "§7This building have reached last level."
-	set {SG::Messages::Build_Started} to "{RANK} {PLAYER} §7has started build construction for §e{BUILD} §7to tier §e{LEVEL}§7. It will be done in §a{TIME}§7."
-	set {SG::Messages::Build_Wait} to "§7Upgrade will be completed in §e{TIME}§7."
+	addMessageLine("Prefix", "fr_FR", "§6§lSUPERGUILDS §6➥§7")
+	addMessageLine("Char_Error", "fr_FR", "§7Ce texte contient des caractères inappropriés.")
+	addMessageLine("WorldGuard_Error", "fr_FR", "§7Il y a une protection WorldGuard ici.")
+	addMessageLine("Chunk_Error", "fr_FR", "§7Il y a une autre Guilde ici.")
+	addMessageLine("Dont_Have_Gold_To_Create", "fr_FR", "§7Vous n'avez pas assez de lingots d'or dans votre inventaire pour créer la Guilde. Vous devez en avoir §e{NUMBER}§7.")
+	addMessageLine("Created_Guild", "fr_FR", "§e{PLAYER}§7, crée la guilde §b{GUILD}.")
+	addMessageLine("Land_Error", "fr_FR", "§7Votre position n'est pas fiable.")
+	addMessageLine("Guild_Name_Length", "fr_FR", "§7Ce nom de guilde est trop long ou trop court.")
+	addMessageLine("That_Guild_Exists", "fr_FR", "§7Cette guilde existe déjà.")
+	addMessageLine("Enter_Guild_Name", "fr_FR", "§7Entrez un nom de guilde.")
+	addMessageLine("You_Have_Guild", "fr_FR", "§7Vous avez déjà une guilde.")
+	addMessageLine("Chunk_Middle", "fr_FR", "§7Placez-vous au milieu de la zone et essayez à nouveau.")
+	addMessageLine("Remove_Confirm", "fr_FR", "§7Voulez-vous vraiment effacer votre guilde? Si vous êtes sûr tapez la commande à nouveau.")
+	addMessageLine("Guild_Removed", "fr_FR", "§7La guilde a été effacée.")
+	addMessageLine("No_Permission", "fr_FR", "§7Vous n'avez pas la permission.")
+	addMessageLine("You_Dont_Have_Guild", "fr_FR", "§7Vous n'avez pas de guilde.")
+	addMessageLine("You_Arent_Leader", "fr_FR", "§7Vous n'êtes pas le leader de la guilde.")
+	addMessageLine("Guild_Remove_Broadcast", "fr_FR", "§c{GUILD} §7a été supprimée.")
+	addMessageLine("Option_Disabled", "fr_FR", "§7Cette fonction est désactivée.")
+	addMessageLine("No_Rank", "fr_FR", "§7Votre rang de guilde n'est pas suffisant.")
+	addMessageLine("You_Dont_Have_This_Chunk", "fr_FR", "§7Votre guilde ne possède pas ce chunk.")
+	addMessageLine("Done_Set_Home", "fr_FR", "§7Votre home de guilde a été défini.")
+	addMessageLine("Teleporting_Message", "fr_FR", "§7Vous serez téléporté dans §e{TIME} §7secondes.")
+	addMessageLine("Teleport_Cancel", "fr_FR", "§7Vous avez bougé et la téléportation a été annulée.")
+	addMessageLine("Teleport_Done", "fr_FR", "§7Vous avez été téléporté avec succès.")
+	addMessageLine("Already_Teleport", "fr_FR", "§7Vous êtes déjà en cours de téléportation.")
+	addMessageLine("Teleport_Starting", "fr_FR", "§7Début de la téléportation, ne bougez pas.")
+	addMessageLine("GUIPrefix", "fr_FR", "§8§l» §8")
+	addMessageLine("Guild_Management", "fr_FR", "Gestion de guilde")
+	addMessageLine("Manage_Panel_1", "fr_FR", "§6Opérations de guilde")
+	addMessageLine("Manage_Panel_2", "fr_FR", "§6ID:")
+	addMessageLine("Manage_Panel_3", "fr_FR", "§6Opérations de guerre")
+	addMessageLine("Manage_Panel_2_Lore", "fr_FR", "||§eJoueurs: §f{NAME}||||§eStatus: §f{STATUS}||||§eDernière connexion: §f{SEEN}||||§eRang: §f{RANK}||||§eDate de création: §f{DATE}||||§eGuerre;||§7 → Kills: §f{WARKILLS}||§7 → Décès: §f{WARDEATHS}||||§eDons;||§7 → Or: §f{DGOLD}||§7 → Magic: §f{DMAGIC}")
+	addMessageLine("Rank_Leader", "fr_FR", "§bLeader §3★★★§b")
+	addMessageLine("Rank_General", "fr_FR", "§aGénéral §2★★§a")
+	addMessageLine("Rank_Captain", "fr_FR", "§dCapitaine §5★§d")
+	addMessageLine("Rank_Member", "fr_FR", "§8Membre")
+	addMessageLine("Guild_Info", "fr_FR", "§6Information de Guilde")
+	addMessageLine("Guild_Info_Lore", "fr_FR", "||§7Cliquez pour voir les informations de guilde.")
+	addMessageLine("Guild_Store", "fr_FR", "§6Stock de guilde")
+	addMessageLine("Guild_Store_Lore", "fr_FR", "||§7Cliquez pour ouvrir le stock de guilde.")
+	addMessageLine("Claimed_Lands", "fr_FR", "§6Lands claims")
+	addMessageLine("Claimed_Lands_Lore", "fr_FR", "||§7Cliquez pour voir les claims de guilde.")
+	addMessageLine("Guild_Alchemy", "fr_FR", "§6Alchimie de guilde")
+	addMessageLine("Guild_Alchemy_Lore", "fr_FR", "||§7Cliquez pour ouvrir le menu d'alchimie.")
+	addMessageLine("Check_Players", "fr_FR", "§6Liste des joueurs")
+	addMessageLine("Check_Players_Lore", "fr_FR", "||§7Cliquez pour voir la liste des joueurs.")
+	addMessageLine("Guild_Buildings", "fr_FR", "§6Buildings de guilde")
+	addMessageLine("Guild_Buildings_Lore", "fr_FR", "||§7Cliquez pour voir les buildings de guilde.")
+	addMessageLine("Guild_Info_Header", "fr_FR", "Information de guilde")
+	addMessageLine("Guild_Info_1", "fr_FR", "§6Guild ID")
+	addMessageLine("Guild_Info_1_Lore", "fr_FR", "||§eNom:||§f{NAME}||||§eEmblème:||§f{EMBLEM}||||§eLeader:||§f{LEADER}")
+	addMessageLine("Guild_Info_2", "fr_FR", "§6Création de guilde")
+	addMessageLine("Guild_Info_2_Lore", "fr_FR", "||§eDate de Création:||§f{TIME}||||§eCréateur:||§f{CREATOR}")
+	addMessageLine("Guild_Info_3", "fr_FR", "§6Status de guilde")
+	addMessageLine("Guild_Info_3_Lore", "fr_FR", "||§eGuerre;||§7 → Kills: §f{KILLS}||§7 → Décès: §f{DEATHS}||||§eDivision:||§f{LEVEL}||||§ePoints:||§f{POINTS} ✪||||§eNombre de joueurs:||§f{PLAYERS}/{MAX}||||§eClaims:||§f{CLAIMED}")
+	addMessageLine("Guild_Header_Kick", "fr_FR", "Kickez Joueurs")
+	addMessageLine("Guild_Kick_Lore", "fr_FR", "||§eRang: §f{RANK}||||§7Cliquez pour kicker un joueur de la guilde.")
+	addMessageLine("Kick_Error_No_Guild", "fr_FR", "§7Ce joueur n'est pas dans la guilde.")
+	addMessageLine("Kick_Error_No_Rank", "fr_FR", "§7Vous ne pouvez pas kicker ce joueur.")
+	addMessageLine("Kicked_Player", "fr_FR", "§c{KICKED}§7 kick de la guilde par §e{PLAYER}§7.")
+	addMessageLine("You_Kicked", "fr_FR", "§7Vous avez été kick de la guilde.")
+	addMessageLine("No_Kick_Yourself", "fr_FR", "§7Vous ne pouvez pas vous kicker vous même.")
+	addMessageLine("Guild_Header_List", "fr_FR", "Membres de guilde")
+	addMessageLine("Claim_Error", "fr_FR", "§7Vous possédez déjà ces terres.")
+	addMessageLine("No_Gold_Guild", "fr_FR", "§7Votre guilde n'a pas assez d'or.")
+	addMessageLine("No_Claim_Level", "fr_FR", "§7La division de la guilde qui possède cette terre est plus grande que la votre.")
+	addMessageLine("Attacking_You", "fr_FR", "§c{ATTACKER}§7 capture votre terre à §e{LAND}§7.")
+	addMessageLine("Attacked_Chunk", "fr_FR", "§7Votre guilde capture une terre à §e{LAND} §7appartenant à §c{OWN}§7.")
+	addMessageLine("Chunk_Claimed", "fr_FR", "§7Vous protégez une terre ici §e{LAND}§7.")
+	addMessageLine("Chunk_Error_You", "fr_FR", "§7Cette terre est la votre.")
+	addMessageLine("Chunk_Unclaimed", "fr_FR", "§7Vous retirez la protection de la terre située §e{LAND}§7.")
+	addMessageLine("Buildings_GUI", "fr_FR", "Batiment de guilde")
+	addMessageLine("Buildings_Name_Townhall", "fr_FR", "§6Mairie")
+	addMessageLine("Buildings_Name_Barrack", "fr_FR", "§6Caserne")
+	addMessageLine("Buildings_Name_Storage", "fr_FR", "§6Stockage")
+	addMessageLine("Buildings_Name_Alchemy", "fr_FR", "§6Alchimie")
+	addMessageLine("Buildings_Upgrade", "fr_FR", "§aCliquer pour améliorer le batiment.")
+	addMessageLine("Buildings_Lore_0", "fr_FR", "§9§nquand mis à jour;")
+	addMessageLine("Buildings_Lore_Townhall", "fr_FR", "§7 → Augmenter la limite de joueur de la guilde.")
+	addMessageLine("Buildings_Lore_Barrack", "fr_FR", "§7 → Commencer la guerre avec plus de pouvoir d'items.")
+	addMessageLine("Buildings_Lore_Storage", "fr_FR", "§7 → Augmenter la capacité de stockage.")
+	addMessageLine("Buildings_Lore_Alchemy", "fr_FR", "§7 → Obtenir des effets plus puissants.")
+	addMessageLine("Buildings_Level", "fr_FR", "§eNiveau de contruction: §f{LEVEL}")
+	addMessageLine("Romen_Num_1", "fr_FR", "1")
+	addMessageLine("Romen_Num_2", "fr_FR", "2")
+	addMessageLine("Romen_Num_3", "fr_FR", "3")
+	addMessageLine("Romen_Num_4", "fr_FR", "4")
+	addMessageLine("Romen_Num_5", "fr_FR", "5")
+	addMessageLine("Romen_Num_6", "fr_FR", "6")
+	addMessageLine("Romen_Num_7", "fr_FR", "7")
+	addMessageLine("Romen_Num_8", "fr_FR", "8")
+	addMessageLine("Store_GUI", "fr_FR", "Stockage de guilde")
+	addMessageLine("Store_Name_Gold", "fr_FR", "§e§nSource d'or")
+	addMessageLine("Store_Color_1", "fr_FR", "§e")
+	addMessageLine("Store_Status", "fr_FR", "§7Disponible: §f{NUMBER}")
+	addMessageLine("Donate_Lore_Gold", "fr_FR", "§7Cliquez pour donner de la ressource en or.")
+	addMessageLine("Donate_Lore_Magic", "fr_FR", "§7Cliquez pour donner de la ressource en magie (diamant).")
+	addMessageLine("Help_Pages_1::Line_1", "fr_FR", "§e/guilds help §8- §7Ouvrir la page d'aide.")
+	addMessageLine("Help_Pages_1::Line_2", "fr_FR", "§e/guilds create <guild name> §8- §7Créer une guilde.")
+	addMessageLine("Help_Pages_1::Line_3", "fr_FR", "§e/guilds remove §8- §7Supprimer la guilde.")
+	addMessageLine("Help_Pages_1::Line_4", "fr_FR", "§e/guilds emblem §8- §7Fabriquer l'emblême de la guilde.")
+	addMessageLine("Help_Pages_1::Line_5", "fr_FR", "§e/guilds info §8- §7Voir les statistiques de la guilde.")
+	addMessageLine("Help_Pages_1::Line_6", "fr_FR", "§e/guilds leave §8- §7Quitter votre guilde.")
+	addMessageLine("Help_Pages_1::Line_7", "fr_FR", "§e/guilds storage §8- §7Voir le stock de la guilde.")
+	addMessageLine("Help_Pages_1::Line_8", "fr_FR", "§e/guilds claimname <name> §8- §7Définissez le nom du claim.")
+	addMessageLine("Help_Pages_2::Line_1", "fr_FR", "§e/guilds leader §8- §7Promouvoir un joueur au rang de leader.")
+	addMessageLine("Help_Pages_2::Line_2", "fr_FR", "§e/guilds invite <player> §8- §7Inviter un joueur dans la guilde.")
+	addMessageLine("Help_Pages_2::Line_3", "fr_FR", "§e/guilds claim §8- §7Protèger la zone dans laquelle vous êtes.")
+	addMessageLine("Help_Pages_2::Line_4", "fr_FR", "§e/guilds unclaim §8- §7Retirer la protection de la zone dans laquelle vous êtes.")
+	addMessageLine("Help_Pages_2::Line_5", "fr_FR", "§e/guilds rank §8- §7Changer le rang du joueur.")
+	addMessageLine("Help_Pages_2::Line_6", "fr_FR", "§e/guilds reload §8- §7Reloads plugin.")
+	addMessageLine("Help_Pages_2::Line_7", "fr_FR", "§e/guilds home §8- §7Téléporte au home de la guilde.")
+	addMessageLine("Help_Pages_3::Line_1", "fr_FR", "§e/guilds sethome §8- §7Définir le home de la guilde.")
+	addMessageLine("Help_Pages_3::Line_2", "fr_FR", "§e/guilds war §8- §7Entrer en guerre avec une autre guilde.")
+	addMessageLine("Help_Pages_3::Line_3", "fr_FR", "§e/guilds version §8- §7Voir la version du plugin.")
+	addMessageLine("Help_Pages_3::Line_4", "fr_FR", "§e/guilds buildings §8- §7Voir les batiments de guilde.")
+	addMessageLine("Help_Pages_3::Line_5", "fr_FR", "§e/guilds showclaims §8- §7Voir toutes les zones protègées par les guildes.")
+	addMessageLine("Help_Pages_3::Line_6", "fr_FR", "§e/guilds alchemy §8- §7Afficher votre alchimie de guilde.")
+	addMessageLine("Help_Pages_3::Line_7", "fr_FR", "§e/guilds invites §8- §7Activer/desactiver les invitations de guilde.")
+	addMessageLine("Help_Pages_3::Line_8", "fr_FR", "§e/guilds chat §8- §7Activer/desactiver le chat de guilde.")
+	addMessageLine("Next_Page", "fr_FR", "§8§m--------§r §7Utilisez §6/sg help {NEXT} §7pour voir la page suivante. §8§m-------")
+	addMessageLine("Invite_Player_Name", "fr_FR", "§7Entrez le nom du joueur à inviter")
+	addMessageLine("Cant_Invite_Yourself", "fr_FR", "§7Vous ne pouvez vous inviter vous même.")
+	addMessageLine("Player_Closed_Invites", "fr_FR", "§7Le joueur a refusé l'invitation.")
+	addMessageLine("Player_Has_Guild", "fr_FR", "§7Le joueur est déjà dans une guilde.")
+	addMessageLine("Your_Guild_Is_Full", "fr_FR", "§7Votre guilde est pleine. Vous pouvez mettre à niveau votre Mairie pour avoir plus d'emplacements de joueurs.")
+	addMessageLine("Invite_Wait", "fr_FR", "§7Vous devez attendre §e{TIME} §7pour inviter quelqu'un.")
+	addMessageLine("This_Guild_Is_Full", "fr_FR", "§7Cette guilde est complète")
+	addMessageLine("Invite_Send", "fr_FR", "§7L'invitation de guilde a été envoyée au joueur.")
+	addMessageLine("Invite_GUI", "fr_FR", "Carte d'invitation")
+	addMessageLine("InviteC_Accept", "fr_FR", "§6Accepter et joindre la guilde §e{GUILD}§6.")
+	addMessageLine("InviteC_Reject", "fr_FR", "§cRejeter et fermer le menu.")
+	addMessageLine("You_Reject", "fr_FR", "§7Vous avez rejeté l'invitation de guilde.")
+	addMessageLine("You_Joined_Guild", "fr_FR", "§7Vous rejoignez la guilde §e{GUILD}.")
+	addMessageLine("Player_Joined_Guild", "fr_FR", "§6{PLAYER} §7rejoins la guilde §e{GUILD} .")
+	addMessageLine("Disabled_Invites", "fr_FR", "§7Vous avez désactivé les invitations de guilde.")
+	addMessageLine("Enabled_Invites", "fr_FR", "§7Vous avez activé les invitations de guilde.")
+	addMessageLine("Donate_Usage", "fr_FR", "§7Vous pouvez donner de l'argent via la commande §e/g donate <gold/magic> <number>§7.")
+	addMessageLine("Enter_An_Integer", "fr_FR", "§7Entrer un nombre entier.")
+	addMessageLine("No_Storage", "fr_FR", "§7Pas de capacité pour stoquer §f{NUMBER} {RESOURCE}§r§7. §7Vous devez mettre à niveau la capacité de stockage.")
+	addMessageLine("Player_Donated", "fr_FR", "{RANK} {PLAYER}§7, donné §f{NUMBER} {RESOURCE}§r §7pour le stockage de guilde.")
+	addMessageLine("You_Donated", "fr_FR", "§7Vous donnez §f{NUMBER} {RESOURCE}§r §7pour le stockage de guilde.")
+	addMessageLine("Donations_0", "fr_FR", "§7Les dons doivent être supérieurs à zéro.")
+	addMessageLine("Leader_Leave", "fr_FR", "§7Vous êtes leader, le leader ne peut pas quitter la guilde. Vous pouvez dissoudre la guilde en utilisant §e/g disband§7.")
+	addMessageLine("Player_Leave", "fr_FR", "{RANK} {PLAYER}§7, quitte la guilde.")
+	addMessageLine("You_Leave", "fr_FR", "§7Vous êtes parti de §c{GUILD}§7.")
+	addMessageLine("Language_GUI", "fr_FR", "Langage")
+	addMessageLine("Language_Lore", "fr_FR", "||§7Cliquez pour selectionner le langage.")
+	addMessageLine("Language_Select", "fr_FR", "§7Langage selectionner: §a{LANG}")
+	addMessageLine("Unknown_Command", "fr_FR", "Commande introuvable.")
+	addMessageLine("Locale_Error", "fr_FR", "Could not connect to web data for locale file.")
+	addMessageLine("Enter_Language", "fr_FR", "Entrer le langage.")
+	addMessageLine("Guild_Error_Upgrade", "fr_FR", "§7vous n'êtes plus dans cette guilde.")
+	addMessageLine("Buildings_Required_Lore_0", "fr_FR", "§b§nCoût de mise à niveau;")
+	addMessageLine("Buildings_Required_Lore_1", "fr_FR", "§7 → {GOLD}: §f{GNEED}||§7 → {MAGIC}: §f{MNEED}")
+	addMessageLine("No_Magic_Guild", "fr_FR", "§7Votre guilde n'a pas assez de magie (diamant).")
+	addMessageLine("Limit_Buildings", "fr_FR", "§7Vous avez atteint le niveau maximum pour ce bâtiment.")
+	addMessageLine("Building_Upgrade", "fr_FR", "§7{RANK} {PLAYER}§7, mis à niveau {BUILD} §7au level §e{NUMBER}§7.")
+	addMessageLine("Buildings_Broadcast_1", "fr_FR", "§7Capacité de guilde augmentée: §a+{NUM}")
+	addMessageLine("Buildings_Broadcast_2", "fr_FR", "§7Votre guilde commencera les guerres avec {ITEM}§7.")
+	addMessageLine("Buildings_Broadcast_3", "fr_FR", "§7Stockage de guilde augmentée: §a+500")
+	addMessageLine("Buildings_Broadcast_4", "fr_FR", "§7votre guilde peut utiliser le prochain niveau d'alchimie maintenant.")
+	addMessageLine("Showing_Claims", "fr_FR", "§7Vous pouvez voir tous vos territoires de guilde maintenant. Si vous ne voulez pas les voir, vous pouvez vous reconnecter au serveur.")
+	addMessageLine("No_Claims", "fr_FR", "§7Votre guilde n'a pas de territoire.")
+	addMessageLine("Show_Claim_Wait", "fr_FR", "§7Vous devez attendre §e{TIME} §7pour afficher tout vos territoires.")
+	addMessageLine("Change_Rank", "fr_FR", "||§7Cliquez pour changer le rang du joueur.")
+	addMessageLine("Status_Online", "fr_FR", "§aEn ligne")
+	addMessageLine("Status_Offline", "fr_FR", "§cHors ligne")
+	addMessageLine("Rank_Yourself", "fr_FR", "§7Vous ne pouvez pas changer votre rang.")
+	addMessageLine("Rank_Not_Enough", "fr_FR", "§7Votre rang n'est pas suffisant pour cette action.")
+	addMessageLine("Guild_Rank_Lore", "fr_FR", "||§7Votre rang: §f{RANK}")
+	addMessageLine("Guild_Header_Rank", "fr_FR", "Changez le rang")
+	addMessageLine("Select_GUI", "fr_FR", "Type de liste")
+	addMessageLine("Player_Info_No_Guild", "fr_FR", "||§7Le joueur n'a pas de guilde.")
+	addMessageLine("Player_Stats", "fr_FR", "Stats joueurs")
+	addMessageLine("Player_Info_Name_1", "fr_FR", "§6Information de guilde:")
+	addMessageLine("Player_Info_Name_2", "fr_FR", "§6Information du joueur:")
+	addMessageLine("Player_Info_Name_3", "fr_FR", "§6Autre information:")
+	addMessageLine("Player_Info_1", "fr_FR", "||§eGuilde: §f{GUILD}||||§eRang: §f{RANK}||||§eRejoins le: §f{DATE}||||§eGuerre;||§7 → Tués: §f{KILLS}||§7 → Décès: §f{DEATHS}||||§eDonation à la guilde;||§7 → Or: §f{DGOLD}||§7 → Magie: §f{DMAGIC}")
+	addMessageLine("Player_Info_2", "fr_FR", "||§eJoueur: §f{PLAYER}||||§ePvP;||§7 → Tués: §f{KILLS}||§7 → Décès: §f{DEATHS}||§7 → KDA: §f{KDA}||||§eLes dons;||§7 → Or: §f{DGOLD}||§7 → Magie: §f{DMAGIC}")
+	addMessageLine("Player_Info_3", "fr_FR", "||§eVie: §f{HEALTH}/10||||§eFaim: §f{HUNGER}/10||||§eLocalisation: §f{LOCATION}")
+	addMessageLine("No_Guild_Like_This", "fr_FR", "§7Pas de guilde trouvé avec ce nom.")
+	addMessageLine("No_Player_Like_This", "fr_FR", "§7Pas de joueur trouvé avec ce nom.")
+	addMessageLine("Guild_Emblem_GUI", "fr_FR", "§6Emblème de guilde")
+	addMessageLine("Guild_Emblem_Lore", "fr_FR", "||§7Cliquez pour fabriquer l'emblème de guilde.")
+	addMessageLine("See_Stats", "fr_FR", "||§7Cliquez pour voir les informations joueur.")
+	addMessageLine("Rank_Changed", "fr_FR", "§7Votre rang change pour {RANK}§7.")
+	addMessageLine("Ranked_Player", "fr_FR", "§7{OLDRANKCHANGEP} {CHANGEP}§7le rang a été changé en {NEWRANKCHANGEP} §7par {RANKPLAYER} {PLAYER}§7.")
+	addMessageLine("Rank_Wrong", "fr_FR", "§7Vous ne pouvez choisir que des rangs inférieurs à vos rangs.")
+	addMessageLine("Player_Info_4", "fr_FR", "||§7Le joueur n'est pas en ligne.||||§eDernière connexion: §f{SEEN}")
+	addMessageLine("You_Cant_Unclaim", "fr_FR", "§7Vous ne pouvez pas retirer votre territoire car §e{BUILD} §7n'est pas à vous.")
+	addMessageLine("You_Cant_Action", "fr_FR", "§7Vous ne pouvez rien changer sur §e{BUILD} §7zone.")
+	addMessageLine("Owned_By", "fr_FR", "§7Ce chunk appartient à §e{GUILD}§7 guilde. Vous ne pouvez rien changer ici.")
+	addMessageLine("Reloading_1", "fr_FR", "§7Tout les fichiers sont rechargés...")
+	addMessageLine("Reloading_2", "fr_FR", "§7Tous les fichiers sont rechargés.")
+	addMessageLine("Version", "fr_FR", "§eSUPER GUILDE {VERSION} §7par §bRepublicanSensei§7.")
+	addMessageLine("Emblem_Saved", "fr_FR", "§7L'emblême de guilde a été sauvé.")
+	addMessageLine("Select_Color", "fr_FR", "§7Vous ne pouvez pas selectionner cette couleur.")
+	addMessageLine("Select_Code", "fr_FR", "§7Vous ne pouvez pas selectionner cette boite.")
+	addMessageLine("Guild_Emblem_Changed", "fr_FR", "§7L'emblème de votre guilde a été modifié par §e{PLAYER}§7.")
+	addMessageLine("Create_Guild_Disabled_World", "fr_FR", "§7Vous ne pouvez pas créer de guilde dans ce monde.")
+	addMessageLine("Divisions_0", "fr_FR", "§8Bronze")
+	addMessageLine("Divisions_1", "fr_FR", "§7Argent")
+	addMessageLine("Divisions_2", "fr_FR", "§eOr")
+	addMessageLine("Divisions_3", "fr_FR", "§dCrystal")
+	addMessageLine("Divisions_4", "fr_FR", "§bMaître")
+	addMessageLine("Divisions_5", "fr_FR", "§cChampion")
+	addMessageLine("Chat_Addon_Click_To_Stats", "fr_FR", "§7Cliquez ici pour voir les statistiques du joueur.")
+	addMessageLine("Back_Header", "fr_FR", "§6Retour")
+	addMessageLine("SYNC_Done", "fr_FR", "§7SYNC pour le fichier §a{FILE} §7complété.")
+	addMessageLine("SYNC_Load_Error", "fr_FR", "§7Impossible de charger le fichier §c{FILE}.")
+	addMessageLine("SYNC_Delete_Failed", "fr_FR", "§7Impossible de supprimer/restaurer le fichier §c{FILE}§7.")
+	addMessageLine("SYNC_Enter_File", "fr_FR", "§7Entrez le fichier à synchroniser. (locale ou config)")
+	addMessageLine("Menu_Alchemy_GUI", "fr_FR", "Alchimie de guilde")
+	addMessageLine("Text_Feature", "fr_FR", "§eFonctionnalité:")
+	addMessageLine("Text_Price", "fr_FR", "§ePrix:")
+	addMessageLine("Text_Buy", "fr_FR", "§eCliquez ici pour acheter la fonctionnalité.")
+	addMessageLine("Alchemy_Menu_Lore_1", "fr_FR", "§8 → §7Octroit 15 minutes de force à tous les membres de la guilde.")
+	addMessageLine("Alchemy_Menu_Lore_2", "fr_FR", "§8 → §7Invoquer un cheval pour tous les membres de la guilde")
+	addMessageLine("Alchemy_Menu_Lore_3", "fr_FR", "§8 → §7Octroit 15 minutes de vitesse à tous les membres de la guilde.")
+	addMessageLine("Alchemy_Menu_Lore_4", "fr_FR", "§8 → §7Octroit 15 minutes de résistance à tous les membres de la guilde.")
+	addMessageLine("Alchemy_Menu_Price_1", "fr_FR", " §8 → §7Niveau 1: §f{MAGIC1} magie|| §8 → §7Niveau 2: §f{MAGIC2} magie|| §8 → §7Niveau 3: §f{MAGIC3} magie")
+	addMessageLine("Alchemy_Menu_Price_2", "fr_FR", " §8 → §7Cheval non armé: §f{MAGIC1} magie|| §8 → §7Armure en fer pour cheval: §f{MAGIC2} magie|| §8 → §7Armure en diamant pour cheval: §f{MAGIC3} magie")
+	addMessageLine("Alchemy_Menu_Price_3", "fr_FR", " §8 → §7Niveau 1: §f{MAGIC1} magie|| §8 → §7Niveau 2: §f{MAGIC2} magie|| §8 → §7Niveau 3: §f{MAGIC3} magie")
+	addMessageLine("Alchemy_Menu_Price_4", "fr_FR", " §8 → §7Niveau 1: §f{MAGIC1} magie|| §8 → §7Niveau 2: §f{MAGIC2} magie|| §8 → §7Niveau 3: §f{MAGIC3} magie")
+	addMessageLine("Alchemy_Type_1_Name_1", "fr_FR", "§6Force niveau 1")
+	addMessageLine("Alchemy_Type_1_Name_2", "fr_FR", "§6Force niveau 2")
+	addMessageLine("Alchemy_Type_1_Name_3", "fr_FR", "§6Force niveau 3")
+	addMessageLine("Alchemy_Type_2_Name_1", "fr_FR", "§6Cheval non armée")
+	addMessageLine("Alchemy_Type_2_Name_2", "fr_FR", "§6Armure en fer pour cheval")
+	addMessageLine("Alchemy_Type_2_Name_3", "fr_FR", "§6Armure en diamant pour cheval")
+	addMessageLine("Alchemy_Type_3_Name_1", "fr_FR", "§6Vitesse niveau 1")
+	addMessageLine("Alchemy_Type_3_Name_2", "fr_FR", "§6Vitesse niveau 2")
+	addMessageLine("Alchemy_Type_3_Name_3", "fr_FR", "§6Vitesse niveau 3")
+	addMessageLine("Alchemy_Type_4_Name_1", "fr_FR", "§6Resistance niveau 1")
+	addMessageLine("Alchemy_Type_4_Name_2", "fr_FR", "§6Resistance niveau 2")
+	addMessageLine("Alchemy_Type_4_Name_3", "fr_FR", "§6Resistance niveau 3")
+	addMessageLine("Bought_Alchemy_Guild", "fr_FR", "§e{GUILD} §7achète §6{TYPE} §7à partir de l'alchimie de guilde.")
+	addMessageLine("Bought_Alchemy_Own", "fr_FR", "§7{RANK} {PLAYER}§7, achète §6{TYPE} §7à partir de l'alchimie de guilde")
+	addMessageLine("Barrack_Upgrade_Item_1", "fr_FR", "§7Ensemble en cuir")
+	addMessageLine("Barrack_Upgrade_Item_2", "fr_FR", "§eEnsemble en or")
+	addMessageLine("Barrack_Upgrade_Item_3", "fr_FR", "§8Ensemble de maille")
+	addMessageLine("Barrack_Upgrade_Item_4", "fr_FR", "§fEnsemble en fer")
+	addMessageLine("Barrack_Upgrade_Item_5", "fr_FR", "§bEnsemble en diamant")
+	addMessageLine("Menu_War_GUI", "fr_FR", "Guerres de guilde")
+	addMessageLine("Menu_War_Name_1", "fr_FR", "§6Rechercher une Guilde à combattre")
+	addMessageLine("Menu_War_Lore_1", "fr_FR", "§7Cliquez ici pour trouver une Guilde à combattre.")
+	addMessageLine("Menu_War_Name_2", "fr_FR", "§6Statistiques de guerre")
+	addMessageLine("Menu_War_Lore_2", "fr_FR", "§eGuilde;||§7 → Division: §f{LEVEL}||§7 → Points: §f{POINTS} ✪||§7 → Items de départ: §f{ITEMS}||||§ePvP;||§7 → Tués: §f{KILLS}||§7 → Décès: §f{DEATHS}||||§eTop tueurs;||§7 → {RANK} {TOP}§8: §f{NUM} tués")
+	addMessageLine("Menu_War_Name_3", "fr_FR", "§6Top Guildes")
+	addMessageLine("Menu_War_Lore_3", "fr_FR", "§7Cliquez ici pour voir le top des guildes.")
+	addMessageLine("Disabled_Chat", "fr_FR", "§7Vous avez désactivé le chat de guilde. Tout les joueurs peuvent voir vos messages")
+	addMessageLine("Enabled_Chat", "fr_FR", "§7Vous avez activé le chat de guilde. Seuls les joueurs de votre guilde peuvent voir vos messages")
+	addMessageLine("Guild_Chat", "fr_FR", "§7[CG]")
+	addMessageLine("Number_Online", "fr_FR", "§8(§a{PLAYER} §7en ligne§8)")
+	addMessageLine("Text_Month", "fr_FR", "mois")
+	addMessageLine("Text_Day", "fr_FR", "jour(s)")
+	addMessageLine("Text_Hour", "fr_FR", "heure(s)")
+	addMessageLine("Text_Minute", "fr_FR", "minute(s)")
+	addMessageLine("Text_Second", "fr_FR", "seconde(s)")
+	addMessageLine("No_Variable_List_0", "fr_FR", "§7Pas de guilde.")
+	addMessageLine("Header_0", "fr_FR", "Liste des guildes")
+	addMessageLine("Header_1", "fr_FR", "Liste des territoires")
+	addMessageLine("Forward_Header", "fr_FR", "§6Récompenses ➙")
+	addMessageLine("Claimed_Land", "fr_FR", "Territoire revendiqué")
+	addMessageLine("Claimed_Land_Lore", "fr_FR", "||§7Localisation: §f{LOC}||||§eCliquez pour être téléporter au territoire.")
+	addMessageLine("Click_To_Info", "fr_FR", "||§7Chef: §f{LEADER}||||§7Division: §f{LEVEL}||||§eCliquez ici pour voir les informations guilde.")
+	addMessageLine("ClaimName_Usage", "fr_FR", "§7Utilisez §e/sg claimname <name> §7pour modifier le nom de votre territoire.")
+	addMessageLine("ClaimName_Changed", "fr_FR", "§7Nom du territoire situé à §e{LOC} §7changer pour §6{NAME} §7par §9{BY}§7.")
+	addMessageLine("No_Item_Gold", "fr_FR", "§7Vous n'avez pas §e{NUMBER} lingots d'or §7à donner.")
+	addMessageLine("Arena_Created", "fr_FR", "§7Arène créée: §e{ARENA}")
+	addMessageLine("Arena_Exists", "fr_FR", "§7Il y a déjà une arène avec ce nom.")
+	addMessageLine("Enter_Arena_Name", "fr_FR", "§7Entrer le nom de l'arène.")
+	addMessageLine("No_Arena", "fr_FR", "§7Cette arène n'existe pas.")
+	addMessageLine("Arena_Removed", "fr_FR", "§7Arène supprimée: §e{ARENA}")
+	addMessageLine("Enter_Setspawn_Type", "fr_FR", "§7Vous devez entrer le type d'équipe (1 or 2)")
+	addMessageLine("Setspawn_Done", "fr_FR", "§eTeam-{TYPE}§7's point de spawn §a{ARENA} §7est ajouté.")
+	addMessageLine("Lobby_Done", "fr_FR", "§7Le loby a été crée ici. Les joueurs seront téléportés ici à la fin de la partie.")
+	addMessageLine("Restart_Kick_restart", "fr_FR", "§7Vous avez été éjecté car l'arène à redémarré.")
+	addMessageLine("Restart_Kick_error", "fr_FR", "§7Vous avez été éjecté car l'arène à buggé.")
+	addMessageLine("Restart_Kick_time", "fr_FR", "§7Vous avez été éjecté car c'est la fin du jeu.")
+	addMessageLine("Enemy_War_Minimum", "fr_FR", "§7Cette guilde a §e{ONLINE} §7membre(s) en ligne. (Minimum est {MINIMUM})")
+	addMessageLine("You_War_Minimum", "fr_FR", "§7Vous avez §e{ONLINE} §7membre(s) en ligne. (Minimum est {MINIMUM})")
+	addMessageLine("Enemy_Leader_Not_Online", "fr_FR", "§7Le leader de la guilde n'est pas en ligne.")
+	addMessageLine("Enemy_Guild_In_War", "fr_FR", "§7Cette guilde est en guerre.")
+	addMessageLine("Your_Guild_In_War", "fr_FR", "§7Votre guilde est en guerre.")
+	addMessageLine("Cannot_War_Yourself", "fr_FR", "§7Vous ne pouvez pas faire la guerre avec vous-même.")
+	addMessageLine("War_Invite_Send", "fr_FR", "§7Votre guilde a envoyé une invitation de guerre à §c{GUILD} §7guilde.")
+	addMessageLine("War_Invite_GUI", "fr_FR", "Invitation de guerre")
+	addMessageLine("War_InviteC_Accept", "fr_FR", "§6Accepter et faire la guerre avec §c{GUILD}§6.")
+	addMessageLine("War_InviteC_Reject", "fr_FR", "§cRejeter et fermer le menu.")
+	addMessageLine("War_Other_Reject", "fr_FR", "§9{GUILD} §7a rejeté votre invitation de guerre.")
+	addMessageLine("War_You_Reject", "fr_FR", "§7Vous avez rejeté l'invitation de guerre de §9{GUILD}§7.")
+	addMessageLine("No_Available_Arena", "fr_FR", "§7Aucune arène disponible trouvée.")
+	addMessageLine("War_Starting_Timer", "fr_FR", "§9{GUILD1} §7vs. §c{GUILD2} §7commencera dans §e{SECONDS} §7second(s).")
+	addMessageLine("War_Started", "fr_FR", "§7La guerre entre §9{GUILD1} §7et §c{GUILD2} §7a commencé. Bonne chance guerriers!")
+	addMessageLine("War_Starting", "fr_FR", "§7Invitation de guerre acceptée, préparez vous pour la guerre!")
+	addMessageLine("War_End_Timer", "fr_FR", "§7La guerre se termine dans §e{MINUTES} §7minute(s).")
+	addMessageLine("Game_Finished_Time", "fr_FR", "§7La guerre est terminée, personne n'a gagné.")
+	addMessageLine("No_Command_War", "fr_FR", "§7Vous ne pouvez pas utiliser cette commande durant la guerre.")
+	addMessageLine("War_Death_1", "fr_FR", "§9{VICTIM} ({VGUILD}) §7tué par §c{ATTACKER} ({AGUILD}) §7et est éliminée de la guerre.")
+	addMessageLine("War_Win", "fr_FR", "§7La guerre entre §9{GUILD1} §7et §c{GUILD2} §7est terminée. §9{GUILD1} §7a gagné la guerre.")
+	addMessageLine("New_Division", "fr_FR", "§7La division de votre guilde a changé de §r{OLDDIVISION} §7à §r{NEWDIVISION}§7.")
+	addMessageLine("War_Points_Add", "fr_FR", "§7Votre guilde a gagné la guerre contre §c{GUILD} §7et gagne §a+{POINTS} ✪§7.")
+	addMessageLine("War_Points_Lose", "fr_FR", "§7Votre guilde a perdu la guerre contre §9{GUILD} §7et perd §c-{POINTS} ✪§7.")
+	addMessageLine("Arena_Debug", "fr_FR", "§7Arène §a{ARENA} §7redémarrée.")
+	addMessageLine("No_Arena_Found", "fr_FR", "§7Pas d'arène trouvée.")
+	addMessageLine("Arena_Guilds", "fr_FR", "§7Arène de guilde: §f")
+	addMessageLine("Arena_TimeLeft", "fr_FR", "§7Temps restant: §f")
+	addMessageLine("Status_Text_0", "fr_FR", "§a§lEn attente")
+	addMessageLine("Status_Text_1", "fr_FR", "§e§lEn jeux")
+	addMessageLine("Status_Text_2", "fr_FR", "§c§lTerminée")
+	addMessageLine("Status_Text_3", "fr_FR", "§4§lRedémarrage")
+	addMessageLine("House_Protection", "fr_FR", "§7Le système créera une base lorsque vous créerez la guilde, veuillez donc sélectionner un terrain vide.")
+	addMessageLine("RankStar_Leader", "fr_FR", "§b✯ ")
+	addMessageLine("RankStar_General", "fr_FR", "§a⚝ ")
+	addMessageLine("RankStar_Captain", "fr_FR", "§d★ ")
+	addMessageLine("RankStar_Member", "fr_FR", "")
+	addMessageLine("No_Name_Guild", "fr_FR", "§7Vous ne pouvez pas utiliser ce nom de guilde.")
+	addMessageLine("Claim_Limit", "fr_FR", "§7Vous ne pouvez pas avoir plus de territoire.")
+	addMessageLine("Teleport_Spawn_1", "fr_FR", "§c{ATTACKER}§7 vous a chassé du territoire.")
+	addMessageLine("Teleport_Spawn_2", "fr_FR", "§7Vous avez chassé §c{VICTIM}§7 du territoire.")
+	addMessageLine("No_Market_Guild", "fr_FR", "§7Cette guilde n'a pas de marché de guilde.")
+	addMessageLine("Done_Set_Market", "fr_FR", "Vous avez défini l'emplacement du marché de guilde.")
+	addMessageLine("Teleport_Market", "fr_FR", "§7Vous avez été téléporté à§a{GUILD}§7.")
+	addMessageLine("Visit_Market", "fr_FR", "§9{PLAYER} §7visite votre marché de guilde.")
+	addMessageLine("Done_Remove_Market", "fr_FR", "§7Votre marché de guilde est supprimé.")
+	addMessageLine("Already_Have_Market", "fr_FR", "§7Vous avez déjà un marché de guilde.")
+	addMessageLine("Death_Broadcast", "fr_FR", "§3[{VGUILD}] §9{VICTIM}§7 tué par §6[{AGUILD}] §e{ATTACKER} §4[-{GOLD} Gold]")
+	addMessageLine("Death_Gold_Gain", "fr_FR", "Votre guilde gagne §e+{GOLD} Or §7parce que §7{RANK} {PLAYER}§7 a tué quelqu'un.")
+	addMessageLine("Death_Gold_Loss", "fr_FR", "Votre guilde perd §4-{GOLD} Or §7parce que §7{RANK} {PLAYER}§7 a été tué par quelqu'un.")
+	addMessageLine("Buildings_Broadcast_TNT", "fr_FR", "§7Les TNT n'exploseront pas dans vos territoires.")
+	addMessageLine("Buildings_Lore_TNT", "fr_FR", "§7 → TNT n'explosera pas dans vos territoires.")
+	addMessageLine("Guild_Info_4", "fr_FR", "§6Marché de guilde")
+	addMessageLine("Text_Status", "fr_FR", "§7Statuts:")
+	addMessageLine("Text_On", "fr_FR", "§fOuvert")
+	addMessageLine("Text_Off", "fr_FR", "§fFermé")
+	addMessageLine("Click_To_Teleport", "fr_FR", "§7Cliquez ici pour vous téléporter.")
+	addMessageLine("Click_To_Select_Color", "fr_FR", "§fCliquez moi pour sélectionner votre colorant.")
+	addMessageLine("Click_To_Dye_Here", "fr_FR", "Cliquez moi pour teindre ici.")
+	addMessageLine("Save_Emblem_Lore", "fr_FR", "§fCliquez moi pour enregistrer et appliquer l'emblème.")
+	addMessageLine("Reset_Emblem_Lore", "fr_FR", "§fCliquez moi pour effacer votre brouillon.")
+	addMessageLine("Use_Emblem_Lore", "fr_FR", "§fCliquez moi pour éditer l'emblème de votre guilde.")
+	addMessageLine("Wilderness_Text", "fr_FR", "§2§l§nRégion sauvage§r §2§l⚘")
+	addMessageLine("Wilderness_Msg_1", "fr_FR", "§7§oJ'aime la nature...")
+	addMessageLine("Wilderness_Msg_2", "fr_FR", "§7§oJ'adore être libre...")
+	addMessageLine("Wilderness_Msg_3", "fr_FR", "§7§oJe suis un homme libre et j'ai besoin de ma liberté.")
+	addMessageLine("Wilderness_Msg_4", "fr_FR", "§7§oLe secret du bonheur est la nature.")
+	addMessageLine("Home_Text", "fr_FR", "§a§l§nMaison§r §a§l⌂")
+	addMessageLine("Home_Msg_1", "fr_FR", "§7§oLa douceur du foyer...")
+	addMessageLine("Home_Msg_2", "fr_FR", "§7§oRien n'est mieux que de rentrer à la maison.")
+	addMessageLine("Home_Msg_3", "fr_FR", "§7Vous avez trouvé ce dont vous avez besoin et retournez chez vous.")
+	addMessageLine("Home_Msg_4", "fr_FR", "§7La maison d'un homme est son château.")
+	addMessageLine("Other_Guild_Text", "fr_FR", "§4§l§n{GUILD}§r §4§l☠")
+	addMessageLine("Other_Guild_Msg_1", "fr_FR", "§7§oFaites attention.")
+	addMessageLine("Other_Guild_Msg_2", "fr_FR", "§7Shh, ils peuvent nous entendre.")
+	addMessageLine("Other_Guild_Msg_3", "fr_FR", "§7Une autre guilde ici.")
+	addMessageLine("Other_Guild_Msg_4", "fr_FR", "§7À la guerre!")
+	addMessageLine("Emblem_Menu", "fr_FR", "§0§l  » EMBLEME DE GUILDE")
+	addMessageLine("Save_Emblem_Button", "fr_FR", "§2§l[§2✓§2§l]§r")
+	addMessageLine("Reset_Emblem_Button", "fr_FR", "§4§l[§4✘§4§l]")
+	addMessageLine("Use_Emblem_Button", "fr_FR", "§0§l[§0✎§0§l]")
+	addMessageLine("Click_To_War", "fr_FR", "||§7Chef: §f{LEADER}||||§7Division: §f{LEVEL}||||§eCliquez pour faire la guerre avec cette guilde.")
+	addMessageLine("Header_2", "fr_FR", "Recherche de Guilde")
+	addMessageLine("No_Variable_List_2", "fr_FR", "§7Aucune guilde en guerre.")
+	addMessageLine("Score_Prefix", "fr_FR", "§7§6§lGUILDES")
+	addMessageLine("Score_Msg_9", "fr_FR", "§b    ")
+	addMessageLine("Score_Msg_8", "fr_FR", "§fTEMPS: §e{TIME} min(s)")
+	addMessageLine("Score_Msg_7", "fr_FR", "§a     ")
+	addMessageLine("Score_Msg_6", "fr_FR", "§9§n{GUILD1}:")
+	addMessageLine("Score_Msg_5", "fr_FR", "§f{PLY1}/{MAX1}  ")
+	addMessageLine("Score_Msg_4", "fr_FR", "§2  ")
+	addMessageLine("Score_Msg_3", "fr_FR", "§c§n{GUILD2}:")
+	addMessageLine("Score_Msg_2", "fr_FR", "§f{PLY2}/{MAX2} ")
+	addMessageLine("Score_Msg_1", "fr_FR", "§1 ")
+	addMessageLine("Player_No_Guild", "fr_FR", "§7Ce joueur n'a pas de guilde.")
+	addMessageLine("Menu_Donate_GUI", "fr_FR", "Placez ressources ici")
+	addMessageLine("No_Item_Magic", "fr_FR", "§7Vous n'avez pas §9{NUMBER} diamant(s) §7a donner.")
+	addMessageLine("Store_Name_Magic", "fr_FR", "§b§nRessource magique")
+	addMessageLine("Store_Color_2", "fr_FR", "§b")
+	addMessageLine("Donate_Must_Be_Gold_Magic", "fr_FR", "§7Les dons ne peuvent être que §e§ngold§r§7 ou §b§nmagic§r§7.")
+	addMessageLine("Cant_Attack_Member", "fr_FR", "§7Vous ne pouvez pas attaquer vos compagnons de guilde.")
+	addMessageLine("Enter_MOTD", "fr_FR", "§7Saisir un message du jour.")
+	addMessageLine("MOTD_Changed", "fr_FR", "§7Message du jour modifié par §a{BY}§7.")
+	addMessageLine("MOTD_Removed", "fr_FR", "§7Message du jour supprimé par §a{BY}§7.")
+	addMessageLine("MOTD_Title", "fr_FR", "§f← §e§l§nMOTD§r §f→")
+	addMessageLine("MOTD_SubTitle", "fr_FR", "§7§o{MESSAGE}")
+	addMessageLine("MOTD_ActionBar", "fr_FR", "§fMessage du jour par §a{BY}§f. §f({DATE})")
+	addMessageLine("Enter_Region_Name", "fr_FR", "§7Entrez un nom de région Worldguard.")
+	addMessageLine("No_Region", "fr_FR", "§7Pas de région WorldGuard de ce nom.")
+	addMessageLine("Allow_Or_Disallow", "fr_FR", "§7Utilisez '/sgallow region allow <region>' pour donner les droits de créer une guilde sur cette région. Pour effacer '/sg region disallow <region>'")
+	addMessageLine("Region_Allowed", "fr_FR", "§7Vous autorisez la région §a{REGION} §7a donner accès à la création de guildes.")
+	addMessageLine("Region_Disallowed", "fr_FR", "§7Vous refuser à la région §c{REGION} §7le droit à la création de guildes.")
+	addMessageLine("Already_Ally", "fr_FR", "§7Cette guilde est déjà dans votre alliée.")
+	addMessageLine("Wait_Ally", "fr_FR", "§7Vous devez attendre §a{TIME} §7pour ajouter/supprimer un allié.")
+	addMessageLine("Added_Ally", "fr_FR", "§a{GUILD} §7et §9{ALLY} §7sont désormais alliés.")
+	addMessageLine("Enemy_Leader_Not_Online", "fr_FR", "§7Le leader de cette guilde n'est pas connecté actuellement.")
+	addMessageLine("Ally_GUI", "fr_FR", "Invitation d'Alliance")
+	addMessageLine("Ally_InviteC_Accept", "fr_FR", "§6Accepter et devenir l'allié de §e{GUILD}§6.")
+	addMessageLine("Ally_InviteC_Lore", "fr_FR", "||§7Les alliés ne peuvent s'attaquer entre eux.")
+	addMessageLine("Ally_Other_Reject", "fr_FR", "§9{GUILD} §7refuse votre invitation d'alliance.")
+	addMessageLine("Ally_You_Reject", "fr_FR", "§7Vous refusez l'invitation d'alliance de la guilde §9{GUILD}§7.")
+	addMessageLine("No_Ally", "fr_FR", "§7Cette guilde n'est pas dans votre liste d'alliés.")
+	addMessageLine("Removed_Ally", "fr_FR", "§a{GUILD} §7et §c{ENEMY} §7ne sont plus alliés.")
+	addMessageLine("Cannot_War_Allies", "fr_FR", "§7Vous ne pouvez pas combattre vos alliés.")
+	addMessageLine("Cannot_Claim_Allies", "fr_FR", "§7Cette terre appartient à votre allié. Vous ne pouvez pas claim.")
+	addMessageLine("Allies_GUI", "fr_FR", "Liste d'Alliés")
+	addMessageLine("Allies_Lore", "fr_FR", "||§7Date: §e{DATE}||§7Ajouté par: §e{BY}||||§7§oUtilisez §c§o'/g enemy {GUILD}' §7§opour supprimer.")
+	addMessageLine("No_Allies", "fr_FR", "§7Votre guilde n'a pas alliés.")
+	addMessageLine("Ally_Yourself", "fr_FR", "§7Vous ne pouvez pas faire d'alliance avec vous même.")
+	addMessageLine("Help_Pages_4::Line_1", "fr_FR", "§e/guilds ally <guild> §8- §7Définir une guilde comme un allié.")
+	addMessageLine("Help_Pages_4::Line_2", "fr_FR", "§e/guilds enemy <guild> §8- §7Retirer une guilde de votre liste d'alliés.")
+	addMessageLine("Help_Pages_4::Line_3", "fr_FR", "§e/guilds allies §8- §7Voir les alliés.")
