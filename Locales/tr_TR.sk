@@ -421,11 +421,9 @@ on load:
 	addMessageLine("Tournaments_Name", "tr_TR", "Turnuvalar [ALPHA v0.1]")
 	addMessageLine("Tournaments_Status_Off_Name", "tr_TR", "§4⚠")
 	addMessageLine("Tournaments_Status_Off_Lore", "tr_TR", "||§7Şu anda Turnuvalar aktif||§7değil daha sonra tekrar deneyin.")
-	addMessageLine("Tournaments_In_Item} to gray dye
 	addMessageLine("Tournaments_In_Name", "tr_TR", "§aTurnuva Bilgisi")
 	addMessageLine("Tournaments_In_Lore", "tr_TR", "||§7Rakibin belirlenmesi bekleniyor...")
 	addMessageLine("Tournaments_Opponent_Lore", "tr_TR", "||§7Rakibin §c{GUILD} §7loncası.||§7Bu loncanın bilgilerine||§e/g info §7yazarak bakabilirsin.")
-	addMessageLine("Tournaments_Join_Item} to green dye
 	addMessageLine("Tournaments_Join_Name", "tr_TR", "§aTurnuvaya Katıl")
 	addMessageLine("Tournaments_Join_Lore", "tr_TR", "||§7Turnuvaya katılmak için tıkla.")
 	addMessageLine("Tournaments_List", "tr_TR", "§aTurnuva Maçları")
