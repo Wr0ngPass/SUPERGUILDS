@@ -11,8 +11,7 @@ Messages:
   That_Guild_Exists: §7Данное название уже занято.
   Enter_Guild_Name: §7Введите название гильдии.
   You_Have_Guild: §7У вас уже есть гильдия.
-  Remove_Confirm: §7Вы уверены, что хотите удалить гильдию? Если да, то введите команду
-    ещё раз.
+  Remove_Confirm: §7Вы уверены, что хотите удалить гильдию? Если да, то введите команду ещё раз.
   Guild_Removed: §7Гильдия была удалена.
   No_Permission: §7У вас нет прав.
   You_Dont_Have_Guild: §7У вас нет гильдии.
@@ -21,7 +20,7 @@ Messages:
   Option_Disabled: §7Эта функция отключена.
   No_Rank: §7Недостаточно прав для данного действия.
   You_Dont_Have_This_Chunk: §7У вашей гильдии нет этого чанка.
-  Done_Set_Home: §7Точка дома гильдии поставлена.
+  Done_Set_Home: §7Точка дома гильдии установлена.
   Teleporting_Message: §7Вы будете телепортированны через §e{TIME} §7секунд.
   Teleport_Cancel: §7Телепортация была отменена, из-за того, что вы двинулись.
   Teleport_Done: §7Вы успешно телепортировались.
@@ -60,8 +59,7 @@ Messages:
   You_Kicked: §7Вы были кикнуты из гильдии.
   No_Kick_Yourself: §7Вы не можете кикнуть себя.
   Claim_Error: §7Вы уже захватили эти земли.
-  No_Claim_Level: §7Дивизия, гильдии которая владеет этой землёй лучше, чем дивизия
-    вашей гильдии.
+  No_Claim_Level: §7Дивизия, гильдии которая владеет этой землёй лучше, чем дивизия вашей гильдии.
   Attacking_You: §c{ATTACKER}§7 захватила вашу землю в §e{LAND}§7.
   Attacked_Chunk: §7Ваша гильдия захватила землю §e{LAND} §7у §c{OWN}§7.
   Chunk_Claimed: §7Вы захватили землю §e{LAND}§7.
@@ -97,12 +95,12 @@ Messages:
   Help_Pages_3::Line_3: §e/guilds version §8- §7Версия плагина.
   Help_Pages_3::Line_4: §e/guilds buildings §8- §7Показать постройки гильдии.
   Help_Pages_3::Line_5: §e/guilds showclaims §8- §7Показать список захваченых земель.
-  Help_Pages_3::Line_6: §e/guilds alchemy §8- §7Показать Алхимия гильдии.
+  Help_Pages_3::Line_6: §e/guilds alchemy §8- §7Показать Алхимию гильдии.
   Help_Pages_3::Line_7: §e/guilds invites §8- §7ВКЛ/ВЫКЛ приглашения в гильдию.
   Help_Pages_3::Line_8: §e/guilds chat §8- §7ВКЛ/ВЫКЛ чат гильдии.
   Next_Page: §8§m--------------------------------------------
   Invite_Player_Name: §7Введите имя, чтобы пригласить.
-  Cant_Invite_Yourself: §7Вы не можете приглосить себя.
+  Cant_Invite_Yourself: §7Вы не можете пригласить себя.
   Player_Closed_Invites: §7Этот игрок отключил приглашения.
   Player_Has_Guild: §7Этот игрок уже состоит в гильдии.
   Your_Guild_Is_Full: §7Ваша гильдия заполнена. Улучшите ратушу, чтобы увеличить слоты.
@@ -118,12 +116,10 @@ Messages:
   Disabled_Invites: §7Вы выключили приглашения.
   Enabled_Invites: §7Вы включили приглашения.
   Enter_An_Integer: §7Введите целое число.
-  No_Storage: §7Недостаточно места для §f{NUMBER} {RESOURCE}§r§7. §7Вы можете улучшить
-    склад.
+  No_Storage: §7Недостаточно места для §f{NUMBER} {RESOURCE}§r§7. §7Вы можете улучшить склад.
   Player_Donated: '{RANK} {PLAYER}§7, положил §f{NUMBER} {RESOURCE}§r §7на склад гильдии.'
   Donations_0: §7Вложение должно быть больше нуля.
-  Leader_Leave: §7Вы лидер, лидеры не могут покинуть гильдию. Вы можете распустить
-    гильдию используя §e/g disband§7.
+  Leader_Leave: §7Вы лидер, лидеры не могут покинуть гильдию. Вы можете распустить гильдию используя §e/g disband§7.
   Player_Leave: '{RANK} {PLAYER}§7, покинул гильдию.'
   You_Leave: §7Вы ушли из гильдии §c{GUILD}§7.
   Language_Select: '§7Язык изменен на: §a{LANG}'
@@ -134,10 +130,8 @@ Messages:
   Buildings_Broadcast_1: '§7Слотов в гильдии: §a+{NUM}'
   Buildings_Broadcast_2: §7Ваша гильдия начнёт войну с бронёй {ITEM}§7.
   Buildings_Broadcast_3: '§7Хранилище гильдии увеличено: §a+500'
-  Buildings_Broadcast_4: §7Теперь ваша гильдия может использовать следующий уровень
-    алхимии.
-  Showing_Claims: §7Теперь вы можете увидеть все завоёванные земли. Если вы не хотите
-    их видеть, перезайдите на сервер.
+  Buildings_Broadcast_4: §7Теперь ваша гильдия может использовать следующий уровень алхимии.
+  Showing_Claims: §7Теперь вы можете увидеть все завоёванные земли. Если вы не хотите их видеть, перезайдите на сервер.
   No_Claims: §7У вашей гильдии нет земель.
   Show_Claim_Wait: §7Вам нужно подождать §e{TIME} §7чтобы показать все земли.
   Status_Online: §aОнлайн
@@ -216,15 +210,13 @@ Messages:
   Arena_Removed: '§7Удалена арена: §e{ARENA}'
   Enter_Setspawn_Type: §7Вы должны ввести тип команды. (1 или 2)
   Setspawn_Done: §eТочка спавна {TYPE} §7команды на §a{ARENA} §7была поставлена.
-  Lobby_Done: §7Лобби было поставлено на этом месте. Игроки будут телепортированны
-    сюда после конца игры.
+  Lobby_Done: §7Лобби было поставлено на этом месте. Игроки будут телепортированны сюда после конца игры.
   Restart_Kick_restart: §7Вы были кикнуты, так как арена перезагружается.
   Restart_Kick_error: §7Вы были кикнуты, так как на арене появились ошибки.
   Restart_Kick_time: §7Вы были кикнуты, потому что время арены истекло.
-  Enemy_War_Minimum: §7В этой гильдии §e{ONLINE} §7онлайн участник(а)(ов). (Минимум
-    {MINIMUM})
+  Enemy_War_Minimum: §7В этой гильдии §e{ONLINE} §7онлайн участник(а)(ов). (Минимум {MINIMUM})
   You_War_Minimum: §7У вас §e{ONLINE} §7онлайн участник(а)(ов). (Минимум {MINIMUM})
-  Enemy_Guild_In_War: §7Эта гильдия на войне.
+  Enemy_Guild_In_War: §7Вражеская гильдия на войне.
   Your_Guild_In_War: §7Ваша гильдия на войне.
   Cannot_War_Yourself: §7Вы не можете воевать с собой.
   War_Invite_Send: §7Ваша гильдия отправила объявление войны гильдии §c{GUILD} §7.
@@ -234,19 +226,15 @@ Messages:
   War_Other_Reject: §9{GUILD} §7отклонила ваше объявление войны.
   War_You_Reject: §9{GUILD} §7отклонила ваше объявление войны.
   No_Available_Arena: §7Нет доступных арен.
-  War_Starting_Timer: §9{GUILD1} §7против §c{GUILD2} §7начнется через §e{SECONDS}
-    §7секунд.
+  War_Starting_Timer: §9{GUILD1} §7против §c{GUILD2} §7начнется через §e{SECONDS} §7секунд.
   War_Started: §7Война между §9{GUILD1} §7и §c{GUILD2} §7началась. Удачной войны!
   War_End_Timer: §7Война закончится через §e{MINUTES} §7минут(у)(ы).
   Game_Finished_Time: §7Время вышло, никто не победил.
-  No_Command_War: §7Время закончилось, никто не выйграл.
-  War_Win: §7Война между §9{GUILD1} §7и §c{GUILD2} §7закончилась. §9{GUILD1} §7победила
-    в войне.
-  New_Division: §7Ваша гильдия перешла вновую дивизию - §r{NEWDIVISION} §7из §r{OLDDIVISION}§7.
-  War_Points_Add: §7Ваша гильдия выиграла войну против §c{GUILD} §7и получила §a+{POINTS}
-    ✪§7.
-  War_Points_Lose: §7Ваша гильдия проиграла войну против §9{GUILD} §7и потеряла §c-{POINTS}
-    ✪§7.
+  No_Command_War: §7Время закончилось, никто не выиграл.
+  War_Win: §7Война между §9{GUILD1} §7и §c{GUILD2} §7закончилась. §9{GUILD1} §7победила в войне.
+  New_Division: §7Ваша гильдия перешла в новую дивизию - §r{NEWDIVISION} §7из §r{OLDDIVISION}§7.
+  War_Points_Add: §7Ваша гильдия выиграла войну против §c{GUILD} §7и получила §a+{POINTS} ✪§7.
+  War_Points_Lose: §7Ваша гильдия проиграла войну против §9{GUILD} §7и потеряла §c-{POINTS} ✪§7.
   Arena_Debug: §7Арена §a{ARENA} §7была перезапушена.
   No_Arena_Found: §7Арена не найдена.
   Arena_Guilds: '§7Арена Гильдий: §f'
@@ -259,19 +247,16 @@ Messages:
   RankStar_General: '§a⚝ '
   RankStar_Captain: '§b❈ '
   RankStar_Member: '§3◆ '
-  Claim_Limit: §7Вы не можете больше захвачивать земли.
-  Death_Broadcast: §c⚔ §e§o{AGUILD} §3{ATTACKER} §fубил игрока §e§o{VGUILD} §3{VICTIM}
-    §7(§6-{GOLD} золота§7)
-  Death_Gold_Gain: Ваша гильдия получила §e+{GOLD} Золота §7так как §7{RANK} {PLAYER}§7
-    убил кого-то.
-  Death_Gold_Loss: Ваша гильдия потеряла §4-{GOLD} Золота §7так как §7{RANK} {PLAYER}§7
-    был убит кем-то.
+  Claim_Limit: §7Вы не можете больше захватывать земли.
+  Death_Broadcast: §c⚔ §e§o{AGUILD} §3{ATTACKER} §fубил игрока §e§o{VGUILD} §3{VICTIM} §7(§6-{GOLD} золота§7)
+  Death_Gold_Gain: Ваша гильдия получила §e+{GOLD} Золота §7так как §7{RANK} {PLAYER}§7 убил кого-то.
+  Death_Gold_Loss: Ваша гильдия потеряла §4-{GOLD} Золота §7так как §7{RANK} {PLAYER}§7 был убит кем-то.
   Buildings_Broadcast_TNT: §7Динамит не будет взрываться на захваченных землях.
   Click_To_Teleport: §7Кликни, чтобы телепортироваться.
   Click_To_Select_Color: §fНажмите здесь, чтобы выбрать краситель.
   Click_To_Dye_Here: Кликните, чтобы раскрасить здесь.
   Save_Emblem_Lore: §fКликни, чтобы сохранить эмблему.
-  Reset_Emblem_Lore: §fКликни, чтобы отчистить всё.
+  Reset_Emblem_Lore: §fКликни, чтобы очистить всё.
   Use_Emblem_Lore: §fКликните, чтобы изменить эмблему вашей гильдии.
   Wilderness_Text: §2§l§nСвободные земли§r §2§l⚘
   Wilderness_Msg_1: §7§oЯ люблю природу...
@@ -292,7 +277,7 @@ Messages:
   Save_Emblem_Button: §2§l[§2✓§2§l]§r
   Reset_Emblem_Button: §4§l[§4✘§4§l]
   Use_Emblem_Button: §0§l[§0✎§0§l]
-  Player_No_Guild: §7Этот игрока не имеет гильдии.
+  Player_No_Guild: §7Этот игрок не имеет гильдии.
   Menu_Donate_GUI: Положите сюда ресурсы
   Cant_Attack_Member: §7Вы не можете атаковать согильдийцев.
   Enter_MOTD: §7Введите сообщение дня.
@@ -303,78 +288,63 @@ Messages:
   MOTD_ActionBar: §fМОТД от игрока §a{BY}§f. §f({DATE})
   Enter_Region_Name: §7Введите название региона WORLDGUARD.
   No_Region: §7Регион WG с таким названием не найден.
-  Region_Allowed: §7Вы разрешили §a{REGION} §7WorldGuard региону создать в данном
-    регионе гильдию.
-  Region_Disallowed: §7Вы запретили §c{REGION} §7WorldGuard региону создать в данном
-    регионе гильдию.
-  Already_Ally: §7Эта гильдия уже в альянсе с вами.
-  Wait_Ally: §7Вам нужно подождать §a{TIME} §7для удаления/добавления в альянс.
-  Added_Ally: §a{GUILD} §7и §9{ALLY} §7объявили альянс.
-  Ally_GUI: Приглашение в альянс
-  Ally_InviteC_Accept: §6Принять альянс с §e{GUILD}§6.
+  Region_Allowed: §7Вы разрешили §a{REGION} §7WorldGuard региону создать в данном регионе гильдию.
+  Region_Disallowed: §7Вы запретили §c{REGION} §7WorldGuard региону создать в данном регионе гильдию.
+  Already_Ally: §7Эта гильдия уже в союзе с вами.
+  Wait_Ally: §7Вам нужно подождать §a{TIME} §7для удаления/добавления в союз.
+  Added_Ally: §a{GUILD} §7и §9{ALLY} §7объявили союз.
+  Ally_GUI: Приглашение в союз
+  Ally_InviteC_Accept: §6Принять союз с §e{GUILD}§6.
   Ally_InviteC_Lore: '||§7Союзники не могут атаковать друг друга.'
   Ally_Other_Reject: §9{GUILD} §7отклонил приглашение.
-  Ally_You_Reject: §7Вы отклонили приглашение §9{GUILD}§7о альянсе.
-  No_Ally: §7Эта гильдия не входит в ваш список альянсов.
-  Removed_Ally: §a{GUILD} §7и §c{ENEMY} §7разовали договор альянса.
-  Cannot_War_Allies: §7Вы не можете сражаться с гильдиями которые в альянсе с вами.
-  Cannot_Claim_Allies: §7Эта земля захвачена собзником из альянса, вы не можете захватить
-    её.
-  Allies_GUI: Список альянсов
-  Allies_Lore: '||§7Дата: §e{DATE}||§7Добавлено: §e{BY}||||§7§oИспользуйте §c§o''/g
-    enemy {GUILD}'' §7§o чтобы убрать.'
-  Ally_Yourself: §7Вы не можете предложить альянс себе.
-  Help_Pages_4::Line_1: §e/guilds ally <гильдия> §8- §7Установить альянс с другой
-    гильдией.
-  Help_Pages_4::Line_2: §e/guilds enemy <гильдия> §8- §7Удалить гильдию из списка
-    альянса.
+  Ally_You_Reject: §7Вы отклонили приглашение §9{GUILD}§7о союзе.
+  No_Ally: §7Эта гильдия не входит в ваш список союза.
+  Removed_Ally: §a{GUILD} §7и §c{ENEMY} §7разовали договор союза.
+  Cannot_War_Allies: §7Вы не можете сражаться с гильдиями которые в союзе с вами.
+  Cannot_Claim_Allies: §7Эта земля захвачена человеком из союза, вы не можете захватить её.
+  Allies_GUI: Список союза
+  Allies_Lore: '||§7Дата: §e{DATE}||§7Добавлено: §e{BY}||||§7§oИспользуйте §c§o''/g enemy {GUILD}'' §7§o чтобы убрать.'
+  Ally_Yourself: §7Вы не можете предложить союз себе.
+  Help_Pages_4::Line_1: §e/guilds ally <гильдия> §8- §7Установить союз с другой гильдией.
+  Help_Pages_4::Line_2: §e/guilds enemy <гильдия> §8- §7Удалить гильдию из списка союза.
   Help_Pages_4::Line_3: §e/guilds allies §8- §7Показать список альянсов.
   Updated_Locale: '§7Файл был обновлён. (Old: {OLD} - New: {NEW})'
   Locale_Update_Already: §7Файл уже был обновлён, обновить ещё раз?
   Updated_Locale_Replace: §7Добавлено §6{NEW} §7новое сообщение в файл.
   Tournaments_Name: Турниры
   Tournaments_Status_Off_Name: §4⚠
-  Tournaments_Status_Off_Lore: '||§7Турнир неактивен||§7на данный момент, повторите
-    попытку позже.'
+  Tournaments_Status_Off_Lore: '||§7Турнир неактивен||§7на данный момент, повторите попытку позже.'
   Tournaments_In_Name: §6§nИнформация о турнире
   Tournaments_In_Lore: '||§7Ожидание противника...'
-  Tournaments_Opponent_Lore: '||§7Ваш противник - §c{GUILD} §7.||§7Вы можете посмотреть
-    информацию об этой||§7гильдии, написав §e/g info §7.'
+  Tournaments_Opponent_Lore: '||§7Ваш противник - §c{GUILD} §7.||§7Вы можете посмотреть информацию об этой||§7гильдии, написав §e/g info §7.'
   Tournaments_Join_Name: §6§nПрисоединиться к турниру
   Tournaments_Join_Lore: '||§7Нажмите, чтобы присоединиться к турниру.'
   Tournaments_List: §6§nТурнирные матчи
-  Tournaments_Guild_List: §6§nГильдии турниров
+  Tournaments_Guild_List: §6§nГильдии в турнире
   Tournaments_Ingame_Lore: §8(§7§oin progress§8)
   Tournaments_Waiting_Lore: §8(§7§owaiting§8)
   Tournaments_Won_Lore: §8(§f{G}§8)
-  Tournaments_Eliminated_Lore: '||§7The tournament has begun||§7and you can''t join
-    at the moment.||§7See you soon in a new Tournament.'
-  Tournaments_Already_Enabled: §7The tournament is already enabled.
-  Tournament_Joins_Closed: §7The tournament matches has been set. Check it with tournament
-    menu.
-  Your_Guild_Already_Tournament: §7Your guild is already in the Tournament.
-  Tournament_Not_Active: §7The tournament is not active at the moment.
-  Cant_Join_Closed: §7Your guild can't join the Tournament at the moment.
-  Guild_Joined_Tournament: §a{GUILD} §7has joined to tournament. §8[§e{ALL} joined§8]
-  Tournament_Not_Enough: §7Tournament has closed because there were not enough teams
-    to participate in the Tournament.
-  You_Cant_War_Tournament: §7Sorry, your guild can't war while tournament is active.
-  Tournaments_You_Won_Waiting: '||§7Your guild won a battle so.||§7you''re waiting
-    for new match.'
-  Guild_Removed_Tournament: §7Your guild has been removed from tournament due to 'guild
-    count must be double'
-  Tournament_Won_Broadcast: §a{GUILD} §7won the Tournament and gained §a+{POINTS}
-    ✪§7.
+  Tournaments_Eliminated_Lore: '||§7Турнир уже начался||§7и вы не можете вступить в данный момент.||§7Ждём вас на другом турнире.'
+  Tournaments_Already_Enabled: §7Турнир уже включен.
+  Tournament_Joins_Closed: §7Матчи турнира уже установлены. Проверьте это в меню турниров.
+  Your_Guild_Already_Tournament: §7Ваша гильдия уже учавствует в турнире.
+  Tournament_Not_Active: §7Турнир в данный момент не активен.
+  Cant_Join_Closed: §7Ваша гильдия не может вступить в турнир в данный момент.
+  Guild_Joined_Tournament: §a{GUILD} §7присоеденилась к турниру. §8[§e{ALL} присоеденился§8]
+  Tournament_Not_Enough: §7Турнир закрыт, потому что не хватило участников для его начала.
+  You_Cant_War_Tournament: §7Извините, ваша гильдия не может воевать, пока турнир активен.
+  Tournaments_You_Won_Waiting: '||§7Ваша гильдия выиграла битву.||§7Ты ожидаешь нового матча.'
+  Guild_Removed_Tournament: §7Ваша гильдия была исключена из турнира, изза того что количество гильдий должно быть парным.
+  Tournament_Won_Broadcast: §a{GUILD} §7выиграл турнир и получил §a+{POINTS} ✪§7.
   Locale_GUI_Name: Выбор языка
   Click_Select_Locale: '||§7Нажмите, чтобы выбрать локализацию.'
   Locale_en_US: §6English (США)
   Locale_es_ES: §6Español
   Locale_de_DE: §6Deutsch
   Locale_it_IT: §6Italiano
-  Locale_ru_RU: §6Руска
+  Locale_ru_RU: §6Русский
   Locale_tr_TR: §6Türkçe
-  Allow_Or_Disallow: §7Используйте §a'/sgallow region allow <region>' §7чтобы разрешить
-    создавать гильдию в регионе. Чтобы удалить используйте §c'/sgadmin region disallow
+  Allow_Or_Disallow: §7Используйте §a'/sgallow region allow <region>' §7чтобы разрешить создавать гильдию в регионе. Чтобы удалить используйте §c'/sgadmin region disallow
     <region>'§7. Для проверки регионов используйте §e'/sgadmin region list'§7.
   No_Region_Found: §7Нет разрешенных регионов.
   Region_List: '          §a§nСписок разрешенных регионов'
@@ -390,15 +360,14 @@ Messages:
   Divisions_3: §dКристалл
   Divisions_4: §bМастер
   Divisions_5: §cЧемпион
-  Menu_Allies_Name: §6Список альянсов
+  Menu_Allies_Name: §6Список союзов
   Menu_Allies_Lore: '||§7Нажмите, чтобы проверить союзников вашей гильдии.'
   Guild_Home_Menu_Name: §6Дом гильдии
   Guild_Home_Menu_Lore: '||§7Кликни, чтобы телепортироваться на точку дома.'
-  Tournament_Cooldown: §7Matches will be set in §e{SECOND} §7second(s). §7Join with
+  Tournament_Cooldown: §7Матчи пройдут в §e{SECOND} §7second(s). §7Присоедениться
     §e/tournament§7.
   You_Need_More_Resource: §7Вам не хватает §f{AMOUNT} §7{RESOURCE}§r §7в хранилище.
-  Enemy_Leader_Not_Online: §7Right now, no one has the permission of answer the invite
-    in this guild.
+  Enemy_Leader_Not_Online: §7Прямо сейчас никто не может ответить на ваше предложение.
   Menu_War_Lore_New: '§eГильдия;||§7 → Дивизия: §f{LEVEL}||§7 → Поинты: §f{POINTS}
     ✪||§7 → Стартовый сет: §f{ITEMS}||||§eПВП;||§7 → Убийства: §f{KILLS}||§7 → Смерти:
     §f{DEATHS}'
@@ -438,7 +407,7 @@ Messages:
   Building_Status_1: Улучшается...
   Building_Status_2: Ждёт подтверждения...
   Buildings_Lore: '||§eТип здания: §f{LEVEL}||§eСтатус: §f{STATUS}||{TIMESHOW}||||§7Кликни,
-    чтобы увидеть информаию.'
+    чтобы увидеть информацию.'
   Buildings_Time_Remaining: '||§eВремени осталось: §f{TIME}'
   Allies_4_Lore: '||§7Дата: §e{DATE}||§7Добавил: §e{BY}||||§7§oИспользуй §c§o''/g
     enemy [Гильдия]'' §7§,чтобы удалить.'
@@ -493,10 +462,10 @@ Messages:
   GuildSelectGUIName_2: §6Помощь о гильдиях
   GuildSelectGUILore_1: '||§7Нажмите, чтобы вступить в одну из публичных гильдий.'
   GuildSelectGUILore_2: '||§7Нажмите, чтобы получить помощь о гильдиях.'
-  Resource_Worker_Time_Ready: '||§7Рабочий §aготов §7строить здания.'
-  Resource_Worker_Time_Rest: '||§7Работник должен отдохнуть, чтобы строить новые здания.||§cПодождите
+  Resource_Worker_Time_Ready: '||§7Строитель §aготов §7строить здания.'
+  Resource_Worker_Time_Rest: '||§7Строитель должен отдохнуть, чтобы строить новые здания.||§cПодождите
     {TIME}§7......'
-  Worker_Rest: §7Работник должен отдохнуть §a{TIME} §7, чтобы строить новые здания.
+  Worker_Rest: §7Строитель должен отдохнуть §a{TIME} §7, чтобы строить новые здания.
   Resource_Give_Usage: '§7Используйте: §e/sgadmin resource <guild> <resource> <add/remove/set>
     <amount>'
   Resource_Give_Admin: §7Вы добавили §a{NUMBER} §7к §f{GUILD}§7's {RESOURCE}§7.
@@ -648,43 +617,40 @@ Messages:
     чтобы вступить в гильдию.'
   RankGUI_PermName_Break: §f§nЛомать блоки на захваченых землях гильдии
   RankGUI_PermName_Place: §f§nРазмещать блоки на захваченных землях гильдии
-  Tournaments_List_Waiting: §7§o(waiting for guilds...)
-  Claim_Name: §7§o(You can change this claim's name||§7§ousing §e/g claimname §7§ocommand.)
-  Dont_Have_Money_To_Create: §7You do not have enough money in your balance to create
-    the guild. You must have §e${NUMBER}§7.
-  Enemy_War_Shield_New: §7This guild has shield for instant guild war. Their war shield
-    expires in §c{EXPIRE}§7.
-  War_Invite_Send_2_New: §7Good luck warriors! Your guild starts a guild war with
-    §c{GUILD} §7guild.
-  War_Invite_Send_3_New: §7Prepare right now! §c{GUILD} §7starts a guild war with
-    you.
-  Click_To_Join_New: '||§7Leader: §f{LEADER}||§7War Points: §f{POINTS} ✪||§7Division:
-    §f{LEVEL}||||{EMBLEM}||||§eClick to join this guild.'
+  Tournaments_List_Waiting: §7§o(ожидание гильдий...)
+  Claim_Name: §7§o(Вы можете изменить название этой земли||§7§oиспользуйте команду §e/g claimname §7§o.)
+  Dont_Have_Money_To_Create: §7У вас недостаточно щекелей для создания гильдии, вы должны иметь: §e${NUMBER}§7.
+  Enemy_War_Shield_New: §7Эта гильдия имеет щит для мгновенной войны гильдии. Их боевой щит истекает через §c{EXPIRE}§7.
+  War_Invite_Send_2_New: §7Удачи воин! Ваша гильдия начинвает войну с
+    §c{GUILD} §7гильидей.
+  War_Invite_Send_3_New: §7Готовьтесь прямо сейчас §c{GUILD} §7Начинает войну с вами
+  Click_To_Join_New: '||§7Лидер: §f{LEADER}||§7Очков войны: §f{POINTS} ✪||§7Дивизия:
+    §f{LEVEL}||||{EMBLEM}||||§eНажми что бы присоедениться.'
   War_Death_2_New: §c☠ §f{VICTIM} ({VGUILD}) §7[+{POINTS} ☆]
-  War_Death_3: §a♜ §a§lMATCH POINT!§r §a♜
-  War_Start_1: §2♜§r §2§l§nGUILD WARS§r §2♜
-  War_Left: §c{PLAYER} ({PLAYERGUILD}) §7left from war.
-  War_Shield_GUI_Lore_1: §a(War Shield Enabled)
-  War_Shield_GUI_Lore_2: §c(No War Shield)
-  You_Cant_War_New: §7You can't guild war because you need to make §9Barrack §7to
-    §6Level {LEVEL}§7.
-  No_Guild_Perm: §7You can't do this with your permissions.
-  WarShield_Give_Usage: '§7Usage: §e/sgadmin warshield <guild name> <days (number)>§7,
+  War_Death_3: §a♜ §a§lИсход матча!§r §a♜
+  War_Start_1: §2♜§r §2§l§nВойна гильдийS§r §2♜
+  War_Left: §c{PLAYER} ({PLAYERGUILD}) §7покинул войну.
+  War_Shield_GUI_Lore_1: §a(Боевой щит активирован)
+  War_Shield_GUI_Lore_2: §c(Нет боевого щита)
+  You_Cant_War_New: §7Вы не можете воевать с гильидями потому что вам необходима §9Казарма §7на
+    §6уровень {LEVEL}§7.
+  No_Guild_Perm: §7Вы не можете сделать это с вашими правами.
+  WarShield_Give_Usage: '§7Используй: §e/sgadmin warshield <guild name> <days (число)>§7,
     example: §6/sgadmin warshield Spigot 3'
-  WarShield_Set_Admin: §7You added §a+{NUMBER} §7days of war protection to §b{GUILD}.
-  Land_Protection_2: §7Ground must be fully solid. (16x16)
-  Sent_Ally_Request: §7You sent an ally request to §e{GUILD}§7.
-  PageAPI_Header_21: 'Sort: No War Shield'
-  PageAPI_Header_22: 'Sort: Online'
-  PageAPI_Header_23: 'Sort: All'
-  PageAPI_NoVariable_21: §c§nNo Guilds Without War Shield Found.
-  PageAPI_NoVariable_22: §c§nNo Online Guilds Found.
-  Attack_GuildMembers: §cYou can't attack your guildmates!
-  Attack_GuildClaim: §cYou can't war in this zone.
-  Wipe_Confirm: §7Are you sure to wipe §4{GUILDS} guilds §7inactive for §c{NUMBER}
-    days§7? If you sure, use this command again.
-  Wipe_Error: §7You can't wipe guilds under §c3 days §7inactivity
-  Wipe_Happen: §7Wiping inactive for §c{DAYS} days§7 guilds...
-  Wipe_NoData: §7No guild found inactive for this day long.
-  Wipe_Done: §7Guild wipe is done, §a{TOTAL} §7inactive guilds wiped.
-  Wipe_Usage: '§aUsage: §7/g wipe <inactive days count>'
+  WarShield_Set_Admin: §7Вы добавили §a+{NUMBER} §7дней защиты для гильдии §b{GUILD}.
+  Land_Protection_2: §7Земля должна быть твердой. (16x16)
+  Sent_Ally_Request: §7Вы отрпавили запрос союза к §e{GUILD}§7.
+  PageAPI_Header_21: 'Сортировка: Без боевого щита'
+  PageAPI_Header_22: 'Сортировка: Online'
+  PageAPI_Header_23: 'Сортировка: Все'
+  PageAPI_NoVariable_21: §c§nНе найдено гильдий без щитов.
+  PageAPI_NoVariable_22: §c§nНе найдено гильдий в онлайне.
+  Attack_GuildMembers: §cВы не можете атаковать своих товарищей по гильдии!
+  Attack_GuildClaim: §cВы не можете воевать в этой зоне.
+  Wipe_Confirm: §7Вы уверены что хотите стереть гильдию §4{GUILDS} §7Неактивна §c{NUMBER}
+    дней§7? Если вы уверены введите команду снова.
+  Wipe_Error: §7Вы не можете стереть гильдию до §c3 дней §7бездействия
+  Wipe_Happen: §7Удаление неактивных до §c{DAYS} днейs§7 гильдий...
+  Wipe_NoData: §7Ни одна гильдия не найдена неактивной в течение этого дня.
+  Wipe_Done: §7Удаление гильдий завершено, §a{TOTAL} §7неактивных гильдий удалено.
+  Wipe_Usage: '§aИспользуйте: §7/g wipe <Количество неактивных дней>'
